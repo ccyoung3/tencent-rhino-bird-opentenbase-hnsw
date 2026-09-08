@@ -1,0 +1,13 @@
+__pycache__/
+
+# Keep only named final evidence sets; exploratory runs remain local.
+results/*
+!results/README.md
+!results/test-summary.json
+!results/seed42-final-comparison-*.json
+!results/*-seed42-final-*/
+!results/*-seed42-final-*/*
+!results/*-final-functional-*/
+!results/*-final-functional-*/*
+!results/*-parallel-stress-*/
+!results/*-parallel-stress-*/*

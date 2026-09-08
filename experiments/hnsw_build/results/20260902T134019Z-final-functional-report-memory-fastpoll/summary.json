@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-09-02T13:40:19.422008+00:00",
+  "parameters": {
+    "rows": 100000,
+    "dimensions": 64,
+    "maintenance_work_mem": "256MB",
+    "m": 16,
+    "ef_construction": 64,
+    "parallel_workers": 0,
+    "seed": 0.42,
+    "sample_interval_seconds": 0.02,
+    "image": "opentenbase-pg18-pgvector:diagnostics-v2-arm64",
+    "isolated_database": true
+  },
+  "provenance": {
+    "host": {
+      "system": "Darwin",
+      "release": "25.6.0",
+      "machine": "arm64"
+    },
+    "container_image_id": "sha256:8665e677e3fa7d62a1158698add8d1da173e4c64491643e7d0182ff32adaea91",
+    "opentenbase_source": {
+      "commit": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": false,
+      "changed_paths": [],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pgvector_source": {
+      "commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": true,
+      "changed_paths": [
+        " M src/hnsw.c",
+        " M src/hnsw.h",
+        " M src/hnswbuild.c",
+        " M test/t/045_hnsw_low_memory_build.pl"
+      ],
+      "tracked_diff_sha256": "eb09370a414afda75eb7550f21d12f118d1d6f1b32ff0a46ecf1c4ec3bb7e50f"
+    }
+  },
+  "finished_at_utc": "2026-09-02T13:42:18.508000+00:00",
+  "build_elapsed_seconds": 110.180544,
+  "initial_container_memory_bytes": 230068224,
+  "peak_container_memory_bytes": 261431296,
+  "peak_memory_delta_bytes": 31363072,
+  "observed_phases": [
+    "building index: loading tuples in memory",
+    "building index: flushing in-memory graph",
+    "building index: writing index pages to WAL"
+  ],
+  "phase_observations": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_seconds": 0.00561,
+      "last_seen_seconds": 109.201828,
+      "sample_count": 420,
+      "sampled_span_seconds": 109.196218,
+      "first_tuple_progress_percent": 0.109,
+      "last_tuple_progress_percent": 99.895,
+      "peak_container_memory_bytes": 261431296
+    },
+    {
+      "phase": "building index: flushing in-memory graph",
+      "first_seen_seconds": 109.375859,
+      "last_seen_seconds": 109.375859,
+      "sample_count": 1,
+      "sampled_span_seconds": 0.0,
+      "first_tuple_progress_percent": 100.0,
+      "last_tuple_progress_percent": 100.0,
+      "peak_container_memory_bytes": 259481600
+    },
+    {
+      "phase": "building index: writing index pages to WAL",
+      "first_seen_seconds": 109.555627,
+      "last_seen_seconds": 109.730853,
+      "sample_count": 2,
+      "sampled_span_seconds": 0.175226,
+      "first_tuple_progress_percent": 100.0,
+      "last_tuple_progress_percent": 100.0,
+      "peak_container_memory_bytes": 240611328
+    }
+  ],
+  "progress_sample_count": 423,
+  "diagnostics": {
+    "spill_detected": false,
+    "spill_after_tuples": null,
+    "spill_context": null,
+    "phase_order_monotonic": true
+  },
+  "launched_parallel_workers": 0,
+  "metadata": {
+    "server_version": "18.6",
+    "pgvector_version": "0.8.6",
+    "row_count": 100000,
+    "table_total_bytes": 89653248,
+    "index_bytes": 57016320,
+    "container_architecture": "aarch64",
+    "query_plan": "SET\nLimit\n  InitPlan 1\n    ->  Index Scan using items_pkey on items items_1\n          Index Cond: (id = 1)\n  ->  Index Scan using items_embedding_hnsw_idx on items\n        Order By: (embedding <-> (InitPlan 1).col1)",
+    "uses_hnsw_index": true
+  }
+}

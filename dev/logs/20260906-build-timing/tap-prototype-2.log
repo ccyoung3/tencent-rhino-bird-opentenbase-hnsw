@@ -1,0 +1,418 @@
+rm -rf /src/pgvector/tmp_check
+cd ./ && TESTDIR='/src/pgvector' PATH="/opt/opentenbase/bin:$PATH" PGPORT='65432' PG_REGRESS='/opt/opentenbase/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress' prove -I /opt/opentenbase/lib/postgresql/pgxs/src/makefiles/../../src/test/perl/ -I ./ -v test/t/049_hnsw_build_timing.pl
+test/t/049_hnsw_build_timing.pl .. 
+# initializing database system by running initdb
+ok 1 - default build succeeds
+ok 2 - timing defaults to off
+ok 3 - workers=0 spill=0: build succeeds
+ok 4 - workers=0 spill=0: leader emits exactly one summary
+ok 5 - workers=0 spill=0: schema version
+ok 6 - workers=0 spill=0: complete AM call
+ok 7 - workers=0 spill=0: internal scope
+ok 8 - workers=0 spill=0: wall time, not worker sum
+ok 9 - workers=0 spill=0: spill applicability
+ok 10 - workers=0 spill=0: actual launched workers
+ok 11 - workers=0 spill=0: exactly one of each phase, in order
+ok 12 - workers=0 spill=0: setup has no gap or overlap
+ok 13 - workers=0 spill=0: setup monotonic
+ok 14 - workers=0 spill=0: memory_build has no gap or overlap
+ok 15 - workers=0 spill=0: memory_build monotonic
+ok 16 - workers=0 spill=0: spill_drain is N/A
+ok 17 - workers=0 spill=0: flush has no gap or overlap
+ok 18 - workers=0 spill=0: flush monotonic
+ok 19 - workers=0 spill=0: disk_insert is N/A
+ok 20 - workers=0 spill=0: finalize has no gap or overlap
+ok 21 - workers=0 spill=0: finalize monotonic
+ok 22 - workers=0 spill=0: wal has no gap or overlap
+ok 23 - workers=0 spill=0: wal monotonic
+ok 24 - workers=0 spill=0: cleanup has no gap or overlap
+ok 25 - workers=0 spill=0: cleanup monotonic
+ok 26 - workers=0 spill=0: phases cover total exactly
+ok 27 - workers=0 spill=0: positive elapsed time
+ok 28 - workers=0 spill=1: build succeeds
+ok 29 - workers=0 spill=1: leader emits exactly one summary
+ok 30 - workers=0 spill=1: schema version
+ok 31 - workers=0 spill=1: complete AM call
+ok 32 - workers=0 spill=1: internal scope
+ok 33 - workers=0 spill=1: wall time, not worker sum
+ok 34 - workers=0 spill=1: spill applicability
+ok 35 - workers=0 spill=1: actual launched workers
+ok 36 - workers=0 spill=1: exactly one of each phase, in order
+ok 37 - workers=0 spill=1: setup has no gap or overlap
+ok 38 - workers=0 spill=1: setup monotonic
+ok 39 - workers=0 spill=1: memory_build has no gap or overlap
+ok 40 - workers=0 spill=1: memory_build monotonic
+ok 41 - workers=0 spill=1: spill_drain has no gap or overlap
+ok 42 - workers=0 spill=1: spill_drain monotonic
+ok 43 - workers=0 spill=1: flush has no gap or overlap
+ok 44 - workers=0 spill=1: flush monotonic
+ok 45 - workers=0 spill=1: disk_insert has no gap or overlap
+ok 46 - workers=0 spill=1: disk_insert monotonic
+ok 47 - workers=0 spill=1: finalize has no gap or overlap
+ok 48 - workers=0 spill=1: finalize monotonic
+ok 49 - workers=0 spill=1: wal has no gap or overlap
+ok 50 - workers=0 spill=1: wal monotonic
+ok 51 - workers=0 spill=1: cleanup has no gap or overlap
+ok 52 - workers=0 spill=1: cleanup monotonic
+ok 53 - workers=0 spill=1: phases cover total exactly
+ok 54 - workers=0 spill=1: positive elapsed time
+ok 55 - workers=0 spill=1: actual spill NOTICE
+ok 56 - workers=2 spill=0: build succeeds
+ok 57 - workers=2 spill=0: leader emits exactly one summary
+ok 58 - workers=2 spill=0: schema version
+ok 59 - workers=2 spill=0: complete AM call
+ok 60 - workers=2 spill=0: internal scope
+ok 61 - workers=2 spill=0: wall time, not worker sum
+ok 62 - workers=2 spill=0: spill applicability
+ok 63 - workers=2 spill=0: actual launched workers
+ok 64 - workers=2 spill=0: exactly one of each phase, in order
+ok 65 - workers=2 spill=0: setup has no gap or overlap
+ok 66 - workers=2 spill=0: setup monotonic
+ok 67 - workers=2 spill=0: memory_build has no gap or overlap
+ok 68 - workers=2 spill=0: memory_build monotonic
+ok 69 - workers=2 spill=0: spill_drain is N/A
+ok 70 - workers=2 spill=0: flush has no gap or overlap
+ok 71 - workers=2 spill=0: flush monotonic
+ok 72 - workers=2 spill=0: disk_insert is N/A
+ok 73 - workers=2 spill=0: finalize has no gap or overlap
+ok 74 - workers=2 spill=0: finalize monotonic
+ok 75 - workers=2 spill=0: wal has no gap or overlap
+ok 76 - workers=2 spill=0: wal monotonic
+ok 77 - workers=2 spill=0: cleanup has no gap or overlap
+ok 78 - workers=2 spill=0: cleanup monotonic
+ok 79 - workers=2 spill=0: phases cover total exactly
+ok 80 - workers=2 spill=0: positive elapsed time
+ok 81 - workers=2 spill=1: build succeeds
+ok 82 - workers=2 spill=1: leader emits exactly one summary
+ok 83 - workers=2 spill=1: schema version
+ok 84 - workers=2 spill=1: complete AM call
+ok 85 - workers=2 spill=1: internal scope
+ok 86 - workers=2 spill=1: wall time, not worker sum
+ok 87 - workers=2 spill=1: spill applicability
+ok 88 - workers=2 spill=1: actual launched workers
+ok 89 - workers=2 spill=1: exactly one of each phase, in order
+ok 90 - workers=2 spill=1: setup has no gap or overlap
+ok 91 - workers=2 spill=1: setup monotonic
+ok 92 - workers=2 spill=1: memory_build has no gap or overlap
+ok 93 - workers=2 spill=1: memory_build monotonic
+ok 94 - workers=2 spill=1: spill_drain has no gap or overlap
+ok 95 - workers=2 spill=1: spill_drain monotonic
+ok 96 - workers=2 spill=1: flush has no gap or overlap
+ok 97 - workers=2 spill=1: flush monotonic
+ok 98 - workers=2 spill=1: disk_insert has no gap or overlap
+ok 99 - workers=2 spill=1: disk_insert monotonic
+ok 100 - workers=2 spill=1: finalize has no gap or overlap
+ok 101 - workers=2 spill=1: finalize monotonic
+ok 102 - workers=2 spill=1: wal has no gap or overlap
+ok 103 - workers=2 spill=1: wal monotonic
+ok 104 - workers=2 spill=1: cleanup has no gap or overlap
+ok 105 - workers=2 spill=1: cleanup monotonic
+ok 106 - workers=2 spill=1: phases cover total exactly
+ok 107 - workers=2 spill=1: positive elapsed time
+ok 108 - workers=2 spill=1: actual spill NOTICE
+ok 109 - empty unlogged index succeeds
+ok 110 - main and init fork summaries are distinct
+ok 111 - fork=0: schema version
+ok 112 - fork=0: complete AM call
+ok 113 - fork=0: internal scope
+ok 114 - fork=0: wall time, not worker sum
+ok 115 - fork=0: spill applicability
+ok 116 - fork=0: actual launched workers
+ok 117 - fork=0: exactly one of each phase, in order
+ok 118 - fork=0: setup has no gap or overlap
+ok 119 - fork=0: setup monotonic
+ok 120 - fork=0: memory_build has no gap or overlap
+ok 121 - fork=0: memory_build monotonic
+ok 122 - fork=0: spill_drain is N/A
+ok 123 - fork=0: flush has no gap or overlap
+ok 124 - fork=0: flush monotonic
+ok 125 - fork=0: disk_insert is N/A
+ok 126 - fork=0: finalize has no gap or overlap
+ok 127 - fork=0: finalize monotonic
+ok 128 - fork=0: wal is N/A
+ok 129 - fork=0: cleanup has no gap or overlap
+ok 130 - fork=0: cleanup monotonic
+ok 131 - fork=0: phases cover total exactly
+ok 132 - fork=0: positive elapsed time
+ok 133 - fork=3: schema version
+ok 134 - fork=3: complete AM call
+ok 135 - fork=3: internal scope
+ok 136 - fork=3: wall time, not worker sum
+ok 137 - fork=3: spill applicability
+ok 138 - fork=3: actual launched workers
+ok 139 - fork=3: exactly one of each phase, in order
+ok 140 - fork=3: setup has no gap or overlap
+ok 141 - fork=3: setup monotonic
+ok 142 - fork=3: memory_build has no gap or overlap
+ok 143 - fork=3: memory_build monotonic
+ok 144 - fork=3: spill_drain is N/A
+ok 145 - fork=3: flush has no gap or overlap
+ok 146 - fork=3: flush monotonic
+ok 147 - fork=3: disk_insert is N/A
+ok 148 - fork=3: finalize has no gap or overlap
+ok 149 - fork=3: finalize monotonic
+ok 150 - fork=3: wal has no gap or overlap
+ok 151 - fork=3: wal monotonic
+ok 152 - fork=3: cleanup has no gap or overlap
+ok 153 - fork=3: cleanup monotonic
+ok 154 - fork=3: phases cover total exactly
+ok 155 - fork=3: positive elapsed time
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# issuing query 1 via background psql: 
+# SET hnsw.build_timing = on;
+# SET client_min_messages = NOTICE;
+# SET max_parallel_maintenance_workers = 0;
+# SET min_parallel_table_scan_size = 0;
+# ALTER TABLE tst SET (parallel_workers = 0);
+# results query 1:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 1:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 1:
+# '
+# }
+# issuing query 2 via background psql: SELECT pg_backend_pid()
+# results query 2:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 2:
+# ',
+#   'stdout' => '429
+# background_psql: QUERY_SEPARATOR 2:
+# '
+# }
+ok 156 - workers=0: entered slow build expression
+ok 157 - cancel accepted
+# issuing query 3 via background psql: SELECT 1
+# results query 3:
+# {
+#   'stderr' => 'psql:<stdin>:19: ERROR:  canceling statement due to user request
+# CONTEXT:  SQL statement "SELECT pg_sleep(0.01)"
+# PL/pgSQL function public.slow_vector(public.vector) line 2 at PERFORM
+# background_psql: QUERY_SEPARATOR 3:
+# ',
+#   'stdout' => '1
+# background_psql: QUERY_SEPARATOR 3:
+# '
+# }
+ok 158 - build cancelled
+ok 159 - cancelled build emits no complete summary
+# issuing query 4 via background psql: CREATE INDEX failed_0 ON tst USING hnsw ((failing_vector(v)::vector(8)) vector_l2_ops)
+# results query 4:
+# {
+#   'stderr' => 'psql:<stdin>:25: ERROR:  timing test failure
+# CONTEXT:  PL/pgSQL function public.failing_vector(public.vector) line 2 at RAISE
+# background_psql: QUERY_SEPARATOR 4:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 4:
+# '
+# }
+ok 160 - expression error exercised
+ok 161 - failed build emits no complete summary
+# issuing query 5 via background psql: CREATE INDEX recovered_0 ON tst USING hnsw (v vector_l2_ops)
+# results query 5:
+# {
+#   'stderr' => 'psql:<stdin>:29: NOTICE:  hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":429,"index_oid":16733,"fork":0,"parallel_workers":0,"spill":false,"total_us":363885,"phases":[{"phase":"setup","start_us":0,"end_us":0},{"phase":"memory_build","start_us":0,"end_us":361809},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":361809,"end_us":363605},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":363605,"end_us":363605},{"phase":"wal","start_us":363605,"end_us":363885},{"phase":"cleanup","start_us":363885,"end_us":363885}]}
+# background_psql: QUERY_SEPARATOR 5:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 5:
+# '
+# }
+ok 162 - same backend recovers with a fresh single summary
+ok 163 - recovered=0: schema version
+ok 164 - recovered=0: complete AM call
+ok 165 - recovered=0: internal scope
+ok 166 - recovered=0: wall time, not worker sum
+ok 167 - recovered=0: spill applicability
+ok 168 - recovered=0: actual launched workers
+ok 169 - recovered=0: exactly one of each phase, in order
+ok 170 - recovered=0: setup has no gap or overlap
+ok 171 - recovered=0: setup monotonic
+ok 172 - recovered=0: memory_build has no gap or overlap
+ok 173 - recovered=0: memory_build monotonic
+ok 174 - recovered=0: spill_drain is N/A
+ok 175 - recovered=0: flush has no gap or overlap
+ok 176 - recovered=0: flush monotonic
+ok 177 - recovered=0: disk_insert is N/A
+ok 178 - recovered=0: finalize has no gap or overlap
+ok 179 - recovered=0: finalize monotonic
+ok 180 - recovered=0: wal has no gap or overlap
+ok 181 - recovered=0: wal monotonic
+ok 182 - recovered=0: cleanup has no gap or overlap
+ok 183 - recovered=0: cleanup monotonic
+ok 184 - recovered=0: phases cover total exactly
+ok 185 - recovered=0: positive elapsed time
+# issuing query 6 via background psql: REINDEX INDEX recovered_0
+# results query 6:
+# {
+#   'stderr' => 'psql:<stdin>:33: NOTICE:  hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":429,"index_oid":16733,"fork":0,"parallel_workers":0,"spill":false,"total_us":373400,"phases":[{"phase":"setup","start_us":0,"end_us":2},{"phase":"memory_build","start_us":2,"end_us":371190},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":371190,"end_us":373131},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":373131,"end_us":373131},{"phase":"wal","start_us":373131,"end_us":373400},{"phase":"cleanup","start_us":373400,"end_us":373400}]}
+# background_psql: QUERY_SEPARATOR 6:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 6:
+# '
+# }
+ok 186 - repeated build has exactly one fresh summary
+# issuing query 7 via background psql: SET hnsw.build_timing = off
+# results query 7:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 7:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 7:
+# '
+# }
+# issuing query 8 via background psql: REINDEX INDEX recovered_0
+# results query 8:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 8:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 8:
+# '
+# }
+ok 187 - turning off suppresses summary
+# issuing query 9 via background psql: SELECT count(*) FROM pg_stat_progress_create_index WHERE pid = 429
+# results query 9:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 9:
+# ',
+#   'stdout' => '0
+# background_psql: QUERY_SEPARATOR 9:
+# '
+# }
+ok 188 - no stale build progress after recovery
+# connect output:
+# {
+#   'stderr' => 'background_psql: ready
+# ',
+#   'stdout' => 'background_psql: ready
+# '
+# }
+# issuing query 1 via background psql: 
+# SET hnsw.build_timing = on;
+# SET client_min_messages = NOTICE;
+# SET max_parallel_maintenance_workers = 2;
+# SET min_parallel_table_scan_size = 0;
+# ALTER TABLE tst SET (parallel_workers = 2);
+# results query 1:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 1:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 1:
+# '
+# }
+# issuing query 2 via background psql: SELECT pg_backend_pid()
+# results query 2:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 2:
+# ',
+#   'stdout' => '435
+# background_psql: QUERY_SEPARATOR 2:
+# '
+# }
+ok 189 - workers=2: entered slow build expression
+ok 190 - cancel accepted
+# issuing query 3 via background psql: SELECT 1
+# results query 3:
+# {
+#   'stderr' => 'psql:<stdin>:19: ERROR:  canceling statement due to user request
+# CONTEXT:  SQL statement "SELECT pg_sleep(0.01)"
+# PL/pgSQL function public.slow_vector(public.vector) line 2 at PERFORM
+# background_psql: QUERY_SEPARATOR 3:
+# ',
+#   'stdout' => '1
+# background_psql: QUERY_SEPARATOR 3:
+# '
+# }
+ok 191 - build cancelled
+ok 192 - cancelled build emits no complete summary
+# issuing query 4 via background psql: CREATE INDEX failed_2 ON tst USING hnsw ((failing_vector(v)::vector(8)) vector_l2_ops)
+# results query 4:
+# {
+#   'stderr' => 'psql:<stdin>:25: ERROR:  timing test failure
+# CONTEXT:  PL/pgSQL function public.failing_vector(public.vector) line 2 at RAISE
+# background_psql: QUERY_SEPARATOR 4:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 4:
+# '
+# }
+ok 193 - expression error exercised
+ok 194 - failed build emits no complete summary
+# issuing query 5 via background psql: CREATE INDEX recovered_2 ON tst USING hnsw (v vector_l2_ops)
+# results query 5:
+# {
+#   'stderr' => 'psql:<stdin>:29: NOTICE:  hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":435,"index_oid":16738,"fork":0,"parallel_workers":2,"spill":false,"total_us":152164,"phases":[{"phase":"setup","start_us":0,"end_us":3},{"phase":"memory_build","start_us":3,"end_us":148517},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":148517,"end_us":150350},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":150350,"end_us":151872},{"phase":"wal","start_us":151872,"end_us":152163},{"phase":"cleanup","start_us":152163,"end_us":152164}]}
+# background_psql: QUERY_SEPARATOR 5:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 5:
+# '
+# }
+ok 195 - same backend recovers with a fresh single summary
+ok 196 - recovered=2: schema version
+ok 197 - recovered=2: complete AM call
+ok 198 - recovered=2: internal scope
+ok 199 - recovered=2: wall time, not worker sum
+ok 200 - recovered=2: spill applicability
+ok 201 - recovered=2: actual launched workers
+ok 202 - recovered=2: exactly one of each phase, in order
+ok 203 - recovered=2: setup has no gap or overlap
+ok 204 - recovered=2: setup monotonic
+ok 205 - recovered=2: memory_build has no gap or overlap
+ok 206 - recovered=2: memory_build monotonic
+ok 207 - recovered=2: spill_drain is N/A
+ok 208 - recovered=2: flush has no gap or overlap
+ok 209 - recovered=2: flush monotonic
+ok 210 - recovered=2: disk_insert is N/A
+ok 211 - recovered=2: finalize has no gap or overlap
+ok 212 - recovered=2: finalize monotonic
+ok 213 - recovered=2: wal has no gap or overlap
+ok 214 - recovered=2: wal monotonic
+ok 215 - recovered=2: cleanup has no gap or overlap
+ok 216 - recovered=2: cleanup monotonic
+ok 217 - recovered=2: phases cover total exactly
+ok 218 - recovered=2: positive elapsed time
+# issuing query 6 via background psql: REINDEX INDEX recovered_2
+# results query 6:
+# {
+#   'stderr' => 'psql:<stdin>:33: NOTICE:  hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":435,"index_oid":16738,"fork":0,"parallel_workers":2,"spill":false,"total_us":155576,"phases":[{"phase":"setup","start_us":0,"end_us":1},{"phase":"memory_build","start_us":1,"end_us":151970},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":151970,"end_us":153927},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":153927,"end_us":155311},{"phase":"wal","start_us":155311,"end_us":155575},{"phase":"cleanup","start_us":155575,"end_us":155576}]}
+# background_psql: QUERY_SEPARATOR 6:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 6:
+# '
+# }
+ok 219 - repeated build has exactly one fresh summary
+# issuing query 7 via background psql: SET hnsw.build_timing = off
+# results query 7:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 7:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 7:
+# '
+# }
+# issuing query 8 via background psql: REINDEX INDEX recovered_2
+# results query 8:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 8:
+# ',
+#   'stdout' => 'background_psql: QUERY_SEPARATOR 8:
+# '
+# }
+ok 220 - turning off suppresses summary
+# issuing query 9 via background psql: SELECT count(*) FROM pg_stat_progress_create_index WHERE pid = 435
+# results query 9:
+# {
+#   'stderr' => 'background_psql: QUERY_SEPARATOR 9:
+# ',
+#   'stdout' => '0
+# background_psql: QUERY_SEPARATOR 9:
+# '
+# }
+ok 221 - no stale build progress after recovery
+1..221
+ok
+All tests successful.
+Files=1, Tests=221,  5 wallclock secs ( 0.02 usr  0.00 sys +  0.20 cusr  0.12 csys =  0.34 CPU)
+Result: PASS

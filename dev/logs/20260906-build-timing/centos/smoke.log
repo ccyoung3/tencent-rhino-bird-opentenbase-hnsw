@@ -1,0 +1,21 @@
+CREATE EXTENSION
+psql:/home/ccyoung/opentenbase-timing-20260906/incoming/smoke.sql:5: NOTICE:  table "hnsw_smoke" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+INSERT 0 5
+CREATE INDEX
+SET
+                          QUERY PLAN                           
+---------------------------------------------------------------
+ Limit
+   ->  Index Scan using hnsw_smoke_embedding_idx on hnsw_smoke
+         Order By: (embedding <-> '[1,0,0]'::vector)
+(3 rows)
+
+ id |      distance      
+----+--------------------
+  1 |                  0
+  4 |                  1
+  5 | 1.4142135623730951
+(3 rows)
+

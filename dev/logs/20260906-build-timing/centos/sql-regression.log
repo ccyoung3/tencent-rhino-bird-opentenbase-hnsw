@@ -1,0 +1,9 @@
+echo "# +++ regress install-check in  +++" && /home/ccyoung/opentenbase-timing-20260906/install/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress --inputdir=./ --bindir='/home/ccyoung/opentenbase-timing-20260906/install/bin'    --inputdir=test --load-extension=vector --dbname=contrib_regression hnsw_vector hnsw_halfvec hnsw_bit hnsw_sparsevec
+# +++ regress install-check in  +++
+# using postmaster on /home/ccyoung/opentenbase-timing-20260906/socket, port 55440
+ok 1         - hnsw_vector                                34 ms
+ok 2         - hnsw_halfvec                               24 ms
+ok 3         - hnsw_bit                                   18 ms
+ok 4         - hnsw_sparsevec                             25 ms
+1..4
+# All 4 tests passed.

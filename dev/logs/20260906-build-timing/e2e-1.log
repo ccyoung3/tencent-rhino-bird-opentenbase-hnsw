@@ -1,0 +1,7 @@
+{"case": "serial-memory", "expected_success": true, "result": "experiments/hnsw_build/results/20260905T171758Z-timing-v1-e2e-serial-memory", "verified": true}
+{"case": "parallel-memory", "expected_success": true, "result": "experiments/hnsw_build/results/20260905T171803Z-timing-v1-e2e-parallel-memory", "verified": true}
+{"case": "parallel-spill", "expected_success": true, "result": "experiments/hnsw_build/results/20260905T171807Z-timing-v1-e2e-parallel-spill", "verified": true}
+{"case": "serial-timeout", "expected_success": false, "result": "experiments/hnsw_build/results/20260905T171812Z-timing-v1-e2e-serial-timeout", "verified": true}
+{"case": "parallel-timeout", "expected_success": false, "result": "experiments/hnsw_build/results/20260905T171816Z-timing-v1-e2e-parallel-timeout", "verified": true}
+{"case": "missing-summary", "expected_success": false, "result": "experiments/hnsw_build/results/20260905T171820Z-timing-v1-e2e-missing-summary", "verified": true}
+All 6 end-to-end cases passed

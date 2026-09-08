@@ -1,0 +1,98 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.37kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 1.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 CACHED
+
+#4 [auth] library/debian:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/debian:bookworm
+#5 DONE 2.2s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 143B done
+#6 DONE 0.0s
+
+#7 [build 1/8] FROM docker.io/library/debian:bookworm@sha256:6ebd97fa83deb272194a2cf015b3d26a4d538e9ad3a7a79d544c8af5b0a01443
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 545.89kB 0.3s done
+#8 DONE 0.3s
+
+#9 [build 2/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         bison         build-essential         ca-certificates         flex         git         libreadline-dev         libssl-dev         libxml2-dev         perl         pkg-config         zlib1g-dev     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [build 3/8] WORKDIR /src/opentenbase
+#10 CACHED
+
+#11 [build 4/8] COPY OpenTenBase/ ./
+#11 CACHED
+
+#12 [build 5/8] RUN ./configure         --prefix=/opt/opentenbase         --without-icu         --with-openssl         --with-libxml     && make -j"6"     && make install
+#12 CACHED
+
+#13 [build 6/8] WORKDIR /src/pgvector
+#13 CACHED
+
+#14 [build 7/8] COPY pgvector/ ./
+#14 CACHED
+
+#15 [build 8/8] RUN make -j"6"         PG_CONFIG=/opt/opentenbase/bin/pg_config         PG_CPPFLAGS=""     && make PG_CONFIG=/opt/opentenbase/bin/pg_config install
+#15 CACHED
+
+#16 [test 1/2] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         libipc-run-perl     && rm -rf /var/lib/apt/lists/*     && useradd --create-home pgtest     && install -d /opt/opentenbase/lib/postgresql/pgxs/src/test/perl     && cp -R /src/opentenbase/src/test/perl/PostgreSQL         /opt/opentenbase/lib/postgresql/pgxs/src/test/perl/     && chown -R pgtest:pgtest /src/pgvector
+#16 ...
+
+#14 [build 7/8] COPY pgvector/ ./
+#14 CACHED
+
+#16 [test 1/2] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         libipc-run-perl     && rm -rf /var/lib/apt/lists/*     && useradd --create-home pgtest     && install -d /opt/opentenbase/lib/postgresql/pgxs/src/test/perl     && cp -R /src/opentenbase/src/test/perl/PostgreSQL         /opt/opentenbase/lib/postgresql/pgxs/src/test/perl/     && chown -R pgtest:pgtest /src/pgvector
+#16 0.816 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#16 1.205 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#16 1.316 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#16 1.421 Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
+#16 2.252 Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
+#16 2.341 Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [334 kB]
+#16 2.720 Fetched 9272 kB in 3s (3647 kB/s)
+#16 2.720 Reading package lists...
+#16 2.941 Reading package lists...
+#16 3.146 Building dependency tree...
+#16 3.201 Reading state information...
+#16 3.261 The following additional packages will be installed:
+#16 3.261   libio-pty-perl
+#16 3.272 The following NEW packages will be installed:
+#16 3.272   libio-pty-perl libipc-run-perl
+#16 3.549 0 upgraded, 2 newly installed, 0 to remove and 2 not upgraded.
+#16 3.549 Need to get 139 kB of archives.
+#16 3.549 After this operation, 412 kB of additional disk space will be used.
+#16 3.549 Get:1 http://deb.debian.org/debian bookworm/main arm64 libio-pty-perl arm64 1:1.17-1 [34.5 kB]
+#16 3.645 Get:2 http://deb.debian.org/debian bookworm/main arm64 libipc-run-perl all 20220807.0-1 [104 kB]
+#16 3.724 debconf: delaying package configuration, since apt-utils is not installed
+#16 3.733 Fetched 139 kB in 0s (373 kB/s)
+#16 3.757 Selecting previously unselected package libio-pty-perl.
+#16 3.757 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 15006 files and directories currently installed.)
+#16 3.788 Preparing to unpack .../libio-pty-perl_1%3a1.17-1_arm64.deb ...
+#16 3.796 Unpacking libio-pty-perl (1:1.17-1) ...
+#16 3.824 Selecting previously unselected package libipc-run-perl.
+#16 3.825 Preparing to unpack .../libipc-run-perl_20220807.0-1_all.deb ...
+#16 3.827 Unpacking libipc-run-perl (20220807.0-1) ...
+#16 3.849 Setting up libio-pty-perl (1:1.17-1) ...
+#16 3.857 Setting up libipc-run-perl (20220807.0-1) ...
+#16 DONE 3.9s
+
+#17 [test 2/2] WORKDIR /src/pgvector
+#17 DONE 0.0s
+
+#18 exporting to image
+#18 exporting layers 0.0s done
+#18 writing image sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6 done
+#18 naming to docker.io/library/opentenbase-pg18-pgvector:timing-v1-test-arm64 done
+#18 DONE 0.0s

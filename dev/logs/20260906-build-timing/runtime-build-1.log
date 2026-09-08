@@ -1,0 +1,111 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.37kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 ...
+
+#3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 2.2s
+
+#4 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#4 CACHED
+
+#5 [internal] load metadata for docker.io/library/debian:bookworm
+#5 ...
+
+#6 [auth] library/debian:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/debian:bookworm-slim
+#7 DONE 1.8s
+
+#5 [internal] load metadata for docker.io/library/debian:bookworm
+#5 DONE 1.8s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 143B done
+#8 DONE 0.0s
+
+#9 [runtime 1/5] FROM docker.io/library/debian:bookworm-slim@sha256:88200866dfff7ea7f5cbcb6ec7c8a701889efe6fe859fe64d6990e4b07ea4171
+#9 DONE 0.0s
+
+#10 [build 1/8] FROM docker.io/library/debian:bookworm@sha256:6ebd97fa83deb272194a2cf015b3d26a4d538e9ad3a7a79d544c8af5b0a01443
+#10 DONE 0.0s
+
+#11 [internal] load build context
+#11 transferring context: 621.83kB 0.3s done
+#11 DONE 0.4s
+
+#12 [build 4/8] COPY OpenTenBase/ ./
+#12 CACHED
+
+#13 [build 5/8] RUN ./configure         --prefix=/opt/opentenbase         --without-icu         --with-openssl         --with-libxml     && make -j"6"     && make install
+#13 CACHED
+
+#14 [build 2/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         bison         build-essential         ca-certificates         flex         git         libreadline-dev         libssl-dev         libxml2-dev         perl         pkg-config         zlib1g-dev     && rm -rf /var/lib/apt/lists/*
+#14 CACHED
+
+#15 [build 3/8] WORKDIR /src/opentenbase
+#15 CACHED
+
+#16 [build 6/8] WORKDIR /src/pgvector
+#16 CACHED
+
+#17 [build 7/8] COPY pgvector/ ./
+#17 DONE 0.1s
+
+#18 [build 8/8] RUN make -j"6"         PG_CONFIG=/opt/opentenbase/bin/pg_config         PG_CPPFLAGS=""     && make PG_CONFIG=/opt/opentenbase/bin/pg_config install
+#18 0.116 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/bitutils.o src/bitutils.c
+#18 0.116 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/bitvec.o src/bitvec.c
+#18 0.116 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/halfutils.o src/halfutils.c
+#18 0.117 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/halfvec.o src/halfvec.c
+#18 0.117 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnsw.o src/hnsw.c
+#18 0.117 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnswbuild.o src/hnswbuild.c
+#18 0.161 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnswinsert.o src/hnswinsert.c
+#18 0.162 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnswscan.o src/hnswscan.c
+#18 0.180 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnswutils.o src/hnswutils.c
+#18 0.218 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/hnswvacuum.o src/hnswvacuum.c
+#18 0.267 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfbuild.o src/ivfbuild.c
+#18 0.330 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfflat.o src/ivfflat.c
+#18 0.371 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfinsert.o src/ivfinsert.c
+#18 0.373 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfkmeans.o src/ivfkmeans.c
+#18 0.410 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfscan.o src/ivfscan.c
+#18 0.418 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfutils.o src/ivfutils.c
+#18 0.443 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/ivfvacuum.o src/ivfvacuum.c
+#18 0.466 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/sparsevec.o src/sparsevec.c
+#18 0.536 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -I. -I./ -I/opt/opentenbase/include/postgresql/server -I/opt/opentenbase/include/postgresql/internal -D_GNU_SOURCE  -I/usr/include/libxml2     -c -o src/vector.o src/vector.c
+#18 0.551 cp sql/vector.sql sql/vector--0.8.6.sql
+#18 0.844 gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -fPIC -fvisibility=hidden -shared -o vector.so src/bitutils.o src/bitvec.o src/halfutils.o src/halfvec.o src/hnsw.o src/hnswbuild.o src/hnswinsert.o src/hnswscan.o src/hnswutils.o src/hnswvacuum.o src/ivfbuild.o src/ivfflat.o src/ivfinsert.o src/ivfkmeans.o src/ivfscan.o src/ivfutils.o src/ivfvacuum.o src/sparsevec.o src/vector.o -L/opt/opentenbase/lib    -Wl,--as-needed -Wl,-rpath,'/opt/opentenbase/lib',--enable-new-dtags -fvisibility=hidden 
+#18 0.859 /usr/bin/mkdir -p '/opt/opentenbase/lib/postgresql'
+#18 0.859 /usr/bin/mkdir -p '/opt/opentenbase/share/postgresql/extension'
+#18 0.859 /usr/bin/mkdir -p '/opt/opentenbase/share/postgresql/extension'
+#18 0.859 /usr/bin/install -c -m 755  vector.so '/opt/opentenbase/lib/postgresql/vector.so'
+#18 0.860 /usr/bin/install -c -m 644 .//vector.control '/opt/opentenbase/share/postgresql/extension/'
+#18 0.861 /usr/bin/install -c -m 644 .//sql/vector--0.1.0--0.1.1.sql .//sql/vector--0.1.1--0.1.3.sql .//sql/vector--0.1.3--0.1.4.sql .//sql/vector--0.1.4--0.1.5.sql .//sql/vector--0.1.5--0.1.6.sql .//sql/vector--0.1.6--0.1.7.sql .//sql/vector--0.1.7--0.1.8.sql .//sql/vector--0.1.8--0.2.0.sql .//sql/vector--0.2.0--0.2.1.sql .//sql/vector--0.2.1--0.2.2.sql .//sql/vector--0.2.2--0.2.3.sql .//sql/vector--0.2.3--0.2.4.sql .//sql/vector--0.2.4--0.2.5.sql .//sql/vector--0.2.5--0.2.6.sql .//sql/vector--0.2.6--0.2.7.sql .//sql/vector--0.2.7--0.3.0.sql .//sql/vector--0.3.0--0.3.1.sql .//sql/vector--0.3.1--0.3.2.sql .//sql/vector--0.3.2--0.4.0.sql .//sql/vector--0.4.0--0.4.1.sql .//sql/vector--0.4.1--0.4.2.sql .//sql/vector--0.4.2--0.4.3.sql .//sql/vector--0.4.3--0.4.4.sql .//sql/vector--0.4.4--0.5.0.sql .//sql/vector--0.5.0--0.5.1.sql .//sql/vector--0.5.1--0.6.0.sql .//sql/vector--0.6.0--0.6.1.sql .//sql/vector--0.6.1--0.6.2.sql .//sql/vector--0.6.2--0.7.0.sql .//sql/vector--0.7.0--0.7.1.sql .//sql/vector--0.7.1--0.7.2.sql .//sql/vector--0.7.2--0.7.3.sql .//sql/vector--0.7.3--0.7.4.sql .//sql/vector--0.7.4--0.8.0.sql .//sql/vector--0.8.0--0.8.1.sql .//sql/vector--0.8.1--0.8.2.sql .//sql/vector--0.8.2--0.8.3.sql .//sql/vector--0.8.3--0.8.4.sql .//sql/vector--0.8.4--0.8.5.sql .//sql/vector--0.8.5--0.8.6.sql sql/vector--0.8.6.sql '/opt/opentenbase/share/postgresql/extension/'
+#18 0.862 /usr/bin/mkdir -p '/opt/opentenbase/include/postgresql/server/extension/vector/'
+#18 0.862 /usr/bin/install -c -m 644   .//src/halfvec.h .//src/sparsevec.h .//src/vector.h '/opt/opentenbase/include/postgresql/server/extension/vector/'
+#18 DONE 0.9s
+
+#19 [runtime 2/5] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         ca-certificates         libreadline8         libssl3         libxml2         zlib1g     && rm -rf /var/lib/apt/lists/*     && groupadd --system postgres     && useradd --system --gid postgres --home-dir /var/lib/postgresql postgres     && install -d -o postgres -g postgres /var/lib/postgresql/data
+#19 CACHED
+
+#20 [runtime 3/5] COPY --from=build /opt/opentenbase /opt/opentenbase
+#20 DONE 0.2s
+
+#21 [runtime 4/5] COPY dev/entrypoint.sh /usr/local/bin/opentenbase-entrypoint
+#21 DONE 0.0s
+
+#22 [runtime 5/5] RUN chmod 0755 /usr/local/bin/opentenbase-entrypoint
+#22 DONE 0.1s
+
+#23 exporting to image
+#23 exporting layers 0.1s done
+#23 writing image sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7 done
+#23 naming to docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64 done
+#23 DONE 0.2s

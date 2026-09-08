@@ -1,0 +1,38 @@
+71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87  src/hnsw.c
+cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8  src/hnsw.h
+f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee  src/hnswbuild.c
+c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9  test/t/049_hnsw_build_timing.pl
+679afd5c0ae367873e43e549ded9ba7f951eb88a97f56add2c3cc223a87d7656  /opt/opentenbase/lib/postgresql/vector.so
+rm -rf /src/pgvector/tmp_check
+cd ./ && TESTDIR='/src/pgvector' PATH="/opt/opentenbase/bin:$PATH" PGPORT='65432' PG_REGRESS='/opt/opentenbase/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress' prove -I /opt/opentenbase/lib/postgresql/pgxs/src/makefiles/../../src/test/perl/ -I ./ -I ./test/perl test/t/*hnsw*.pl
+test/t/010_hnsw_wal.pl ...................... ok
+test/t/011_hnsw_vacuum.pl ................... ok
+test/t/012_hnsw_vector_build_recall.pl ...... ok
+test/t/013_hnsw_vector_insert_recall.pl ..... ok
+test/t/014_hnsw_vector_vacuum_recall.pl ..... ok
+test/t/015_hnsw_vector_duplicates.pl ........ ok
+test/t/016_hnsw_inserts.pl .................. ok
+test/t/017_hnsw_filtering.pl ................ ok
+test/t/020_hnsw_bit_build_recall.pl ......... ok
+test/t/021_hnsw_bit_insert_recall.pl ........ ok
+test/t/022_hnsw_bit_vacuum_recall.pl ........ ok
+test/t/023_hnsw_bit_duplicates.pl ........... ok
+test/t/024_hnsw_halfvec_build_recall.pl ..... ok
+test/t/025_hnsw_halfvec_insert_recall.pl .... ok
+test/t/026_hnsw_halfvec_vacuum_recall.pl .... ok
+test/t/027_hnsw_halfvec_duplicates.pl ....... ok
+test/t/028_hnsw_sparsevec_build_recall.pl ... ok
+test/t/029_hnsw_sparsevec_insert_recall.pl .. ok
+test/t/030_hnsw_sparsevec_vacuum_recall.pl .. ok
+test/t/031_hnsw_sparsevec_duplicates.pl ..... ok
+test/t/038_hnsw_sparsevec_vacuum_insert.pl .. ok
+test/t/039_hnsw_cost.pl ..................... ok
+test/t/043_hnsw_iterative_scan.pl ........... ok
+test/t/044_hnsw_iterative_scan_recall.pl .... ok
+test/t/045_hnsw_low_memory_build.pl ......... ok
+test/t/046_hnsw_vacuum_scan.pl .............. ok
+test/t/047_hnsw_vacuum_insert.pl ............ ok
+test/t/049_hnsw_build_timing.pl ............. ok
+All tests successful.
+Files=28, Tests=632, 122 wallclock secs ( 0.06 usr  0.03 sys +  8.04 cusr  5.74 csys = 13.87 CPU)
+Result: PASS

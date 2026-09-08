@@ -1,0 +1,11 @@
+*
+!OpenTenBase/
+!OpenTenBase/**
+!pgvector/
+!pgvector/**
+!dev/
+!dev/**
+**/.git
+**/.git/**
+**/.DS_Store
+

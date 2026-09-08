@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-06",
+  "status": "functional_validation_complete_performance_under_review",
+  "pgvector_base": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+  "opentenbase_base": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+  "sha256": {
+    "pgvector/src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "pgvector/src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "pgvector/src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "pgvector/test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "pgvector/test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9",
+    "dev/snapshots/20260906-build-timing/pgvector.patch": "99da7d1050501be3d8060989511f26c39f0571e0a14c1d09a809c4a1fbf2bcc2",
+    "experiments/hnsw_build/run.py": "05f006f3f7ecaad125f6c2dbb526e784da512be975afbf34438f37c3f6982772",
+    "experiments/hnsw_build/timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "experiments/hnsw_build/test_timing.py": "1b6fe6e1da00117678f53641e01fc12537cebf576fd43bbef14f16dcff7ad03b",
+    "dev/verify_build_timing.py": "d8fe2cff8d6818392dab9f11aa0d0e3da624bf49466458f52b019998a0be6e23",
+    "dev/benchmark_build_timing.py": "9b6b2b0640436cd8f7739c3ffc47f3b5ae042fb7bddab641a6a2f82948cc9823",
+    "dev/benchmark_timing_switch.py": "8b117fcb1ab39ec67c223e1383b75ff816ec07f9f86df645eaeb83ad66de5f46",
+    "dev/centos/verify-timing.sh": "f43f38f2bb08a62ed82aea6f0c2c00d17f8553c1ccd0263c1e464815493359ee"
+  },
+  "images": {
+    "runtime": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7",
+    "test": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+    "seed42": "sha256:a8b091b6ff87fb8c35037cabd00fb4cd5b0a111ced58371310cc620a05e4b969"
+  },
+  "runtime_and_test_vector_so_sha256": "679afd5c0ae367873e43e549ded9ba7f951eb88a97f56add2c3cc223a87d7656",
+  "evidence": "dev/logs/20260906-build-timing/tap-canonical.log contains test-image source/library hashes; runtime library hash separately checked; CentOS source hashes recorded in centos/source-sha256.txt",
+  "reconstruction": "Apply tracked pgvector.patch to base, then copy the separately snapshotted 049_hnsw_build_timing.pl into test/t/. New TAP is untracked and is not included in git diff HEAD."
+}

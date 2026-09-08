@@ -1,0 +1,3 @@
+{"case": "interrupt-workers-0", "expected_success": false, "result": "experiments/hnsw_build/results/20260905T172312Z-timing-v1-interrupt-w0-1788628992084520000", "verified": true}
+{"case": "interrupt-workers-2", "expected_success": false, "result": "experiments/hnsw_build/results/20260905T172317Z-timing-v1-interrupt-w2-1788628997073926000", "verified": true}
+All 2 end-to-end cases passed

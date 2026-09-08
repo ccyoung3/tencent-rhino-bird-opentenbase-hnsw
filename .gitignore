@@ -1,0 +1,16 @@
+# Source checkouts are delivered from their own repositories.
+/OpenTenBase/
+/pgvector/
+
+# Private meeting source material is kept locally and is not published.
+/20260825102142-OpenTenbase 实战启动会议-Transcription Text-1.txt
+/20260825102142-OpenTenbase 实战启动会议-纯音频-1.m4a
+/Opentenbase实战｜2026腾讯犀牛鸟开源计划.pdf
+
+# macOS metadata.
+.DS_Store
+
+# Generated inspection artifacts and local caches.
+/tmp/
+**/__pycache__/
+*.py[cod]

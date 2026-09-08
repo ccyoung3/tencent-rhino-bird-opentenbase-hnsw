@@ -1,0 +1,261 @@
+diff --git a/src/hnsw.c b/src/hnsw.c
+index a3f5822..95d6e80 100644
+--- a/src/hnsw.c
++++ b/src/hnsw.c
+@@ -121,8 +121,14 @@ hnswbuildphasename(int64 phasenum)
+ 	{
+ 		case PROGRESS_CREATEIDX_SUBPHASE_INITIALIZE:
+ 			return "initializing";
+-		case PROGRESS_HNSW_PHASE_LOAD:
+-			return "loading tuples";
++		case PROGRESS_HNSW_PHASE_LOAD_MEMORY:
++			return "loading tuples in memory";
++		case PROGRESS_HNSW_PHASE_FLUSH:
++			return "flushing in-memory graph";
++		case PROGRESS_HNSW_PHASE_LOAD_DISK:
++			return "loading tuples on disk";
++		case PROGRESS_HNSW_PHASE_WAL:
++			return "writing index pages to WAL";
+ 		default:
+ 			return NULL;
+ 	}
+diff --git a/src/hnsw.h b/src/hnsw.h
+index 1f25cc2..6827726 100644
+--- a/src/hnsw.h
++++ b/src/hnsw.h
+@@ -10,6 +10,7 @@
+ #include "lib/pairingheap.h"
+ #include "nodes/execnodes.h"
+ #include "port.h"				/* for random() */
++#include "port/atomics.h"
+ #include "storage/bufpage.h"
+ #include "storage/condition_variable.h"
+ #include "storage/lwlock.h"
+@@ -73,7 +74,10 @@ typedef Pointer Item;
+ 
+ /* Build phases */
+ /* PROGRESS_CREATEIDX_SUBPHASE_INITIALIZE is 1 */
+-#define PROGRESS_HNSW_PHASE_LOAD		2
++#define PROGRESS_HNSW_PHASE_LOAD_MEMORY	2
++#define PROGRESS_HNSW_PHASE_FLUSH		3
++#define PROGRESS_HNSW_PHASE_LOAD_DISK	4
++#define PROGRESS_HNSW_PHASE_WAL			5
+ 
+ #define HNSW_MAX_SIZE (BLCKSZ - MAXALIGN(SizeOfPageHeaderData) - MAXALIGN(sizeof(HnswPageOpaqueData)) - sizeof(ItemIdData))
+ #define HNSW_TUPLE_ALLOC_SIZE BLCKSZ
+@@ -249,6 +253,7 @@ typedef struct HnswGraph
+ 	/* Flushed state */
+ 	LWLock		flushLock;
+ 	bool		flushed;
++	pg_atomic_uint32 buildPhase;
+ }			HnswGraph;
+ 
+ typedef struct HnswShared
+@@ -324,6 +329,8 @@ typedef struct HnswBuildState
+ 	/* Statistics */
+ 	double		indtuples;
+ 	double		reltuples;
++	uint32		reportedBuildPhase;
++	bool		reportBuildPhase;
+ 
+ 	/* Support functions */
+ 	HnswSupport support;
+diff --git a/src/hnswbuild.c b/src/hnswbuild.c
+index 4d6d6b1..0afa46e 100644
+--- a/src/hnswbuild.c
++++ b/src/hnswbuild.c
+@@ -82,6 +82,53 @@
+ 
+ #define HNSW_MAX_GRAPH_MEMORY (SIZE_MAX / 2)
+ 
++/*
++ * Publish the current shared build phase from the leader backend. Parallel
++ * workers update the shared value and wake the leader instead of writing to
++ * their own backend progress slots, which are not exposed for this command.
++ */
++static void
++ReportBuildPhase(HnswBuildState * buildstate)
++{
++	uint32		phase;
++
++	if (IsParallelWorker())
++		return;
++
++	phase = pg_atomic_read_u32(&buildstate->graph->buildPhase);
++	if (phase == buildstate->reportedBuildPhase)
++		return;
++
++	pgstat_progress_update_param(PROGRESS_CREATEIDX_SUBPHASE, phase);
++	buildstate->reportedBuildPhase = phase;
++}
++
++/*
++ * Advance the shared build phase monotonically. Only the process that changes
++ * the value needs to notify the leader.
++ */
++static void
++AdvanceBuildPhase(HnswBuildState * buildstate, uint32 newPhase)
++{
++	uint32		oldPhase = pg_atomic_read_u32(&buildstate->graph->buildPhase);
++	bool		changed = false;
++
++	while (oldPhase < newPhase)
++	{
++		if (pg_atomic_compare_exchange_u32(&buildstate->graph->buildPhase,
++										   &oldPhase, newPhase))
++		{
++			changed = true;
++			break;
++		}
++	}
++
++	if (changed && IsParallelWorker() && buildstate->hnswshared != NULL)
++		ConditionVariableSignal(&buildstate->hnswshared->workersdonecv);
++
++	ReportBuildPhase(buildstate);
++}
++
+ /*
+  * Create the metapage
+  */
+@@ -532,16 +579,21 @@ InsertTuple(Relation index, Datum *values, bool *isnull, ItemPointer heaptid, Hn
+ 		LWLockRelease(&graph->allocatorLock);
+ 
+ 		LWLockRelease(flushLock);
++		AdvanceBuildPhase(buildstate, PROGRESS_HNSW_PHASE_FLUSH);
+ 		LWLockAcquire(flushLock, LW_EXCLUSIVE);
+ 
+ 		if (!graph->flushed)
+ 		{
+ 			ereport(NOTICE,
+ 					(errmsg("hnsw graph no longer fits into maintenance_work_mem after " INT64_FORMAT " tuples", (int64) graph->indtuples),
+-					 errdetail("Building will take significantly more time."),
++					 errdetail("Graph memory used: %zu bytes; graph memory limit: %zu bytes; dimensions: %d; m: %d; ef_construction: %d. Building will take significantly more time.",
++							   graph->memoryUsed, graph->memoryTotal,
++							   buildstate->dimensions, buildstate->m,
++							   buildstate->efConstruction),
+ 					 errhint("Increase maintenance_work_mem to speed up builds.")));
+ 
+ 			FlushPages(buildstate);
++			AdvanceBuildPhase(buildstate, PROGRESS_HNSW_PHASE_LOAD_DISK);
+ 		}
+ 
+ 		LWLockRelease(flushLock);
+@@ -587,6 +639,9 @@ BuildCallback(Relation index, ItemPointer tid, Datum *values,
+ 	HnswGraph  *graph = buildstate->graph;
+ 	MemoryContext oldCtx;
+ 
++	if (buildstate->reportBuildPhase)
++		ReportBuildPhase(buildstate);
++
+ 	/* Skip nulls */
+ 	if (isnull[0])
+ 		return;
+@@ -623,6 +678,7 @@ InitGraph(HnswGraph * graph, char *base, Size memoryTotal)
+ 	graph->memoryTotal = Min(memoryTotal, HNSW_MAX_GRAPH_MEMORY);
+ 	graph->flushed = false;
+ 	graph->indtuples = 0;
++	pg_atomic_init_u32(&graph->buildPhase, PROGRESS_HNSW_PHASE_LOAD_MEMORY);
+ 	SpinLockInit(&graph->lock);
+ 	LWLockInitialize(&graph->entryLock, hnsw_lock_tranche_id);
+ 	LWLockInitialize(&graph->entryWaitLock, hnsw_lock_tranche_id);
+@@ -717,6 +773,8 @@ InitBuildState(HnswBuildState * buildstate, Relation heap, Relation index, Index
+ 
+ 	buildstate->reltuples = 0;
+ 	buildstate->indtuples = 0;
++	buildstate->reportedBuildPhase = 0;
++	buildstate->reportBuildPhase = false;
+ 
+ 	/* Get support functions */
+ 	HnswInitSupport(&buildstate->support, index);
+@@ -764,13 +822,14 @@ ParallelHeapScan(HnswBuildState * buildstate)
+ 	double		reltuples;
+ 
+ 	nparticipanttuplesorts = buildstate->hnswleader->nparticipanttuplesorts;
++	buildstate->graph = &hnswshared->graphData;
++	buildstate->hnswarea = buildstate->hnswleader->hnswarea;
+ 	for (;;)
+ 	{
++		ReportBuildPhase(buildstate);
+ 		SpinLockAcquire(&hnswshared->mutex);
+ 		if (hnswshared->nparticipantsdone == nparticipanttuplesorts)
+ 		{
+-			buildstate->graph = &hnswshared->graphData;
+-			buildstate->hnswarea = buildstate->hnswleader->hnswarea;
+ 			reltuples = hnswshared->reltuples;
+ 			SpinLockRelease(&hnswshared->mutex);
+ 			break;
+@@ -802,7 +861,9 @@ HnswParallelScanAndInsert(Relation heapRel, Relation indexRel, HnswShared * hnsw
+ 	indexInfo->ii_Concurrent = hnswshared->isconcurrent;
+ 	InitBuildState(&buildstate, heapRel, indexRel, indexInfo, MAIN_FORKNUM);
+ 	buildstate.graph = &hnswshared->graphData;
++	buildstate.hnswshared = hnswshared;
+ 	buildstate.hnswarea = hnswarea;
++	buildstate.reportBuildPhase = progress;
+ 	InitAllocator(&buildstate.allocator, &HnswSharedMemoryAlloc, &buildstate);
+ 	scan = table_beginscan_parallel(heapRel,
+ 									ParallelTableScanFromHnswShared(hnswshared)
+@@ -1090,7 +1151,7 @@ BuildGraph(HnswBuildState * buildstate)
+ {
+ 	int			parallel_workers = 0;
+ 
+-	pgstat_progress_update_param(PROGRESS_CREATEIDX_SUBPHASE, PROGRESS_HNSW_PHASE_LOAD);
++	ReportBuildPhase(buildstate);
+ 
+ 	/* Calculate parallel workers */
+ 	if (buildstate->heap != NULL)
+@@ -1114,7 +1175,10 @@ BuildGraph(HnswBuildState * buildstate)
+ 
+ 	/* Flush pages */
+ 	if (!buildstate->graph->flushed)
++	{
++		AdvanceBuildPhase(buildstate, PROGRESS_HNSW_PHASE_FLUSH);
+ 		FlushPages(buildstate);
++	}
+ 
+ 	/* End parallel build */
+ 	if (buildstate->hnswleader)
+@@ -1137,7 +1201,11 @@ BuildIndex(Relation heap, Relation index, IndexInfo *indexInfo,
+ 	BuildGraph(buildstate);
+ 
+ 	if (RelationNeedsWAL(index) || forkNum == INIT_FORKNUM)
++	{
++		pgstat_progress_update_param(PROGRESS_CREATEIDX_SUBPHASE,
++								 PROGRESS_HNSW_PHASE_WAL);
+ 		log_newpage_range(index, forkNum, 0, RelationGetNumberOfBlocksInFork(index, forkNum), true);
++	}
+ 
+ 	FreeBuildState(buildstate);
+ }
+diff --git a/test/t/045_hnsw_low_memory_build.pl b/test/t/045_hnsw_low_memory_build.pl
+index 5a65736..c43d3f3 100644
+--- a/test/t/045_hnsw_low_memory_build.pl
++++ b/test/t/045_hnsw_low_memory_build.pl
+@@ -16,6 +16,17 @@ $node->safe_psql("postgres",
+ 	"INSERT INTO tst SELECT ARRAY[random(), random(), random()] FROM generate_series(1, 1000) i;"
+ );
+ 
++is(
++	$node->safe_psql("postgres", qq(
++		SELECT string_agg(pg_indexam_progress_phasename(oid, phase), ',' ORDER BY phase)
++		FROM pg_am
++		CROSS JOIN generate_series(2, 5) AS phase
++		WHERE amname = 'hnsw';
++	)),
++	"loading tuples in memory,flushing in-memory graph,loading tuples on disk,writing index pages to WAL",
++	"reports descriptive HNSW build phase names"
++);
++
+ my ($ret, $stdout, $stderr) = $node->psql("postgres", qq(
+ 	SET client_min_messages = DEBUG;
+ 	SET maintenance_work_mem = '3073kB';
+@@ -25,5 +36,9 @@ my ($ret, $stdout, $stderr) = $node->psql("postgres", qq(
+ is($ret, 0, $stderr);
+ like($stderr, qr/using \d+ parallel workers/);
+ like($stderr, qr/hnsw graph no longer fits into maintenance_work_mem after 0 tuples/);
++like(
++	$stderr,
++	qr/Graph memory used: \d+ bytes; graph memory limit: \d+ bytes; dimensions: 3; m: 16; ef_construction: 64\./
++);
+ 
+ done_testing();

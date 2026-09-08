@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-09-02T13:24:12.818551+00:00",
+  "parameters": {
+    "rows": 50000,
+    "dimensions": 64,
+    "maintenance_work_mem": "256MB",
+    "m": 16,
+    "ef_construction": 64,
+    "parallel_workers": 2,
+    "seed": 0.42,
+    "sample_interval_seconds": 0.1,
+    "image": "opentenbase-pg18-pgvector:baseline-0.8.6-seed42-arm64",
+    "isolated_database": true
+  },
+  "provenance": {
+    "host": {
+      "system": "Darwin",
+      "release": "25.6.0",
+      "machine": "arm64"
+    },
+    "container_image_id": "sha256:0cd8f08b52b2ef9107977d245d5aee06d68c143bdd4d18f86b67faec17dfee76",
+    "opentenbase_source": {
+      "commit": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": false,
+      "changed_paths": [],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pgvector_source": {
+      "commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": true,
+      "changed_paths": [
+        " M src/hnsw.c",
+        " M src/hnsw.h",
+        " M src/hnswbuild.c",
+        " M test/t/045_hnsw_low_memory_build.pl"
+      ],
+      "tracked_diff_sha256": "eb09370a414afda75eb7550f21d12f118d1d6f1b32ff0a46ecf1c4ec3bb7e50f"
+    }
+  },
+  "finished_at_utc": "2026-09-02T13:24:42.821960+00:00",
+  "build_elapsed_seconds": 21.956729,
+  "initial_container_memory_bytes": 166342656,
+  "peak_container_memory_bytes": 441896960,
+  "peak_memory_delta_bytes": 275554304,
+  "observed_phases": [
+    "building index: loading tuples"
+  ],
+  "phase_observations": [
+    {
+      "phase": "building index: loading tuples",
+      "first_seen_seconds": 0.005688,
+      "last_seen_seconds": 21.418274,
+      "sample_count": 54
+    }
+  ],
+  "progress_sample_count": 54,
+  "diagnostics": {
+    "spill_detected": false,
+    "spill_after_tuples": null,
+    "spill_context": null,
+    "phase_order_monotonic": true
+  },
+  "launched_parallel_workers": 2,
+  "metadata": {
+    "server_version": "18.6",
+    "pgvector_version": "0.8.6",
+    "row_count": 50000,
+    "table_total_bytes": 44867584,
+    "index_bytes": 28524544,
+    "container_architecture": "aarch64",
+    "query_plan": "SET\nLimit\n  InitPlan 1\n    ->  Index Scan using items_pkey on items items_1\n          Index Cond: (id = 1)\n  ->  Index Scan using items_embedding_hnsw_idx on items\n        Order By: (embedding <-> (InitPlan 1).col1)",
+    "uses_hnsw_index": true
+  }
+}

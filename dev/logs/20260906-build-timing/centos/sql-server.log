@@ -1,0 +1,52 @@
+2026-09-06 01:22:52.882 CST [40339] LOG:  starting PostgreSQL 18.6 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-15), 64-bit
+2026-09-06 01:22:52.883 CST [40339] LOG:  listening on Unix socket "/home/ccyoung/opentenbase-timing-20260906/socket/.s.PGSQL.55440"
+2026-09-06 01:22:52.886 CST [40345] LOG:  database system was shut down at 2026-09-06 01:22:52 CST
+2026-09-06 01:22:52.888 CST [40339] LOG:  database system is ready to accept connections
+2026-09-06 01:22:53.061 CST [40374] ERROR:  value 1 out of bounds for option "m"
+2026-09-06 01:22:53.061 CST [40374] DETAIL:  Valid values are between "2" and "100".
+2026-09-06 01:22:53.061 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops) WITH (m = 1);
+2026-09-06 01:22:53.061 CST [40374] ERROR:  value 101 out of bounds for option "m"
+2026-09-06 01:22:53.061 CST [40374] DETAIL:  Valid values are between "2" and "100".
+2026-09-06 01:22:53.061 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops) WITH (m = 101);
+2026-09-06 01:22:53.061 CST [40374] ERROR:  value 3 out of bounds for option "ef_construction"
+2026-09-06 01:22:53.061 CST [40374] DETAIL:  Valid values are between "4" and "1000".
+2026-09-06 01:22:53.061 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops) WITH (ef_construction = 3);
+2026-09-06 01:22:53.061 CST [40374] ERROR:  value 1001 out of bounds for option "ef_construction"
+2026-09-06 01:22:53.061 CST [40374] DETAIL:  Valid values are between "4" and "1000".
+2026-09-06 01:22:53.061 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops) WITH (ef_construction = 1001);
+2026-09-06 01:22:53.061 CST [40374] ERROR:  ef_construction must be greater than or equal to 2 * m
+2026-09-06 01:22:53.061 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops) WITH (m = 16, ef_construction = 31);
+2026-09-06 01:22:53.062 CST [40374] ERROR:  0 is outside the valid range for parameter "hnsw.ef_search" (1 .. 1000)
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.ef_search = 0;
+2026-09-06 01:22:53.062 CST [40374] ERROR:  1001 is outside the valid range for parameter "hnsw.ef_search" (1 .. 1000)
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.ef_search = 1001;
+2026-09-06 01:22:53.062 CST [40374] ERROR:  invalid value for parameter "hnsw.iterative_scan": "on"
+2026-09-06 01:22:53.062 CST [40374] HINT:  Available values: off, relaxed_order, strict_order.
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.iterative_scan = on;
+2026-09-06 01:22:53.062 CST [40374] ERROR:  0 is outside the valid range for parameter "hnsw.max_scan_tuples" (1 .. 2147483647)
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.max_scan_tuples = 0;
+2026-09-06 01:22:53.062 CST [40374] ERROR:  0 is outside the valid range for parameter "hnsw.scan_mem_multiplier" (1 .. 1000)
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.scan_mem_multiplier = 0;
+2026-09-06 01:22:53.062 CST [40374] ERROR:  1001 is outside the valid range for parameter "hnsw.scan_mem_multiplier" (1 .. 1000)
+2026-09-06 01:22:53.062 CST [40374] STATEMENT:  SET hnsw.scan_mem_multiplier = 1001;
+2026-09-06 01:22:53.065 CST [40374] ERROR:  column cannot have more than 2000 dimensions for hnsw index
+2026-09-06 01:22:53.065 CST [40374] STATEMENT:  CREATE INDEX ON t USING hnsw (val vector_l2_ops);
+2026-09-06 01:22:53.091 CST [40378] ERROR:  column cannot have more than 4000 dimensions for hnsw index
+2026-09-06 01:22:53.091 CST [40378] STATEMENT:  CREATE INDEX ON t USING hnsw (val halfvec_l2_ops);
+2026-09-06 01:22:53.104 CST [40382] ERROR:  type not supported for hnsw index
+2026-09-06 01:22:53.104 CST [40382] STATEMENT:  CREATE INDEX ON t USING hnsw (val bit_hamming_ops);
+2026-09-06 01:22:53.105 CST [40382] ERROR:  column cannot have more than 64000 dimensions for hnsw index
+2026-09-06 01:22:53.105 CST [40382] STATEMENT:  CREATE INDEX ON t USING hnsw ((val::bit(64001)) bit_hamming_ops);
+2026-09-06 01:22:53.110 CST [40382] ERROR:  column cannot have more than 64000 dimensions for hnsw index
+2026-09-06 01:22:53.110 CST [40382] STATEMENT:  CREATE INDEX ON t USING hnsw (val bit_hamming_ops);
+2026-09-06 01:22:53.134 CST [40386] ERROR:  sparsevec cannot have more than 1000 non-zero elements for hnsw index
+2026-09-06 01:22:53.134 CST [40386] STATEMENT:  CREATE INDEX ON t USING hnsw (val sparsevec_l2_ops);
+2026-09-06 01:22:53.136 CST [40386] ERROR:  sparsevec cannot have more than 1000 non-zero elements for hnsw index
+2026-09-06 01:22:53.136 CST [40386] STATEMENT:  INSERT INTO t (val) VALUES (array_fill(1, ARRAY[1001])::vector::sparsevec);
+2026-09-06 01:22:53.153 CST [40339] LOG:  received fast shutdown request
+2026-09-06 01:22:53.154 CST [40339] LOG:  aborting any active transactions
+2026-09-06 01:22:53.154 CST [40339] LOG:  background worker "logical replication launcher" (PID 40348) exited with exit code 1
+2026-09-06 01:22:53.155 CST [40343] LOG:  shutting down
+2026-09-06 01:22:53.156 CST [40343] LOG:  checkpoint starting: shutdown immediate
+2026-09-06 01:22:53.525 CST [40343] LOG:  checkpoint complete: wrote 1135 buffers (6.9%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.347 s, total=0.371 s; sync files=508, longest=0.008 s, average=0.001 s; distance=6330 kB, estimate=6330 kB; lsn=0/1D22C68, redo lsn=0/1D22C68
+2026-09-06 01:22:53.530 CST [40339] LOG:  database system is shut down

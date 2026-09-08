@@ -1,0 +1,7 @@
+rm -rf /home/ccyoung/opentenbase-timing-20260906/pgvector/tmp_check
+cd ./ && TESTDIR='/home/ccyoung/opentenbase-timing-20260906/pgvector' PATH="/home/ccyoung/opentenbase-timing-20260906/install/bin:$PATH" PGPORT='65432' PG_REGRESS='/home/ccyoung/opentenbase-timing-20260906/install/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress' /usr/bin/prove -I /home/ccyoung/opentenbase-timing-20260906/install/lib/postgresql/pgxs/src/makefiles/../../src/test/perl/ -I ./ -I ./test/perl test/t/045_hnsw_low_memory_build.pl test/t/049_hnsw_build_timing.pl
+test/t/045_hnsw_low_memory_build.pl .. ok
+test/t/049_hnsw_build_timing.pl ...... ok
+All tests successful.
+Files=2, Tests=226,  5 wallclock secs ( 0.01 usr  0.00 sys +  0.35 cusr  0.16 csys =  0.52 CPU)
+Result: PASS

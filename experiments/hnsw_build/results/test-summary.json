@@ -1,0 +1,79 @@
+{
+  "verified_at_utc": "2026-09-02T13:43:47Z",
+  "tooling_and_experiments_updated_at_utc": "2026-09-03T11:26:51Z",
+  "final_local_audit_at_utc": "2026-09-04T01:27:00Z",
+  "target": {
+    "opentenbase_version": "18.6",
+    "pgvector_version": "0.8.6",
+    "architecture": "arm64",
+    "test_image_id": "sha256:5b107676eed35311d01f44dee6154fa39224805cdbca3909a6f21d444abebc6c",
+    "pgvector_diff_sha256": "eb09370a414afda75eb7550f21d12f118d1d6f1b32ff0a46ecf1c4ec3bb7e50f"
+  },
+  "checks": [
+    {
+      "name": "full HNSW TAP suite",
+      "command": "docker run --rm --shm-size=2g opentenbase-pg18-pgvector:test-arm64 make prove_installcheck 'PROVE_TESTS=test/t/*hnsw*.pl'",
+      "files": 27,
+      "assertions": 411,
+      "wallclock_seconds": 335,
+      "result": "PASS"
+    },
+    {
+      "name": "warning-free clean pgvector rebuild",
+      "command": "docker run --rm opentenbase-pg18-pgvector:test-arm64 sh -lc 'make clean && make -j6 PG_CFLAGS=-Werror'",
+      "result": "PASS"
+    },
+    {
+      "name": "HNSW SQL regression",
+      "tests": [
+        "hnsw_vector",
+        "hnsw_halfvec",
+        "hnsw_bit",
+        "hnsw_sparsevec"
+      ],
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "name": "targeted low-memory TAP",
+      "test": "test/t/045_hnsw_low_memory_build.pl",
+      "assertions": 5,
+      "result": "PASS"
+    },
+    {
+      "name": "experiment tool unit tests (recall, aggregation, scale, and diagnostic provenance)",
+      "command": "python3 -m unittest discover -s experiments/hnsw_build -p 'test_*.py' -v",
+      "tests": 28,
+      "result": "PASS"
+    },
+    {
+      "name": "controlled Recall@K parameter experiments",
+      "runs": 14,
+      "failed": 0,
+      "exact_plan_uses_sequential_scan": true,
+      "approximate_plan_uses_hnsw": true,
+      "result": "PASS"
+    },
+    {
+      "name": "controlled row, dimension, and m scale experiments",
+      "runs": 10,
+      "maximum_rows": 1000000,
+      "sample_interval_seconds": 0.2,
+      "failed": 0,
+      "spill_runs": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "final tooling provenance and parallel-spill smoke",
+      "result_directory": "20260903T112623Z-final-tooling-provenance-spill-smoke-r4",
+      "python_version": "3.14.7",
+      "tool_file_hashes_verified": 3,
+      "launched_parallel_workers": 2,
+      "spill_detected": true,
+      "parallel_memory_safety_margin_bytes": 1048576,
+      "exact_plan_uses_sequential_scan": true,
+      "approximate_plan_uses_hnsw": true,
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+rm -rf /home/ccyoung/opentenbase-timing-20260906/pgvector/tmp_check
+cd ./ && TESTDIR='/home/ccyoung/opentenbase-timing-20260906/pgvector' PATH="/home/ccyoung/opentenbase-timing-20260906/install/bin:$PATH" PGPORT='65432' PG_REGRESS='/home/ccyoung/opentenbase-timing-20260906/install/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress' /usr/bin/prove -I /home/ccyoung/opentenbase-timing-20260906/install/lib/postgresql/pgxs/src/makefiles/../../src/test/perl/ -I ./ -I ./test/perl test/t/*hnsw*.pl
+test/t/010_hnsw_wal.pl ...................... ok
+test/t/011_hnsw_vacuum.pl ................... ok
+test/t/012_hnsw_vector_build_recall.pl ...... ok
+test/t/013_hnsw_vector_insert_recall.pl ..... ok
+test/t/014_hnsw_vector_vacuum_recall.pl ..... ok
+test/t/015_hnsw_vector_duplicates.pl ........ ok
+test/t/016_hnsw_inserts.pl .................. ok
+test/t/017_hnsw_filtering.pl ................ ok
+test/t/020_hnsw_bit_build_recall.pl ......... ok
+test/t/021_hnsw_bit_insert_recall.pl ........ ok
+test/t/022_hnsw_bit_vacuum_recall.pl ........ ok
+test/t/023_hnsw_bit_duplicates.pl ........... ok
+test/t/024_hnsw_halfvec_build_recall.pl ..... ok
+test/t/025_hnsw_halfvec_insert_recall.pl .... ok
+test/t/026_hnsw_halfvec_vacuum_recall.pl .... ok
+test/t/027_hnsw_halfvec_duplicates.pl ....... ok
+test/t/028_hnsw_sparsevec_build_recall.pl ... ok
+test/t/029_hnsw_sparsevec_insert_recall.pl .. ok
+test/t/030_hnsw_sparsevec_vacuum_recall.pl .. ok
+test/t/031_hnsw_sparsevec_duplicates.pl ..... ok
+test/t/038_hnsw_sparsevec_vacuum_insert.pl .. ok
+test/t/039_hnsw_cost.pl ..................... ok
+test/t/043_hnsw_iterative_scan.pl ........... ok
+test/t/044_hnsw_iterative_scan_recall.pl .... ok
+test/t/045_hnsw_low_memory_build.pl ......... ok
+test/t/046_hnsw_vacuum_scan.pl .............. ok
+test/t/047_hnsw_vacuum_insert.pl ............ ok
+test/t/049_hnsw_build_timing.pl ............. ok
+All tests successful.
+Files=28, Tests=632, 118 wallclock secs ( 0.07 usr  0.01 sys +  8.05 cusr  5.57 csys = 13.70 CPU)
+Result: PASS
