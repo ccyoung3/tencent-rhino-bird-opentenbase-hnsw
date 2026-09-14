@@ -4,7 +4,7 @@
 
 ## 五分钟了解项目
 
-1. 看首页的三个亮点，了解新增能力与上游已有能力的分工。
+1. 看首页的主要功能和使用效果，了解工具的用途。
 2. 看一次[实际诊断报告](../presentations/hnsw-diagnostics/evidence/user-experience/manual-low/diagnostic.md)
    和[调整后报告](../presentations/hnsw-diagnostics/evidence/user-experience/manual-high/diagnostic.md)。
 3. 看[正式效果与限制](results.md)，区分参数收益和诊断成本。
