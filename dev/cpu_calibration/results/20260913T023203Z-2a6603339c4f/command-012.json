@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "4b7ce63d84e949b76a756110ea01dd3bb1658e81a25f7af7ee8a0eeeedc0be37",
+    "/bin/sh",
+    "-c",
+    "uname -a; id; cat /proc/self/status"
+  ],
+  "started_at_utc": "2026-09-13T02:32:04.673649+00:00",
+  "returncode": 0,
+  "stdout": "Linux 4b7ce63d84e9 7.0.14-orbstack-00380-ga7e0a2dc9535 #1 SMP PREEMPT Fri Aug  7 03:48:40 UTC 2026 aarch64 GNU/Linux\nuid=999(postgres) gid=999(postgres) groups=999(postgres)\nName:\tcat\nUmask:\t0022\nState:\tR (running)\nTgid:\t13\nNgid:\t0\nPid:\t13\nPPid:\t6\nTracerPid:\t0\nUid:\t999\t999\t999\t999\nGid:\t999\t999\t999\t999\nFDSize:\t64\nGroups:\t999 \nNStgid:\t13\nNSpid:\t13\nNSpgid:\t6\nNSsid:\t6\nKthread:\t0\nVmPeak:\t    2380 kB\nVmSize:\t    2380 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t     944 kB\nVmRSS:\t     944 kB\nRssAnon:\t     112 kB\nRssFile:\t     832 kB\nRssShmem:\t       0 kB\nVmData:\t     356 kB\nVmStk:\t     132 kB\nVmExe:\t      36 kB\nVmLib:\t    1748 kB\nVmPTE:\t      40 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffff\nThreads:\t1\nSigQ:\t0/48185\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000200000000\nSigCgt:\t0000000000000000\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t1\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\tunknown\nCpus_allowed:\t3ff\nCpus_allowed_list:\t0-9\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t0\nnonvoluntary_ctxt_switches:\t0\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T02:32:04.713149+00:00",
+  "host_elapsed_s": 0.039532249997137114
+}

@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "created_at_utc": "2026-09-13T03:07:22.972564+00:00",
+  "scope": "Independent standard-library construction-profile audit; tests mutate only private copies or in-memory records.",
+  "command": [
+    ".venv-glove/bin/python",
+    "dev/cpu_calibration/test_audit.py",
+    "dev/cpu_calibration/results/20260913T030031Z-ce171210b519",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests": 10,
+  "elapsed_s": 0.126,
+  "log_provenance": "Exact output captured from the first successful exec_command test call; copied here without rerunning tests.",
+  "no_cpu_docker_database_workload": true,
+  "original_summary_unchanged": true,
+  "existing_independent_review_unchanged": true,
+  "files": {
+    "audit.py": "6991e43a1005fc89c60921fc380cbff84394e56d0c4e93e8cf4d8cc9385305f2",
+    "test_audit.py": "1e3c22b773d218202c30e2a44a9cad0b18449fc746753320751a42500c81f5f1",
+    "tests.log": "cc2c7e3071d0dc75ffaf5b74b27647b937e1ce2e4da6258499d64c66f84e6922"
+  },
+  "run_bindings": {
+    "summary.json": "33037482f450cceaf79350b714a1480c3f5ef42e06f4b1f7c11e6597a73ab324",
+    "protocol.json": "e9e4ce23f24720457fbb43660bed176e3122a6e074c7b2a73b05bbbac8ae94a9",
+    "source/run.py": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+    "source/calibrate.c": "e69d3fa14355179a359795440bd8ef3e1aa533ec7639aaf2c71e14d171567a6e",
+    "source/method.md": "7741df420c394ef811db25f4c67cde752d34ce8c52024998af572d11a947a74f",
+    "binary/calibrate": "9bbd029e20e5754d42840b96e4e59cb679c9b16a1b327961c8d7458153704fdd",
+    "independent-review.json": "81da23f506c347b9e1ac02eb9c011a00259e25bc292d96ee809fd11141ce7d8f",
+    "report.md": "6e27bb452e885bd43cc9712e9599ab1fe27e94a5b59bbba57f93ea27eb72ce4e"
+  }
+}

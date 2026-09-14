@@ -1,0 +1,39 @@
+{
+  "frozen_at_utc": "2026-09-10T07:42:33.018361+00:00",
+  "identity": {
+    "core_unchanged": true,
+    "previous_evidence_and_tooling_unchanged": true,
+    "intentionally_updated_old_document_paths": [
+      "experiments/hnsw_build/.gitignore"
+    ]
+  },
+  "unit_test_returncode": 0,
+  "sha256": {
+    "experiments/hnsw_build/bounded_overhead.py": "9af6b9195060b047c0d3f1c98cfafa554d65cf6b719476723b9c845c37b299b5",
+    "experiments/hnsw_build/bounded_recall.py": "915a3f40cf379ef337f86793528712963fa8d63ebf0cc46eaac8d603c0a78eb5",
+    "experiments/hnsw_build/compare.py": "da15768912d834ecd80a0684a3c28bfaa913b1ebe1bce362ec83ca02d5a36caa",
+    "experiments/hnsw_build/glove.py": "98ff0be4928acc7e59e7cccad49664dcc43a2c69a7ce758dd6da0825400a2c7a",
+    "experiments/hnsw_build/glove_cases.py": "7757314ede0b2f402ce42c8eda8940ebef3f62c207be5d7ae0b01f88b28dc8af",
+    "experiments/hnsw_build/glove_report.py": "65dcacf5d0273188524ecd42dc706928f29607eb3a18dd1b867245f756ac4c8c",
+    "experiments/hnsw_build/glove_run.py": "56347bc2d0129f7d467d62bd997ea6945d791e62d6b30c85ead4bc8d5ead401c",
+    "experiments/hnsw_build/local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "experiments/hnsw_build/observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "experiments/hnsw_build/recall.py": "8fed0edf184dfb9375f9038f60a5e04ce9e5c9ef167f87d4b10ba920e7e0fb89",
+    "experiments/hnsw_build/run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "experiments/hnsw_build/summarize_sweep.py": "a319275c1463ea42bcdaae23a4df3fb696b36f806510755c0683b91f5fbd5677",
+    "experiments/hnsw_build/test_bounded.py": "c505654e2b31e25998943db8e20f27f0410f8ab1cdfeb5ea8faa1d3687691bde",
+    "experiments/hnsw_build/test_glove.py": "843046fecb111e950570949fb0957e8372ec39a317fa23bf39565c798e64589c",
+    "experiments/hnsw_build/test_observe.py": "b096eb23285feea0de3d182d21372e1203a0f47e93450f6cc3138844230f006f",
+    "experiments/hnsw_build/test_recall.py": "6b243911bcf06d2dde0e59c134c54d0a539af1c5c6a2d493166947c2a8e9ebe2",
+    "experiments/hnsw_build/test_summarize_sweep.py": "4c30848c67cac591a1e00d97e476ae8d512c425317e870e982fb5071ec465b70",
+    "experiments/hnsw_build/test_timing.py": "1b6fe6e1da00117678f53641e01fc12537cebf576fd43bbef14f16dcff7ad03b",
+    "experiments/hnsw_build/test_tools.py": "8566b5018d58805875906d05d5f12c7b3d355d4ae787d27ea0926bf4a2c09c83",
+    "experiments/hnsw_build/timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "experiments/hnsw_build/verify_glove.py": "457fd6dc2bc5d1f98bfba7563595bdb1b560b18c28d3a61b263e8b20476cf09f",
+    "experiments/hnsw_build/verify_observe.py": "96b30c3ed53e07208c15b446ab93e219dea4d032e5ba61641aaccdfb0e516bbb",
+    "experiments/hnsw_build/requirements-glove.txt": "22c37b0e1a86a95ac2d762de0678af411aec0c4c310bbc83077ccde06fe0e396",
+    "dev/compose.yml": "e348f673186e72e472aad3abc7f8c7a1950fb92fb5918eb4161367a4aca8304e",
+    "docs/2026-09-10-observer-recall-overhead.md": "293bc16b208a6ad12ee92b916755dfedf2347fe326aa4463527a1f00d2adb505"
+  },
+  "archive_sha256": "d50b38c3eb7a57e0f1f170b5e683eea4f2411c78ef33f62a5a297f9cb80ea240"
+}

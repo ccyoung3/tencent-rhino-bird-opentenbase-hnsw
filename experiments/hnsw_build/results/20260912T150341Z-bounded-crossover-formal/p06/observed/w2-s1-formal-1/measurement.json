@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 8.961659208000128,
+  "started_epoch": 1789229965.201191,
+  "civil_wall_seconds": 8.961621046066284,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 340,
+        "index_oid": 16742,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 8946069,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 79
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 79,
+            "end_us": 1430
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 1430,
+            "end_us": 1464
+          },
+          {
+            "phase": "flush",
+            "start_us": 1464,
+            "end_us": 1516
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 1516,
+            "end_us": 8929829
+          },
+          {
+            "phase": "finalize",
+            "start_us": 8929829,
+            "end_us": 8929946
+          },
+          {
+            "phase": "wal",
+            "start_us": 8929946,
+            "end_us": 8946048
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 8946048,
+            "end_us": 8946069
+          }
+        ],
+        "durations_us": {
+          "setup": 79,
+          "memory_build": 1351,
+          "spill_drain": 34,
+          "flush": 52,
+          "disk_insert": 8928313,
+          "finalize": 117,
+          "wal": 16102,
+          "cleanup": 21
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9980152176335774
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 340,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 9,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.002882166998460889,
+          "last_seen_s": 8.087530166998476,
+          "samples": 9
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 341
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 8
+      },
+      "elapsed_seconds": 8.95706112500011
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      4.71435546875,
+      4.06396484375,
+      4.001953125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 256869697\nuser_usec 249224659\nsystem_usec 7645038\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n106995712\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=37969920 wbytes=771530752 rios=660 wios=5356 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      4.81689453125,
+      4.095703125,
+      4.01318359375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 283649677\nuser_usec 275793238\nsystem_usec 7856438\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n134778880\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=37969920 wbytes=784449536 rios=660 wios=5390 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13041664
+}

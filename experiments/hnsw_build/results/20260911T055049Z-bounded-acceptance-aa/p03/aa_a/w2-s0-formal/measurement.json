@@ -1,0 +1,38 @@
+{
+  "condition": "off",
+  "workers": 2,
+  "spill": false,
+  "warmup": false,
+  "command_seconds": 6.436471207998693,
+  "started_epoch": 1789106404.6251168,
+  "civil_wall_seconds": 6.436507225036621,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "not_requested",
+    "records": []
+  },
+  "observer": {
+    "attachment_probes": 0
+  },
+  "resources_before": {
+    "host_load_average": [
+      5.0732421875,
+      4.46142578125,
+      4.298828125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 43225067\nuser_usec 41921220\nsystem_usec 1303846\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n187588608\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=13066240 wbytes=273944576 rios=133 wios=4077 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      5.30712890625,
+      4.52001953125,
+      4.3203125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 62154563\nuser_usec 60055159\nsystem_usec 2099403\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n201633792\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=13099008 wbytes=333479936 rios=135 wios=4211 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 43450368
+}

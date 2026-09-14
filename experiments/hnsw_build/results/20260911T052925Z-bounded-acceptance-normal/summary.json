@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "checks": [],
+  "builds": [],
+  "error": "InsufficientPrivilege:42501",
+  "error_locations": [
+    {
+      "file": "verify_acceptance.py",
+      "line": 30
+    },
+    {
+      "file": "connection.py",
+      "line": 300
+    }
+  ]
+}

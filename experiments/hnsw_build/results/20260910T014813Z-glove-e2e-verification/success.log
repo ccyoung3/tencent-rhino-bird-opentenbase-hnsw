@@ -1,0 +1,7 @@
+/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014813Z-glove-e2e-success
+Validating pinned data
+Loading 10000 vectors
+Building with 64MB
+Evaluating tuning queries
+Validating held-out queries at [10, 40, 100]
+passed: /Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014813Z-glove-e2e-success

@@ -1,0 +1,111 @@
+{
+  "variant": "new_observed",
+  "workers": 2,
+  "spill": true,
+  "command_seconds": 5.640292166965082,
+  "command_returncode": 0,
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 53,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 1800.0,
+      "samples": 6,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.0036907090106979012,
+          "last_seen_s": 5.045483250054531,
+          "samples": 6
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 66
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 5
+      },
+      "elapsed_seconds": 5.636213459074497
+    }
+  },
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 53,
+        "index_oid": 16728,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 5627855,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 16
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 16,
+            "end_us": 268
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 268,
+            "end_us": 313
+          },
+          {
+            "phase": "flush",
+            "start_us": 313,
+            "end_us": 361
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 361,
+            "end_us": 5621881
+          },
+          {
+            "phase": "finalize",
+            "start_us": 5621881,
+            "end_us": 5622958
+          },
+          {
+            "phase": "wal",
+            "start_us": 5622958,
+            "end_us": 5627828
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 5627828,
+            "end_us": 5627855
+          }
+        ],
+        "durations_us": {
+          "setup": 16,
+          "memory_build": 252,
+          "spill_drain": 45,
+          "flush": 48,
+          "disk_insert": 5621520,
+          "finalize": 1077,
+          "wal": 4870,
+          "cleanup": 27
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9988743491081415
+  },
+  "index_bytes": 8691712,
+  "image_variant": "timing-v1-seed42-arm64"
+}

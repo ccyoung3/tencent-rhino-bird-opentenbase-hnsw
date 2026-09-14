@@ -1,0 +1,7 @@
+# Keep exported media byte-for-byte and avoid treating ASCII PDF streams as code diffs.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+*.gz binary

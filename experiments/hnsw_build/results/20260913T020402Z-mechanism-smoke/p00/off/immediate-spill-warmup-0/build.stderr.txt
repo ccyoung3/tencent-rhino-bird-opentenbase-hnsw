@@ -1,0 +1,11 @@
+DEBUG: building index "items_hnsw" on table "small" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 0 tuples
+DETAIL: Graph memory used: 0 bytes; graph memory limit: 1048576 bytes; dimensions: 32; m: 16; ef_construction: 64. Building will take significantly more time.
+INFO: memory: 0 MB
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"leader","worker_number":-1,"pid":143,"index_oid":16733,"callbacks_seen":9978,"successful_inserts":9978,"distance_calls":139512604,"elements_initialized":9978,"user_cpu_us":5343185,"system_cpu_us":56411,"elapsed_us":5405080,"level_hist":[9365,570,41,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: leader processed 9978 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":1,"pid":154,"index_oid":16733,"callbacks_seen":10011,"successful_inserts":10011,"distance_calls":140500696,"elements_initialized":10011,"user_cpu_us":5348120,"system_cpu_us":52776,"elapsed_us":5404143,"level_hist":[9360,608,38,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 10011 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":0,"pid":155,"index_oid":16733,"callbacks_seen":10011,"successful_inserts":10011,"distance_calls":140566200,"elements_initialized":10011,"user_cpu_us":5358507,"system_cpu_us":50003,"elapsed_us":5411724,"level_hist":[9382,591,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 10011 tuples

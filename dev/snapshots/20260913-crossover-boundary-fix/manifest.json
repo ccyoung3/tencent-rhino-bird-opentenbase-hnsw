@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "created_at_utc": "2026-09-12T17:45:29.415724+00:00",
+  "purpose": "Preserve the post-measurement correction of exact-5-percent floating-point regression classification.",
+  "provenance": {
+    "before": "Full source text captured in tool memory immediately before editing these three files; not reconstructed from a patch.",
+    "after": "Read from the current workspace after the targeted tests passed.",
+    "test_evidence": "Observed unittest command output in the implementing task, summarized below."
+  },
+  "files": {
+    "overhead_crossover.py": {
+      "source_path": "experiments/hnsw_build/overhead_crossover.py",
+      "before_path": "before/overhead_crossover.py",
+      "after_path": "after/overhead_crossover.py",
+      "before_sha256": "ead83ba4620ebc840cb1b5b57bed68b45d50995fce5f9dab64afec1b054c533a",
+      "after_sha256": "38f1cac8294d13140f4cda8f83a46d5f301bebac6b231e752b9dbdaf2037c3d9",
+      "before_bytes": 10478,
+      "after_bytes": 10563
+    },
+    "audit_crossover.py": {
+      "source_path": "experiments/hnsw_build/audit_crossover.py",
+      "before_path": "before/audit_crossover.py",
+      "after_path": "after/audit_crossover.py",
+      "before_sha256": "6f1a020d649d74ba0fab4c72dbdc3034c96ad682cf21860265bcf0535fd0f325",
+      "after_sha256": "a0628b19a9e5965b56253f23e135be67b1b7a9a47a20675fc47d64fe4cdda80a",
+      "before_bytes": 21494,
+      "after_bytes": 21571
+    },
+    "test_crossover.py": {
+      "source_path": "experiments/hnsw_build/test_crossover.py",
+      "before_path": "before/test_crossover.py",
+      "after_path": "after/test_crossover.py",
+      "before_sha256": "d7634ad5f34634d7d15a708bd5d14fc171fd07636f2b6cc20f92b7bdd1a64f1f",
+      "after_sha256": "433bbc356579ca23696d0becb17d89e655a95183d619e45da64aff77503d75d9",
+      "before_bytes": 8702,
+      "after_bytes": 9071
+    }
+  },
+  "patch_path": "changes.patch",
+  "patch_sha256": "2d5da3438872a758565af7b5e0c97daed2a46d8b88856855a6dfa0a5b1ce296a",
+  "problem": {
+    "synthetic_baseline_seconds": 1000.0,
+    "synthetic_candidate_seconds": 1050.0,
+    "true_relative_cost": 0.05,
+    "original_main_lower_ratio": 1.0500000000000003,
+    "original_main_verdict": "regression_supported",
+    "original_independent_lower_ratio": 1.05,
+    "original_independent_verdict": "not_established",
+    "affected_synthetic_groups": 12,
+    "cause": "The upper-bound acceptance check excluded isclose(1.05), but the lower-bound regression check used only >1.05."
+  },
+  "correction": {
+    "predicate": "lower is not None and lower > 1.05 and not math.isclose(lower, 1.05, rel_tol=1e-12)",
+    "implementations": [
+      "overhead_crossover.summarize",
+      "audit_crossover.independent_analysis"
+    ],
+    "classification_at_exact_five_percent": "not_established",
+    "impact": {
+      "primary_all_supported_acceptance": "unchanged",
+      "raw_duration_collection": "unchanged",
+      "schedule_or_sample_selection": "unchanged",
+      "scope": "Floating-point boundary classification in postprocessing only."
+    }
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv-glove/bin/python -m unittest discover -s experiments/hnsw_build -p test_crossover.py -v",
+    "red": {
+      "state": "Strengthened test file with the original two analysis implementations.",
+      "tests_run": 11,
+      "failures": 1,
+      "exit_code": 1,
+      "elapsed_seconds": 0.032,
+      "failing_test": "test_exact_five_percent_is_not_strictly_below_limit",
+      "failing_subtest": {
+        "scale": 1000.0
+      },
+      "actual": "All 12 main-analysis groups were regression_supported.",
+      "expected": "All 12 groups should be not_established."
+    },
+    "green": {
+      "state": "All three files match the after/ snapshot.",
+      "tests_run": 11,
+      "failures": 0,
+      "exit_code": 0,
+      "elapsed_seconds": 0.032,
+      "result": "OK",
+      "covered_boundary_scales": [
+        1.0,
+        10.0,
+        1000.0
+      ],
+      "exact_five_percent": "Both independent algorithms return not_established for all 12 groups.",
+      "six_percent": "regression_supported is preserved and the two complete analyses agree within audit numerical tolerance."
+    }
+  },
+  "formal_run_context": {
+    "path": "experiments/hnsw_build/results/20260912T150341Z-bounded-crossover-formal",
+    "status": "failed",
+    "stop_reason": "AC to Battery power change triggered the frozen host validation guard.",
+    "measurement_finished_before_source_edit": true,
+    "real_group_effects_computed_or_compared_for_this_fix": false,
+    "original_run_artifacts_modified": false,
+    "frozen_method_modified": false
+  }
+}

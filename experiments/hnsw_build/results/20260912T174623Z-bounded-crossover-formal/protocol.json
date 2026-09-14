@@ -1,0 +1,2227 @@
+{
+  "schema": 1,
+  "mode": "formal",
+  "panels": 24,
+  "schedule": [
+    {
+      "panel": 0,
+      "slots": [
+        "baseline",
+        "observed",
+        "off",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "off",
+            "on",
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "off",
+            "on",
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 1,
+      "slots": [
+        "on",
+        "baseline",
+        "off",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "on",
+            "off",
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "off",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "slots": [
+        "on",
+        "observed",
+        "baseline",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "on",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "slots": [
+        "on",
+        "baseline",
+        "observed",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "on",
+            "off",
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "off",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "slots": [
+        "off",
+        "observed",
+        "baseline",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "off",
+            "on",
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 5,
+      "slots": [
+        "off",
+        "baseline",
+        "observed",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "on",
+            "off",
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "on",
+            "off",
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "on",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 6,
+      "slots": [
+        "on",
+        "observed",
+        "off",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "off",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 7,
+      "slots": [
+        "on",
+        "off",
+        "observed",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "on",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "on",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 8,
+      "slots": [
+        "baseline",
+        "on",
+        "observed",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "off",
+            "on",
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "off",
+            "on",
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 9,
+      "slots": [
+        "off",
+        "on",
+        "baseline",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "on",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 10,
+      "slots": [
+        "observed",
+        "baseline",
+        "off",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "on",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "on",
+            "off",
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 11,
+      "slots": [
+        "off",
+        "observed",
+        "on",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "on",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "on",
+            "off",
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 12,
+      "slots": [
+        "off",
+        "on",
+        "observed",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "off",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "on",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "on",
+            "off",
+            "off",
+            "on",
+            "observed",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 13,
+      "slots": [
+        "observed",
+        "on",
+        "baseline",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 14,
+      "slots": [
+        "observed",
+        "on",
+        "off",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "on",
+            "off",
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 15,
+      "slots": [
+        "baseline",
+        "observed",
+        "on",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "off",
+            "on",
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "on",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "on",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "on",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 16,
+      "slots": [
+        "observed",
+        "off",
+        "on",
+        "baseline"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "off",
+            "on",
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "off",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 17,
+      "slots": [
+        "baseline",
+        "on",
+        "off",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "off",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "off",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 18,
+      "slots": [
+        "on",
+        "off",
+        "baseline",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "off",
+            "on",
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 19,
+      "slots": [
+        "observed",
+        "baseline",
+        "on",
+        "off"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 20,
+      "slots": [
+        "baseline",
+        "off",
+        "on",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ],
+          "order": [
+            "on",
+            "off",
+            "baseline",
+            "observed",
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "on",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "on",
+            "observed"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 21,
+      "slots": [
+        "off",
+        "baseline",
+        "on",
+        "observed"
+      ],
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "on",
+            "baseline",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "off",
+            "observed",
+            "baseline",
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "observed",
+            "on",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 22,
+      "slots": [
+        "baseline",
+        "off",
+        "observed",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ],
+          "order": [
+            "observed",
+            "off",
+            "on",
+            "baseline",
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "observed",
+            "off"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "observed",
+            "off",
+            "off",
+            "observed",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "off",
+            "baseline",
+            "on",
+            "observed"
+          ],
+          "order": [
+            "off",
+            "baseline",
+            "on",
+            "observed",
+            "observed",
+            "on",
+            "baseline",
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 23,
+      "slots": [
+        "observed",
+        "off",
+        "baseline",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "on",
+            "off",
+            "observed"
+          ],
+          "order": [
+            "baseline",
+            "on",
+            "off",
+            "observed",
+            "observed",
+            "off",
+            "on",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "off",
+            "observed",
+            "on",
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "observed",
+            "baseline",
+            "off"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "baseline",
+            "off",
+            "off",
+            "baseline",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "off",
+            "observed",
+            "baseline",
+            "on"
+          ],
+          "order": [
+            "off",
+            "observed",
+            "baseline",
+            "on",
+            "on",
+            "baseline",
+            "observed",
+            "off"
+          ]
+        }
+      ]
+    }
+  ],
+  "images": {
+    "baseline": "sha256:3db4573bad80e77defd9e89f88f74affd77dc0ee1cd4d80ef670f6d0505b99bd",
+    "off": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "on": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "observed": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be"
+  },
+  "large_rows": 100000,
+  "small_rows": 30000,
+  "dimensions": 32,
+  "m": 16,
+  "ef_construction": 64,
+  "affinity": "0-9",
+  "warmups_per_scene_condition": 1,
+  "measurements_per_scene_condition": 2,
+  "formal_count": 768,
+  "warmup_count": 384,
+  "primary_estimand": "population median of paired within-panel two-run geometric-mean time ratios",
+  "primary_upper_confidence": 0.9958333333333333,
+  "comparisons": 12,
+  "strict_upper_ratio_limit": 1.05,
+  "no_aa_gate": true,
+  "old_protocol_status": "unchanged; failed screens remain failed",
+  "no_optional_stopping": true,
+  "no_effect_based_restarts": true,
+  "acceptance": "all 12 upper bounds <1.05, complete validated measurements and observer coverage",
+  "source_sha256": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "overhead_crossover.py": "38f1cac8294d13140f4cda8f83a46d5f301bebac6b231e752b9dbdaf2037c3d9"
+  },
+  "common_build_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29",
+  "method_review_sha256": "711cab9d66de11aed71540c3d4d79633a59926a3b289161adedf8c8f7e1cb532",
+  "created_at_utc": "2026-09-12T17:46:23.181107+00:00"
+}

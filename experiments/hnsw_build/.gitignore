@@ -11,3 +11,17 @@ results/*
 !results/*-final-functional-*/*
 !results/*-parallel-stress-*/
 !results/*-parallel-stress-*/*
+
+# GloVe case evidence, including failed trials; original HDF5 stays in data/cache.
+!results/*-glove-*/
+!results/*-glove-*/**
+
+# New read-only observer and bounded cost/recall validation; retain failures.
+!results/*-observe-*/
+!results/*-observe-*/**
+!results/*-bounded-*/
+!results/*-bounded-*/**
+
+# Preserve independent mechanism diagnostics and any failed attempts.
+!results/*-mechanism-*/
+!results/*-mechanism-*/**

@@ -1,0 +1,54 @@
+{
+  "status": "verified_absent",
+  "checked_at_utc": "2026-09-13T03:03:17.117313+00:00",
+  "nonce": "ce171210b519",
+  "checks": [
+    {
+      "argv": [
+        "docker",
+        "container",
+        "inspect",
+        "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652"
+      ],
+      "returncode": 1,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: No such container: 354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652\n"
+    },
+    {
+      "argv": [
+        "docker",
+        "volume",
+        "inspect",
+        "ac6de9434e1620e9eab070215c7af3329bbd34e90a3b1c81d95eb74b3cf88274"
+      ],
+      "returncode": 1,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: get ac6de9434e1620e9eab070215c7af3329bbd34e90a3b1c81d95eb74b3cf88274: no such volume\n"
+    },
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=cpu.calibration.nonce=ce171210b519"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=hnsw.acceptance.run"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Exact owned container and anonymous volume absent; no change to unrelated services."
+}

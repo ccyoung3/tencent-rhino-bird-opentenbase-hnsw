@@ -1,0 +1,11 @@
+digraph mechanism_reasoning {
+  graph [rankdir=LR, nodesep=0.17, ranksep=0.28, pad=0.02, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#b4b6b9", penwidth=0.8, margin="0.11,0.10"];
+  edge [color="#62666c", penwidth=0.9, arrowsize=0.55];
+  {rank=same; counts; bridge; review;}
+  counts -> bridge -> review [style=invis];
+  counts -> judgment;
+  bridge -> judgment;
+  review -> judgment;
+  judgment [fillcolor="#edf4f7", color="#004f71"];
+}

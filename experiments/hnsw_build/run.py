@@ -201,6 +201,9 @@ def create_dataset(args: argparse.Namespace) -> None:
 
 
 def build_sql(args: argparse.Namespace) -> str:
+    operator_class = getattr(args, "operator_class", "vector_l2_ops")
+    if operator_class not in ("vector_l2_ops", "vector_cosine_ops"):
+        raise ValueError("unsupported operator class")
     max_parallel_workers = max(2, args.parallel_workers + 1)
     client_min_messages = "DEBUG1" if args.parallel_workers > 0 else "NOTICE"
     timing_setting = "SET hnsw.build_timing = on;" if getattr(args, "build_timing", False) else ""
@@ -214,7 +217,7 @@ def build_sql(args: argparse.Namespace) -> str:
         SET max_parallel_workers = {max_parallel_workers};
         SET min_parallel_table_scan_size = 0;
         CREATE INDEX items_embedding_hnsw_idx
-        ON {TABLE} USING hnsw (embedding vector_l2_ops)
+        ON {TABLE} USING hnsw (embedding {operator_class})
         WITH (m = {args.m}, ef_construction = {args.ef_construction});
     """
 
@@ -527,7 +530,7 @@ def render_diagnostic_report(summary: dict[str, Any]) -> str:
             "## Interpretation limits",
             "",
             "- The sampled timeline contains sampled spans, not exact instrumentation; a short phase may be missed. Internal timing, when enabled, is reported separately.",
-            "- Tuple percentage is `tuples_done / requested rows` for this generated all-non-null dataset.",
+            "- Tuple percentage is `tuples_done / requested rows`; the input must contain only indexable, non-null vectors.",
             "- Container memory includes the database process and supporting state, not only HNSW.",
             "- Mac ARM64 results support local functional and relative claims, not production sizing.",
             "",
@@ -584,7 +587,9 @@ def diagnose_build(
     }
 
 
-def collect_metadata() -> dict[str, Any]:
+def collect_metadata(distance_operator: str = "<->") -> dict[str, Any]:
+    if distance_operator not in ("<->", "<=>"):
+        raise ValueError("unsupported distance operator")
     sql = f"""
         SELECT current_setting('server_version'),
                (SELECT extversion FROM pg_extension WHERE extname = 'vector'),
@@ -602,7 +607,7 @@ def collect_metadata() -> dict[str, Any]:
         SET enable_seqscan = off;
         EXPLAIN (COSTS OFF)
         SELECT id FROM {TABLE}
-        ORDER BY embedding <-> (SELECT embedding FROM {TABLE} WHERE id = 1)
+        ORDER BY embedding {distance_operator} (SELECT embedding FROM {TABLE} WHERE id = 1)
         LIMIT 5;
         """
     ).stdout.strip()

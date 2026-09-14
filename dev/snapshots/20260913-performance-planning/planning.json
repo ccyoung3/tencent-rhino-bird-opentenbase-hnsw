@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "generated_at_utc": "2026-09-13T05:05:11.435062+00:00",
+  "scope": "Offline planning only; no new observations, power guarantee, acceptance or execution protocol.",
+  "source": "experiments/hnsw_build/results/20260912T174623Z-bounded-crossover-formal/summary.json",
+  "source_sha256": "b7f221d7b8bbfa872f3b842f2ff267809bc4f1fd896813fac5bc94a2b3ddb1d3",
+  "analysis_source_sha256": "fade08df714615ad8db248b9369f822a368848862e2c71c32eb1e446af22a16c",
+  "observed": [
+    {
+      "workers": 2,
+      "spill": false,
+      "condition": "off",
+      "below_reference": 16,
+      "panels": 24,
+      "empirical_probability": 0.6666666666666666
+    },
+    {
+      "workers": 2,
+      "spill": false,
+      "condition": "on",
+      "below_reference": 16,
+      "panels": 24,
+      "empirical_probability": 0.6666666666666666
+    },
+    {
+      "workers": 2,
+      "spill": true,
+      "condition": "on",
+      "below_reference": 17,
+      "panels": 24,
+      "empirical_probability": 0.7083333333333334
+    }
+  ],
+  "scenarios": [
+    {
+      "panels": 24,
+      "required_below_reference": 19,
+      "null_probability": 0.003305375576019287,
+      "plugin_support_probabilities": [
+        0.13825350412890258,
+        0.13825350412890258,
+        0.2564378814963412
+      ],
+      "plugin_joint_lower_bound": 0,
+      "sql_hours_using_old_durations": 1.1727519804494335,
+      "sensitivity": {
+        "0.6": 0.03997093752135471,
+        "0.65": 0.10441141685976613,
+        "0.7": 0.22880839301398345,
+        "0.75": 0.4221552018239514,
+        "0.8": 0.6558924322848171
+      }
+    },
+    {
+      "panels": 48,
+      "required_below_reference": 34,
+      "null_probability": 0.0027576007427505544,
+      "plugin_support_probabilities": [
+        0.32818405437290504,
+        0.32818405437290504,
+        0.5714896344476675
+      ],
+      "plugin_joint_lower_bound": 0,
+      "sql_hours_using_old_durations": 2.345503960898867,
+      "sensitivity": {
+        "0.6": 0.08125713393483121,
+        "0.65": 0.2459128354297531,
+        "0.7": 0.5209887537786837,
+        "0.75": 0.8001134151599041,
+        "0.8": 0.9562674433649593
+      }
+    },
+    {
+      "panels": 72,
+      "required_below_reference": 48,
+      "null_probability": 0.003154913656833024,
+      "plugin_support_probabilities": [
+        0.5551168560489111,
+        0.5551168560489111,
+        0.8188103184473001
+      ],
+      "plugin_joint_lower_bound": 0,
+      "sql_hours_using_old_durations": 3.5182559413483006,
+      "sensitivity": {
+        "0.6": 0.15030278482135417,
+        "0.65": 0.43617933101066864,
+        "0.7": 0.77433542303699,
+        "0.75": 0.9581567459758926,
+        "0.8": 0.9974774298853207
+      }
+    },
+    {
+      "panels": 96,
+      "required_below_reference": 62,
+      "null_probability": 0.002786498881082294,
+      "plugin_support_probabilities": [
+        0.7086599055149652,
+        0.7086599055149652,
+        0.9257125520321969
+      ],
+      "plugin_joint_lower_bound": 0.34303236306212725,
+      "sql_hours_using_old_durations": 4.691007921797734,
+      "sensitivity": {
+        "0.6": 0.20900366235864412,
+        "0.65": 0.5803371228242203,
+        "0.7": 0.8964920433047164,
+        "0.75": 0.9916757020107076,
+        "0.8": 0.9998645943549815
+      }
+    },
+    {
+      "panels": 144,
+      "required_below_reference": 89,
+      "null_probability": 0.002884411926462612,
+      "plugin_support_probabilities": [
+        0.9064714507220827,
+        0.9064714507220827,
+        0.9922641105399813
+      ],
+      "plugin_joint_lower_bound": 0.8052070119841467,
+      "sql_hours_using_old_durations": 7.036511882696601,
+      "sensitivity": {
+        "0.6": 0.36239643577425507,
+        "0.65": 0.8140225325224348,
+        "0.7": 0.9859571458861774,
+        "0.75": 0.9998355240677911,
+        "0.8": 0.999999855111504
+      }
+    },
+    {
+      "panels": 192,
+      "required_below_reference": 115,
+      "null_probability": 0.0037093280633834617,
+      "plugin_support_probabilities": [
+        0.9794705381911452,
+        0.9794705381911452,
+        0.9995490894163734
+      ],
+      "plugin_joint_lower_bound": 0.9584901657986638,
+      "sql_hours_using_old_durations": 9.382015843595468,
+      "sensitivity": {
+        "0.6": 0.5429795222987865,
+        "0.65": 0.939306982276578,
+        "0.7": 0.9988884095803465,
+        "0.75": 0.9999985387022711,
+        "0.8": 0.999999999948129
+      }
+    }
+  ],
+  "sql_seconds_per_panel": 175.91279706741503,
+  "limits": [
+    "Uses the old one-sided per-comparison alpha .05/12 only as a planning illustration.",
+    "A new study must separately specify repeated-testing and cross-stage claims; old nine plus new three is not automatically a jointly controlled claim.",
+    "Binomial calculations assume independent, comparable panels and constant P(ratio < 1.05).",
+    "Empirical probabilities from only 24 panels are uncertain; plugging them in ignores estimation error and time drift.",
+    "Joint lower bounds use the union bound, not independence among the three comparisons; they are conditional on assumed probabilities.",
+    "SQL time extrapolates old selected observations only, excludes setup/cleanup and new monitoring, and is not a runtime bound.",
+    "More repetitions do not remove systematic confounding; this analysis does not select or authorize a new sample size.",
+    "The original study and its verdicts remain unchanged."
+  ]
+}

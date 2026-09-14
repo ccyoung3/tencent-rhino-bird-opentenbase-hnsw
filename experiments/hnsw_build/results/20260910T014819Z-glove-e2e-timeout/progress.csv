@@ -1,0 +1,2 @@
+elapsed_seconds,phase,blocks_total,blocks_done,tuples_total,tuples_done,tuple_progress_percent,container_memory_bytes
+0.003029,building index: loading tuples in memory,0,0,0,0,0.0,76460032

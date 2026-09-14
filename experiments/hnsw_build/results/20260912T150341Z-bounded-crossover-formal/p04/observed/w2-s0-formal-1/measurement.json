@@ -1,0 +1,143 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": false,
+  "warmup": false,
+  "command_seconds": 9.883928458999435,
+  "started_epoch": 1789228418.738662,
+  "civil_wall_seconds": 9.883955001831055,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 271,
+        "index_oid": 16739,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": false,
+        "total_us": 9859999,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 37
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 37,
+            "end_us": 9631632
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "flush",
+            "start_us": 9631632,
+            "end_us": 9771329
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "finalize",
+            "start_us": 9771329,
+            "end_us": 9791355
+          },
+          {
+            "phase": "wal",
+            "start_us": 9791355,
+            "end_us": 9859981
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 9859981,
+            "end_us": 9859999
+          }
+        ],
+        "durations_us": {
+          "setup": 37,
+          "memory_build": 9631595,
+          "spill_drain": null,
+          "flush": 139697,
+          "disk_insert": null,
+          "finalize": 20026,
+          "wal": 68626,
+          "cleanup": 18
+        }
+      }
+    ],
+    "dominant_phase": "memory_build",
+    "dominant_fraction": 0.9768352917682852
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 271,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 10,
+      "phases": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "first_seen_s": 0.008414124999035266,
+          "last_seen_s": 9.098203207999177,
+          "samples": 10
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 272
+      },
+      "observation_counts": {
+        "waiting_observed": 1,
+        "progress_observed": 9
+      },
+      "wait_observations": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "type": "IO",
+          "event": "DsmAllocate",
+          "samples": 1,
+          "first_seen_s": 0.008414124999035266,
+          "last_seen_s": 0.008414124999035266
+        }
+      ],
+      "elapsed_seconds": 9.873672707999503
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      5.2978515625,
+      4.66015625,
+      4.3779296875
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 185136184\nuser_usec 181204974\nsystem_usec 3931210\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n106885120\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=7454720 wbytes=469114880 rios=224 wios=4691 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      5.09814453125,
+      4.6376953125,
+      4.373046875
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 214215292\nuser_usec 209092339\nsystem_usec 5122952\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n195117056\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=7454720 wbytes=511848448 rios=224 wios=4765 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 43458560
+}

@@ -1,0 +1,11 @@
+digraph technical_decisions {
+  graph [rankdir=LR, nodesep=0.22, ranksep=0.42, pad=0.05, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#b60b2d", penwidth=1.0, margin="0.14,0.12"];
+  edge [color="#62666c", penwidth=1.0, arrowsize=0.6];
+  scope [fillcolor="#f5e8ec", penwidth=1.3];
+  scope -> interface;
+  scope -> overhead;
+  scope -> validation;
+  {rank=same; interface; overhead; validation;}
+  interface -> overhead -> validation [style=invis];
+}

@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "checks": [
+    "read_only_and_no_payload_privileges"
+  ],
+  "error": "AssertionError:",
+  "error_locations": [
+    {
+      "file": "verify_observe.py",
+      "line": 50
+    }
+  ],
+  "tooling_sha256": {
+    "observe.py": "be3e835383415a207e3751fb505bbea4b15cfef8935e7f1f82d510fdea0e90ea",
+    "local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "verify_observe.py": "4ea819f1ff2b8ce161de6eca75883900345687429ea6ec9c39dc935fd4d2105a"
+  }
+}

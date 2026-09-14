@@ -1,0 +1,9 @@
+DEBUG: building index "items_hnsw" on table "small" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 0 tuples
+DETAIL: Graph memory used: 0 bytes; graph memory limit: 1048576 bytes; dimensions: 32; m: 16; ef_construction: 64. Building will take significantly more time.
+INFO: memory: 0 MB
+DEBUG: worker processed 9978 tuples
+DEBUG: leader processed 10011 tuples
+DEBUG: worker processed 10011 tuples
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":320,"index_oid":16741,"fork":0,"parallel_workers":2,"spill":true,"total_us":12610719,"phases":[{"phase":"setup","start_us":0,"end_us":112},{"phase":"memory_build","start_us":112,"end_us":748},{"phase":"spill_drain","start_us":748,"end_us":1023},{"phase":"flush","start_us":1023,"end_us":1133},{"phase":"disk_insert","start_us":1133,"end_us":12601684},{"phase":"finalize","start_us":12601684,"end_us":12603097},{"phase":"wal","start_us":12603097,"end_us":12610711},{"phase":"cleanup","start_us":12610711,"end_us":12610719}]}

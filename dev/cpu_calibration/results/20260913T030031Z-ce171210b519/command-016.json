@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652",
+    "/opt/cpu-calibration/calibrate",
+    "abc"
+  ],
+  "started_at_utc": "2026-09-13T03:00:32.984062+00:00",
+  "returncode": 2,
+  "stdout": "",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T03:00:33.024588+00:00",
+  "host_elapsed_s": 0.04053912500239676
+}

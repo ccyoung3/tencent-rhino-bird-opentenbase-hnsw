@@ -1,0 +1,157 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": false,
+  "warmup": false,
+  "command_seconds": 12.189305166997656,
+  "started_epoch": 1789250805.5014179,
+  "civil_wall_seconds": 12.189527034759521,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 345,
+        "index_oid": 16742,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": false,
+        "total_us": 12170274,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 110
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 110,
+            "end_us": 11816275
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "flush",
+            "start_us": 11816275,
+            "end_us": 12046000
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "finalize",
+            "start_us": 12046000,
+            "end_us": 12065218
+          },
+          {
+            "phase": "wal",
+            "start_us": 12065218,
+            "end_us": 12170258
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 12170258,
+            "end_us": 12170274
+          }
+        ],
+        "durations_us": {
+          "setup": 110,
+          "memory_build": 11816165,
+          "spill_drain": null,
+          "flush": 229725,
+          "disk_insert": null,
+          "finalize": 19218,
+          "wal": 105040,
+          "cleanup": 16
+        }
+      }
+    ],
+    "dominant_phase": "memory_build",
+    "dominant_fraction": 0.970903777515609
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 345,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 13,
+      "phases": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "first_seen_s": 0.0025715829979162663,
+          "last_seen_s": 11.123994582994783,
+          "samples": 12
+        },
+        {
+          "phase": "building index: writing index pages to WAL",
+          "first_seen_s": 12.138940332995844,
+          "last_seen_s": 12.138940332995844,
+          "samples": 1
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 346
+      },
+      "observation_counts": {
+        "waiting_observed": 2,
+        "progress_observed": 11
+      },
+      "wait_observations": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "type": "IO",
+          "event": "DsmAllocate",
+          "samples": 1,
+          "first_seen_s": 0.0025715829979162663,
+          "last_seen_s": 0.0025715829979162663
+        },
+        {
+          "phase": "building index: writing index pages to WAL",
+          "type": "IO",
+          "event": "WalWrite",
+          "samples": 1,
+          "first_seen_s": 12.138940332995844,
+          "last_seen_s": 12.138940332995844
+        }
+      ],
+      "elapsed_seconds": 12.182553457998438
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      5.74169921875,
+      5.13330078125,
+      4.83740234375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 271094860\nuser_usec 264027425\nsystem_usec 7067435\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n111001600\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=45232128 wbytes=754798592 rios=681 wios=5492 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      5.8046875,
+      5.17529296875,
+      4.8564453125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 306826122\nuser_usec 298117455\nsystem_usec 8708666\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n198483968\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=45375488 wbytes=797548544 rios=684 wios=5586 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 43458560
+}

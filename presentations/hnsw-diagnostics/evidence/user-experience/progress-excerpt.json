@@ -1,0 +1,22 @@
+[
+  {
+    "elapsed_seconds": "20.237715",
+    "phase": "building index: loading tuples on disk",
+    "blocks_total": "1852",
+    "blocks_done": "669",
+    "tuples_total": "0",
+    "tuples_done": "18080",
+    "tuple_progress_percent": "36.16",
+    "container_memory_bytes": "174108672"
+  },
+  {
+    "elapsed_seconds": "40.316529",
+    "phase": "building index: loading tuples on disk",
+    "blocks_total": "1852",
+    "blocks_done": "1038",
+    "tuples_total": "0",
+    "tuples_done": "28031",
+    "tuple_progress_percent": "56.062",
+    "container_memory_bytes": "127647744"
+  }
+]

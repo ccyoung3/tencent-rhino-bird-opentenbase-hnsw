@@ -4,6 +4,118 @@
 只采用下面列出的证据；其余带 `smoke`、`formal` 或 `isolated-final` 的目录属于
 探索过程，不用于最终性能结论。
 
+## 2026-09-11 整套诊断开销验收（尚未通过）
+
+先看[本轮结论与剩余项](../../../docs/2026-09-11-overhead-acceptance.md)。
+
+- `20260911T014248Z-bounded-acceptance-smoke`：连接规则导致启动失败，无测量。
+- `20260911T014752Z-bounded-acceptance-smoke`：8 正式 +8 预热通过，只作流程验证。
+- `20260911T015041Z-bounded-acceptance-aa`：端口占用保护拒绝，无测量。
+- `20260911T015059Z-bounded-acceptance-aa`：19 正式 +19 预热及一次失败，Mac 合盖
+  休眠中断；没有完整 A/A，不能据此执行正式实验或宣称性能通过。
+- `20260911T052925Z-bounded-acceptance-normal`：测试把 schema 权限拒绝误当失败，已修正。
+- [常规版功能检查](20260911T053006Z-bounded-acceptance-normal/summary.json)：16 构建、
+  20 检查、4 真实观察均通过；本次耗时不进入开销结论。运行源码按预先哈希精确恢复并
+  标明运行后归档，见同目录 `tooling-provenance.md`。
+- [检查点](../../../dev/snapshots/20260911-overhead-acceptance/checkpoint.json)：
+  原始证据、旧数据保护、98 项工具测试和清理复核；状态是 `performance_pending`。
+- [四客体 CPU 完整 A/A](20260911T055049Z-bounded-acceptance-aa/summary.json)：
+  64正式+64预热、16实例清理，3/4场景通过；并行 spill 最大绝对配对变化14.64%，
+  未过预定10%筛查线，不能作为正式 gate。
+- `20260911T061330Z-bounded-acceptance-aa`：两倍规模首组并行 spill 已有24.75%
+  绝对差异，按固定样本数不可能挽回门槛；明确提前停止偏离及全部部分记录见
+  [deviation.md](20260911T061330Z-bounded-acceptance-aa/deviation.md)，6实例清理。
+- `20260911T062955Z-bounded-acceptance-aa`：全客体 CPU 配置被供电切换中断，
+  17正式+17有效预热及一次被保护拒绝的预热，6实例清理；
+  [interruption.md](20260911T062955Z-bounded-acceptance-aa/interruption.md) 保留原因。
+- [最后配置完整重跑](20260911T102954Z-bounded-acceptance-aa/summary.json)：
+  64正式+64预热、16实例清理，0/4场景通过；均接电但同版本配对明显波动。
+  不拼接前次样本，不启动正式，不据此推断诊断版本的因果开销。
+- [收尾检查点](../../../dev/snapshots/20260911-overhead-acceptance/checkpoint-after-final-screen.json)：
+  离线核对两次完整 A/A 原始证据与统计、常规功能检查、工具测试和清理；
+  `aa_screens` 保留未通过结果，`formal=null`，状态仍为 `performance_pending`。
+- [确认窗口后的完整复验](20260911T111859Z-bounded-acceptance-aa/summary.json)：
+  9/11 19:19–19:43完成64测量+64预热，16实例清理；9/12离线复核。测量前后均AC，
+  宿主负载边界采样2.26–6.89，仍0/4场景通过。不能把当前电池状态归因到昨天结果。
+- [续验收尾检查点](../../../dev/snapshots/20260911-overhead-acceptance/checkpoint-after-approved-window.json)：
+  三个完整A/A原始证据与统计、常规功能、98项测试及清理复核；`formal=null`，
+  仍为`performance_pending`，不覆盖旧检查点。
+
+上述所有测试实例及临时卷均已清理。正式新旧对照未启动，本轮不继续换配置加测。
+三个完整A/A均未整体通过，不能把收尾审计完成当成性能达标。下一步先Review测量
+方案，不自动再次要求窗口或重复抽样。
+
+## 2026-09-10–11 默认关闭成本定位
+
+前轮：[结论与限制](../../../docs/2026-09-10-default-off-triage.md)。旧开销协议
+存在版本/位置/前项混杂，保留原始结果，但不据旧比值直接证明功能纯增量成本。
+
+- [正式A简表](20260910T144549Z-bounded-triage/report.md)、
+  [完整原始索引及B排列汇总](20260910T144549Z-bounded-triage/summary.json)：
+  108次正式、72次预热、36个临时环境；流程完成不代表性能达标。
+- A：两个场景各6个匹配块，中位差异+0.49%/+3.29%，单侧上界+72.08%/+11.94%；
+  不删除异常块，仍未证明低于5%，也未归因到C。
+- B：六种完整排列、12次观察均实际采到进度；位置次数平衡不等于时段随机化，
+  耗时漂移仍存在，只作描述分析。启用计时的串行主要耗时在disk_insert，
+  并行在memory_build；阶段不是CPU或存储根因证明。
+- [新审计与指纹](../../../dev/snapshots/20260910-default-off-triage/audit.json)：
+  逐次日志、配对统计、排列、内部计时边界、身份和清理复算；全套83/83测试。
+- `20260910T084218Z-bounded-triage-smoke`：30次构建、6个环境的流程自检，
+  不纳入正式统计；smoke后加强了新入口的汇总校验，正式源码单独冻结。
+
+正式和smoke共42个临时环境均清理，旧原始结果/源码/C候选不变；仅新增工具、
+复现记录与文档更正。没有提交或推送。
+
+## 2026-09-10 已有任务观察、有限召回与开销
+
+这一轮与下面的首轮 GloVe 证据独立。最新状态、正式结果与失败原因见
+[本轮留痕](../../../docs/2026-09-10-observer-recall-overhead.md)，源码身份见
+[新快照](../../../dev/snapshots/20260910-observer-bounded/README.md)。
+
+- [观察器受限账号验收](20260910T073830Z-observe-e2e/summary.json)：11 项检查，
+  含服务配置入口、正常/取消结束、等待与权限检查；测试实例清理完成。
+- [锁等待可读报告](20260910T073830Z-observe-e2e/lock-wait/report.md)：即使索引
+  进度尚未发布，也保留等待事实，不把它伪装成已确认的构建阶段。
+- [中途观察报告](20260910T073830Z-observe-e2e/mid-build/report.md)：此前阶段未知，
+  停止观察不影响构建；[正常结束报告](20260910T073830Z-observe-e2e/builder-success/report.md)
+  仍不只凭任务消失断言成功。
+- `*-bounded-recall-smoke`、`*-bounded-overhead-smoke` 为小规模流程验证，不纳入
+  正式收益/开销统计；`*-observe-e2e` 中初期失败也全部保留。
+- [正式召回](20260910T074253Z-bounded-recall/report.md)：两项全量候选后选中
+  m16/efc128/ef1000；新1000查询平均 Recall@10=95.47%，p50/p95=29.00/44.95ms。
+  同索引 ef400 的均值为91.13%、p50=3.74ms，不能忽略代价。16,200 条原始测量保留。
+- [正式开销](20260910T075739Z-bounded-overhead/report.md)：192次正式+96次预热
+  完成；spill下开启计时与观察的增量有低于5%的支持，其余未建立。默认关闭
+  新版/旧版出现待定位的中位变慢信号，不作为全面性能通过。
+- [逐条复核](../../../dev/snapshots/20260910-observer-bounded/audit.json)通过；旧
+  原始数据不改写。本轮实例与临时卷已清理。
+
+上述 `*-observe-*`、`*-bounded-*` 均在忽略规则中显式保留；不包含连接密码或大数据。
+
+## 2026-09-09–10 GloVe 真实向量验证线（已完成）
+
+- [正式报告及两张图](20260909T135759Z-glove-formal-cases/report.md)：全量两档内存
+  各三次全部完成；1024MB 均 spill、1792MB 均无 spill，构建中位数 1414.649s/
+  326.571s；验证集 ef=400 时 Recall@10=0.8971，未达本轮 0.95 目标。
+- [protocol.json](20260909T135759Z-glove-formal-cases/protocol.json)：预登记、采用顺序
+  与 6 个成功返回码；同目录保留正式运行工具归档，不用事后修改覆盖。
+- `*-glove-formal-high-r*` / `*-glove-formal-low-r*`：上述编排逐次引用的构建原始证据；
+  H3 额外保存同一索引的调参与独立验证查询。
+- `20260909T135053Z-glove-smoke-10k`：最初连接被 HBA 拒绝，清理通过；保留失败。
+- `20260909T135221Z-glove-smoke-10k-r2`：10k 端到端，通过；子集答案重新计算。
+- `20260909T135302Z-glove-pilot-100k-high` / `20260909T135346Z-glove-pilot-100k-low`：
+  100k 容量与耗时预检，通过，不进入正式统计。
+- `20260909T135712Z-glove-expected-timeout`：预期构建超时，failed/incomplete/清理 complete。
+- `20260909T135725Z-glove-synthetic-regression`：原 synthetic 工具回归烟测，通过。
+- [20260910T014813Z-glove-e2e-verification](20260910T014813Z-glove-e2e-verification/summary.json)：
+  success/timeout/interrupt 三条端到端 3/3；引用各自原始目录。后两条预期 failed，
+  内部计时 incomplete、没有瓶颈建议、临时实例及卷清理 complete。
+- [9/10 快照](../../../dev/snapshots/20260910-glove/README.md)：59 项单元测试日志、
+  逐条证据反算脚本、数据/源码/报告哈希；C 输入与 9/6 相同。
+
+本轮所有 `*-glove-*` 证据（包括失败）均允许进入个人仓库；大数据仍只留本地。
+见 [方案与进度](../../../docs/2026-09-09-glove-validation.md)。
+
 ## 2026-09-06 内部计时增强
 
 本轮与以下历史基线分开记账。新计时 runtime/test/seed42 镜像、输入 patch 与

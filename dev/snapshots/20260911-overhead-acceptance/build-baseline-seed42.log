@@ -1,0 +1,30 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 653B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6
+#2 ...
+
+#3 [auth] library/sha256:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7
+#4 ...
+
+#2 [internal] load metadata for docker.io/library/sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+#4 [internal] load metadata for docker.io/library/sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7
+#4 CANCELED
+------
+ > [internal] load metadata for docker.io/library/sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6 AS compiler
+   2 |     USER root
+   3 |     WORKDIR /work
+--------------------
+ERROR: failed to build: failed to solve: sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6: failed to resolve source metadata for docker.io/library/sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed

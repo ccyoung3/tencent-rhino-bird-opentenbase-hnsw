@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "docker",
+    "volume",
+    "inspect",
+    "ac6de9434e1620e9eab070215c7af3329bbd34e90a3b1c81d95eb74b3cf88274"
+  ],
+  "started_at_utc": "2026-09-13T03:02:11.426871+00:00",
+  "returncode": 1,
+  "stdout": "[]\n",
+  "stderr": "Error response from daemon: get ac6de9434e1620e9eab070215c7af3329bbd34e90a3b1c81d95eb74b3cf88274: no such volume\n",
+  "finished_at_utc": "2026-09-13T03:02:11.455516+00:00",
+  "host_elapsed_s": 0.028658333998464514
+}

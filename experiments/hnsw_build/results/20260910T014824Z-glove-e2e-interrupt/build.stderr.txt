@@ -1,0 +1,6 @@
+DEBUG:  building index "items_embedding_hnsw_idx" on table "items" with request for 2 parallel workers
+DEBUG:  using 2 parallel workers
+NOTICE:  hnsw graph no longer fits into maintenance_work_mem after 0 tuples
+DETAIL:  Graph memory used: 0 bytes; graph memory limit: 1048576 bytes; dimensions: 100; m: 16; ef_construction: 64. Building will take significantly more time.
+HINT:  Increase maintenance_work_mem to speed up builds.
+ERROR:  canceling statement due to user request

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "scope": "invalid arguments only; no calculation",
+  "records": [
+    {
+      "argument": "",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argument": "-1",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argument": "+1",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argument": "abc",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argument": "4000000001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "status": "verified"
+}

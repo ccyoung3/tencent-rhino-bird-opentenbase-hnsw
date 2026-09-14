@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-14",
+  "status": "passed",
+  "scope": "repository reconstruction and minimum functional reproduction; not a new performance benchmark",
+  "fresh_export": true,
+  "source_check": "passed",
+  "existing_source_overwrite_refused": true,
+  "source_preparation_script_sha256": "c8f3d533523a6bd11bc37ffb44cf6b2d289aa674a833accf54549a38ce963c72",
+  "runtime_image_id": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7",
+  "test_image_id": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+  "docker_build_used_cache": true,
+  "matches_frozen_image_ids": true,
+  "python_version": "3.14.7",
+  "python_tests": {
+    "passed": 120,
+    "skipped": 0
+  },
+  "tap_tests": {
+    "files": 1,
+    "passed": 221
+  },
+  "smoke": [
+    {
+      "label": "review-low",
+      "directory": "runs/20260914T034901Z-review-low",
+      "status": "passed",
+      "rows": 10000,
+      "dimensions": 32,
+      "maintenance_work_mem": "1MB",
+      "spill": true,
+      "command_seconds": 3.458103,
+      "internal_timing": "complete",
+      "uses_hnsw_index": true,
+      "cleanup": "complete",
+      "recall_enabled": false
+    },
+    {
+      "label": "review-high",
+      "directory": "runs/20260914T035007Z-review-high",
+      "status": "passed",
+      "rows": 10000,
+      "dimensions": 32,
+      "maintenance_work_mem": "64MB",
+      "spill": false,
+      "command_seconds": 1.293138,
+      "internal_timing": "complete",
+      "uses_hnsw_index": true,
+      "cleanup": "complete",
+      "recall_enabled": false
+    },
+    {
+      "label": "review-recall",
+      "directory": "runs/20260914T035154Z-review-recall",
+      "status": "passed",
+      "rows": 10000,
+      "dimensions": 32,
+      "maintenance_work_mem": "64MB",
+      "spill": false,
+      "command_seconds": 1.269477,
+      "internal_timing": "complete",
+      "uses_hnsw_index": true,
+      "cleanup": "complete",
+      "recall_enabled": true
+    }
+  ],
+  "preexisting_evidence_files_unchanged": 9827,
+  "product_c_tap_files_unchanged": 5,
+  "remote_updated": false,
+  "live_cleanup_check": "passed",
+  "isolated_projects": [
+    "hnswdiag-20260914t034901z-29024",
+    "hnswdiag-20260914t035007z-30526",
+    "hnswdiag-20260914t035154z-33016"
+  ],
+  "entry_document_links_verified": 107,
+  "high_confidence_credential_scan": "no_matches",
+  "personal_meeting_sources_and_unrelated_demo_excluded": true
+}

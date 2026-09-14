@@ -1,0 +1,7 @@
+DEBUG: building index "items_hnsw" on table "large" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+DEBUG: leader processed 33464 tuples
+DEBUG: worker processed 33213 tuples
+DEBUG: worker processed 33323 tuples
+INFO: memory: 77 MB
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":303,"index_oid":16740,"fork":0,"parallel_workers":2,"spill":false,"total_us":13774208,"phases":[{"phase":"setup","start_us":0,"end_us":82},{"phase":"memory_build","start_us":82,"end_us":13505077},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":13505077,"end_us":13671105},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":13671105,"end_us":13692450},{"phase":"wal","start_us":13692450,"end_us":13774193},{"phase":"cleanup","start_us":13774193,"end_us":13774208}]}

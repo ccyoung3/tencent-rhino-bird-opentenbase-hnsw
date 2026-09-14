@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 10.028637040999456,
+  "started_epoch": 1789240481.520352,
+  "civil_wall_seconds": 10.028594970703125,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 204,
+        "index_oid": 16736,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 10002230,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 61
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 61,
+            "end_us": 436
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 436,
+            "end_us": 450
+          },
+          {
+            "phase": "flush",
+            "start_us": 450,
+            "end_us": 514
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 514,
+            "end_us": 9993311
+          },
+          {
+            "phase": "finalize",
+            "start_us": 9993311,
+            "end_us": 9994366
+          },
+          {
+            "phase": "wal",
+            "start_us": 9994366,
+            "end_us": 10002219
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 10002219,
+            "end_us": 10002230
+          }
+        ],
+        "durations_us": {
+          "setup": 61,
+          "memory_build": 375,
+          "spill_drain": 14,
+          "flush": 64,
+          "disk_insert": 9992797,
+          "finalize": 1055,
+          "wal": 7853,
+          "cleanup": 11
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9990569103090011
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 204,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 10,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.003504125001200009,
+          "last_seen_s": 9.117227874998207,
+          "samples": 10
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 205
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 9
+      },
+      "elapsed_seconds": 10.023166167000454
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      4.61669921875,
+      3.92822265625,
+      3.79931640625
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 124370737\nuser_usec 121016214\nsystem_usec 3354522\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n121393152\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=16617472 wbytes=476827648 rios=305 wios=4492 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      4.66845703125,
+      3.962890625,
+      3.81298828125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 154309977\nuser_usec 150689003\nsystem_usec 3620974\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n149417984\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=16625664 wbytes=489742336 rios=306 wios=4523 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

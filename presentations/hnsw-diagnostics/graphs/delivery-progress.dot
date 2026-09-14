@@ -1,0 +1,7 @@
+digraph delivery_progress {
+  graph [rankdir=LR, nodesep=0.2, ranksep=0.24, pad=0.06, bgcolor="transparent"];
+  node [shape=box, style="rounded,dashed,filled", fillcolor="#ffffff", color="#a5a8ad", penwidth=1.0, margin="0.11,0.16"];
+  edge [color="#a5a8ad", penwidth=1.1, arrowsize=0.6];
+  current [style="rounded,filled", fillcolor="#edf4f7", color="#004f71", penwidth=1.5];
+  current -> scope -> review -> integration -> submit;
+}

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "exploratory": true,
+  "no_acceptance_inference": true,
+  "formal_count": 8,
+  "warmup_count": 4,
+  "created_at_utc": "2026-09-13T02:17:08.802642+00:00",
+  "workers": 2,
+  "spill": false,
+  "rows": 100000,
+  "dimensions": 32,
+  "memory": "256MB",
+  "m": 16,
+  "ef_construction": 64,
+  "affinity": "0-9",
+  "slots": [
+    "plain-baseline",
+    "counter-baseline",
+    "plain-on",
+    "counter-on"
+  ],
+  "warmup_order": [
+    "counter-baseline",
+    "plain-baseline",
+    "plain-on",
+    "counter-on"
+  ],
+  "order": [
+    "counter-baseline",
+    "plain-baseline",
+    "plain-on",
+    "counter-on",
+    "counter-on",
+    "plain-on",
+    "plain-baseline",
+    "counter-baseline"
+  ],
+  "images": {
+    "plain-baseline": "sha256:3db4573bad80e77defd9e89f88f74affd77dc0ee1cd4d80ef670f6d0505b99bd",
+    "counter-baseline": "sha256:a5ce22f6c8251519757d57f92ba57eeaa967037c148d105792033d8975baec44",
+    "plain-on": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "counter-on": "sha256:3835555138a494ca0a34e93b37a4f695dcdcfebf2f361b02d75842467fecb317"
+  },
+  "identity_sha256": {
+    "plain-baseline": "ed0c3e6c4a2beecb33a469134471da8a4327d80af9bb3f9ce7bffcc5eb66379a",
+    "counter-baseline": "e76326a93212ec4778c87e950e71e4cf0465f1e5ac2eb886e62845ac995906f8",
+    "plain-on": "2cce9acce83c04ab7cd16480e4dbde8009897a0bd4920160e9951d687cad94a3",
+    "counter-on": "a28e918fb3c89fb22443c929d49fe188cb9f00f9f5acafc5df68e69792bdcccd"
+  },
+  "no_effect_based_sample_addition": true,
+  "plain_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29",
+  "counter_manifest_sha256": "5ee24073e1bec89adaf68ace1748d963deceb3ae5f0e280b0fbdcd09b5e8481a",
+  "method_sha256": "d5c39eb08f3d3d046933f6c4ad9178604a6ba70a146facc23f4975ae965e5808",
+  "sources": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "mechanism_diagnostic.py": "0ea0b1e42e8a853f99ea2c073ab7aca01357c1f20af4dd49f1067a5b5245f639",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "instrumentation_bridge.py": "0aa469d5eca24769131dbdbdfd51bca4b8c883956af7b911aa54018e571cc197"
+  }
+}

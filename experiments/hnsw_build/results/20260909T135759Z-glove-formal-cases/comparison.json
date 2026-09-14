@@ -1,0 +1,36 @@
+{
+  "groups": {
+    "1792MB": {
+      "n": 3,
+      "median_seconds": 326.57123408303596,
+      "minimum_seconds": 315.59885808301624,
+      "maximum_seconds": 538.0406294999411,
+      "spill_runs": 0,
+      "median_peak_container_bytes": 3754631168,
+      "index_bytes_range": [
+        881410048,
+        881410048
+      ]
+    },
+    "1024MB": {
+      "n": 3,
+      "median_seconds": 1414.648555416963,
+      "minimum_seconds": 1114.4684085000772,
+      "maximum_seconds": 1730.1846467909636,
+      "spill_runs": 3,
+      "median_peak_container_bytes": 2916175872,
+      "index_bytes_range": [
+        881410048,
+        881418240
+      ]
+    }
+  },
+  "sources": [
+    "20260909T135759Z-glove-formal-high-r1",
+    "20260909T140726Z-glove-formal-low-r1",
+    "20260909T143123Z-glove-formal-low-r2",
+    "20260909T145015Z-glove-formal-high-r2",
+    "20260909T145555Z-glove-formal-high-r3",
+    "20260909T150617Z-glove-formal-low-r3"
+  ]
+}

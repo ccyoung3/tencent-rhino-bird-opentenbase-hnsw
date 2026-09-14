@@ -1,0 +1,26 @@
+# 整套诊断镜像顺序对照
+
+运行状态：completed
+
+| worker | spill | 条件 / 原版 | 面板比值中位变化 | 联合单侧上界变化 | 判断 |
+|---:|---|---|---:|---:|---|
+| 0 | False | off | +0.95% | +2.59% | supported |
+| 0 | False | on | -0.30% | +3.78% | supported |
+| 0 | False | observed | -2.27% | +3.22% | supported |
+| 0 | True | off | -1.09% | +1.48% | supported |
+| 0 | True | on | -1.58% | +4.17% | supported |
+| 0 | True | observed | -2.82% | +0.74% | supported |
+| 2 | False | off | -0.31% | +7.60% | not_established |
+| 2 | False | on | +0.73% | +7.86% | not_established |
+| 2 | False | observed | -1.01% | +1.86% | supported |
+| 2 | True | off | -1.83% | +4.48% | supported |
+| 2 | True | on | -0.91% | +5.54% | not_established |
+| 2 | True | observed | -3.01% | +2.11% | supported |
+
+- 每面板每条件两次测量先取几何均值，再与原版配对；24面板才是24个统计单位。
+- 12项单侧上界采用精确二项分布顺序统计量与Bonferroni；参考线仍为5%。
+- 结论以独立、可比较的面板为前提；时序相关和不规则漂移仍是限制。
+- 正逆序只平衡执行位置，不保证墙钟中心完全相同；不承诺消除所有系统噪声。
+- 对照为seed42受控构建；常规构建的功能验证另有记录。不是生产SLA或最坏单次开销保证。
+- 旧A/A结果保持未通过；本协议不使用其作为性能准入条件，也不宣称旧协议通过。
+- 所有样本保留；不按结果追加面板或删除异常值。未建立支持不等于已证明C回归。

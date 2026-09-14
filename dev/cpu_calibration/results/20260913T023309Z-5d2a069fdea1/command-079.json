@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "docker",
+    "rm",
+    "-f",
+    "-v",
+    "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035"
+  ],
+  "started_at_utc": "2026-09-13T02:33:14.404340+00:00",
+  "returncode": 0,
+  "stdout": "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T02:33:14.476136+00:00",
+  "host_elapsed_s": 0.07182708400068805
+}

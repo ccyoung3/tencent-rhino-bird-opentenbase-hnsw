@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "verified_at_utc": "2026-09-13T02:35:56.948895+00:00",
+  "summary_sha256": "5cd65d579bf9665052ee5ce16880ddae4c64c455ed239a04c40e6a5b0f71dcba",
+  "protocol_sha256": "152350bbbb4f3ca9bfbad9db23733b88f568478edb5c8a21c23ff4d9fb92d427",
+  "source_hashes_verified": {
+    "run.py": "d7414fcd7a82c8426690dd9e6d9f29bf58778c83735821779b6e815518651099",
+    "compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e"
+  },
+  "binary_hashes_verified": {
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e",
+    "disassembly.txt": "b59ce8b7400783ae258c4ad7f03fe2f8d65a103c03f2aefffa2cb6c2535aeb82",
+    "calibrate": "f98e7d5e0174a84c3152d6521b82b98ae19595cadf7ecce7719e2a6296eb1eb2",
+    "ldd.txt": "18a90ad2bcc2d47bb090b32d44d77eb2079d5cf52fb47e12b0c21e88c46bf49c",
+    "vectorization.txt": "5ead2c7460d55ad5c34f987a00266a6b11853c7ae55e34ecfe44e1d32a6d3bea",
+    "compiler-identity.txt": "8cc43957b630e192d712cb3694fe34f81e068d09251b2caf533e8d6738f76219"
+  },
+  "formal_records": 12,
+  "formal_process_records": 36,
+  "sizing_records": 1,
+  "ac_and_cgroup_boundaries": 26,
+  "independent_integer_expected_checksum": 86303660579,
+  "cpu_pressure": "unavailable",
+  "cgroup_cpu_throttling_counters_all_zero": true,
+  "cgroup_memory_event_counters_all_zero": true,
+  "major_faults_all_zero": true,
+  "note": "Read-only artifact verification and independent integer checksum recomputation. No additional workload."
+}

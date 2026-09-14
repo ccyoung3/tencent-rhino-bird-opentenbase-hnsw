@@ -1,0 +1,70 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.37kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 ...
+
+#3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 2.2s
+
+#4 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#4 CACHED
+
+#5 [internal] load metadata for docker.io/library/debian:bookworm
+#5 ...
+
+#6 [auth] library/debian:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/debian:bookworm
+#5 DONE 1.8s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 143B done
+#7 DONE 0.1s
+
+#8 [build 1/8] FROM docker.io/library/debian:bookworm@sha256:6ebd97fa83deb272194a2cf015b3d26a4d538e9ad3a7a79d544c8af5b0a01443
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 142.95MB 0.8s done
+#9 DONE 0.9s
+
+#10 [build 8/8] RUN make -j"6"         PG_CONFIG=/opt/opentenbase/bin/pg_config         PG_CPPFLAGS=""     && make PG_CONFIG=/opt/opentenbase/bin/pg_config install
+#10 CACHED
+
+#11 [build 2/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         bison         build-essential         ca-certificates         flex         git         libreadline-dev         libssl-dev         libxml2-dev         perl         pkg-config         zlib1g-dev     && rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [build 7/8] COPY pgvector/ ./
+#12 CACHED
+
+#13 [build 3/8] WORKDIR /src/opentenbase
+#13 CACHED
+
+#14 [build 5/8] RUN ./configure         --prefix=/opt/opentenbase         --without-icu         --with-openssl         --with-libxml     && make -j"6"     && make install
+#14 CACHED
+
+#15 [test 1/2] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         libipc-run-perl     && rm -rf /var/lib/apt/lists/*     && useradd --create-home pgtest     && install -d /opt/opentenbase/lib/postgresql/pgxs/src/test/perl     && cp -R /src/opentenbase/src/test/perl/PostgreSQL         /opt/opentenbase/lib/postgresql/pgxs/src/test/perl/     && chown -R pgtest:pgtest /src/pgvector
+#15 CACHED
+
+#16 [build 4/8] COPY OpenTenBase/ ./
+#16 CACHED
+
+#17 [build 6/8] WORKDIR /src/pgvector
+#17 CACHED
+
+#18 [test 2/2] WORKDIR /src/pgvector
+#18 CACHED
+
+#19 exporting to image
+#19 exporting layers done
+#19 writing image sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6 done
+#19 naming to docker.io/library/opentenbase-pg18-pgvector:review-test-arm64 done
+#19 DONE 0.0s

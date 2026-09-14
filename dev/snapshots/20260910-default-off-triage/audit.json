@@ -1,0 +1,1574 @@
+{
+  "status": "passed",
+  "audited_at_utc": "2026-09-11T00:25:20.109029+00:00",
+  "scope": "offline reproducibility and raw-record audit; not a C test rerun, human Review, or performance pass",
+  "source": "20260910T144549Z-bounded-triage",
+  "identity": {
+    "previous_files_checked": 1121,
+    "previous_evidence_and_code_unchanged": true,
+    "intentional_document_updates": [
+      "README.md",
+      "docs/2026-09-02-project-brief.md",
+      "docs/2026-09-04-frozen-snapshot-review.md",
+      "docs/2026-09-10-observer-recall-overhead.md",
+      "experiments/hnsw_build/README.md",
+      "experiments/hnsw_build/results/README.md"
+    ],
+    "core_unchanged": true,
+    "head_unchanged": true
+  },
+  "formal": {
+    "formal": 108,
+    "warmups": 72,
+    "cleaned_fixtures": 36,
+    "observed_with_progress": 12,
+    "expected_observed": 12,
+    "matched": [
+      {
+        "workers": 0,
+        "spill": true,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.662685968023575,
+              1.7208084586533001,
+              1.7546079689309464
+            ],
+            "median_ratio": 1.7208084586533001
+          },
+          {
+            "block": 1,
+            "position_ratios": [
+              0.7965692472955855,
+              0.8312219113618297,
+              1.0323248089185972
+            ],
+            "median_ratio": 0.8312219113618297
+          },
+          {
+            "block": 2,
+            "position_ratios": [
+              0.9903338851281253,
+              1.0114844735116915,
+              1.0181660795703646
+            ],
+            "median_ratio": 1.0114844735116915
+          },
+          {
+            "block": 3,
+            "position_ratios": [
+              1.0606764682204506,
+              0.9359531416075835,
+              1.024661566525823
+            ],
+            "median_ratio": 1.024661566525823
+          },
+          {
+            "block": 4,
+            "position_ratios": [
+              1.0030455349449088,
+              0.8672814938836195,
+              0.8884290791146612
+            ],
+            "median_ratio": 0.8884290791146612
+          },
+          {
+            "block": 5,
+            "position_ratios": [
+              0.9619181081994146,
+              0.9982236105492206,
+              1.0552471163527202
+            ],
+            "median_ratio": 0.9982236105492206
+          }
+        ],
+        "median_change_percent": 0.48540420304559184,
+        "upper_bound": {
+          "upper_ratio": 1.7208084586533001,
+          "rank": 6,
+          "coverage": 0.984375
+        },
+        "position_changes_percent": [
+          -0.33102899634829264,
+          -3.2911623921597966,
+          2.84931877222101
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.8672294285414477,
+              1.0998946384823354,
+              0.35195111898763226
+            ],
+            "median_ratio": 1.0998946384823354
+          },
+          {
+            "block": 1,
+            "position_ratios": [
+              1.1129469909111323,
+              1.1857650197939096,
+              1.1193702868390187
+            ],
+            "median_ratio": 1.1193702868390187
+          },
+          {
+            "block": 2,
+            "position_ratios": [
+              0.9092479595578565,
+              0.97905371025619,
+              1.1386584274038833
+            ],
+            "median_ratio": 0.97905371025619
+          },
+          {
+            "block": 3,
+            "position_ratios": [
+              1.0303316444807535,
+              0.9624892570409578,
+              1.153925580557167
+            ],
+            "median_ratio": 1.0303316444807535
+          },
+          {
+            "block": 4,
+            "position_ratios": [
+              1.0075306214477124,
+              1.013379486654425,
+              1.1299119439645853
+            ],
+            "median_ratio": 1.013379486654425
+          },
+          {
+            "block": 5,
+            "position_ratios": [
+              0.9407090830699265,
+              1.063754577334439,
+              1.0353955634942726
+            ],
+            "median_ratio": 1.0353955634942726
+          }
+        ],
+        "median_change_percent": 3.28636039875132,
+        "upper_bound": {
+          "upper_ratio": 1.1193702868390187,
+          "rank": 6,
+          "coverage": 0.984375
+        },
+        "position_changes_percent": [
+          1.8931132964232988,
+          3.856703199443201,
+          12.46411154018019
+        ]
+      }
+    ],
+    "ordering": [
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 12.936387708468828
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 22.242348124971613
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 27.0258361879969
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 21.568524021073245
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 16.608369521040004
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 24.2621963340207
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 22.93839756201487
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 22.049530875054188
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 17.49740081251366
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 5.193681875010952
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 3.5507973124622367
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 3.680064834014047
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 3.4761806880123913
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 5.070633041497786
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 3.0602856460027397
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 1,
+            "n": 2,
+            "median_seconds": 3.617746416479349
+          },
+          {
+            "position": 2,
+            "n": 2,
+            "median_seconds": 2.7259776879218407
+          },
+          {
+            "position": 3,
+            "n": 2,
+            "median_seconds": 4.9466913130600005
+          }
+        ]
+      }
+    ],
+    "descriptive_order_diagnostics": [
+      {
+        "workers": 0,
+        "spill": true,
+        "scope": "descriptive, not causal; condition and order effects may coexist",
+        "later_to_first_ratios": {
+          "2": [
+            1.0355521341923348,
+            1.2179100183229243,
+            0.9704986026314125,
+            1.2224206689905024,
+            1.0040855532583937,
+            0.9585086637995339
+          ],
+          "3": [
+            1.039404707089164,
+            1.8631037525831404,
+            1.0775138145626784,
+            1.535289545534224,
+            0.9167442609375295,
+            0.9308008890792808
+          ]
+        },
+        "median_later_to_first": {
+          "2": 1.0198188437253641,
+          "3": 1.0584592608259213
+        },
+        "predecessors": [
+          {
+            "condition": "new_off",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 12.936387708468828
+          },
+          {
+            "condition": "new_off",
+            "previous": "new_on",
+            "n": 2,
+            "median_seconds": 20.798890270933043
+          },
+          {
+            "condition": "new_off",
+            "previous": "new_observed",
+            "n": 2,
+            "median_seconds": 28.46929404203547
+          },
+          {
+            "condition": "new_on",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 21.568524021073245
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_off",
+            "n": 2,
+            "median_seconds": 16.71372400049586
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_observed",
+            "n": 2,
+            "median_seconds": 24.156841854564846
+          },
+          {
+            "condition": "new_observed",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 22.93839756201487
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_off",
+            "n": 2,
+            "median_seconds": 20.361905145517085
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_on",
+            "n": 2,
+            "median_seconds": 19.185026542050764
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "scope": "descriptive, not causal; condition and order effects may coexist",
+        "later_to_first_ratios": {
+          "2": [
+            1.9142506793852372,
+            0.3922993228046224,
+            0.9596059564556849,
+            0.7774835527741624,
+            1.0745579124918336,
+            0.9725320597608308
+          ],
+          "3": [
+            2.0147233527119583,
+            0.3398674970363528,
+            0.8739905067012217,
+            1.0098575492993622,
+            1.0656314431030776,
+            1.0314643806057189
+          ]
+        },
+        "median_later_to_first": {
+          "2": 0.9660690081082579,
+          "3": 1.0206609649525404
+        },
+        "predecessors": [
+          {
+            "condition": "new_off",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 5.193681875010952
+          },
+          {
+            "condition": "new_off",
+            "previous": "new_on",
+            "n": 2,
+            "median_seconds": 3.5778840004932135
+          },
+          {
+            "condition": "new_off",
+            "previous": "new_observed",
+            "n": 2,
+            "median_seconds": 3.65297814598307
+          },
+          {
+            "condition": "new_on",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 3.4761806880123913
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_off",
+            "n": 2,
+            "median_seconds": 5.137385041452944
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_observed",
+            "n": 2,
+            "median_seconds": 2.993533646047581
+          },
+          {
+            "condition": "new_observed",
+            "previous": null,
+            "n": 2,
+            "median_seconds": 3.617746416479349
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_off",
+            "n": 2,
+            "median_seconds": 2.8812723754672334
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_on",
+            "n": 2,
+            "median_seconds": 4.791396625514608
+          }
+        ]
+      }
+    ],
+    "enabled_phase_diagnostics": [
+      {
+        "workers": 0,
+        "source": "B-b00-w0/new/formal-2-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9881546285088958,
+        "internal_seconds": 11.811871,
+        "command_minus_internal_seconds": 0.01558841705070435
+      },
+      {
+        "workers": 0,
+        "source": "B-b00-w0/new/formal-3-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9869454005156548,
+        "internal_seconds": 11.866852,
+        "command_minus_internal_seconds": 0.004609209026165573
+      },
+      {
+        "workers": 2,
+        "source": "B-b00-w2/new/formal-2-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9871341327548284,
+        "internal_seconds": 6.511959,
+        "command_minus_internal_seconds": 0.013923040965370781
+      },
+      {
+        "workers": 2,
+        "source": "B-b00-w2/new/formal-3-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9750924735933757,
+        "internal_seconds": 6.844116,
+        "command_minus_internal_seconds": 0.024287959088027833
+      },
+      {
+        "workers": 2,
+        "source": "B-b01-w2/new/formal-2-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9867165577364442,
+        "internal_seconds": 2.724068,
+        "command_minus_internal_seconds": 0.013498083902493185
+      },
+      {
+        "workers": 2,
+        "source": "B-b01-w2/new/formal-3-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9685111820978035,
+        "internal_seconds": 2.361632,
+        "command_minus_internal_seconds": 0.010051250064961437
+      },
+      {
+        "workers": 0,
+        "source": "B-b01-w0/new/formal-2-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9930138000044478,
+        "internal_seconds": 17.581661,
+        "command_minus_internal_seconds": 0.018808875033013095
+      },
+      {
+        "workers": 0,
+        "source": "B-b01-w0/new/formal-3-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9867057897020268,
+        "internal_seconds": 26.905547,
+        "command_minus_internal_seconds": 0.018857084100389443
+      },
+      {
+        "workers": 0,
+        "source": "B-b02-w0/new/formal-1-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9885062160246003,
+        "internal_seconds": 21.449159,
+        "command_minus_internal_seconds": 0.010742584079487472
+      },
+      {
+        "workers": 0,
+        "source": "B-b02-w0/new/formal-3-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9873235322643875,
+        "internal_seconds": 23.115982,
+        "command_minus_internal_seconds": 0.007358416001157053
+      },
+      {
+        "workers": 2,
+        "source": "B-b02-w2/new/formal-1-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9694900446637539,
+        "internal_seconds": 3.454479,
+        "command_minus_internal_seconds": 0.006632583979800266
+      },
+      {
+        "workers": 2,
+        "source": "B-b02-w2/new/formal-3-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9724695399911616,
+        "internal_seconds": 3.014116,
+        "command_minus_internal_seconds": 0.010862667031973583
+      },
+      {
+        "workers": 2,
+        "source": "B-b03-w2/new/formal-1-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9714819720196355,
+        "internal_seconds": 3.476152,
+        "command_minus_internal_seconds": 0.015097792044982405
+      },
+      {
+        "workers": 2,
+        "source": "B-b03-w2/new/formal-2-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9838863040439689,
+        "internal_seconds": 2.698636,
+        "command_minus_internal_seconds": 0.01575329194118824
+      },
+      {
+        "workers": 0,
+        "source": "B-b03-w0/new/formal-1-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.987796732739562,
+        "internal_seconds": 21.665919,
+        "command_minus_internal_seconds": 0.011227458067001095
+      },
+      {
+        "workers": 0,
+        "source": "B-b03-w0/new/formal-2-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.991997333452364,
+        "internal_seconds": 26.458181,
+        "command_minus_internal_seconds": 0.040410875075362895
+      },
+      {
+        "workers": 0,
+        "source": "B-b04-w0/new/formal-1-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9881153604274806,
+        "internal_seconds": 23.525745,
+        "command_minus_internal_seconds": 0.03588445798132511
+      },
+      {
+        "workers": 0,
+        "source": "B-b04-w0/new/formal-3-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9870648744054107,
+        "internal_seconds": 21.586957,
+        "command_minus_internal_seconds": 0.013031583941010894
+      },
+      {
+        "workers": 2,
+        "source": "B-b04-w2/new/formal-1-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9676174892278109,
+        "internal_seconds": 3.503002,
+        "command_minus_internal_seconds": 0.01499483296121662
+      },
+      {
+        "workers": 2,
+        "source": "B-b04-w2/new/formal-3-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9719133606119907,
+        "internal_seconds": 3.732344,
+        "command_minus_internal_seconds": 0.01654404194051784
+      },
+      {
+        "workers": 2,
+        "source": "B-b05-w2/new/formal-1-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9728311656603436,
+        "internal_seconds": 3.702588,
+        "command_minus_internal_seconds": 0.014907999997481713
+      },
+      {
+        "workers": 2,
+        "source": "B-b05-w2/new/formal-2-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9834452327401914,
+        "internal_seconds": 3.593406,
+        "command_minus_internal_seconds": 0.021978042030200484
+      },
+      {
+        "workers": 0,
+        "source": "B-b05-w0/new/formal-1-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9871086299231164,
+        "internal_seconds": 22.291114,
+        "command_minus_internal_seconds": 0.024051666048414688
+      },
+      {
+        "workers": 0,
+        "source": "B-b05-w0/new/formal-2-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9885727340792836,
+        "internal_seconds": 21.364428,
+        "command_minus_internal_seconds": 0.024851625029302937
+      }
+    ]
+  },
+  "smoke": {
+    "formal": 18,
+    "warmups": 12,
+    "cleaned_fixtures": 6,
+    "observed_with_progress": 2,
+    "expected_observed": 2,
+    "matched": [
+      {
+        "workers": 0,
+        "spill": true,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.0038018109882247,
+              0.9799944567985542,
+              1.0181402064741818
+            ],
+            "median_ratio": 1.0038018109882247
+          }
+        ],
+        "median_change_percent": 0.3801810988224741,
+        "upper_bound": {
+          "upper_ratio": null,
+          "rank": null,
+          "coverage": null
+        },
+        "position_changes_percent": [
+          0.3801810988224741,
+          -2.0005543201445763,
+          1.8140206474181797
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.048903553040172,
+              0.9732342275982436,
+              0.9775891855215335
+            ],
+            "median_ratio": 0.9775891855215335
+          }
+        ],
+        "median_change_percent": -2.241081447846649,
+        "upper_bound": {
+          "upper_ratio": null,
+          "rank": null,
+          "coverage": null
+        },
+        "position_changes_percent": [
+          4.890355304017202,
+          -2.676577240175637,
+          -2.241081447846649
+        ]
+      }
+    ],
+    "ordering": [
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 1,
+            "median_seconds": 7.8465314590139315
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 2,
+            "n": 1,
+            "median_seconds": 7.813899958971888
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 3,
+            "n": 1,
+            "median_seconds": 7.8816904169507325
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 1,
+            "median_seconds": 1.0194077920168638
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 2,
+            "n": 1,
+            "median_seconds": 0.9910738340113312
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 3,
+            "n": 1,
+            "median_seconds": 1.0215676659718156
+          }
+        ]
+      }
+    ],
+    "descriptive_order_diagnostics": [
+      {
+        "workers": 0,
+        "spill": true,
+        "scope": "descriptive, not causal; condition and order effects may coexist",
+        "later_to_first_ratios": {
+          "2": [
+            0.9958412834750624
+          ],
+          "3": [
+            1.0044808280092232
+          ]
+        },
+        "median_later_to_first": {
+          "2": 0.9958412834750624,
+          "3": 1.0044808280092232
+        },
+        "predecessors": [
+          {
+            "condition": "new_off",
+            "previous": null,
+            "n": 1,
+            "median_seconds": 7.8465314590139315
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_off",
+            "n": 1,
+            "median_seconds": 7.813899958971888
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_on",
+            "n": 1,
+            "median_seconds": 7.8816904169507325
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "scope": "descriptive, not causal; condition and order effects may coexist",
+        "later_to_first_ratios": {
+          "2": [
+            0.9722054724052336
+          ],
+          "3": [
+            1.0021187536252578
+          ]
+        },
+        "median_later_to_first": {
+          "2": 0.9722054724052336,
+          "3": 1.0021187536252578
+        },
+        "predecessors": [
+          {
+            "condition": "new_off",
+            "previous": null,
+            "n": 1,
+            "median_seconds": 1.0194077920168638
+          },
+          {
+            "condition": "new_on",
+            "previous": "new_off",
+            "n": 1,
+            "median_seconds": 0.9910738340113312
+          },
+          {
+            "condition": "new_observed",
+            "previous": "new_on",
+            "n": 1,
+            "median_seconds": 1.0215676659718156
+          }
+        ]
+      }
+    ],
+    "enabled_phase_diagnostics": [
+      {
+        "workers": 0,
+        "source": "B-b00-w0/new/formal-2-new_on",
+        "phase": "disk_insert",
+        "fraction": 0.9871015603209766,
+        "internal_seconds": 7.798075,
+        "command_minus_internal_seconds": 0.01582495897188796
+      },
+      {
+        "workers": 0,
+        "source": "B-b00-w0/new/formal-3-new_observed",
+        "phase": "disk_insert",
+        "fraction": 0.9837494626405355,
+        "internal_seconds": 7.876478,
+        "command_minus_internal_seconds": 0.005212416950732823
+      },
+      {
+        "workers": 2,
+        "source": "B-b00-w2/new/formal-2-new_on",
+        "phase": "memory_build",
+        "fraction": 0.9809779170798797,
+        "internal_seconds": 0.980124,
+        "command_minus_internal_seconds": 0.010949834011331205
+      },
+      {
+        "workers": 2,
+        "source": "B-b00-w2/new/formal-3-new_observed",
+        "phase": "memory_build",
+        "fraction": 0.9554706590338526,
+        "internal_seconds": 1.016139,
+        "command_minus_internal_seconds": 0.005428665971815683
+      }
+    ]
+  },
+  "tests": {
+    "venv": {
+      "returncode": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 83 tests in 0.279s",
+        "",
+        "OK"
+      ]
+    },
+    "system": {
+      "returncode": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 83 tests in 0.229s",
+        "",
+        "OK (skipped=6)"
+      ]
+    }
+  },
+  "local_fixture_resources_absent": true,
+  "sha256": {
+    "README.md": "cd556f306c6574c82886e8706320e765b7a8893a296c69e49454d1eef1c64d7c",
+    "dev/snapshots/20260910-default-off-triage/README.md": "13f6372c777f57f7e028d829a58eb7eee860c4b1de9360eabad3654be71d70a9",
+    "dev/snapshots/20260910-default-off-triage/audit.py": "45dd9afc4e08396cabf9b19d918a1a084fbc6aad0b3d6f0067fd5d1c361e2699",
+    "dev/snapshots/20260910-default-off-triage/freeze.py": "58a1827f904112695c320618c398fd00142cb0098a4f06c08bf17ae7f12088ca",
+    "dev/snapshots/20260910-default-off-triage/python-tests-at-start.log": "edc46f2edbec80c86e039d6d582404b989b0cf904e3054c483bf15010c4bc3d7",
+    "dev/snapshots/20260910-default-off-triage/python-tests-system.log": "cdec9f4014cc7bceda4bfac762f550c6fc4d15288d46d1504c5c34552f50ab4b",
+    "dev/snapshots/20260910-default-off-triage/python-tests-venv.log": "b4aa82f5e67bbaf2a7e067378d670ab7b9c10c06477e88aeba01cafd9f87af9f",
+    "dev/snapshots/20260910-default-off-triage/start-manifest.json": "0bddc2f0456fa64fd3d513777b2c621c02e3564903b58cf5df883c8c70f4d2eb",
+    "dev/snapshots/20260910-default-off-triage/tooling-at-start.tar.gz": "228bf8161ca7a73dc4affe2e0993880dcae775bb0916ed0c50d890920a32f45a",
+    "docs/2026-09-02-project-brief.md": "454a6bd8e7469d1c3b2f2c30277b8aec0e8657a6784a6698971126b8ba1b0d43",
+    "docs/2026-09-04-frozen-snapshot-review.md": "aea7bb98e43e1a970ca5e027e5b1db0a1f8f4015a422a4b66dc44351f3904e85",
+    "docs/2026-09-10-default-off-triage.md": "dac12005f1896565f4fc4764b3b3e71188600bb58605348adddb9cb59830cb5e",
+    "docs/2026-09-10-observer-recall-overhead.md": "65c6f499e8aa135b7b6bc9e35c00978467322998232114b15a86687edcc8e5b4",
+    "experiments/hnsw_build/README.md": "559cde2224eeb0f15519739228ccdc08941d1efeb2ce6b748064051290472e31",
+    "experiments/hnsw_build/bounded_overhead.py": "240d1090102ffda2129755de6141f99d8e38f46fdf6acdd1fab5487ffb50902d",
+    "experiments/hnsw_build/bounded_recall.py": "915a3f40cf379ef337f86793528712963fa8d63ebf0cc46eaac8d603c0a78eb5",
+    "experiments/hnsw_build/compare.py": "da15768912d834ecd80a0684a3c28bfaa913b1ebe1bce362ec83ca02d5a36caa",
+    "experiments/hnsw_build/glove.py": "98ff0be4928acc7e59e7cccad49664dcc43a2c69a7ce758dd6da0825400a2c7a",
+    "experiments/hnsw_build/glove_cases.py": "7757314ede0b2f402ce42c8eda8940ebef3f62c207be5d7ae0b01f88b28dc8af",
+    "experiments/hnsw_build/glove_report.py": "65dcacf5d0273188524ecd42dc706928f29607eb3a18dd1b867245f756ac4c8c",
+    "experiments/hnsw_build/glove_run.py": "56347bc2d0129f7d467d62bd997ea6945d791e62d6b30c85ead4bc8d5ead401c",
+    "experiments/hnsw_build/local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "experiments/hnsw_build/observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "experiments/hnsw_build/recall.py": "8fed0edf184dfb9375f9038f60a5e04ce9e5c9ef167f87d4b10ba920e7e0fb89",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/cleanup.json": "4768ded5b9de1dc1bf5d3081ec404945aca2e0cd0d374be8a9469dc68a5a34d2",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-1-new_off/measurement.json": "e5e5e22bf36b436bd2265f0f9791c11971ff0b9914be088a851272832a4c376b",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-2-new_off/measurement.json": "921bf3b1e1271024195d05f71c92091a33d6d2ab92e692dcfc1c888339397c6a",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/formal-3-new_off/measurement.json": "c065aae4385305a2bdf59901b33a13193aeec7c8cd58e399f750e09589736175",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/warmup-1-new_off/measurement.json": "9462c2578e18e1fac2dd24862971b4da1ed20c0b1bb4615e6ed896751733b334",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/new/warmup-2-new_off/measurement.json": "bbacc81958385cce510a5f5497b926d423ff69231a30ab53a8807d3facb3c7ba",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/cleanup.json": "69a5f11ea2447afef762833d1f707117b6fe59f24caf49f441b3ddc7149f282c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-1-old_off/measurement.json": "0432c64317fe8ef8c103a053121a918b713ef6bac85691eb5af5c2cd02215d02",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-2-old_off/measurement.json": "954f3d4710f152fc4670d737588ccec164c5318934326ea3bec4223dafadaa25",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/formal-3-old_off/measurement.json": "a42487d4597df442c943dfe0131fcbbf229d0190d5c720a76ad5eed6f8770a22",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/warmup-1-old_off/measurement.json": "76633cef9d26a96588fe34af68949e2e00cdaa104257996aa51524d764ff848c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w0/old/warmup-2-old_off/measurement.json": "c9e5dafee9febeb5768befb779dc039822eec268936c389de929a17cc072d265",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/cleanup.json": "cb5b4f45a61c82a0a30d69367d426b17d183518bc3a1d77781b6eaa3ac888c51",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-1-new_off/build.stderr.txt": "385d11633458a101b64000f9c4e62a4baac1e7af8a34f85fb127cefe3c49732d",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-1-new_off/measurement.json": "920302033fa4b6062bbce1033477457e3709a83da7abecdb87e546db5d125632",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-2-new_off/build.stderr.txt": "7388ebdfebeed133a9b4acb3ac3c66fa2a670c56a25f1609d060e9f5c90ce794",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-2-new_off/measurement.json": "b1f53213b2f14e28c00616ea6f1fda9570c76f56f6187661813377cc34ba329b",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-3-new_off/build.stderr.txt": "3e41d2e8ee2be72554c61d591e126baeea48d241d12b3441b2ae388de5dcac4c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/formal-3-new_off/measurement.json": "260585da827b28652cc2b60e292ffd34ebd84c61009fe8ffce65db0f1948cfac",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/warmup-1-new_off/build.stderr.txt": "49e8465fa5085c31b4808a891924a53fce9be34a371f8601c6008b24d17c9ca9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/warmup-1-new_off/measurement.json": "6063f400777e2eaffd3606b854c47d7909119e81dd6febd00e368c794cb46431",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/warmup-2-new_off/build.stderr.txt": "3e41d2e8ee2be72554c61d591e126baeea48d241d12b3441b2ae388de5dcac4c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/new/warmup-2-new_off/measurement.json": "f83f5cc6780d1ed05da9e961835e6bf6c2870e503ed80c0ba73ddd8651846f79",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/cleanup.json": "5eea46559de72407415852b247b556be663629274f2c455b7fd9dd51920ddacf",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-1-old_off/build.stderr.txt": "5153d18adcff7b29ea1f5dbbdc95af88626414eb0b7b8bbc31b5dded27e95ae3",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-1-old_off/measurement.json": "99cdd7acf4b62a4b3210807bc1bcaefe803a50ccb0f9834c91531026f8647130",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-2-old_off/build.stderr.txt": "cbecc203900e3779e3af799e7732b292cd01a3663a24a459b13d99ce0606e22c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-2-old_off/measurement.json": "a1c4ebd26d1de16e17e8be30a81c03844740e0896af76672144f8bf178925c15",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-3-old_off/build.stderr.txt": "cbecc203900e3779e3af799e7732b292cd01a3663a24a459b13d99ce0606e22c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/formal-3-old_off/measurement.json": "0e16b436fb06e65846ede9f0fddced4ea6e004bb4fb4d14f3acae2e0c99eec1f",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/warmup-1-old_off/build.stderr.txt": "a82f825540b53d32bbdd15f7f7e16d4890c9b7ae5e27cb989aa92b72aef6018a",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/warmup-1-old_off/measurement.json": "d6d6c0c64b0911dcc3df3c251602abc511282fd5a38642d8b67a0dc0c251fc46",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/warmup-2-old_off/build.stderr.txt": "6202fe926eaa9ca368215620991d06b00c1c684ac416f4b3b579f2d75edbcaab",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/A-b00-w2/old/warmup-2-old_off/measurement.json": "c3e6877483681e784d4fe52a725f9ed1820500da832e95b5df6747a6ba111762",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/cleanup.json": "b80f0109307e9dd51a5d230edec4f8369ce3fa917e622ba4138a0ae4fcd157ca",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-1-new_off/measurement.json": "c0a8a559a01b48fa16142c5da5ea9f2a132f39afce4623260677257a773ad8e9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-2-new_on/build.stderr.txt": "7b6d22e2d116af5498ec801b7738cef3030fd419685156149d7763fb7e763b61",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-2-new_on/measurement.json": "92cf8d819a71b6821e6b217f4acbc00902eaa587dcb4ad3008239249213fe866",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-3-new_observed/build.stderr.txt": "5d98930d8b10395120d768c56ef0350b7ae0c0581205894f6d0f20d5c0aa1ec5",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-3-new_observed/measurement.json": "3275c89121d200e96d0ef75ee9ef6f9f9ec7b16f9afdf3a3d8f73574f2356e7a",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-3-new_observed/observer/report.md": "480444ed816e275109353e3dbde6de59d57454b38bf7feeb6f3174b463432533",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-3-new_observed/observer/samples.jsonl": "5a9dbb2cd25240dd99cbc2f1501ba06fcab94761fb919accde29ffefc9b18219",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/formal-3-new_observed/observer/summary.json": "db30ec5319df39c5db2898724f062677eeb6154b241e3e099fae8f73b51ae61c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/warmup-1-new_off/measurement.json": "0321809b36ed824994cad3891cc251acf503f4341dbbe3c6dce4f63e0dbd7c13",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w0/new/warmup-2-new_off/measurement.json": "e86440429ff2130f979a3948497f2c93df38a077197c35ddf57de5a0106eca46",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/cleanup.json": "17af0013c005026edfbb8c42aef9d5e5b0d9c04b936188d5cb42a2432c5ceb98",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-1-new_off/build.stderr.txt": "1101eaf27fdce627dcb2b845afc627863c354be2f7c5e3d871cd76a83b208d2f",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-1-new_off/measurement.json": "0907b4dc575c7967bca53849dfd69b93b4023a3e26428134044bb1e96aea739d",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-2-new_on/build.stderr.txt": "84bac283631ec9322ff8827220a48d9e1fc83fd8655524aee1bef9a7431ebe6b",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-2-new_on/measurement.json": "2cab1492a8d91989e61a44535cf14a52abea4ec9f71a41245b395bf9b31d3d94",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-3-new_observed/build.stderr.txt": "dbbfb2400bf950da93c7c9b1fd6ae4bab509ec89df5e36766362d1eb92915b3d",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-3-new_observed/measurement.json": "23ac786f1fcc05822e40e9fe593d1af4d78d8b2f59ec061afb9de67e7142b2b0",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-3-new_observed/observer/report.md": "654755ff80840200f73950443a20ee0bcccd470a5da484c23dc74530c1f08704",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-3-new_observed/observer/samples.jsonl": "55d6035cdbf2839636f5882b54bbd0186e1a4700f890691c1c9988a84438722f",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/formal-3-new_observed/observer/summary.json": "58c6be83dd388dd5ee0559e33a32b5aff161187eb9102a0f3c081131803b430f",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/warmup-1-new_off/build.stderr.txt": "6b9b378b3c18f3c312f7d00b08ccef633f080b4ad8bcc94b7f4b29a631e39534",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/warmup-1-new_off/measurement.json": "d511e8e4309fc7c6e239b1345da80436a569d16822d1193f815500aac9a673cb",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/warmup-2-new_off/build.stderr.txt": "0b8d2eef5f604ebc2050dd1a0576129fb820ab1ab07767870a4c5aac0a3d7c46",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/B-b00-w2/new/warmup-2-new_off/measurement.json": "e3ce474fcd34006bda6657661a848554b6ac1a4cc0adca3a49ef5fa86440d6a2",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/image-inspection.json": "6c1af168c892d60d7bccaf41d195c391cb7e8c2f5a455d8844ed339bf7d20a21",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/prior-position-analysis.json": "075b4f13ae526b30c957cf4d9cab4d10503c92fa29c82eb6a3a2100a97abbf70",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/protocol.json": "def2772cc549abb96e05dba7b360391994f5b582ad28752dee334ed2b561011c",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/report.md": "180615f4fb24cef935cc3b5c72ee83e11cb86432b1e707f0e4438c3e75fd5cf6",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/summary.json": "92340a35fc01635e10c77f08c002323f75a70fea38124bf720e051cbbe00ad2b",
+    "experiments/hnsw_build/results/20260910T084218Z-bounded-triage-smoke/tooling-at-start.tar.gz": "7e19107becd3de9697ff0ae5f0e1d77519fc7bb4635d5a79be978a2fe83a6514",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/cleanup.json": "11a1975f699e7c55a6b5fb9c88e22a90fefc7dfca1a55f731b98256b0dba3355",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-1-new_off/measurement.json": "a2ca4b7799dd0755ac5a69a11a7f3dd3240b3c6a1265ed1a7a368d7d33cb4579",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-2-new_off/measurement.json": "79c6b3a497d5a52cde682110fac97b5324a90fca53e1f87151c0d65938717af9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/formal-3-new_off/measurement.json": "ef310521b8ffadb4bbb5625758557e233c75f9526318630cfce553385d820995",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/warmup-1-new_off/measurement.json": "a4b9eb9164bc5ed7a5d37c70f9364bc5a9606043366a5ad80740ab62d70b6000",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/new/warmup-2-new_off/measurement.json": "ec63416ddb192a23d3bb7c237c065b0737079beea8a5651a904671a569c3e433",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/cleanup.json": "a6e99c7f703159603ed23916f656cc9c37db3f530f9832a2dd60194aefcfb976",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-1-old_off/measurement.json": "f0ecde1b4fda164cd519c643552d89a488aca9ac46a8e6ee0ce3e521c6bf9fba",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-2-old_off/measurement.json": "00772019889d0e7b13f9b31371e5aa51c9c612840cc7446f50343f23a3307f1a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/formal-3-old_off/measurement.json": "7aa7cb03a2177ea7e28e90aa28acdd28ca2a57702931939f7b2d388b12eea15b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/warmup-1-old_off/measurement.json": "dc1d0052b0d29d645a5b9d881a93d80b43505ca4dbc5397535ce8a27c2dccaac",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w0/old/warmup-2-old_off/measurement.json": "fe2af8f7b27e270cda05e0290a5a0c82bb47ea86ddbc006bc7afd6574188fea0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/cleanup.json": "e68fa762c20b48b9af17f3e049ade6c23acffb6ebea6ddbebdb892ccd4a69402",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-1-new_off/build.stderr.txt": "8950f66fc0a8497f27b92950d28136b8a178381308630d65a8ae06d8e1bdce9e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-1-new_off/measurement.json": "7165b642276e721762937c1d6012686be6a2d9f14b2279eee194ee95e4ac7d26",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-2-new_off/build.stderr.txt": "cbecc203900e3779e3af799e7732b292cd01a3663a24a459b13d99ce0606e22c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-2-new_off/measurement.json": "6c58e2722277540db5217a51acf9c5633c98589f395b7eec45d4fda3cad1ce6d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-3-new_off/build.stderr.txt": "5153d18adcff7b29ea1f5dbbdc95af88626414eb0b7b8bbc31b5dded27e95ae3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/formal-3-new_off/measurement.json": "9d09c3eda8766cbbb60703b1a52f615cc1bc76ed314631695dab7d013fb71003",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/warmup-1-new_off/build.stderr.txt": "e9441c8a71bd4dd7f1a4ee6a6b0c19643fa10e01623caf4b099d461f1a6794a4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/warmup-1-new_off/measurement.json": "e631b27867435aa7f934c247fd6564d9150b1b1472d525387e8f764c88da2c9f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/warmup-2-new_off/build.stderr.txt": "3ffc372cfa72117206a5de83808294b846b59933b81a085c20452a82425ab53a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/new/warmup-2-new_off/measurement.json": "b37a86e9190826cf947aebc4379c927c4603d84cd7477c6b824ac403934b4208",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/cleanup.json": "9ae79af605ce095a80d35cf361e2f197f9a5c4869f8b6cc1d67d7b6cec2228ff",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-1-old_off/build.stderr.txt": "0748fe8c7ff615777e753081d5f25d93bc42e7f17748aea441b7dbb5fc076215",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-1-old_off/measurement.json": "4ad4bd3c6e9784f8f28c24c87305449be808f0ab048957b344eb7631567348e5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-2-old_off/build.stderr.txt": "d7ee53f48616eff181773dae3acd38a89145ce54be66dff01768207e30156a96",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-2-old_off/measurement.json": "682cc3639452f50cf6e2bee01ac5eca81d026bb01e30cf348533cd4e9c00d453",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-3-old_off/build.stderr.txt": "0748fe8c7ff615777e753081d5f25d93bc42e7f17748aea441b7dbb5fc076215",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/formal-3-old_off/measurement.json": "1a1c687fdbb32bb8428885e0a574a732a548834700daa151ef8a5550f13a830b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/warmup-1-old_off/build.stderr.txt": "8cc405b5fadc6d7487ba98129c8bad37a915082757e12aed11d06cca9c4ba373",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/warmup-1-old_off/measurement.json": "0bf79dd57cce88da11d02b5ed45da589786cabb8e969478f8b660e7978f6aa98",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/warmup-2-old_off/build.stderr.txt": "77f2caab60452aa9abad1929d092456e391dbd36e548e96b12f37365d3aac2f4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b00-w2/old/warmup-2-old_off/measurement.json": "dc5fbd9cd15a1973b4478fa5b570fae16387a8e82518875dc1c0c3aae4a78b0e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/cleanup.json": "7459c46b0c525e3f4b32dbd06802f0409e2713af691d03b7583bcb00e9a84d28",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-1-new_off/measurement.json": "6c2f2425d1fdc0461d712d2f78d4356b06b1930031f0e0fb6baf586fc5ee9a45",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-2-new_off/measurement.json": "f5bec95be7161c49aeaa0c78103f2188879c7d7a74d208cd6e82e5db1a040141",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/formal-3-new_off/measurement.json": "84807bd51a36dc1da2994eb2116441527e375a526887fcf9ad667e794cd18b3e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/warmup-1-new_off/measurement.json": "2b53bd13af39f470f9a49a707f4c5cfad91b20bcb3d90d6adcf764f9f81d9b00",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/new/warmup-2-new_off/measurement.json": "9de90a56fd96c4eba59de5fc739180abcf248abb96e3a5fdde213a8e6d739a41",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/cleanup.json": "c19edf972b36053cc8d88ea779366b08039f2755976c5b205dbfdc4b9dd0ea85",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-1-old_off/measurement.json": "337fab740d25dbaff5c097e7289cea138a015ec16ae8745d9d9b085794aa7aeb",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-2-old_off/measurement.json": "b8f188552a2d48970fb4de6c3fe2af4a183cfa125565e6772db89cbcde7fe98d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/formal-3-old_off/measurement.json": "4b379506aa44ce49d147b01f2011530cf8e705aa61f22c9ed3cb2c451270634c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/warmup-1-old_off/measurement.json": "26f1b05ed30a04c765e7195ef65948102e778af16effefd5127e6a03bbc57c1c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w0/old/warmup-2-old_off/measurement.json": "659ae568d5bfe36de624ffbfedd00494d1543b7f66d5c738bca1aa04535cd3be",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/cleanup.json": "3ed6ef0eb9e1e881c041271cdd37890c6132027fa8f5b1140a54549d640a005e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-1-new_off/build.stderr.txt": "0b8d2eef5f604ebc2050dd1a0576129fb820ab1ab07767870a4c5aac0a3d7c46",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-1-new_off/measurement.json": "694fa2111265a45121cc9bd9efae8c745c02887a43e63e103d3fe0000ba90668",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-2-new_off/build.stderr.txt": "5153d18adcff7b29ea1f5dbbdc95af88626414eb0b7b8bbc31b5dded27e95ae3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-2-new_off/measurement.json": "9763531fc1824941d74d97abab4fb363edcd42952caca5fc6489c01d6c7c8c95",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-3-new_off/build.stderr.txt": "d97c35e4cb93c908e51254deebc49b3c1c3e91b77734f34c52073219bc89b76d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/formal-3-new_off/measurement.json": "c74740d3c30ebc6cc3fab46784f3a34665b32b7f6e637b57af0abeaf114fb28a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/warmup-1-new_off/build.stderr.txt": "42c7ea010e9d42eb7999d1ee79e25c89e2dd2fc5c641d6e555ae74c54df6351a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/warmup-1-new_off/measurement.json": "b4cb959e5aa34abbbf1c793e79c77c243b3051c8bdd9b7c65d7dfa6afb9ad60e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/warmup-2-new_off/build.stderr.txt": "0c01c6bd96cc6887d91a087a7b0628bfc8204eb55bf9a27f7958f3f54f353bf8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/new/warmup-2-new_off/measurement.json": "e3772cd70cad595df9ea658f8194fd514b55ec8ae47c044860e9a2fdfad0e435",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/cleanup.json": "acc7e6ff558bdcd617993fb81de18da6792a9068a6dd7b32829809a32a85c6a4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-1-old_off/build.stderr.txt": "7d293b28d0532a20ca6024c796ba8cb8c4464b7f1afe5dbae25be38f07a4a7d0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-1-old_off/measurement.json": "893d554fbc293567f61241b270802e7629c1c36a81a15c9db8ec029cf94fa018",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-2-old_off/build.stderr.txt": "582c77efbb37a51a43d55effcc8c21798eacfff970e0aed8f4e3ddb1954eec31",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-2-old_off/measurement.json": "ec71b6c6aaca5928adcf65a6bd00f221dfae35f762e4affce75f267d5ea976ee",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-3-old_off/build.stderr.txt": "43ba72eb1a02daa479a005c4dba2ff1868c78627507b0805331995e9065dbb1a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/formal-3-old_off/measurement.json": "3c806ca821e57a58f16edfaaeb6792f85eac5fcc6a7c80caca0cf8bbb8190a40",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/warmup-1-old_off/build.stderr.txt": "a82f825540b53d32bbdd15f7f7e16d4890c9b7ae5e27cb989aa92b72aef6018a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/warmup-1-old_off/measurement.json": "3b6fc148ef20f651f26886c8a03822a1512485d8da5d8ec9e9f2486c80626ddd",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/warmup-2-old_off/build.stderr.txt": "385d11633458a101b64000f9c4e62a4baac1e7af8a34f85fb127cefe3c49732d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b01-w2/old/warmup-2-old_off/measurement.json": "cb1ee46c4d96f1b5c8023bf51df0ef593b805723b96e36e286e139c800c07f10",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/cleanup.json": "5a6be8d0648ec9a1f18e933b2ce0260136e8a15e18c164f7df7b4b3574e93f07",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-1-new_off/measurement.json": "2f3067f77b14d6fe044d567b4bab37b48d13d4a20043962b0c8bbb3b9aa086fc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-2-new_off/measurement.json": "809c80afcae2c6b30fc3081d2c2bc4ec6a5c7c527fd1cebf8b7b9a47e276b4f4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/formal-3-new_off/measurement.json": "980ed26c4f28562ced9c81f4a1e2e870907fc6a8d429746a92b3f1216302cba3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/warmup-1-new_off/measurement.json": "56a9cd9ed3a4afe6909071d0f4e6698bf610d8eac257e314dd3e3f0fcd5c9ba4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/new/warmup-2-new_off/measurement.json": "c5d07666dab58039a694870403618ee6fba663f913c554a9a1ac8fbe311a80b4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/cleanup.json": "9ccc422eb32c1b2cf1552dcd983cefe322abae931575c18d78d1a21be87d1d2e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-1-old_off/measurement.json": "19751faf0525aea42415ee9eb1e803eb666e1fb2fd9526a0535695e2aa3356e7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-2-old_off/measurement.json": "a8a821e2e1642b8d2e7b4afe241ea7b8f3f3d9086b8babac8dd658292db7f35f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/formal-3-old_off/measurement.json": "170572d5416b1d94b8ea4e9e9fde09247251a1b93c570d77e17d654cbee3c2e8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/warmup-1-old_off/measurement.json": "c375c8d411cfb9f4ab182a1de79c4cc2cbcf464560058a951bb6e4c6283ef99d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w0/old/warmup-2-old_off/measurement.json": "0e6b905b45d510d6cd41108e7c386c148fae480d7bac1eef55550521db9244e0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/cleanup.json": "5043d26f435950c5b05afc42d27b4aa08c3d5b049b03422f78b01799c1c82689",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-1-new_off/build.stderr.txt": "0b8d2eef5f604ebc2050dd1a0576129fb820ab1ab07767870a4c5aac0a3d7c46",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-1-new_off/measurement.json": "d861d541487cd4c8962589a3156e9be465e3b9f2abeedc11766359d33fde566c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-2-new_off/build.stderr.txt": "06bc2011ef5c544b9e1c641517612a7947f28813cc7904a3c3d1e99c09aa8d65",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-2-new_off/measurement.json": "3319ca73e9d0c3a119b3fcdfebb45c1464f38d320fa84166d5e16e01d189685e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-3-new_off/build.stderr.txt": "2adae6de13776e7660cb6d743c6f42a6779128f4ba2c2480a15835db0f1aaaf6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/formal-3-new_off/measurement.json": "7d0b95d12e82f381f5dc3d04c66adc2609c451cd040764a707792cd3b1e0abfc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/warmup-1-new_off/build.stderr.txt": "79b9e2fe15131cd25651e844f2895fa1be5e16651390b0538b1a3ea9af09ef36",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/warmup-1-new_off/measurement.json": "5c634af47642e2b32e14b7381488cde71b308a8c9089002e4ad7b64499335296",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/warmup-2-new_off/build.stderr.txt": "b39cf8db099d60afaa4cc9077f39e331dbc76496f81c7d643fab3f4290ab49d9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/new/warmup-2-new_off/measurement.json": "3f6fc8d0182c787b6396e9f793a0abb01d0f4bee9442e0a8669b833192ab7694",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/cleanup.json": "d767bf064e75d1038f136814ccdd0badac36a3e8e8e8ea920b144013b0dd3131",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-1-old_off/build.stderr.txt": "3e41d2e8ee2be72554c61d591e126baeea48d241d12b3441b2ae388de5dcac4c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-1-old_off/measurement.json": "ef585de6443f6000c9674ed920a46ce6c6675874262e4ef86d426ce1632320e9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-2-old_off/build.stderr.txt": "3e41d2e8ee2be72554c61d591e126baeea48d241d12b3441b2ae388de5dcac4c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-2-old_off/measurement.json": "ba94ac7b6d8d353af4c99b4e1af6592254eaf7bc3902498c6b5171feee8929eb",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-3-old_off/build.stderr.txt": "3e41d2e8ee2be72554c61d591e126baeea48d241d12b3441b2ae388de5dcac4c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/formal-3-old_off/measurement.json": "24c5969aff2562b09ac9262e795c53acc9470f32b013c25d9e4012bffdd1d3af",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/warmup-1-old_off/build.stderr.txt": "85eb03c6b7e76eb61f8aeafad747380c479837747c8fd486282963924f3ccf10",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/warmup-1-old_off/measurement.json": "968437a14602a7de4f033086407226e0526578eceb7e79d4728a191a01c583a9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/warmup-2-old_off/build.stderr.txt": "84daa8574e056c0c631d2d346952bef7cd141f6fa0a60f46c4f000de2381f406",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b02-w2/old/warmup-2-old_off/measurement.json": "f063ec2dd8fc914f30ae005fb1c10a1bdf01a8ac7cd5d1255f9aa70d42bfca3e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/cleanup.json": "6499d1f4469c8bc35fb773f293f99bddb965fbc69e4a31d131a32adc341ef987",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-1-new_off/measurement.json": "ec904581307e736edf67eb1d8dfe7397eede795efa3a123f56ff26af2f064c4a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-2-new_off/measurement.json": "a06db836e88a59804fc7091c380c884ef694410bc72d9c5389f24c1a38e77a15",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/formal-3-new_off/measurement.json": "acb3b28a72cd257fe5d3bb3b9b97a0c08619fe9643aaecec57ed2f9a38b19835",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/warmup-1-new_off/measurement.json": "4d62a6448c39578fa2caff5b3ef1ecda1e4c738b111742a95fef8411a4623d19",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/new/warmup-2-new_off/measurement.json": "b71ed1db89883170eb4ea2f0bd7f44cf1a8a01720c90674990181adf2db11572",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/cleanup.json": "e905d9c387ed2039fde88102083362c323663f5397eb52d30185b2d4ccc5a623",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-1-old_off/measurement.json": "08b180dcbdcb43f6143c0d4c94d2bf6fd1cb1bba5762ca48bddfa3ebfea2765f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-2-old_off/measurement.json": "ea67258ed1469a392e899948c1836a788654cf91ac861cd97320730abb4ed756",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/formal-3-old_off/measurement.json": "04e1bbf7e1332e517898487698706b757501abc4a76906218bd601494973e5dc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/warmup-1-old_off/measurement.json": "dd72acafab5edbc59e930f2c00e38ca42a5bbcad66538c68e5176007d274164a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w0/old/warmup-2-old_off/measurement.json": "e9db33f15383076a958f6ca4f3ff049d3b6a96e93f9332ea7b64a140328056d3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/cleanup.json": "8c19bdb0c39e53dbbbd2692a9162b286a58626f442438d89879f4b7c4ef56787",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-1-new_off/build.stderr.txt": "5153d18adcff7b29ea1f5dbbdc95af88626414eb0b7b8bbc31b5dded27e95ae3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-1-new_off/measurement.json": "d838a5c175ef4a233ba155f0c06c47bbb81782159a902e723125d485feaeaf02",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-2-new_off/build.stderr.txt": "7910c54d40b1168dbde81956154f7602a8ab0b6e9d8d506ca669842e73502e6e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-2-new_off/measurement.json": "0a3112f8a453d025d0bd7bfa78d81d4a14079cde1b502e7d1a329763a96bd063",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-3-new_off/build.stderr.txt": "99a7762749dc155ba8b10f97b4c10a8d2608817e8790829ee388c2a0d46abea6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/formal-3-new_off/measurement.json": "04d34475000a8ef7988b32c27bdc1e306e2f6ec04ec6b74e09a6e51b701837e1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/warmup-1-new_off/build.stderr.txt": "4b03a6e711102d3493c1e5a6b43aa533ea16b64fec7ebd1a0c5af0f6b7f45a6b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/warmup-1-new_off/measurement.json": "b2fc1bd49090e105cb0039b5ae391a960f221be9d652d509c89292d029aa3609",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/warmup-2-new_off/build.stderr.txt": "636e96a08849ca7f0a1dcdb0fc6c2ea6e1f8a0b2ab000d945ae29ebba0240fac",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/new/warmup-2-new_off/measurement.json": "8ba4b79bd43c79122928fddb65427842a969d2fc14c03932cf32cc3eca63b662",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/cleanup.json": "ee6c3e0de21469885542e5852c44f0b3b2e7a7ad861145adf78044ef061d38c3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-1-old_off/build.stderr.txt": "5a68c009b9c5ba93d07eac40c1d6d413d7ef866e588df3916b3e3723099b4dd6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-1-old_off/measurement.json": "4d14b6cd14030b7995001fb445f0da4c610b5df43cd55b2680311e168cbc1948",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-2-old_off/build.stderr.txt": "43ba72eb1a02daa479a005c4dba2ff1868c78627507b0805331995e9065dbb1a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-2-old_off/measurement.json": "bac0ab25815fdaa2fd9773d511645a13691150a5982ee0730fc49ae0e1b4b9f8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-3-old_off/build.stderr.txt": "99a7762749dc155ba8b10f97b4c10a8d2608817e8790829ee388c2a0d46abea6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/formal-3-old_off/measurement.json": "67a232567e5a78b8a64c6648de4de049d12a8da7797f0e2c77efc879d5123863",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/warmup-1-old_off/build.stderr.txt": "db08a93e28cc102549f4689a040b56a98c4d52e4ade0560cc512df8b9c624c61",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/warmup-1-old_off/measurement.json": "a04f9c231b5f6dd09bcdd773373dbc342920f57a1f684aa5a17ef925467cbb88",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/warmup-2-old_off/build.stderr.txt": "5153d18adcff7b29ea1f5dbbdc95af88626414eb0b7b8bbc31b5dded27e95ae3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b03-w2/old/warmup-2-old_off/measurement.json": "f17b831cd2019a23201560d54e8ca4b419e6d981dfbeb81883c288b607cdf007",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/cleanup.json": "86656ab1a6ca32e4450211f2a38661a40cd73933822cb830b30a365ea4842d3d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-1-new_off/measurement.json": "ab60d5bd72e2b1c140f01401d038ca8e27f39eafa7b866ea9fdb8318245216e8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-2-new_off/measurement.json": "32871abb2f62af5f09494a3944c9bc32e5d9b37daf87a511e0e13c9ef71914d3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/formal-3-new_off/measurement.json": "150d1a6aa9187260a22167dfdb39fa3b571d1bd1995a8266bbaf79b5f0261dbb",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/warmup-1-new_off/measurement.json": "eeafda4cf22187cc89918d384c1a1350d3c6cda64be4ae5d15f86ab0d2b17ba7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/new/warmup-2-new_off/measurement.json": "de30665c973744e5e68e0aa77fbd532bd95aaf7a213851c8da3c2147c6b34547",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/cleanup.json": "3e64755021be2110731b3c09804ca3154ca696ae60e20dbf3322a66012d468bb",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-1-old_off/measurement.json": "44a771304e396570e66f2962de4373146d7a1fe64a21677ac184569dc1e6d7dd",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-2-old_off/measurement.json": "7077da40c388ad116b45574d2354fee58f7a621f865604e53a4f16caa35dc8c1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/formal-3-old_off/measurement.json": "32f8e6bd2630727b9c62e3295ca94a78ac86c858f0d9635b1152b45f38115b67",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/warmup-1-old_off/measurement.json": "3ad2b9de80efc024c9be7b332ad7b4d99f04b42685cb52661dfbd045eac8def9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w0/old/warmup-2-old_off/measurement.json": "5b8993a5717ad9d538edbf4c9957cacdb918818001f44f23c1a4f6a4868af283",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/cleanup.json": "9d523edb41a60f1e8b29a4d0f62e0f8bd24d4104ecb03d85af00beb7bdda9c65",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-1-new_off/build.stderr.txt": "0748fe8c7ff615777e753081d5f25d93bc42e7f17748aea441b7dbb5fc076215",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-1-new_off/measurement.json": "10e74abfad0bf1ba4932a98588094c27139c707682ed9cbb430abbe1d3d8d613",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-2-new_off/build.stderr.txt": "7d293b28d0532a20ca6024c796ba8cb8c4464b7f1afe5dbae25be38f07a4a7d0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-2-new_off/measurement.json": "b91f5a08b78e4bd1df7f2108461d66900d5b1b9c325515b4f772b7083d052845",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-3-new_off/build.stderr.txt": "3bcc0a9aeb1fb1a63bef5f8fc07680be6c1607defb875ead79de99ba121ba8d2",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/formal-3-new_off/measurement.json": "0194c3ae794d76b41f142f3c8ea792d4f86ab6920fface8c85d2a32f2130cb30",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/warmup-1-new_off/build.stderr.txt": "49e8465fa5085c31b4808a891924a53fce9be34a371f8601c6008b24d17c9ca9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/warmup-1-new_off/measurement.json": "e7982c4386bb03928247e206de0a9b827561ad7558462c00f03ff2063bc6efe6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/warmup-2-new_off/build.stderr.txt": "50356164687b7b4608bca04fd8dfc8bbe82d43f0c6b89b3af2a5bdbeaa5e1960",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/new/warmup-2-new_off/measurement.json": "0507b390eee98794eee39f220dfccba16bb67ada4b38b9cc09aab0029f36b9a0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/cleanup.json": "bc5b2dab4da46f07fa84b34d41cb7559ca5b8db547bcbddcbc48352aa99efbec",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-1-old_off/build.stderr.txt": "45e5a56a473f5694e2e32298762e992fadefdc9a86c2f395ccf076b5fba3c623",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-1-old_off/measurement.json": "004bd35ebf26106eed9069997c98f0bee9aa0777e1fa118f75a1437dc1888841",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-2-old_off/build.stderr.txt": "0b8d2eef5f604ebc2050dd1a0576129fb820ab1ab07767870a4c5aac0a3d7c46",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-2-old_off/measurement.json": "d31eaa239a297e0a2711c2d308ffc924135235189459cbda4521d23bef4ff799",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-3-old_off/build.stderr.txt": "43ba72eb1a02daa479a005c4dba2ff1868c78627507b0805331995e9065dbb1a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/formal-3-old_off/measurement.json": "ff2e11f0a2e43d2c5c853224a101ca41d4cce37c84d9068d50b9285ebf5a05c9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/warmup-1-old_off/build.stderr.txt": "613d6acd43ace95cc19af127378bbbc77754dcf8a9b3f049273ef3ee7e9b2034",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/warmup-1-old_off/measurement.json": "534d56d1433f4771648dfeca0ddb83918280f3652350fd3cd112c87d0c9049c3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/warmup-2-old_off/build.stderr.txt": "9195234b79f475143bfd3abe35c5d3574c60600e8b97745a69d60df36a84b3f0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b04-w2/old/warmup-2-old_off/measurement.json": "ce68571182263e14fdf9a366955cbdf18153a0b98fce49c9b6eb381c36cfecfe",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/cleanup.json": "0a9bc39d63345c6861616517837406c9c526743a7bdabafc1944e4761fdde6e5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-1-new_off/measurement.json": "71c8e11dd43add5a422a1dff4b2866ed9469add940a113807a6f34a3ad9cc302",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-2-new_off/measurement.json": "7def341d9f51ebad6d70fde33f013d75c10e6ff552bd75bda12c7d3913c595eb",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/formal-3-new_off/measurement.json": "cf8298586c235ef753f29c8e8b339f81d1261faa860a68f05222db4ad9860cf2",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/warmup-1-new_off/measurement.json": "157cb0912639e4b4156f347a6b445bc73b248cb275176bc295fedf254150b41e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/new/warmup-2-new_off/measurement.json": "95a00bd6f08d7a1b526e4533bd9e3c9e3d8111d12dcc2e15af6dcc289ca5e42b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/cleanup.json": "e8a970cacd8cf7dce83bc7b7105fad05c6ccd89686e5913bd41d42c057e383c7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-1-old_off/measurement.json": "052f193213f3d1a8b6ab8987e1946a157a11cfcd094f18d2da60bae73623a761",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-2-old_off/measurement.json": "73b2a53bbd62f3edb671b8ab4bed500decf55786b47870789b1317ae4a5e72fc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-3-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/formal-3-old_off/measurement.json": "1e3745dddc0bd4af33dbd4fe449ddea7dfc5409f64d40b867734e3fd823538b7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/warmup-1-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/warmup-1-old_off/measurement.json": "3c2e0608c08a3c6ed44e4fd952cb4de5aba6c7a244ce4d195c53106c74051106",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/warmup-2-old_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w0/old/warmup-2-old_off/measurement.json": "2a5dab3ae63612f05f86abfd8b184ebb6e5635a80e0657e7b8c8b75d2ad8e7e9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/cleanup.json": "30b1c668fff4ca996e472fb09b00f6672218fa603b9a746c43b7bbcd581ae0c9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-1-new_off/build.stderr.txt": "7388ebdfebeed133a9b4acb3ac3c66fa2a670c56a25f1609d060e9f5c90ce794",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-1-new_off/measurement.json": "5f58306b145e5f7d5f3a38aed3cafa9ecf11e33dea321c7ac2c91138b26f137c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-2-new_off/build.stderr.txt": "915a7cb4becf7cdb5f06f75b9863d8bdc3698bd31a5b849b2d24a3a20f854a20",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-2-new_off/measurement.json": "a8f92490ab115512fee4589e20ea8fe0ef0dc6e645f8cb6c4c2c45054b1e9e2b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-3-new_off/build.stderr.txt": "316f999f5074c6ca7e0f88cf415046642252fdc68d8b309e77dbb69e87f16318",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/formal-3-new_off/measurement.json": "116493213edd38f005e44def98f8e2cf3f02ec201902fbe0a22f4f1ee8ad93d1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/warmup-1-new_off/build.stderr.txt": "7062f62999a6828829be3a09ecd06d562c7a352422c3cf52e472361d83f9ff8c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/warmup-1-new_off/measurement.json": "c63c85921829fe05816fa032c8fd919c34df69ca9a7e844707bdab91cc8b35f5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/warmup-2-new_off/build.stderr.txt": "7d293b28d0532a20ca6024c796ba8cb8c4464b7f1afe5dbae25be38f07a4a7d0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/new/warmup-2-new_off/measurement.json": "8429130688cb84cd01d85e24754cabc691ca48f2d1f9d722531d19658ceb5434",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/cleanup.json": "cf0574137d10484cd36328519ec7ab94536b8fd112d6dcaca7630e450f9bdfc6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-1-old_off/build.stderr.txt": "0748fe8c7ff615777e753081d5f25d93bc42e7f17748aea441b7dbb5fc076215",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-1-old_off/measurement.json": "1e8554bc5b896c835c7c64c170a9c61a48cc0bba0af6c32551d4d656c4f6a166",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-2-old_off/build.stderr.txt": "385d11633458a101b64000f9c4e62a4baac1e7af8a34f85fb127cefe3c49732d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-2-old_off/measurement.json": "2039ad0a85cec804b0767fb2ab9418452521c86e8ea62c3d937e29f4f1c07545",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-3-old_off/build.stderr.txt": "50356164687b7b4608bca04fd8dfc8bbe82d43f0c6b89b3af2a5bdbeaa5e1960",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/formal-3-old_off/measurement.json": "7a8dad5664aca8960b31f2a7cccfcec3b1a7eb1803c5ee9eb8bf0dadc1f8465b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/provenance.json": "d9f9293fdefc607cd4e86f2bce495c7d2da72c963923c021c4a01b9d97b0581e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/warmup-1-old_off/build.stderr.txt": "c2c6e5efc9e06ae2090e435d651e6000773b23c40c91f3bfc940203114f89e17",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/warmup-1-old_off/measurement.json": "0bd82833cd193488efc9b53085c6efb3a5316cccc44934fb77c659190bb7b9fc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/warmup-2-old_off/build.stderr.txt": "0748fe8c7ff615777e753081d5f25d93bc42e7f17748aea441b7dbb5fc076215",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/A-b05-w2/old/warmup-2-old_off/measurement.json": "0d8355df7117304cc5f1cd966f4bcc60318436467073032a25f074768bab8f0d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/cleanup.json": "b0516b12e0d50d31ed7ce411ab8741a6bdc7f2c60bb54ab2e082cc51c21af5f7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-1-new_off/measurement.json": "3197cf39fe8de197f0382b4450222b396f73561cb369abd5f953596a746afa64",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-2-new_on/build.stderr.txt": "1fff0dd8c73300703cc8c03c3529fa8768e72c016691da60a07a9ed929b9d512",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-2-new_on/measurement.json": "79f70108d59c3710f2eec70d05beec9b6e96bc2fb32c92eca41abd0a730549d7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-3-new_observed/build.stderr.txt": "06239de898ebbeb5de5e54935eb3358b0e6074265a6d3f1f2b98b90c31d3ab8f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-3-new_observed/measurement.json": "303a2222a40b2f8fb38844ea86e10a409fa60b2d45c6a31093e5aaa8af604993",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-3-new_observed/observer/report.md": "9b36e06258fa4317a17e52fe0b8ef10258571c37a184085c93371d6e26c829ff",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-3-new_observed/observer/samples.jsonl": "a95a3cff6de76cf9929b78fed16d01f26484b5ccdf7409a8f6fef93e5151c0ea",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/formal-3-new_observed/observer/summary.json": "a28b5c345ce557a7284c998c3c182982b501382b7a9f9f344eff082e5e40e535",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/warmup-1-new_off/measurement.json": "91c0cdec05a4b6b86aed3cec2323a200c3b2bf6df768385f164306c48921685a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w0/new/warmup-2-new_off/measurement.json": "b8e47b5161860e40cf203e8f463f7174ccc38799c5eeb255aafc64c0b5d31dd9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/cleanup.json": "b819e24829ad926b72a5be5b1a00a1f319ef5ba5bee8b5c7c889f17b1672f42a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-1-new_off/build.stderr.txt": "0c01c6bd96cc6887d91a087a7b0628bfc8204eb55bf9a27f7958f3f54f353bf8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-1-new_off/measurement.json": "d5c0d44bd37aa17871bd0e8d98f07c8c243d136e8698936ec0dab3c51ab1d41e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-2-new_on/build.stderr.txt": "067e66d04d33fd17a942bc55c37798d7d1fa5c1541a65ce93fc4f37676a6988a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-2-new_on/measurement.json": "8ec9dafd36077dc6e333a4c38eb55f1d49296a2cf6659d3b169a06ea086a9999",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-3-new_observed/build.stderr.txt": "b3b4f7a88276531316ee042c94f50585b47746395c399e6c324a39d6d3235b73",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-3-new_observed/measurement.json": "b7cf0178c4faa41dbe03b58cec7d94263b9442a3af5e3ae6583c6262b20e0269",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-3-new_observed/observer/report.md": "da15c3d16375c62f17f584e3bfb72afb6573ec830dd6679ea8e1553183a86348",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-3-new_observed/observer/samples.jsonl": "9bc7a9baf4be2be3224770a3e725a82e213105f0755d24a7e24a79401dc8c0e5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/formal-3-new_observed/observer/summary.json": "aaac19917af4f2616ea7e68484e06a1b0c845b0f447a6bfb8746d05a0c1c73d7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/warmup-1-new_off/build.stderr.txt": "01a95526ee7261fc25ba8ddd516f0e5ca0bc403fa844119cd07d5454c7f76fd6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/warmup-1-new_off/measurement.json": "66b189f9f356acbf05f7f323cb1f58dff18cbc3dab15ae60feaab9fa4ec67b8d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/warmup-2-new_off/build.stderr.txt": "cbecc203900e3779e3af799e7732b292cd01a3663a24a459b13d99ce0606e22c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b00-w2/new/warmup-2-new_off/measurement.json": "524dc6e948ad925563d28b4e5cbe4cf2e7609df0bc5971b48176744ff93b31d0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/cleanup.json": "594caa81c68d645cb986ae313085c2f21248559043aebfb5ec3e181d7d3b61d5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-1-new_off/measurement.json": "cb0437bf2d2365b7f1247ecb7890ea8aeda7f60ed699fbfc47379fc9da331b72",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-2-new_observed/build.stderr.txt": "a02aad6b1b7cbf64b27d25d798b7d153b9fae896bb1cca09d7c701c7c262df0a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-2-new_observed/measurement.json": "d6c1eaccd36054075923d721eba280da04904adb951e895e479f6687ea68249a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-2-new_observed/observer/report.md": "516886a1dcb89bc072b1096ee459d6ab11ff432e5ce954d6886d773c2d475074",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-2-new_observed/observer/samples.jsonl": "9576c6f6f03a0e8300ee8c599487f8e0ddadf04e32ec89df503bbfc94002e10f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-2-new_observed/observer/summary.json": "94adc929efd29f85748de7f99b3d6e0eeefd955f815f6c26362fd1c180e8f1a6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-3-new_on/build.stderr.txt": "d15151b2839a836c7670b75b5a817b57713308f6bd4f12aa1413a16ac3ae3c67",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/formal-3-new_on/measurement.json": "4417afa2ca04014a2b6960544b3a6e453ca9d151da4531dafba0bfd3e085e977",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/warmup-1-new_off/measurement.json": "f3f8671563d1cc4169b378958e6074d034eabe58d10468524f60f856bd09f9cd",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w0/new/warmup-2-new_off/measurement.json": "d589c7f20bde7839c8d9d5cf34f095be21cd9fb4c2165576218a07c556f57681",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/cleanup.json": "a586381a43b15398c6dc8912fa073c41b0f856c96da22bef7079b5d2f165bd05",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-1-new_off/build.stderr.txt": "9bd1e810c8c0ddfaf8f041817c5beefa46dcd0f1ce3f91049485e6153b2e0bf6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-1-new_off/measurement.json": "af12fc4bf329b8c1ffae011bbb3d1d25a1a7959220f150304edc58a2167b550d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-2-new_observed/build.stderr.txt": "1064a16cc9814f57678c9c14b9b91e31d1ac7a72051638f1da2a3f202d756c82",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-2-new_observed/measurement.json": "dc0a8b2d1ae5a0bf1a9bd649e4085c413960809176fc37efaa53a3ffd0fe3eaf",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-2-new_observed/observer/report.md": "3b6c54333aab7c2f3a99b75da2f5f618b0508c02a9e6e7a35da9681681e0bac4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-2-new_observed/observer/samples.jsonl": "d4f9c5942afed96c0db5ee6b870a18bffe41a14f768ccd4cc7cc86e2a7459aaa",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-2-new_observed/observer/summary.json": "c4112ac28a9cc9e921e6bcc14d3f99ff433cf5bccfdf02dfe435bd8d3d343289",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-3-new_on/build.stderr.txt": "4e27ed6ccd3cc841dda4e374233c6d06182530a05b56931e626f22acba1693a9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/formal-3-new_on/measurement.json": "a32bb17241733cffe9ec97457978be9cd10f6e8b2d5616e7fc0cd0a9644083b0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/warmup-1-new_off/build.stderr.txt": "5480ae268c557b5f4c7b1309b3642d8012319558e6f6cfafcc664f99787f5e41",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/warmup-1-new_off/measurement.json": "30caf1043c83be11f7a5e85abc13cdede4f5c91b1dd666dae9a3feee8c7d75c5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/warmup-2-new_off/build.stderr.txt": "47ff842342da95e288b99393dd3f2cdd318689ce0d25681bd3b30c0aaeabab95",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b01-w2/new/warmup-2-new_off/measurement.json": "cfd3986b03605a3fabddf98f26b1e9f20e350909790b192dcceecbc6e8266a2e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/cleanup.json": "9d270987b7cea39c04d2c8ec19d216543182a3ef923146e29188ce60cc951d06",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-1-new_on/build.stderr.txt": "163793c5806ca0ffb88244b96f2611f3d7c265d282d8209daf16a87f423c43fd",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-1-new_on/measurement.json": "cbe5f0108f5e4c293988b8b044db98b9935d0bea08323c551fd1fbd87fd9ee1f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-2-new_off/measurement.json": "020d124efd004862decca8b94c6ce6a9ff8efcfeef3ce90f081b15f1957851a4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-3-new_observed/build.stderr.txt": "7b34189373144f1168126a1d7bdbb7b2cfe6ac11f3bd407111e0dccc52018774",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-3-new_observed/measurement.json": "9d58f1e403a9898695e87399ea35e52609c851190d47862b7b3c505efeb4eb70",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-3-new_observed/observer/report.md": "ecd5ebca48fb2d5485664d8ed169d16abd24ed894a0414d54db43eb8069f1566",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-3-new_observed/observer/samples.jsonl": "4176aa833b91a792fd5a83f5345db3a85a38d56a923bdd61b6df443a11ee41bd",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/formal-3-new_observed/observer/summary.json": "3fb334b070e1a4cb004a2f0d818ecc3c262db5ecbd36f47642cd9d366de0a10f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/warmup-1-new_off/measurement.json": "d1a6499cc883d18fd29962ebd185d6947710f35935f9c007f1df24b89e3c2cb2",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w0/new/warmup-2-new_off/measurement.json": "bbdcf52d09d6907ac785e4834140018dd24955c57138cbfbe292e1dab9cc921e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/cleanup.json": "45425e83f50a9a65d1b035757f6db54ba29a3413284fb74c5a5b0e555936fe91",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-1-new_on/build.stderr.txt": "2a9a434fed0d6369f330c0cbe7ff64415208a99e43af86dca8b4cb670e9281c8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-1-new_on/measurement.json": "15056e048809d06a9c042ec043715770a32c35234a85611c260a5bcdf29e2fc1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-2-new_off/build.stderr.txt": "3bdfaa24ac3164b5de136956205ec9d87c0bd65c6572b13907d5362666d96dbe",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-2-new_off/measurement.json": "ae7b5723b1ad7510a0f4180ab2d0488875eac3eb6368b11c0dad52991bfd6a26",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-3-new_observed/build.stderr.txt": "84433b607e9be9953392d6ca7caadb3b9a0ca25ef6688ac0d3426653aa4c760f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-3-new_observed/measurement.json": "ba47f69120e9c3e3ffde4628bf67fd0e7d4f2bdff3d62069b8b4ce0e9f7bb1bc",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-3-new_observed/observer/report.md": "5eb5a207ad7154af92cb6515d16a36e3e528c4b2663bd7aeae5df1c20f82f2c6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-3-new_observed/observer/samples.jsonl": "f22ef7806202f68bfee1dc71f533234e5e8c65c20a42018ba57dee6b33a43e92",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/formal-3-new_observed/observer/summary.json": "702a995307be8394f040131ed3f06f3897b64f409d162e797971dc9ba9167d0b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/warmup-1-new_off/build.stderr.txt": "a82f825540b53d32bbdd15f7f7e16d4890c9b7ae5e27cb989aa92b72aef6018a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/warmup-1-new_off/measurement.json": "b86ec89e9e7498141e4d7b37d2022c005cecf04e92ad5d15af9345d3d8bed2c7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/warmup-2-new_off/build.stderr.txt": "0c01c6bd96cc6887d91a087a7b0628bfc8204eb55bf9a27f7958f3f54f353bf8",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b02-w2/new/warmup-2-new_off/measurement.json": "0559d55889e2e6d51c3e2726a8d4dd6010c48ce5337e81bb57115f247c2f5638",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/cleanup.json": "4d69c6d014a5faefff1edbb7126704d3a2fb5484a5107a8b8c05cd072083861c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-1-new_on/build.stderr.txt": "c13ad79041467e72792218544b1a59e5204c13a22e350eb0a62221fadd1fa0f1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-1-new_on/measurement.json": "9d2c1a6cf547197d52d1484090e5b09cc9042539127b4acf8dcee5a2404fa492",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-2-new_observed/build.stderr.txt": "9230e1c30c43fe1fb695f633e066f78f812e410cfd5eb09257d2a9df1ef40515",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-2-new_observed/measurement.json": "59de2dd1b5959e8e5eac9e08bb0d74384b7f10beb9a34d40a4103dc4beb123ce",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-2-new_observed/observer/report.md": "72817d8efbb720b623daa99afe4c297f09eef1b17c0975d60e24e232b0e10145",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-2-new_observed/observer/samples.jsonl": "10d12bb42c6f2e6cafa91f815150ea14f113b6b93824caf1f587594f97bcfde2",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-2-new_observed/observer/summary.json": "fa245149142b0fac9517dfa88aba71b15983a74eff70d9dbefff342be9d64dfe",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/formal-3-new_off/measurement.json": "9448bb98bd39281615b6b87d0f53bc94c7065d94f17baf86607d5f5afbe50227",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/warmup-1-new_off/measurement.json": "fd7bd8422ef2b5780cc7a43988ede8adb8da86d114643aa8b3416a5c79dc908d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w0/new/warmup-2-new_off/measurement.json": "7c7d9598b6286f2b30f1b18ff1806f2fd9c62d124a238bd59f9b7f324b631db0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/cleanup.json": "766234429cc9a9cc7eeda03f9f217be0416ec72a1b3c100f7012a4a50cd38e59",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-1-new_on/build.stderr.txt": "c1a9d3b657f6a55c9aa19e4046a7956144e94d363695cd6f1d00017b8f337f72",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-1-new_on/measurement.json": "0e73afadefa25cf7f19f76a9ff7d1f8bcae6188a48b63706025355225f1ab80d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-2-new_observed/build.stderr.txt": "8f115a6b196bbd620a7a8c0dd2f974694eedc2deccbd0ee9adce9044caba208f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-2-new_observed/measurement.json": "f4aae621c78d8f1b1e9aa2361e69c738917301802e8ced6fc454db7fb1e68181",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-2-new_observed/observer/report.md": "a969945263513cdb67798f76f676ba4df91d82dea84888a74b448b6dbc0f0654",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-2-new_observed/observer/samples.jsonl": "90dbab59883ff0b282b70ccdd6e1fe2cfb6f3754491c6c99f3a24865b0b6303f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-2-new_observed/observer/summary.json": "b6538e1a26c7cf434ddfcc43c4d702a175f8baf8ce37cc8910b087ab5b0f352b",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-3-new_off/build.stderr.txt": "7910c54d40b1168dbde81956154f7602a8ab0b6e9d8d506ca669842e73502e6e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/formal-3-new_off/measurement.json": "b25d4bd5b998d370a7138f82b17d0dd1ded7fbaf39751a6f3c4adcd617544174",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/warmup-1-new_off/build.stderr.txt": "05f50bdf6a5e20bdbd3613233b47d74896e23584833649b77aaafc61eace82d1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/warmup-1-new_off/measurement.json": "c8d00165af2febe058a903129c723293c3bcb35f9e527ba8dcb69ae3673634a5",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/warmup-2-new_off/build.stderr.txt": "1474c2eb960ae0a9a101ec7a830230cea87403d40388c86f37d104af3dc515ee",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b03-w2/new/warmup-2-new_off/measurement.json": "48f6fdee2277f8e811557a35b0a29ae4ef0cc85ba3aa520210fcc0c00a980a11",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/cleanup.json": "8f166a52bc020a49f16fa9d72e759745484658c610782b1aec134218e1aef7e7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-1-new_observed/build.stderr.txt": "b02a1bcefcab7ca40342da0357b4d4a1dc7f7cec3fb5cae9adf1e4dd83ae204e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-1-new_observed/measurement.json": "e638afaa735821a92130b53696b2cb2df0750bfd5268d9dbc8dd3e0e01efde47",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-1-new_observed/observer/report.md": "ee3caab890a4758c43bc8933ec97008a4ff57ea046f40d52eb7b94be77e5e975",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-1-new_observed/observer/samples.jsonl": "d7657028085f393b1afc61c5ef5c5b87cb34136d2dad77184bc68fe4f92e4a90",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-1-new_observed/observer/summary.json": "eb68683005c704dcb732fb3d8ce8b676ae3f635985e50b51268f2c45d04a0871",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-2-new_off/measurement.json": "a1dec63ef19690fbe750adcf01dfb25e1fd3e4eda2fcd24debf519f681510b33",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-3-new_on/build.stderr.txt": "0b4f230ec70fa3aac5a7825907b1b13fd081f23f136c863bfc5d939540fdf723",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/formal-3-new_on/measurement.json": "de7f289627444dbf93df45767210b2f10edee2ee2b84c8111546a9f3212ffae1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/warmup-1-new_off/measurement.json": "adcebe9a1d1fb0b904ba4820f52090144bd33f1fea320a03cadf6b5e2cc481e3",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w0/new/warmup-2-new_off/measurement.json": "a9fbdb97bb7e33da9abdf6ba5256f143075e81c58bb955377dc4cd6467b1ccb1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/cleanup.json": "8342cb775afdc2fa3b7085fcf88e214621290440d79eb948f9a76d12f04b86f4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-1-new_observed/build.stderr.txt": "64690ee9b487539c0e6a84b709a65ed4e1d2b562d777953bb7c6fac3ff6609c7",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-1-new_observed/measurement.json": "0b4795c9ecb0c402e07f83c3feffb29fef7d80ff5c63c3d6fc90f3e97b10ce87",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-1-new_observed/observer/report.md": "7018f6ece63481547d9022dcff2cbd61e57659f69409e7f8488f2ba26f1358e6",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-1-new_observed/observer/samples.jsonl": "771926a7a698b7c02befb6356d388b763f46d0eb05a806d34f9b433f08f1b545",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-1-new_observed/observer/summary.json": "f4e6cb4504bebe2b0e8bfb1659e410ba5bca10e20376e8e0b8320f137b933bad",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-2-new_off/build.stderr.txt": "7ee8ed099af752f6c896d283811a2b8835d849042d245e837e5d65fcd3a1c9fe",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-2-new_off/measurement.json": "99534ce1a55224270318b28e3c816a5d3e205fbc1faa2869f0302cf0462b0cef",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-3-new_on/build.stderr.txt": "3b76189a487976b3479858d891e6b362a66af71a61ca58350a5af8ab65c201ca",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/formal-3-new_on/measurement.json": "c5858e5aad402ae91a65902afd63104ac917655c803f873878b4181252223849",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/warmup-1-new_off/build.stderr.txt": "8cc405b5fadc6d7487ba98129c8bad37a915082757e12aed11d06cca9c4ba373",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/warmup-1-new_off/measurement.json": "be9deb69e96e0a757001392b17427d6d92cf5dcbe32166446ab3146c60d91eb1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/warmup-2-new_off/build.stderr.txt": "3bdfaa24ac3164b5de136956205ec9d87c0bd65c6572b13907d5362666d96dbe",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b04-w2/new/warmup-2-new_off/measurement.json": "cc9bc60ccb7323032a251066c61b1897321e70dda4355ef1784dcd67c2932789",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/cleanup.json": "46ff7fda3377baf3d355bbb31ceeb082bc3994e626de5e891db67e80dcd5b815",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-1-new_observed/build.stderr.txt": "2986eb87621b71fd2c4c744311a2e3e69a92488d5c9f5f05139634d3c51b2bdf",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-1-new_observed/measurement.json": "5124c99caffd8968a3262ca3cb56dac9296cb64dafa6832600bcda6a26bd0d2a",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-1-new_observed/observer/report.md": "6c7c2e9004d36a39b560d43600a71f32dec54bb134716c98750db67ada2be280",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-1-new_observed/observer/samples.jsonl": "8dd2b9298bb4eab415e7d4af751adfb0623aa905e639b45bf71ef2c2e72d33f1",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-1-new_observed/observer/summary.json": "0bf3c3e7ccfc8b5b6a058fd6618e9d05eda470b42e01fdc278db0cbd3922e826",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-2-new_on/build.stderr.txt": "36efd37b7fcd49059633e6ff4528139b374b77b83bab4d3e6996f52d46590b5f",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-2-new_on/measurement.json": "fe1562018e9b6bf722eb96724b5ec914badbb9cea9ae93a80c64e1b8d9ac284d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-3-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/formal-3-new_off/measurement.json": "ccb8f8a452d39744cf8ea743dced4fbce786c218719d79bd40b563cec8281755",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/warmup-1-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/warmup-1-new_off/measurement.json": "1bf5d10e8bc070296d7d8941036e492b215353ae31b3c5117a5e8dfe198e50a0",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/warmup-2-new_off/build.stderr.txt": "ef2a96fdd7befcbc4d90273be20144cfe49fbc36ef00ab08b8c75964107e9ba9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w0/new/warmup-2-new_off/measurement.json": "42ef068f4e13fbf2eec5e1963a520935b73773c63fe3030679c0d5df346c0234",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/cleanup.json": "5946d95ac8b47ce27d4634f8b9abd49968937cbc7cf15760cc21445b94441e9c",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-1-new_observed/build.stderr.txt": "671787a20bbb519cab794649ec48eff3cae8803bff52bdd429792538cf575526",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-1-new_observed/measurement.json": "21e93ba5fc32e827b5e065ac5fe1d12f0ac46220ee6e6b7b2826b15d5964710d",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-1-new_observed/observer/report.md": "22c4b009ee58f0b8652f555ab3ec108cacec862ff2b95bd85c171994cebf62c2",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-1-new_observed/observer/samples.jsonl": "679837d24b827e1cbe3a4dd4d65e0a8a8dd8d7d3e70bff406f271f7c4fdc7f21",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-1-new_observed/observer/summary.json": "426ba637cab29116f93cb1108be12ab943e3a582197a13cf9e2273a7a6899908",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-2-new_on/build.stderr.txt": "ddb5ecd974635dd0e4bd1709d8b6f13ee8d59d20b652b78f8edfd5b6f7eeb340",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-2-new_on/measurement.json": "4066f389b8aad2bf27132273f3abbd8bbba9ced7574ddac228670f5c0964e824",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-3-new_off/build.stderr.txt": "41035c167200f2b6f71c03327d57ab36a90cff195d94dd05cab7ca05e1f4d372",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/formal-3-new_off/measurement.json": "087714c21b075c1d6fd2a7db5b292a0c8601acb418f491070cfa6a5e328efbc4",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/pg_hba.conf": "9963e4e6e7f748a6e6d9cb158adcef178b1a119be3f2ba0912b247425fd1f697",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/provenance.json": "703ab23163a65771829b395aaa641d13d82eefd970c4bc143a0a797f8aab9098",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/warmup-1-new_off/build.stderr.txt": "c2c6e5efc9e06ae2090e435d651e6000773b23c40c91f3bfc940203114f89e17",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/warmup-1-new_off/measurement.json": "ba59634be5426615ce98dc0fd1232d20f561b549fb861d3d12c1e7d3053aa116",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/warmup-2-new_off/build.stderr.txt": "1474c2eb960ae0a9a101ec7a830230cea87403d40388c86f37d104af3dc515ee",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/B-b05-w2/new/warmup-2-new_off/measurement.json": "8125273067a6209152eb677ab0f7a1a37d68e8c1e2e5b9af7176a49f61147d7e",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/image-inspection.json": "6c1af168c892d60d7bccaf41d195c391cb7e8c2f5a455d8844ed339bf7d20a21",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/prior-position-analysis.json": "075b4f13ae526b30c957cf4d9cab4d10503c92fa29c82eb6a3a2100a97abbf70",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/protocol.json": "76f53d422e84f1641af495f43f50727e43605675403ec7f3fc8a91d278796e90",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/report.md": "c7f8b88702824fe12aeb582ccf6fa48cd1cfef3a56d07353701c02d6e1d4c4e9",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/summary.json": "7b7fcc64afa642fa2cfe8b40dac2cd02b8bf1e41c00069c7bdbf788e14894aab",
+    "experiments/hnsw_build/results/20260910T144549Z-bounded-triage/tooling-at-start.tar.gz": "ea14f64edf9bc4171bb51eca44a72be185f9a3511e2f8fe8fba96afee652dee4",
+    "experiments/hnsw_build/results/README.md": "0ee7dfbb4b5aac4203490b8fce8e8c42779a67f123c59b2b0b361bbdf7669583",
+    "experiments/hnsw_build/run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "experiments/hnsw_build/summarize_sweep.py": "a319275c1463ea42bcdaae23a4df3fb696b36f806510755c0683b91f5fbd5677",
+    "experiments/hnsw_build/test_bounded.py": "c505654e2b31e25998943db8e20f27f0410f8ab1cdfeb5ea8faa1d3687691bde",
+    "experiments/hnsw_build/test_glove.py": "843046fecb111e950570949fb0957e8372ec39a317fa23bf39565c798e64589c",
+    "experiments/hnsw_build/test_observe.py": "b096eb23285feea0de3d182d21372e1203a0f47e93450f6cc3138844230f006f",
+    "experiments/hnsw_build/test_recall.py": "6b243911bcf06d2dde0e59c134c54d0a539af1c5c6a2d493166947c2a8e9ebe2",
+    "experiments/hnsw_build/test_summarize_sweep.py": "4c30848c67cac591a1e00d97e476ae8d512c425317e870e982fb5071ec465b70",
+    "experiments/hnsw_build/test_timing.py": "1b6fe6e1da00117678f53641e01fc12537cebf576fd43bbef14f16dcff7ad03b",
+    "experiments/hnsw_build/test_tools.py": "8566b5018d58805875906d05d5f12c7b3d355d4ae787d27ea0926bf4a2c09c83",
+    "experiments/hnsw_build/test_triage.py": "91a58e8c85e8043a9ed9de2ef5f78ecc82b0f181e3dd15d898548219e9dd1a56",
+    "experiments/hnsw_build/timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "experiments/hnsw_build/triage_overhead.py": "cbda45223eca1c6d2c79dfe7ae3e9cece0794dc2b5307f51cc709111aa71edd5",
+    "experiments/hnsw_build/verify_glove.py": "457fd6dc2bc5d1f98bfba7563595bdb1b560b18c28d3a61b263e8b20476cf09f",
+    "experiments/hnsw_build/verify_observe.py": "96b30c3ed53e07208c15b446ab93e219dea4d032e5ba61641aaccdfb0e516bbb"
+  }
+}

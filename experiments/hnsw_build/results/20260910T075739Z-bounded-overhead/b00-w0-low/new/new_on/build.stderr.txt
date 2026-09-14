@@ -1,0 +1,5 @@
+DEBUG: building index "items_embedding_hnsw_idx" on table "items" serially
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 1242 tuples
+DETAIL: Graph memory used: 2097024 bytes; graph memory limit: 1048576 bytes; dimensions: 32; m: 16; ef_construction: 64. Building will take significantly more time.
+INFO: memory: 1 MB
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":53,"index_oid":16727,"fork":0,"parallel_workers":0,"spill":true,"total_us":7576212,"phases":[{"phase":"setup","start_us":0,"end_us":22},{"phase":"memory_build","start_us":22,"end_us":93926},{"phase":"spill_drain","start_us":93926,"end_us":94039},{"phase":"flush","start_us":94039,"end_us":94614},{"phase":"disk_insert","start_us":94614,"end_us":7542457},{"phase":"finalize","start_us":7542457,"end_us":7542457},{"phase":"wal","start_us":7542457,"end_us":7576179},{"phase":"cleanup","start_us":7576179,"end_us":7576212}]}

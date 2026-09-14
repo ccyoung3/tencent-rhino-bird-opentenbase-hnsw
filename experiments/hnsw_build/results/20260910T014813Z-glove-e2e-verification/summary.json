@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "success",
+      "status": "passed",
+      "source": "20260910T014813Z-glove-e2e-success"
+    },
+    {
+      "case": "timeout",
+      "status": "passed",
+      "source": "20260910T014819Z-glove-e2e-timeout"
+    },
+    {
+      "case": "interrupt",
+      "status": "passed",
+      "source": "20260910T014824Z-glove-e2e-interrupt"
+    }
+  ]
+}

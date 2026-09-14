@@ -1,0 +1,7 @@
+digraph diagnostic {
+  graph [rankdir=LR, nodesep=0.3, ranksep=0.48, pad=0.1, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#b60b2d", penwidth=1.2, margin="0.18,0.14"];
+  edge [color="#5a0718", penwidth=1.2, arrowsize=0.7];
+  observe -> diagnose -> choose -> verify;
+  verify -> diagnose [constraint=false, style=dashed, color="#62666c"];
+}

@@ -1,0 +1,14 @@
+{
+  "selected": {
+    "m": 16,
+    "ef_construction": 64,
+    "ef_search": 200,
+    "source": "m16-efc64"
+  },
+  "validation_efs": [
+    40,
+    200,
+    400
+  ],
+  "source": "m16-efc64"
+}

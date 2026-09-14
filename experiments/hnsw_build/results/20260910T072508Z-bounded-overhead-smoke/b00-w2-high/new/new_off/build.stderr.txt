@@ -1,0 +1,6 @@
+DEBUG: building index "items_embedding_hnsw_idx" on table "items" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+DEBUG: leader processed 6956 tuples
+DEBUG: worker processed 6580 tuples
+DEBUG: worker processed 6464 tuples
+INFO: memory: 15 MB

@@ -1,0 +1,40 @@
+{
+  "manual_low_report": "presentations/hnsw-diagnostics/evidence/user-experience/manual-low/diagnostic.md",
+  "source_line_numbers": [
+    22,
+    28,
+    29,
+    31,
+    34,
+    39,
+    41,
+    43
+  ],
+  "display": "Markdown report excerpt rendered in local browser; no product GUI implied",
+  "omissions": "Only memory_build and disk_insert rows, Evidence and Recommendation paragraphs are retained. Other rows and paragraphs omitted.",
+  "progress": "Original progress.csv samples; terminal screenshot pending because native-app capture is unavailable.",
+  "browser_screenshot": {
+    "path": "assets/manual-low-report-preview.jpg",
+    "size": [
+      1280,
+      720
+    ]
+  },
+  "crop": {
+    "path": "assets/manual-low-report-crop.png",
+    "x": 0,
+    "y": 0,
+    "width": 1080,
+    "height": 379,
+    "operation": "pixel crop only; no retouching"
+  },
+  "terminal_screenshot_status": "pending_user_image",
+  "progress_excerpt": "evidence/user-experience/progress-excerpt.json",
+  "preview_files_sha256": {
+    "assets/manual-low-report-preview.jpg": "8d3d404102a4527c56950dcb952b029bb3c8a70280228ba57f23db3c18f43811",
+    "assets/manual-low-report-crop.png": "6da86068e07a628fc5f9dc1953402e37460816ab6f62941ff9a2dede4570cbea",
+    "evidence/user-experience/report-excerpt.md": "6e3337f9ae42c3f39a864f4c4454bb980cc2ac75e17a12fa4b0f43d87f7cf08e",
+    "evidence/user-experience/report-preview.html": "810f548bfc1ecac636f3b0d8d9ee307a2bb28fefeafd71b5a79083b7be4b32ef",
+    "evidence/user-experience/progress-excerpt.json": "1a550b7b028b4ee1327ad65a1585160b20f1aad33afa0337a1ffb01dd0db4c27"
+  }
+}

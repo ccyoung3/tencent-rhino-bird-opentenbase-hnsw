@@ -1,0 +1,52 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 598B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/opentenbase-pg18-pgvector:timing-v1-test-arm64
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [compiler 1/6] FROM docker.io/library/opentenbase-pg18-pgvector:timing-v1-test-arm64
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 18.31kB done
+#6 DONE 0.0s
+
+#7 [compiler 5/6] COPY compile.sh /work/compile.sh
+#7 CACHED
+
+#8 [compiler 3/6] COPY baseline/ /work/baseline/
+#8 CACHED
+
+#9 [compiler 4/6] COPY candidate/ /work/candidate/
+#9 CACHED
+
+#10 [compiler 2/6] WORKDIR /work
+#10 CACHED
+
+#11 [compiler 6/6] RUN /bin/sh /work/compile.sh
+#11 CACHED
+
+#12 [runtime 1/3] FROM docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64
+#12 CACHED
+
+#13 [runtime 2/3] COPY --from=compiler /work/out/candidate/normal/vector.so /opt/opentenbase/lib/postgresql/vector.so
+#13 DONE 0.0s
+
+#14 [runtime 3/3] COPY --from=compiler /work/out/candidate/normal/identity.txt /opt/hnsw-acceptance-identity.txt
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers 0.0s done
+#15 writing image sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4 done
+#15 naming to docker.io/library/opentenbase-pg18-pgvector:acceptance-20260911-candidate-normal-arm64 done
+#15 DONE 0.0s

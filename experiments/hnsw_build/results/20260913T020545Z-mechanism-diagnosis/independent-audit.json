@@ -1,0 +1,21 @@
+{
+  "audit_status": "verified",
+  "status": "mechanism_evidence_verified",
+  "mode": "diagnosis",
+  "exploratory": true,
+  "no_acceptance_inference": true,
+  "formal_count": 36,
+  "warmup_count": 18,
+  "verified_counter_records": 162,
+  "verified_instance_identities": 6,
+  "verified_cleanup_records": 6,
+  "source_archive_verified": true,
+  "actual_sequence_verified": true,
+  "live_resource_absence": "not queried; owned cleanup records verified offline",
+  "scope": "participant scan_and_insert counters exclude final leader flush/WAL/cleanup",
+  "limitation": "Test-only instrumentation can alter scheduling. Work/CPU normalization is descriptive and cannot establish <5% diagnostic overhead.",
+  "protocol_sha256": "419978fdd69bfeab188d99bd2bbbf80f811f0ba18bd5edbf570cb11431569236",
+  "summary_sha256": "0d2983534d50629c83c6f0017aab0320666ecaa6d933e36aa7c44be0ab041fc5",
+  "audit_tool_sha256": "9ab2ce8ca30a5cd7dae9a7e4a5149cb4c92df9e8b7fb2f7273bc7634a860130a",
+  "audited_at_utc": "2026-09-13T02:11:26.430580+00:00"
+}

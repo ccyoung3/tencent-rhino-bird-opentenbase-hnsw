@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "docker",
+    "cp",
+    "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652:/opt/cpu-calibration",
+    "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/dev/cpu_calibration/results/20260913T030031Z-ce171210b519/binary"
+  ],
+  "started_at_utc": "2026-09-13T03:00:32.817778+00:00",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T03:00:32.842831+00:00",
+  "host_elapsed_s": 0.02507629200408701
+}

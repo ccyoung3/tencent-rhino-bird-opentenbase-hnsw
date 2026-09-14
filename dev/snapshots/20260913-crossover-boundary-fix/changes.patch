@@ -1,0 +1,54 @@
+--- before/overhead_crossover.py
++++ after/overhead_crossover.py
+@@ -79,7 +79,8 @@
+             groups.append(dict(workers=w, spill=s, condition=label, reference='baseline', panels=panels,
+                 ratios=ratios, median_change_percent=100*(statistics.median(ratios)-1), upper=upper,
+                 lower_ratio=lower, observed_with_progress=coverage if label == 'observed' else None,
+-                verdict='supported' if passing else 'regression_supported' if lower and lower > 1.05
++                verdict='supported' if passing else 'regression_supported' if
++                        lower is not None and lower > 1.05 and not math.isclose(lower, 1.05, rel_tol=1e-12)
+                         else 'not_established'))
+     return dict(estimand='population median of paired within-panel two-run geometric-mean time ratios',
+                 groups=groups, all_supported=all(g['verdict'] == 'supported' for g in groups))
+--- before/audit_crossover.py
++++ after/audit_crossover.py
+@@ -106,7 +106,8 @@
+             groups.append(dict(workers=w, spill=s, condition=label, reference='baseline', panels=panels,
+                 ratios=ratios, median_change_percent=100 * (statistics.median(ratios) - 1), upper=bound,
+                 lower_ratio=lower, observed_with_progress=coverage if label == 'observed' else None,
+-                verdict='supported' if passing else 'regression_supported' if lower and lower > 1.05
++                verdict='supported' if passing else 'regression_supported' if
++                lower is not None and lower > 1.05 and not math.isclose(lower, 1.05, rel_tol=1e-12)
+                 else 'not_established'))
+     return dict(estimand=ESTIMAND, groups=groups,
+                 all_supported=all(group['verdict'] == 'supported' for group in groups))
+--- before/test_crossover.py
++++ after/test_crossover.py
+@@ -6,6 +6,7 @@
+ from collections import Counter
+ 
+ import acceptance as a
++import audit_crossover as audit
+ import overhead_crossover as crossover
+ 
+ 
+@@ -119,6 +120,7 @@
+         result = crossover.summarize(rows)
+         self.assertFalse(result['all_supported'])
+         self.assertTrue(all(g['verdict'] == 'regression_supported' for g in result['groups']))
++        self.assertTrue(audit.almost_equal(result, audit.independent_analysis(rows)))
+ 
+     def test_exact_five_percent_is_not_strictly_below_limit(self):
+         for scale in (1., 10., 1000.):
+@@ -128,7 +130,10 @@
+                     row['command_seconds'] = scale * (1. if row['condition'] == 'baseline' else 1.05)
+                 result = crossover.summarize(rows)
+                 self.assertFalse(result['all_supported'])
+-                self.assertTrue(all(g['verdict'] != 'supported' for g in result['groups']))
++                self.assertEqual([g['verdict'] for g in result['groups']], ['not_established'] * 12)
++                independent = audit.independent_analysis(rows)
++                self.assertEqual([g['verdict'] for g in independent['groups']], ['not_established'] * 12)
++                self.assertTrue(audit.almost_equal(result, independent))
+ 
+     def test_missing_or_duplicate_measurements_are_rejected(self):
+         rows = fixture()

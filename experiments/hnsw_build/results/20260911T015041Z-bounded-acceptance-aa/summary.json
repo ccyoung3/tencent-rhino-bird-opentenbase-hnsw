@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "rows": [],
+  "warmups": [],
+  "error": "RuntimeError:",
+  "error_locations": [
+    {
+      "file": "acceptance.py",
+      "line": 248
+    },
+    {
+      "file": "contextlib.py",
+      "line": 141
+    },
+    {
+      "file": "acceptance_stack.py",
+      "line": 160
+    }
+  ]
+}

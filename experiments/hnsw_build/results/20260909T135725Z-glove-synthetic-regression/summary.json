@@ -1,0 +1,706 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-09-09T13:57:25.875067+00:00",
+  "workload": {
+    "distance_metric": "Euclidean (L2)",
+    "distance_operator": "<->",
+    "operator_class": "vector_l2_ops",
+    "indexed_data_distribution": "PostgreSQL random()::real per component after setseed(seed), synthetic uniform [0,1)",
+    "holdout_distribution": "Python random.Random(query_seed).random() per component, independent synthetic uniform [0,1)"
+  },
+  "parameters": {
+    "rows": 2000,
+    "dimensions": 8,
+    "maintenance_work_mem": "64MB",
+    "m": 16,
+    "ef_construction": 64,
+    "parallel_workers": 0,
+    "seed": 0.42,
+    "sample_interval_seconds": 0.5,
+    "build_timing": true,
+    "statement_timeout_ms": 0,
+    "recall_queries": 10,
+    "recall_k": 10,
+    "ef_search_values": [
+      40
+    ],
+    "query_seed": 20260903,
+    "minimum_mean_recall": 0.95,
+    "image": "opentenbase-pg18-pgvector:timing-v1-arm64",
+    "isolated_database": true
+  },
+  "provenance": {
+    "host": {
+      "system": "Darwin",
+      "release": "25.6.0",
+      "machine": "arm64",
+      "python_version": "3.14.7"
+    },
+    "container_image_id": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7",
+    "provenance_scope": {
+      "git_sources": "host checkouts at experiment invocation; they do not attest which source bytes built the selected Docker image",
+      "container_image_id": "runtime image identity; source attestation requires a separate image label or build manifest"
+    },
+    "opentenbase_source": {
+      "commit": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": false,
+      "changed_paths": [],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "host checkout at experiment invocation; not a container-image build-source attestation"
+    },
+    "pgvector_source": {
+      "commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+      "branch": "codex/hnsw-build-diagnostics",
+      "dirty": true,
+      "changed_paths": [
+        " M src/hnsw.c",
+        " M src/hnsw.h",
+        " M src/hnswbuild.c",
+        " M test/t/045_hnsw_low_memory_build.pl",
+        "?? test/t/049_hnsw_build_timing.pl"
+      ],
+      "tracked_diff_sha256": "99da7d1050501be3d8060989511f26c39f0571e0a14c1d09a809c4a1fbf2bcc2",
+      "scope": "host checkout at experiment invocation; not a container-image build-source attestation"
+    },
+    "experiment_tooling": {
+      "sha256": {
+        "dev/compose.yml": "e348f673186e72e472aad3abc7f8c7a1950fb92fb5918eb4161367a4aca8304e",
+        "experiments/hnsw_build/run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+        "experiments/hnsw_build/recall.py": "8fed0edf184dfb9375f9038f60a5e04ce9e5c9ef167f87d4b10ba920e7e0fb89",
+        "experiments/hnsw_build/timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c"
+      }
+    }
+  },
+  "build_elapsed_seconds": 0.771318,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 69,
+        "index_oid": 16723,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": false,
+        "total_us": 467583,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 51
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 51,
+            "end_us": 464218
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "flush",
+            "start_us": 464218,
+            "end_us": 466932
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "finalize",
+            "start_us": 466932,
+            "end_us": 466933
+          },
+          {
+            "phase": "wal",
+            "start_us": 466933,
+            "end_us": 467507
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 467507,
+            "end_us": 467583
+          }
+        ],
+        "durations_us": {
+          "setup": 51,
+          "memory_build": 464167,
+          "spill_drain": null,
+          "flush": 2714,
+          "disk_insert": null,
+          "finalize": 1,
+          "wal": 574,
+          "cleanup": 76
+        }
+      }
+    ],
+    "dominant_phase": "memory_build",
+    "dominant_fraction": 0.9926943451750813
+  },
+  "initial_container_memory_bytes": 65310720,
+  "peak_container_memory_bytes": 70762496,
+  "peak_memory_delta_bytes": 5451776,
+  "observed_phases": [
+    "building index: loading tuples in memory"
+  ],
+  "phase_observations": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_seconds": 0.005639,
+      "last_seen_seconds": 0.005639,
+      "sample_count": 1,
+      "sampled_span_seconds": 0.0,
+      "first_tuple_progress_percent": 8.8,
+      "last_tuple_progress_percent": 8.8,
+      "peak_container_memory_bytes": 70762496
+    }
+  ],
+  "progress_sample_count": 1,
+  "diagnostics": {
+    "spill_detected": false,
+    "spill_after_tuples": null,
+    "spill_context": null,
+    "hnsw_memory_bytes": null,
+    "hnsw_memory_source": null,
+    "parallel_memory_safety_margin_bytes": null,
+    "phase_order_monotonic": true
+  },
+  "launched_parallel_workers": 0,
+  "metadata": {
+    "server_version": "18.6",
+    "pgvector_version": "0.8.6",
+    "row_count": 2000,
+    "table_total_bytes": 933888,
+    "index_bytes": 679936,
+    "container_architecture": "aarch64",
+    "query_plan": "SET\nLimit\n  InitPlan 1\n    ->  Index Scan using items_pkey on items items_1\n          Index Cond: (id = 1)\n  ->  Index Scan using items_embedding_hnsw_idx on items\n        Order By: (embedding <-> (InitPlan 1).col1)",
+    "uses_hnsw_index": true
+  },
+  "recall_evaluation": {
+    "query_source": "deterministic synthetic holdout sample",
+    "query_seed": 20260903,
+    "query_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "query_count": 10,
+    "k": 10,
+    "ef_search_values": [
+      40
+    ],
+    "minimum_mean_recall": 0.95,
+    "rows": [
+      {
+        "query_id": 1,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.525,
+        "approximate_execution_ms": 0.489,
+        "exact_neighbors": [
+          667,
+          572,
+          297,
+          1346,
+          728,
+          1047,
+          241,
+          300,
+          1907,
+          1512
+        ],
+        "approximate_neighbors": [
+          667,
+          572,
+          297,
+          1346,
+          728,
+          1047,
+          241,
+          300,
+          1907,
+          1512
+        ]
+      },
+      {
+        "query_id": 2,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.498,
+        "approximate_execution_ms": 0.612,
+        "exact_neighbors": [
+          1684,
+          725,
+          382,
+          882,
+          1817,
+          1391,
+          380,
+          1132,
+          1049,
+          538
+        ],
+        "approximate_neighbors": [
+          1684,
+          725,
+          382,
+          882,
+          1817,
+          1391,
+          380,
+          1132,
+          1049,
+          538
+        ]
+      },
+      {
+        "query_id": 3,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.641,
+        "approximate_execution_ms": 0.487,
+        "exact_neighbors": [
+          1946,
+          1956,
+          534,
+          775,
+          1230,
+          1454,
+          1782,
+          865,
+          1718,
+          1242
+        ],
+        "approximate_neighbors": [
+          1946,
+          1956,
+          534,
+          775,
+          1230,
+          1454,
+          1782,
+          865,
+          1718,
+          1242
+        ]
+      },
+      {
+        "query_id": 4,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.389,
+        "approximate_execution_ms": 0.467,
+        "exact_neighbors": [
+          1002,
+          700,
+          105,
+          751,
+          906,
+          638,
+          167,
+          1614,
+          1044,
+          587
+        ],
+        "approximate_neighbors": [
+          1002,
+          700,
+          105,
+          751,
+          906,
+          638,
+          167,
+          1614,
+          1044,
+          587
+        ]
+      },
+      {
+        "query_id": 5,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.536,
+        "approximate_execution_ms": 0.444,
+        "exact_neighbors": [
+          1092,
+          1889,
+          891,
+          268,
+          724,
+          1861,
+          937,
+          675,
+          1851,
+          1694
+        ],
+        "approximate_neighbors": [
+          1092,
+          1889,
+          891,
+          268,
+          724,
+          1861,
+          937,
+          675,
+          1851,
+          1694
+        ]
+      },
+      {
+        "query_id": 6,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.509,
+        "approximate_execution_ms": 0.606,
+        "exact_neighbors": [
+          1300,
+          294,
+          1456,
+          519,
+          1372,
+          1356,
+          1437,
+          1939,
+          1946,
+          600
+        ],
+        "approximate_neighbors": [
+          1300,
+          294,
+          1456,
+          519,
+          1372,
+          1356,
+          1437,
+          1939,
+          1946,
+          600
+        ]
+      },
+      {
+        "query_id": 7,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.532,
+        "approximate_execution_ms": 0.444,
+        "exact_neighbors": [
+          1574,
+          464,
+          1043,
+          815,
+          956,
+          303,
+          1794,
+          1959,
+          1966,
+          820
+        ],
+        "approximate_neighbors": [
+          1574,
+          464,
+          1043,
+          815,
+          956,
+          303,
+          1794,
+          1959,
+          1966,
+          820
+        ]
+      },
+      {
+        "query_id": 8,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.496,
+        "approximate_execution_ms": 1.185,
+        "exact_neighbors": [
+          371,
+          1091,
+          1374,
+          1835,
+          688,
+          1928,
+          10,
+          705,
+          1498,
+          261
+        ],
+        "approximate_neighbors": [
+          371,
+          1091,
+          1374,
+          1835,
+          688,
+          1928,
+          10,
+          705,
+          1498,
+          261
+        ]
+      },
+      {
+        "query_id": 9,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.453,
+        "approximate_execution_ms": 0.517,
+        "exact_neighbors": [
+          18,
+          588,
+          1402,
+          1677,
+          1209,
+          1420,
+          1988,
+          1232,
+          655,
+          1905
+        ],
+        "approximate_neighbors": [
+          18,
+          588,
+          1402,
+          1677,
+          1209,
+          1420,
+          1988,
+          1232,
+          655,
+          1905
+        ]
+      },
+      {
+        "query_id": 10,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.497,
+        "approximate_execution_ms": 0.346,
+        "exact_neighbors": [
+          513,
+          1019,
+          470,
+          500,
+          1410,
+          1361,
+          313,
+          1310,
+          739,
+          1985
+        ],
+        "approximate_neighbors": [
+          513,
+          1019,
+          470,
+          500,
+          1410,
+          1361,
+          313,
+          1310,
+          739,
+          1985
+        ]
+      }
+    ],
+    "by_ef_search": [
+      {
+        "ef_search": 40,
+        "queries": 10,
+        "mean_recall": 1.0,
+        "median_recall": 1.0,
+        "minimum_recall": 1.0,
+        "maximum_recall": 1.0,
+        "risk_detected": false,
+        "mean_query_execution_ms": 0.5597,
+        "median_query_execution_ms": 0.488,
+        "minimum_query_execution_ms": 0.346,
+        "maximum_query_execution_ms": 1.185
+      }
+    ],
+    "plan_verification": {
+      "exact_uses_sequential_scan": true,
+      "approximate_uses_hnsw": true,
+      "exact_plan": {
+        "Plan": {
+          "Node Type": "Limit",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Actual Rows": 10.0,
+          "Actual Loops": 1,
+          "Disabled": false,
+          "Shared Hit Blocks": 22,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Sort",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Actual Rows": 10.0,
+              "Actual Loops": 1,
+              "Disabled": false,
+              "Sort Key": [
+                "((embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788]'::vector))"
+              ],
+              "Sort Method": "top-N heapsort",
+              "Sort Space Used": 25,
+              "Sort Space Type": "Memory",
+              "Shared Hit Blocks": 22,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "items",
+                  "Alias": "items",
+                  "Actual Rows": 2000.0,
+                  "Actual Loops": 1,
+                  "Disabled": false,
+                  "Shared Hit Blocks": 19,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 136,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.759,
+        "Triggers": [],
+        "Execution Time": 0.525
+      },
+      "approximate_plans": {
+        "40": {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Actual Rows": 10.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Shared Hit Blocks": 449,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "items_embedding_hnsw_idx",
+                "Relation Name": "items",
+                "Alias": "items",
+                "Actual Rows": 10.0,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Order By": "(embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788]'::vector)",
+                "Index Searches": 1,
+                "Shared Hit Blocks": 449,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 136,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.496,
+          "Triggers": [],
+          "Execution Time": 0.489
+        }
+      }
+    }
+  },
+  "finished_at_utc": "2026-09-09T13:57:42.313759+00:00",
+  "build_command_returncode": 0,
+  "cleanup": {
+    "status": "complete",
+    "steps": [
+      {
+        "action": "drop_experiment_schema",
+        "returncode": 0,
+        "stderr": "NOTICE:  drop cascades to table hnsw_diag.items\n"
+      },
+      {
+        "action": "remove_isolated_stack_and_volume",
+        "returncode": 0,
+        "stderr": " Container hnswdiag-20260909t135725z-76983-db-1 Stopping \n Container hnswdiag-20260909t135725z-76983-db-1 Stopped \n Container hnswdiag-20260909t135725z-76983-db-1 Removing \n Container hnswdiag-20260909t135725z-76983-db-1 Removed \n Volume hnswdiag-20260909t135725z-76983_opentenbase_pgdata Removing \n Network hnswdiag-20260909t135725z-76983_default Removing \n Volume hnswdiag-20260909t135725z-76983_opentenbase_pgdata Removed \n Network hnswdiag-20260909t135725z-76983_default Removed \n"
+      }
+    ],
+    "data_kept_by_request": false
+  }
+}

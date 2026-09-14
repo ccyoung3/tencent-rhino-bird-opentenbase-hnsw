@@ -1,0 +1,106 @@
+{
+  "opentenbase-pg18-pgvector:timing-v1-test-arm64": {
+    "Id": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+    "RepoTags": [
+      "opentenbase-pg18-pgvector:timing-v1-test-arm64"
+    ],
+    "RepoDigests": [],
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2026-09-06T01:19:19.866620334+08:00",
+    "Config": {
+      "User": "pgtest",
+      "Env": [
+        "PATH=/opt/opentenbase/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PG_CONFIG=/opt/opentenbase/bin/pg_config"
+      ],
+      "Cmd": [
+        "bash"
+      ],
+      "WorkingDir": "/src/pgvector"
+    },
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Size": 865873792,
+    "GraphDriver": {
+      "Data": {
+        "LowerDir": "/var/lib/docker/overlay2/v9ovawdkodnq20ignwn260k3c/diff:/var/lib/docker/overlay2/fpmijyram3kjcttodi896q6wf/diff:/var/lib/docker/overlay2/z6qdd5eo4r53iynis9aagk887/diff:/var/lib/docker/overlay2/4elury4thjwlop52vtr9bfmbl/diff:/var/lib/docker/overlay2/7qhq3kcjdz3ngig5ptpbqcxw9/diff:/var/lib/docker/overlay2/kc45z77hoc459zjnxylrk12k0/diff:/var/lib/docker/overlay2/q3x3pakjx4k75d0lg69jmnshv/diff:/var/lib/docker/overlay2/m7w5ru762s8cder6uihcbtxb1/diff:/var/lib/docker/overlay2/da0f4bc7bcee8be52b0a10079729f3984e53f53f71818897df79397e59bd3d55/diff",
+        "MergedDir": "/var/lib/docker/overlay2/mfwoepmmjaa3o5d8y1ie6fcv5/merged",
+        "UpperDir": "/var/lib/docker/overlay2/mfwoepmmjaa3o5d8y1ie6fcv5/diff",
+        "WorkDir": "/var/lib/docker/overlay2/mfwoepmmjaa3o5d8y1ie6fcv5/work"
+      },
+      "Name": "overlay2"
+    },
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:ded5352e1593266510db9635d858232746801f4579439d3b7f9ae8da2b2bcd25",
+        "sha256:456fd6396a8b74d5eb2f17a5d1ee51ca6faef173d577bd822f7a6e1e71b34057",
+        "sha256:4d5c40c52f93a9c98d666792e57f33d6e9ceece8ca059513515681027a4b225d",
+        "sha256:6ead41decd2e8f5ebead0084e49a9736de72b64f14520bb3414aac795e2fbd5a",
+        "sha256:933c5053443c496e6c01f06c4397724cd5a1a6025ba1ed29d64c5dd00bb52ba8",
+        "sha256:fad7554dd22bf59d7befa3c3f5198068bc7126d1655d88352a1441e549220c9e",
+        "sha256:a797136995383e44f23c6e7bb4778b40274da88e4ef1533a9423c6327fb9e506",
+        "sha256:9b7c88fc144d06b93fcbb8e7d9eb593911c25f23beaba7cfb64323aa16d44db0",
+        "sha256:a227416ae69776ae2e843052615df64417fb70b69d59a499a043151a2a982239",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-09-06T01:19:19.907361087+08:00"
+    }
+  },
+  "opentenbase-pg18-pgvector:timing-v1-arm64": {
+    "Id": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7",
+    "RepoTags": [
+      "opentenbase-pg18-pgvector:timing-v1-arm64"
+    ],
+    "RepoDigests": [],
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2026-09-06T01:13:49.123668105+08:00",
+    "Config": {
+      "User": "postgres",
+      "ExposedPorts": {
+        "5432/tcp": {}
+      },
+      "Env": [
+        "PATH=/opt/opentenbase/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "PGDATA=/var/lib/postgresql/data"
+      ],
+      "Entrypoint": [
+        "opentenbase-entrypoint"
+      ],
+      "Cmd": [
+        "postgres"
+      ],
+      "Volumes": {
+        "/var/lib/postgresql/data": {}
+      },
+      "ArgsEscaped": true
+    },
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Size": 180944898,
+    "GraphDriver": {
+      "Data": {
+        "LowerDir": "/var/lib/docker/overlay2/ismsya9vch9g6jv3obmis0xk9/diff:/var/lib/docker/overlay2/pzay2v15nabclwrnurioevp8b/diff:/var/lib/docker/overlay2/nk43qjqt7nmplh6bbebdbwaz7/diff:/var/lib/docker/overlay2/2b4ec3fbbb7ea74c31b2025246b00a475a80a93a2ba014565c5278b07cbccb6e/diff",
+        "MergedDir": "/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/merged",
+        "UpperDir": "/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/diff",
+        "WorkDir": "/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/work"
+      },
+      "Name": "overlay2"
+    },
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:13a56b6535801be2adde694dabaf1c2df1d862a390661907dac821c42cd565cc",
+        "sha256:915e8399c95d8e60b907101e6de03242fe9d562e15b90d3d5630a2c3cb737291",
+        "sha256:0063346756912fdeae2f11c8e25224e3fa936b2cad66bda842c2f5d1fb0d1c86",
+        "sha256:d42ab9f7ce1074d641b72783d53d0916aa58868e8cd358aa18ac65fe291b28c9",
+        "sha256:9ed16320534bd20750721d9f8b2c436b0a34a9467059002d686c34e0a0e1d4fe"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-09-06T01:13:49.276783027+08:00"
+    }
+  }
+}

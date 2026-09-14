@@ -1,0 +1,83 @@
+test_fixed_budget_and_selection (test_bounded.BoundedRecallTest.test_fixed_budget_and_selection) ... ok
+test_formal_holdout_not_previously_exposed (test_bounded.BoundedRecallTest.test_formal_holdout_not_previously_exposed) ... ok
+test_exact_conservative_rank (test_bounded.CostBoundTest.test_exact_conservative_rank) ... ok
+test_new_cli_help (test_bounded.CostBoundTest.test_new_cli_help) ... ok
+test_paired_reference_not_ratio_of_medians (test_bounded.CostBoundTest.test_paired_reference_not_ratio_of_medians) ... ok
+test_reject_nonfinite_and_incomplete (test_bounded.CostBoundTest.test_reject_nonfinite_and_incomplete) ... ok
+test_small_sample_has_no_finite_bound (test_bounded.CostBoundTest.test_small_sample_has_no_finite_bound) ... ok
+test_binary_copy_row_layout (test_glove.GloveInputTest.test_binary_copy_row_layout) ... skipped 'optional GloVe dependencies not installed'
+test_failed_measurement_preserves_partial_evidence (test_glove.GloveInputTest.test_failed_measurement_preserves_partial_evidence) ... skipped 'optional GloVe dependencies not installed'
+test_reject_zero_nan_invalid_ids_and_order (test_glove.GloveInputTest.test_reject_zero_nan_invalid_ids_and_order) ... skipped 'optional GloVe dependencies not installed'
+test_subset_ground_truth_is_recomputed (test_glove.GloveInputTest.test_subset_ground_truth_is_recomputed) ... skipped 'optional GloVe dependencies not installed'
+test_valid_input_and_hash_pin (test_glove.GloveInputTest.test_valid_input_and_hash_pin) ... skipped 'optional GloVe dependencies not installed'
+test_controller_interrupt_signals_python_only (test_glove.GloveLogicTest.test_controller_interrupt_signals_python_only) ... ok
+test_exact_identity_and_boundary_ties (test_glove.GloveLogicTest.test_exact_identity_and_boundary_ties) ... ok
+test_fixed_cosine_build_and_old_default (test_glove.GloveLogicTest.test_fixed_cosine_build_and_old_default) ... ok
+test_formal_comparison_needs_repetitions_and_rejects_duplicates (test_glove.GloveLogicTest.test_formal_comparison_needs_repetitions_and_rejects_duplicates) ... ok
+test_percentile_and_unique_queries (test_glove.GloveLogicTest.test_percentile_and_unique_queries) ... ok
+test_selection_and_no_selection (test_glove.GloveLogicTest.test_selection_and_no_selection) ... ok
+test_split_is_deterministic_disjoint_and_complete (test_glove.GloveLogicTest.test_split_is_deterministic_disjoint_and_complete) ... ok
+test_split_rejects_over_budget (test_glove.GloveLogicTest.test_split_rejects_over_budget) ... ok
+test_summary_rejects_failed_or_mixed_protocol (test_glove.GloveLogicTest.test_summary_rejects_failed_or_mixed_protocol) ... ok
+test_before_progress_publication_is_unconfirmed (test_observe.ObserveTest.test_before_progress_publication_is_unconfirmed) ... ok
+test_limits_and_finite_values (test_observe.ObserveTest.test_limits_and_finite_values) ... ok
+test_local_log_unmatched_or_invalid_is_rejected (test_observe.ObserveTest.test_local_log_unmatched_or_invalid_is_rejected) ... ok
+test_percentage_is_phase_local_and_can_be_unknown (test_observe.ObserveTest.test_percentage_is_phase_local_and_can_be_unknown) ... ok
+test_permissions_unknown_not_idle (test_observe.ObserveTest.test_permissions_unknown_not_idle) ... ok
+test_pid_reuse_or_new_statement_not_merged (test_observe.ObserveTest.test_pid_reuse_or_new_statement_not_merged) ... ok
+test_report_explicit_unknown (test_observe.ObserveTest.test_report_explicit_unknown) ... ok
+test_service_not_connection_string (test_observe.ObserveTest.test_service_not_connection_string) ... skipped 'optional DB dependency missing'
+test_sql_surface_does_not_read_payload_or_mutate (test_observe.ObserveTest.test_sql_surface_does_not_read_payload_or_mutate) ... ok
+test_state_and_wait_are_not_failure (test_observe.ObserveTest.test_state_and_wait_are_not_failure) ... ok
+test_termination_never_claims_success (test_observe.ObserveTest.test_termination_never_claims_success) ... ok
+test_wait_before_progress_is_visible_without_invented_duration (test_observe.ObserveTest.test_wait_before_progress_is_visible_without_invented_duration) ... ok
+test_json_explain_is_parsed_after_psql_set_status (test_recall.ExplainParserTest.test_json_explain_is_parsed_after_psql_set_status) ... ok
+test_holdout_vectors_are_deterministic_and_in_range (test_recall.QueryGenerationTest.test_holdout_vectors_are_deterministic_and_in_range) ... ok
+test_recall_at_k_uses_set_overlap (test_recall.RecallScoreTest.test_recall_at_k_uses_set_overlap) ... ok
+test_recall_rejects_incomplete_ground_truth (test_recall.RecallScoreTest.test_recall_rejects_incomplete_ground_truth) ... ok
+test_no_threshold_does_not_invent_a_risk_decision (test_recall.RecallSummaryTest.test_no_threshold_does_not_invent_a_risk_decision) ... ok
+test_report_explains_scope_and_adjustment_order (test_recall.RecallSummaryTest.test_report_explains_scope_and_adjustment_order) ... ok
+test_summary_includes_server_execution_time_when_measured (test_recall.RecallSummaryTest.test_summary_includes_server_execution_time_when_measured) ... ok
+test_user_threshold_flags_only_low_mean_recall (test_recall.RecallSummaryTest.test_user_threshold_flags_only_low_mean_recall) ... ok
+test_groups_build_configs_and_aggregates_repeats (test_summarize_sweep.SweepSummaryTest.test_groups_build_configs_and_aggregates_repeats) ... ok
+test_rejects_duplicate_input_paths (test_summarize_sweep.SweepSummaryTest.test_rejects_duplicate_input_paths) ... ok
+test_rejects_mixed_dataset_protocols (test_summarize_sweep.SweepSummaryTest.test_rejects_mixed_dataset_protocols) ... ok
+test_rejects_mixed_distance_metrics (test_summarize_sweep.SweepSummaryTest.test_rejects_mixed_distance_metrics) ... ok
+test_rejects_mixed_host_provenance (test_summarize_sweep.SweepSummaryTest.test_rejects_mixed_host_provenance) ... ok
+test_rejects_mixed_sampling_intervals (test_summarize_sweep.SweepSummaryTest.test_rejects_mixed_sampling_intervals) ... ok
+test_cleanup_failure_is_not_silently_ignored (test_timing.TimingTest.test_cleanup_failure_is_not_silently_ignored) ... ok
+test_command_failure_overrides_internal_completion (test_timing.TimingTest.test_command_failure_overrides_internal_completion) ... ok
+test_duplicate_json_key_rejected (test_timing.TimingTest.test_duplicate_json_key_rejected) ... ok
+test_duplicate_or_truncated_summary_rejected (test_timing.TimingTest.test_duplicate_or_truncated_summary_rejected) ... ok
+test_failed_report_has_no_bottleneck_advice (test_timing.TimingTest.test_failed_report_has_no_bottleneck_advice) ... ok
+test_init_fork_valid_but_not_this_logged_workload (test_timing.TimingTest.test_init_fork_valid_but_not_this_logged_workload) ... ok
+test_interrupt_cancels_owned_backend_and_keeps_logs (test_timing.TimingTest.test_interrupt_cancels_owned_backend_and_keeps_logs) ... ok
+test_isolated_cleanup_still_removes_stack_after_sql_failure (test_timing.TimingTest.test_isolated_cleanup_still_removes_stack_after_sql_failure) ... ok
+test_missing_duplicate_reversed_or_gapped_phases_rejected (test_timing.TimingTest.test_missing_duplicate_reversed_or_gapped_phases_rejected) ... ok
+test_no_summary_is_incomplete (test_timing.TimingTest.test_no_summary_is_incomplete) ... ok
+test_opt_out_not_incomplete (test_timing.TimingTest.test_opt_out_not_incomplete) ... ok
+test_report_limits_attribution_and_links_revalidation (test_timing.TimingTest.test_report_limits_attribution_and_links_revalidation) ... ok
+test_spill_requires_disk_timing (test_timing.TimingTest.test_spill_requires_disk_timing) ... ok
+test_sql_timing_is_opt_in (test_timing.TimingTest.test_sql_timing_is_opt_in) ... ok
+test_total_coverage_checked (test_timing.TimingTest.test_total_coverage_checked) ... ok
+test_unknown_or_wrong_scalar_types_rejected (test_timing.TimingTest.test_unknown_or_wrong_scalar_types_rejected) ... ok
+test_valid_timelines_and_na (test_timing.TimingTest.test_valid_timelines_and_na) ... ok
+test_ef_search_without_recall_queries_is_rejected (test_tools.ArgumentValidationTest.test_ef_search_without_recall_queries_is_rejected) ... ok
+test_ground_truth_requires_at_least_k_rows (test_tools.ArgumentValidationTest.test_ground_truth_requires_at_least_k_rows) ... ok
+test_recall_defaults_are_enabled_only_with_queries (test_tools.ArgumentValidationTest.test_recall_defaults_are_enabled_only_with_queries) ... ok
+test_threshold_without_recall_queries_is_rejected (test_tools.ArgumentValidationTest.test_threshold_without_recall_queries_is_rejected) ... ok
+test_known_monotonic_sequence_is_true (test_tools.CompareSummaryTest.test_known_monotonic_sequence_is_true) ... ok
+test_no_samples_leave_group_monotonicity_unknown (test_tools.CompareSummaryTest.test_no_samples_leave_group_monotonicity_unknown) ... ok
+test_file_sha256_hashes_exact_file_bytes (test_tools.DiagnoseBuildTest.test_file_sha256_hashes_exact_file_bytes) ... ok
+test_no_samples_leave_phase_order_unknown (test_tools.DiagnoseBuildTest.test_no_samples_leave_phase_order_unknown) ... ok
+test_parallel_spill_report_explains_memory_safety_margin (test_tools.DiagnoseBuildTest.test_parallel_spill_report_explains_memory_safety_margin) ... ok
+test_phase_observations_include_sampled_progress_span (test_tools.DiagnoseBuildTest.test_phase_observations_include_sampled_progress_span) ... ok
+test_phase_regression_is_detected (test_tools.DiagnoseBuildTest.test_phase_regression_is_detected) ... ok
+test_report_marks_phase_timing_as_sampled (test_tools.DiagnoseBuildTest.test_report_marks_phase_timing_as_sampled) ... ok
+test_spill_context_and_monotonic_phases_are_parsed (test_tools.DiagnoseBuildTest.test_spill_context_and_monotonic_phases_are_parsed) ... ok
+test_test_macro_memory_output_is_labeled_and_parsed (test_tools.DiagnoseBuildTest.test_test_macro_memory_output_is_labeled_and_parsed) ... ok
+
+----------------------------------------------------------------------
+Ran 78 tests in 0.163s
+
+OK (skipped=6)

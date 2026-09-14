@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "mode": "smoke",
+  "panels": 1,
+  "schedule": [
+    {
+      "panel": 0,
+      "slots": [
+        "baseline",
+        "observed",
+        "off",
+        "on"
+      ],
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "warmup_order": [
+            "baseline",
+            "observed",
+            "off",
+            "on"
+          ],
+          "order": [
+            "baseline",
+            "observed",
+            "off",
+            "on",
+            "on",
+            "off",
+            "observed",
+            "baseline"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "warmup_order": [
+            "observed",
+            "baseline",
+            "off",
+            "on"
+          ],
+          "order": [
+            "observed",
+            "baseline",
+            "off",
+            "on",
+            "on",
+            "off",
+            "baseline",
+            "observed"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "warmup_order": [
+            "on",
+            "observed",
+            "off",
+            "baseline"
+          ],
+          "order": [
+            "on",
+            "observed",
+            "off",
+            "baseline",
+            "baseline",
+            "off",
+            "observed",
+            "on"
+          ]
+        }
+      ]
+    }
+  ],
+  "images": {
+    "baseline": "sha256:3db4573bad80e77defd9e89f88f74affd77dc0ee1cd4d80ef670f6d0505b99bd",
+    "off": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "on": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "observed": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be"
+  },
+  "large_rows": 100000,
+  "small_rows": 30000,
+  "dimensions": 32,
+  "m": 16,
+  "ef_construction": 64,
+  "affinity": "0-9",
+  "warmups_per_scene_condition": 1,
+  "measurements_per_scene_condition": 2,
+  "formal_count": 32,
+  "warmup_count": 16,
+  "primary_estimand": "population median of paired within-panel two-run geometric-mean time ratios",
+  "primary_upper_confidence": 0.9958333333333333,
+  "comparisons": 12,
+  "strict_upper_ratio_limit": 1.05,
+  "no_aa_gate": true,
+  "old_protocol_status": "unchanged; failed screens remain failed",
+  "no_optional_stopping": true,
+  "no_effect_based_restarts": true,
+  "acceptance": "all 12 upper bounds <1.05, complete validated measurements and observer coverage",
+  "source_sha256": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "overhead_crossover.py": "ead83ba4620ebc840cb1b5b57bed68b45d50995fce5f9dab64afec1b054c533a"
+  },
+  "common_build_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29",
+  "method_review_sha256": "711cab9d66de11aed71540c3d4d79633a59926a3b289161adedf8c8f7e1cb532",
+  "created_at_utc": "2026-09-12T14:53:51.650029+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "purpose": "functional only, no overhead inference",
+  "images": {
+    "baseline": "sha256:5a7ffd0b187b3e3278cd905bd5f07d42163b1b96c5cedebc9e112e4d8dea05dc",
+    "off": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4",
+    "on": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4",
+    "observed": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4"
+  },
+  "source_sha256": {
+    "verify_acceptance.py": "6366d1ea2ac495d3a9c58b854be38eafcea6392e7b65ddbfb0680ca1fb6bdbfb",
+    "acceptance.py": "33f8e39f7df7c290063911c694b748d71046a8852c8577faf4fa796796ce1619",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb"
+  },
+  "build_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29"
+}

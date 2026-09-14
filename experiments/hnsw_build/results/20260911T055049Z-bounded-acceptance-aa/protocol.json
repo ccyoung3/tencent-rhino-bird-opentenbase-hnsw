@@ -1,0 +1,331 @@
+{
+  "mode": "aa",
+  "panels": 8,
+  "scale": 1,
+  "affinity": "0-3",
+  "large_rows": 100000,
+  "small_rows": 30000,
+  "dimensions": 32,
+  "m": 16,
+  "ef_construction": 64,
+  "images": {
+    "baseline-seed42": "sha256:3db4573bad80e77defd9e89f88f74affd77dc0ee1cd4d80ef670f6d0505b99bd",
+    "baseline-normal": "sha256:5a7ffd0b187b3e3278cd905bd5f07d42163b1b96c5cedebc9e112e4d8dea05dc",
+    "candidate-seed42": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+    "candidate-normal": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4"
+  },
+  "common_build_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29",
+  "warmups_per_condition": 1,
+  "formal_per_condition": 1,
+  "schedule": [
+    {
+      "panel": 0,
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 1,
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 5,
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 6,
+      "scenes": [
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 7,
+      "scenes": [
+        {
+          "workers": 2,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 2,
+          "spill": false,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": true,
+          "order": [
+            "aa_b",
+            "aa_a"
+          ]
+        },
+        {
+          "workers": 0,
+          "spill": false,
+          "order": [
+            "aa_a",
+            "aa_b"
+          ]
+        }
+      ]
+    }
+  ],
+  "gate_sha256": null,
+  "gate_directory": null,
+  "acceptance": "12 total-cost comparisons to unmodified pgvector, 5% median-ratio upper bound; Bonferroni FWER<=.05",
+  "aa_gate": "per-scene upper95<1.05 and lower95>.95; empirical p90 absolute paired change <=10%",
+  "host_controls": "AC required before/after every build; idle-sleep assertion; reject civil/monotonic gap >1s",
+  "sources": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61"
+  },
+  "no_optional_stopping": true
+}

@@ -1,0 +1,24 @@
+{
+  "status": "duration_reached",
+  "build_outcome": "unknown",
+  "pid": 62,
+  "interval_seconds": 0.25,
+  "duration_limit_seconds": 0.5,
+  "samples": 2,
+  "phases": [
+    {
+      "phase": "build progress not published; active task unconfirmed",
+      "first_seen_s": 0.0022106670076027513,
+      "last_seen_s": 0.2605969998985529,
+      "samples": 2
+    }
+  ],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 60
+  },
+  "elapsed_seconds": 0.5039724169764668
+}

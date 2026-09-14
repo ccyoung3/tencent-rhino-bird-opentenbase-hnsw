@@ -1,0 +1,5 @@
+{
+  "status": "complete",
+  "returncode": 0,
+  "stderr": " Container hnsw-local-63401-1789051963079818000-db-1 Stopping \n Container hnsw-local-63401-1789051963079818000-db-1 Stopped \n Container hnsw-local-63401-1789051963079818000-db-1 Removing \n Container hnsw-local-63401-1789051963079818000-db-1 Removed \n Volume hnsw-local-63401-1789051963079818000_opentenbase_pgdata Removing \n Network hnsw-local-63401-1789051963079818000_default Removing \n Volume hnsw-local-63401-1789051963079818000_opentenbase_pgdata Removed \n Network hnsw-local-63401-1789051963079818000_default Removed \n"
+}

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="480" viewBox="0 0 940 480" role="img">
+<title>Same-index recall and latency — tuning versus held-out validation</title>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:14px Arial,sans-serif;fill:#202020} .title{font-size:18px;font-weight:bold}</style>
+<text class="title" x="20" y="28">Same-index recall and latency</text>
+<text x="65" y="60">tuning: 10 unique queries</text>
+<path d="M65 85v290h350" fill="none" stroke="#444"/>
+<path d="M65 99.50000000000001h350" stroke="#888" stroke-dasharray="5 4"/>
+<text text-anchor="end" x="55" y="379.0">0.0</text>
+<text text-anchor="middle" x="65.0" y="397">0.0</text>
+<text text-anchor="end" x="55" y="321.0">0.2</text>
+<text text-anchor="middle" x="135.0" y="397">1.0</text>
+<text text-anchor="end" x="55" y="263.0">0.4</text>
+<text text-anchor="middle" x="205.0" y="397">2.0</text>
+<text text-anchor="end" x="55" y="205.0">0.6</text>
+<text text-anchor="middle" x="275.0" y="397">2.9</text>
+<text text-anchor="end" x="55" y="147.0">0.8</text>
+<text text-anchor="middle" x="345.0" y="397">3.9</text>
+<text text-anchor="end" x="55" y="89.0">1.0</text>
+<text text-anchor="middle" x="415.0" y="397">4.9</text>
+<text x="65" y="423">Server execution (ms): circle=p50, line to p95</text>
+<text x="65" y="76">Mean Recall@10</text>
+<path d="M76.63 119.80H78.53" stroke="#0072B2" stroke-width="2"/>
+<circle cx="76.63" cy="119.80" r="4" fill="#0072B2"/>
+<text x="81.63" y="136.80">ef=40</text>
+<path d="M88.94 102.40H90.58" stroke="#0072B2" stroke-width="2"/>
+<circle cx="88.94" cy="102.40" r="4" fill="#0072B2"/>
+<text x="93.94" y="119.40">ef=100</text>
+<path d="M106.84 90.80H181.50" stroke="#0072B2" stroke-width="2"/>
+<circle cx="106.84" cy="90.80" r="4" fill="#0072B2"/>
+<text x="111.84" y="107.80">ef=200</text>
+<path d="M132.72 85.00H150.12" stroke="#0072B2" stroke-width="2"/>
+<circle cx="132.72" cy="85.00" r="4" fill="#0072B2"/>
+<text x="137.72" y="102.00">ef=400</text>
+<path d="M195.34 85.00H310.41" stroke="#0072B2" stroke-width="2"/>
+<circle cx="195.34" cy="85.00" r="4" fill="#0072B2"/>
+<text x="200.34" y="102.00">ef=800</text>
+<path d="M211.56 85.00H356.67" stroke="#0072B2" stroke-width="2"/>
+<circle cx="211.56" cy="85.00" r="4" fill="#0072B2"/>
+<text x="216.56" y="102.00">ef=1000</text>
+<text x="530" y="60">validation: 20 unique queries</text>
+<path d="M530 85v290h350" fill="none" stroke="#444"/>
+<path d="M530 99.50000000000001h350" stroke="#888" stroke-dasharray="5 4"/>
+<text text-anchor="end" x="520" y="379.0">0.0</text>
+<text text-anchor="middle" x="530.0" y="397">0.0</text>
+<text text-anchor="end" x="520" y="321.0">0.2</text>
+<text text-anchor="middle" x="600.0" y="397">1.0</text>
+<text text-anchor="end" x="520" y="263.0">0.4</text>
+<text text-anchor="middle" x="670.0" y="397">2.0</text>
+<text text-anchor="end" x="520" y="205.0">0.6</text>
+<text text-anchor="middle" x="740.0" y="397">2.9</text>
+<text text-anchor="end" x="520" y="147.0">0.8</text>
+<text text-anchor="middle" x="810.0" y="397">3.9</text>
+<text text-anchor="end" x="520" y="89.0">1.0</text>
+<text text-anchor="middle" x="880.0" y="397">4.9</text>
+<text x="530" y="423">Server execution (ms): circle=p50, line to p95</text>
+<text x="530" y="76">Mean Recall@10</text>
+<path d="M542.95 134.30H545.24" stroke="#0072B2" stroke-width="2"/>
+<circle cx="542.95" cy="134.30" r="4" fill="#0072B2"/>
+<text x="547.95" y="151.30">ef=40</text>
+<path d="M572.42 92.25H609.70" stroke="#0072B2" stroke-width="2"/>
+<circle cx="572.42" cy="92.25" r="4" fill="#0072B2"/>
+<text x="577.42" y="109.25">ef=200</text>
+<path d="M614.40 86.45H674.00" stroke="#0072B2" stroke-width="2"/>
+<circle cx="614.40" cy="86.45" r="4" fill="#0072B2"/>
+<text x="619.40" y="103.45">ef=400</text>
+<text x="20" y="465">Dashed line: experimental recall target. Warmed single-query execution; not production latency or QPS.</text>
+</svg>

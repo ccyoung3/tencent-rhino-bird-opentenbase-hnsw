@@ -1,0 +1,9 @@
+DEBUG: building index "items_hnsw" on table "large" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":0,"pid":123,"index_oid":16732,"callbacks_seen":33323,"successful_inserts":33323,"distance_calls":101443196,"elements_initialized":33323,"user_cpu_us":5936552,"system_cpu_us":216195,"elapsed_us":6163489,"level_hist":[31270,1923,118,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 33323 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"leader","worker_number":-1,"pid":111,"index_oid":16732,"callbacks_seen":33276,"successful_inserts":33276,"distance_calls":101265447,"elements_initialized":33276,"user_cpu_us":5889633,"system_cpu_us":265553,"elapsed_us":6165605,"level_hist":[31240,1888,140,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: leader processed 33276 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":1,"pid":122,"index_oid":16732,"callbacks_seen":33401,"successful_inserts":33401,"distance_calls":101543969,"elements_initialized":33401,"user_cpu_us":5988509,"system_cpu_us":171223,"elapsed_us":6167651,"level_hist":[31347,1917,124,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 33401 tuples
+INFO: memory: 77 MB

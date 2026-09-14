@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "docker",
+    "image",
+    "inspect",
+    "opentenbase-pg18-pgvector:timing-v1-arm64"
+  ],
+  "started_at_utc": "2026-09-13T02:33:09.397518+00:00",
+  "returncode": 0,
+  "stdout": "[\n    {\n        \"Id\": \"sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7\",\n        \"RepoTags\": [\n            \"opentenbase-pg18-pgvector:timing-v1-arm64\"\n        ],\n        \"RepoDigests\": [],\n        \"Comment\": \"buildkit.dockerfile.v0\",\n        \"Created\": \"2026-09-06T01:13:49.123668105+08:00\",\n        \"Config\": {\n            \"User\": \"postgres\",\n            \"ExposedPorts\": {\n                \"5432/tcp\": {}\n            },\n            \"Env\": [\n                \"PATH=/opt/opentenbase/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"PGDATA=/var/lib/postgresql/data\"\n            ],\n            \"Entrypoint\": [\n                \"opentenbase-entrypoint\"\n            ],\n            \"Cmd\": [\n                \"postgres\"\n            ],\n            \"Volumes\": {\n                \"/var/lib/postgresql/data\": {}\n            },\n            \"ArgsEscaped\": true\n        },\n        \"Architecture\": \"arm64\",\n        \"Os\": \"linux\",\n        \"Size\": 180944898,\n        \"GraphDriver\": {\n            \"Data\": {\n                \"LowerDir\": \"/var/lib/docker/overlay2/ismsya9vch9g6jv3obmis0xk9/diff:/var/lib/docker/overlay2/pzay2v15nabclwrnurioevp8b/diff:/var/lib/docker/overlay2/nk43qjqt7nmplh6bbebdbwaz7/diff:/var/lib/docker/overlay2/2b4ec3fbbb7ea74c31b2025246b00a475a80a93a2ba014565c5278b07cbccb6e/diff\",\n                \"MergedDir\": \"/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/merged\",\n                \"UpperDir\": \"/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/diff\",\n                \"WorkDir\": \"/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/work\"\n            },\n            \"Name\": \"overlay2\"\n        },\n        \"RootFS\": {\n            \"Type\": \"layers\",\n            \"Layers\": [\n                \"sha256:13a56b6535801be2adde694dabaf1c2df1d862a390661907dac821c42cd565cc\",\n                \"sha256:915e8399c95d8e60b907101e6de03242fe9d562e15b90d3d5630a2c3cb737291\",\n                \"sha256:0063346756912fdeae2f11c8e25224e3fa936b2cad66bda842c2f5d1fb0d1c86\",\n                \"sha256:d42ab9f7ce1074d641b72783d53d0916aa58868e8cd358aa18ac65fe291b28c9\",\n                \"sha256:9ed16320534bd20750721d9f8b2c436b0a34a9467059002d686c34e0a0e1d4fe\"\n            ]\n        },\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-09-06T01:13:49.276783027+08:00\"\n        }\n    }\n]\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T02:33:09.418391+00:00",
+  "host_elapsed_s": 0.020889167004497722
+}

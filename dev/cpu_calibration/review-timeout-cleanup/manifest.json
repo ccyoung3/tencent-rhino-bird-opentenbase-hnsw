@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "created_at_utc": "2026-09-13T02:39:07.012468+00:00",
+  "scope": "Post-run create-timeout ownership recovery only. No CPU or Docker workload executed. All tests use mocked subprocess calls.",
+  "test_command": [
+    "python3",
+    "dev/cpu_calibration/test_cleanup.py",
+    "-v"
+  ],
+  "tests": 3,
+  "original_run_sources_unchanged": true,
+  "files": {
+    "run-after.py": "db7254e0a0df536b16d0fbeef92ed00b4891f522469e00609e51760d045cbe55",
+    "run.diff": "d221201efe8743c6b7ebe9275910c218a6114e3a5120be53b8c0daf285a28b80",
+    "tests.txt": "3685472c8042231bc17372462ecde68e45829ba8a7136eeb26250e913ae68bc9",
+    "test_cleanup.py": "e9677cc125ac763705d654cf91cfdfef558bc69d06e478b032d54d2149fe1cad",
+    "run-before.py": "d7414fcd7a82c8426690dd9e6d9f29bf58778c83735821779b6e815518651099"
+  }
+}

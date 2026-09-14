@@ -1,0 +1,15 @@
+test_ac_resource_and_warmup_in_statistics_rejected (__main__.AuditMutations.test_ac_resource_and_warmup_in_statistics_rejected) ... ok
+test_clock_exact_boundary_and_both_exceeding_directions (__main__.AuditMutations.test_clock_exact_boundary_and_both_exceeding_directions) ... ok
+test_complete_archived_chain_and_independent_answer (__main__.AuditMutations.test_complete_archived_chain_and_independent_answer) ... ok
+test_cpu_sum_keeps_outer_wall_separate_and_does_not_gate_variation (__main__.AuditMutations.test_cpu_sum_keeps_outer_wall_separate_and_does_not_gate_variation) ... ok
+test_json_duplicate_nonfinite_and_raw_divergence_rejected (__main__.AuditMutations.test_json_duplicate_nonfinite_and_raw_divergence_rejected) ... ok
+test_missing_distance_call_inside_loop_rejected (__main__.AuditMutations.test_missing_distance_call_inside_loop_rejected) ... ok
+test_missing_duplicate_reordered_or_failed_formal_rejected (__main__.AuditMutations.test_missing_duplicate_reordered_or_failed_formal_rejected) ... ok
+test_participant_identity_types_and_scope_rejected (__main__.AuditMutations.test_participant_identity_types_and_scope_rejected) ... ok
+test_self_consistent_wrong_reference_cannot_pass (__main__.AuditMutations.test_self_consistent_wrong_reference_cannot_pass) ... ok
+test_source_binary_and_cleanup_mutations_rejected_on_private_copies (__main__.AuditMutations.test_source_binary_and_cleanup_mutations_rejected_on_private_copies) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.126s
+
+OK

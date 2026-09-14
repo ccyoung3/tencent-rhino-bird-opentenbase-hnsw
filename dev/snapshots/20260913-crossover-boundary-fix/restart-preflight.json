@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-09-12T17:46:23.085415+00:00",
+  "decision": "one fresh complete fixed-protocol run after observed restoration of AC; no partial-sample pooling or effect-based restart",
+  "prior_failed_run": "experiments/hnsw_build/results/20260912T150341Z-bounded-crossover-formal",
+  "prior_failure": "AC to Battery during a SQL-successful measurement",
+  "prior_formal_effects_inspected": false,
+  "power_source": "AC",
+  "live_task_resource_absence": {
+    "containers": [],
+    "volumes": []
+  },
+  "unit_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv-glove/bin/python -m unittest discover -s experiments/hnsw_build -p test_*.py -q",
+    "tests": 109,
+    "failures": 0,
+    "skips": 0,
+    "seconds": 0.409
+  },
+  "postprocessing_fix": "dev/snapshots/20260913-crossover-boundary-fix/manifest.json",
+  "method_sha256": "711cab9d66de11aed71540c3d4d79633a59926a3b289161adedf8c8f7e1cb532",
+  "measurement_configuration": "unchanged: 24 panels, 768 formal, 384 warmups, original source-attested images, 5% reference"
+}

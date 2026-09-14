@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652",
+    "/bin/sh",
+    "-c",
+    "for f in cpu.stat cpu.max cpuset.cpus.effective memory.current memory.events io.stat; do printf \"FILE:%s\\n\" \"$f\"; cat \"/sys/fs/cgroup/$f\" || exit; done; printf \"FILE:cpu.pressure\\n\"; if [ -r /sys/fs/cgroup/cpu.pressure ]; then cat /sys/fs/cgroup/cpu.pressure; else printf \"unavailable\\n\"; fi"
+  ],
+  "started_at_utc": "2026-09-13T03:01:01.008808+00:00",
+  "returncode": 0,
+  "stdout": "FILE:cpu.stat\nusage_usec 82051302\nuser_usec 81990105\nsystem_usec 61196\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpuset.cpus.effective\n0-9\nFILE:memory.current\n4255744\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=3637248 wbytes=0 rios=54 wios=0 dbytes=0 dios=0\nFILE:cpu.pressure\nunavailable\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T03:01:01.044058+00:00",
+  "host_elapsed_s": 0.03526666700054193
+}

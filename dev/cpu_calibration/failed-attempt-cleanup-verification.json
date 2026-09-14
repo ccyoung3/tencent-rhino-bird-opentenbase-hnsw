@@ -1,0 +1,28 @@
+{
+  "verified_at_utc": "2026-09-13T02:34:30.944113+00:00",
+  "status": "verified",
+  "note": "Supplemental read-only verification: first attempt original cleanup status remains failed due only to case-sensitive not-found assertion. No calculation probe was run.",
+  "records": [
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "4b7ce63d84e949b76a756110ea01dd3bb1658e81a25f7af7ee8a0eeeedc0be37"
+      ],
+      "returncode": 1,
+      "stdout": "[]\n",
+      "stderr": "error: no such object: 4b7ce63d84e949b76a756110ea01dd3bb1658e81a25f7af7ee8a0eeeedc0be37\n"
+    },
+    {
+      "argv": [
+        "docker",
+        "volume",
+        "inspect",
+        "3e97330e345240c816402e8404624b16faa2295746fb858562a761921cfcf19a"
+      ],
+      "returncode": 1,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: get 3e97330e345240c816402e8404624b16faa2295746fb858562a761921cfcf19a: no such volume\n"
+    }
+  ]
+}

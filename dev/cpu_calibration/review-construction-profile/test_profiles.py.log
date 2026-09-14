@@ -1,0 +1,11 @@
+test_actual_parser_boundaries_without_calculate_or_fork (__main__.CParserTests.test_actual_parser_boundaries_without_calculate_or_fork) ... ok
+test_clock_threshold_is_absolute_and_source_changes_invalidate (__main__.ProfileTests.test_clock_threshold_is_absolute_and_source_changes_invalidate) ... ok
+test_construction_keeps_warmup_and_all_twelve_including_extreme_value (__main__.ProfileTests.test_construction_keeps_warmup_and_all_twelve_including_extreme_value) ... ok
+test_failure_stops_without_discarding_or_replacing_attempted_probes (__main__.ProfileTests.test_failure_stops_without_discarding_or_replacing_attempted_probes) ... ok
+test_selection_boundaries_and_construction_is_not_adaptive (__main__.ProfileTests.test_selection_boundaries_and_construction_is_not_adaptive) ... ok
+test_short_default_selection_and_no_new_clock_gate (__main__.ProfileTests.test_short_default_selection_and_no_new_clock_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.858s
+
+OK

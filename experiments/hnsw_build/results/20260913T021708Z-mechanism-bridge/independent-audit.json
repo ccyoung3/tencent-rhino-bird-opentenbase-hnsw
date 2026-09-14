@@ -1,0 +1,112 @@
+{
+  "audit_status": "verified",
+  "status": "exploratory_bridge_verified",
+  "exploratory": true,
+  "no_acceptance_inference": true,
+  "panels": 1,
+  "formal_count": 8,
+  "warmup_count": 4,
+  "verified_counter_builds": 6,
+  "verified_counter_records": 18,
+  "verified_actual_index_records": 12,
+  "verified_instance_identities": 4,
+  "verified_cleanup_records": 4,
+  "source_archive_verified": true,
+  "actual_sequence_verified": true,
+  "description": {
+    "scope": "one exploratory panel; two repeats are not independent acceptance evidence",
+    "groups": [
+      {
+        "condition": "baseline",
+        "times": {
+          "plain-baseline": [
+            5.895084499999939,
+            6.402570874997764
+          ],
+          "counter-baseline": [
+            6.311359915998764,
+            7.303182583003945
+          ]
+        },
+        "geometric_seconds": {
+          "plain-baseline": 6.143589856537492,
+          "counter-baseline": 6.789183589621909
+        },
+        "instrumented_over_plain_ratio": 1.1050841198973318
+      },
+      {
+        "condition": "on",
+        "times": {
+          "plain-on": [
+            6.237932208001439,
+            6.2139164169930154
+          ],
+          "counter-on": [
+            6.467957000000752,
+            6.318585958004405
+          ]
+        },
+        "geometric_seconds": {
+          "plain-on": 6.225912732715552,
+          "counter-on": 6.392835229941488
+        },
+        "instrumented_over_plain_ratio": 1.0268109278738844
+      }
+    ]
+  },
+  "boundary_resource_warnings": [],
+  "live_resource_absence": "not queried; owned cleanup records verified offline",
+  "limitation": "One exploratory panel; two repeats are not independent units. These ratios do not update the 5% acceptance or uniquely identify host-frequency/compilation causes.",
+  "protocol_sha256": "d8bc3443c6c16058d49414c132bba224c5645ea66c50b383ce42e5648e92b649",
+  "summary_sha256": "690f032a22d14bea9bb1cfdf26412e0aaafd2da2537287fb5c6b8ddf1a42b4fc",
+  "raw_artifacts_sha256": {
+    "p00/counter-baseline/measure-0/measurement.json": "9c79175dc62a9180259c0ace18dad953cfdb26e1cd96a72d5cd32ac26c9ec258",
+    "p00/counter-baseline/measure-0/build.stderr.txt": "33aafa349dacf743cb9fd2de73be06e6237293e12288ea5e9b4d677ebbe6f923",
+    "p00/counter-baseline/measure-0/bridge.json": "79c71a64875d97ed13bb98dd5652492dff80859e8b4b07dfa643a1beb0e64a60",
+    "p00/counter-baseline/measure-0/work.json": "fb602593db9c0f1609e0d9632cdd9e25e7784c5441ac6cda74b7f0952f939c4f",
+    "p00/plain-baseline/measure-0/measurement.json": "4fc00c79ccf12a7a11b15cce473d92a73046ee5612f8a4d65f5d0ff26f66fb05",
+    "p00/plain-baseline/measure-0/build.stderr.txt": "5915f6bd4cdfd6dda5b19666d3dc523b940a22168e57e7dfc5e72423562adb1f",
+    "p00/plain-baseline/measure-0/bridge.json": "5bbbc3375a350a015b5965e31828b46bb1c899bdd6af2102c66f376e8254f6de",
+    "p00/plain-on/measure-0/measurement.json": "12163e0ff54ddca62fb1870bae045f629f3787f552b52b2571b7cce322c6d48f",
+    "p00/plain-on/measure-0/build.stderr.txt": "8e387f6575034aa01ba06afc6371c3a27f63b470186853c19b7f8b982b020549",
+    "p00/plain-on/measure-0/bridge.json": "5bbbc3375a350a015b5965e31828b46bb1c899bdd6af2102c66f376e8254f6de",
+    "p00/counter-on/measure-0/measurement.json": "fddf483181ddf894a14280c14e20a8c8773169108ae514dc1ee440d3ef6bd595",
+    "p00/counter-on/measure-0/build.stderr.txt": "d594b56c8e0d8375e58c2b7ca4d2276974eb52ccd3a9935f0a4f9f9c9621305d",
+    "p00/counter-on/measure-0/bridge.json": "79c71a64875d97ed13bb98dd5652492dff80859e8b4b07dfa643a1beb0e64a60",
+    "p00/counter-on/measure-0/work.json": "c4ce3ed7cd2a8b1540cd049d373bd7401395ea134a14b64b156c8ba21074eebe",
+    "p00/counter-on/measure-1/measurement.json": "ba8ffecdbeca7f876d07d90d02a65b229584a50e106619bf6470f14387e7b020",
+    "p00/counter-on/measure-1/build.stderr.txt": "81b1ba69910fd7c2e433b2d5b4a3165f4495596b36556f8b60b3b2f38def524d",
+    "p00/counter-on/measure-1/bridge.json": "9a430b107cffb4719e537ee1fb1c6107197379df0c6df7b9d920db5a69f01b1f",
+    "p00/counter-on/measure-1/work.json": "eb65b7afe28bde2935bab6d297caa5c041df480387cd2841484cc9b3329b8b18",
+    "p00/plain-on/measure-1/measurement.json": "22a14a1ccced0d0b895e463905812fda7922339455a1149b286619b89fdd6c9e",
+    "p00/plain-on/measure-1/build.stderr.txt": "c8e83e100dc1d3165ec1fdc569b3d86755a0712f95e50581a7bcecdbfe4b5db0",
+    "p00/plain-on/measure-1/bridge.json": "2f9db9033374ca94ad4f64451c8910b1f098ea16d5d2e9b42e92bb272d060e97",
+    "p00/plain-baseline/measure-1/measurement.json": "f21b3e8aec087cfaf4fc20b9567d11f4b6db088a2b27ce7e25ab27907bf6b2f6",
+    "p00/plain-baseline/measure-1/build.stderr.txt": "975a8ed28b5e4529d827e380496ebb17aede51104ec2a85b9485d6904c0a31f2",
+    "p00/plain-baseline/measure-1/bridge.json": "2f9db9033374ca94ad4f64451c8910b1f098ea16d5d2e9b42e92bb272d060e97",
+    "p00/counter-baseline/measure-1/measurement.json": "7ff5c16055437dcf13bc5a490a6b87636db5e328876235d3467f1b24b7e904a2",
+    "p00/counter-baseline/measure-1/build.stderr.txt": "50481e114b2083205552ed0e5a1bda39b547465064cd70de95dc107ec96deb46",
+    "p00/counter-baseline/measure-1/bridge.json": "9a430b107cffb4719e537ee1fb1c6107197379df0c6df7b9d920db5a69f01b1f",
+    "p00/counter-baseline/measure-1/work.json": "e1858092dd78384557a72f421aef5c9955c2570545d1bcd4ee2e0616eb481094",
+    "p00/counter-baseline/warmup-0/measurement.json": "ba46111f83d96dd5d460e92cfc3bb49d0c6fb15a3c429d5503843a9a71186a03",
+    "p00/counter-baseline/warmup-0/build.stderr.txt": "a732e6178162fc366f4beea0f9dcf3be00d643a27a21d2a6040597d925c328c7",
+    "p00/counter-baseline/warmup-0/bridge.json": "6e8b2901c100187ba1953a3c6519a3fee842e14e625f8db2411edd73039e923a",
+    "p00/counter-baseline/warmup-0/work.json": "e96e8686f9457ef5fceebcfb7613537afc359160f10efb6b88c3d3760df1f6a9",
+    "p00/plain-baseline/warmup-0/measurement.json": "0521186a12392404ca18cee429731675377efc6c891e21aaf9ceaa262d3e53e1",
+    "p00/plain-baseline/warmup-0/build.stderr.txt": "b8ebbc2d46463499e3b0ec4306d759fbb6f94f8e6a3dc6ab956d16582df84a15",
+    "p00/plain-baseline/warmup-0/bridge.json": "44a0ae31c4eccbdb6b7f49b9d33e338465f99b1dc55c1cb2915a8536f5a8cfa3",
+    "p00/plain-on/warmup-0/measurement.json": "c4d66531da93182eb8213105582af61870145949ed93ca60dfa59ccec0951971",
+    "p00/plain-on/warmup-0/build.stderr.txt": "63ecf969b6a199742d48acd861b26939c7258b5eac94b3786d498fcf5cdccee0",
+    "p00/plain-on/warmup-0/bridge.json": "44a0ae31c4eccbdb6b7f49b9d33e338465f99b1dc55c1cb2915a8536f5a8cfa3",
+    "p00/counter-on/warmup-0/measurement.json": "a3747924a67d8bb380fa428d08c1ac0fadc38fa581593f7816bfe9c2f3f082b8",
+    "p00/counter-on/warmup-0/build.stderr.txt": "bbbc78000b09345bb5767f333a72dc5eaddd1bfe46f1ce422583c448071148db",
+    "p00/counter-on/warmup-0/bridge.json": "6e8b2901c100187ba1953a3c6519a3fee842e14e625f8db2411edd73039e923a",
+    "p00/counter-on/warmup-0/work.json": "d2e2ec7dfe12e81fca6f8d0bc879a308b06fcf52182d11ba770cfbf564592373"
+  },
+  "audit_source_sha256": {
+    "audit_bridge.py": "06bd8bfa2fe4c87aacda59aa6d04c058577b46d5e6689465c1f01310c1f4380f",
+    "audit_mechanism.py": "9ab2ce8ca30a5cd7dae9a7e4a5149cb4c92df9e8b7fb2f7273bc7634a860130a",
+    "audit_crossover.py": "a0628b19a9e5965b56253f23e135be67b1b7a9a47a20675fc47d64fe4cdda80a"
+  },
+  "audited_at_utc": "2026-09-13T02:20:06.946187+00:00"
+}

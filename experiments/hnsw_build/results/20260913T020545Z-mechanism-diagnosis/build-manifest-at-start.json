@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "test_only": true,
+  "status": "passed",
+  "started_at_utc": "2026-09-13T02:01:45.862872+00:00",
+  "build_context": "/var/folders/6y/11gbn31n30j3yh2t3tw6b16r0000gn/T/hnsw-mechanism-build-cfzy34ke",
+  "prior_manifest_sha256": "81cc65ba8499c3f66e651928d9730c245a9e132b24b9cc40081596c1b6ac7d29",
+  "baseline_commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+  "candidate_changes": {
+    "src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9"
+  },
+  "bases": {
+    "timing-v1-test-arm64": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+    "timing-v1-arm64": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7"
+  },
+  "baseline_archive_sha256": "68b6e84e43ad41ad3a3d3f59fd391a51aaef4c4e63d09e3f512d95ba1dfccf61",
+  "candidate_tracked_diff_sha256": "99da7d1050501be3d8060989511f26c39f0571e0a14c1d09a809c4a1fbf2bcc2",
+  "inputs": {
+    "build.py": "028f63a7dc4b21d5ecb06c8bfa8b41f022d92a5d4918a0a96a6eab126753f335",
+    "instrument.py": "030436470c3217fc76ff483d1ab2e789935cf4ed0e8637dd27530c81053d6a21",
+    "compile.sh": "5c0884efe41659f2037a80ce43ae898a92fbe48860b664455eb06e67a852c574",
+    "Dockerfile": "4c14356ac89d330730c064053b2463130c4d4eb018ed449d16fe34c886c51acc"
+  },
+  "sources": {
+    "baseline": {
+      "src/bitutils.c": "59b798f77226ceed8dbb2688001d17000127b45f2c9af7a7b825b0d7ad6ff18b",
+      "src/bitutils.h": "379ae17f7b1c10ff323684d7582413dcecfe2151b2c8dd0d5b55b6f5597e40b9",
+      "src/bitvec.c": "150cd99001d3398411dfd31c2e257fdbe07d278f76da136efe9dcf53eca84209",
+      "src/bitvec.h": "f2c103f71d933583d42309aa4ab74394672ced3bf8f5c8935675a988c9eca587",
+      "src/halfutils.c": "b187154518b8b0955a0b2fbecb52c1a0016b1b073af29d3b6cbee079a5bc9741",
+      "src/halfutils.h": "cf15f882c6843076e9a14d82b2d4d7c483d69d2acbc497fb23da6cf917c5b298",
+      "src/halfvec.c": "958b5bc29d4b3d7a910491bd93eeed62e5948f48c340fc324cd7a13331291ae7",
+      "src/halfvec.h": "451a53dded6a1e662d2bc9f75d0ecd655a347e0bfda9c7c05f9bc253fd4d7d3b",
+      "src/hnsw.c": "05751fa1bc696cb82f813f222ba11731f4a88432ed438c7dc1dd3cb239dcac17",
+      "src/hnsw.h": "ccb561a9b6cbbcf6bff2614d2f0de3ec7dbd9fcf3dd1784d6512e09a7bbe63d3",
+      "src/hnswbuild.c": "d260380910859f3abaa36feb090ab9b1a215a4efca5acc776ebe7f7fa20c0fce",
+      "src/hnswinsert.c": "b0771340fc19283ab5c5e77f61369dbeb370787468ada2d806f7b2209fc16349",
+      "src/hnswscan.c": "ed7a6a6bb16e94473db7d6b355fbdf1d3e042202d5c9e1ecd978511a0303858d",
+      "src/hnswutils.c": "d89f18228940e38ccffc9741ffe41e79aa08e098c8abf5f7eb51de6783ac331f",
+      "src/hnswvacuum.c": "0ca3f011abfd82370de5c173e25d586234bb2c8aaf92c86914c3c7ede9e9306f",
+      "src/ivfbuild.c": "767ca565b6a8c62a684424f58ceaa4f356d97d087b2d84b96d09a8bc90dd835d",
+      "src/ivfflat.c": "652309192fdd909048371ed24f5026ae0ebd1eecf253ca6512820ce114ea71e0",
+      "src/ivfflat.h": "e237e501810d963d6976199540784e9797f4ccbecaaebcf934acdbfe75c0e9ab",
+      "src/ivfinsert.c": "41df35c597ebf4e7f3a4feb8dd0bb2da615a4d61ed07dd1191e3b469b4dbf279",
+      "src/ivfkmeans.c": "7aefce174af9c02ad7c2aa0991247b266c9455090704092f13f743595b98f97d",
+      "src/ivfscan.c": "60399f3f5de986a45cfbc4f69c9ccab9829a669cc68ea97ab49591d8ee13e0a7",
+      "src/ivfutils.c": "db4d7bc6d34343032ecd456ee253e2865ad15e3bf272684c1671dbf33e3b998e",
+      "src/ivfvacuum.c": "edaea787a49f9b6c00b861cbf3d83ede93b2016bd3daa7aee2cf997f44ca74f4",
+      "src/sparsevec.c": "61b939b93a576c6864447818ddebb47dc6e0dd3596538c8e5127acb6eb495954",
+      "src/sparsevec.h": "89b01077de88c3597e687b04303499c35610b108cc64b05284d38d909dfc67bc",
+      "src/vector.c": "37642b15fd6cae9f968ddefadc53410be42bdb226d50e4af5aba6ef801d4b130",
+      "src/vector.h": "a67272ea44553d174968f575a91da71dfe82b8278ec2c70d51e37c154e2f0049"
+    },
+    "candidate": {
+      "src/bitutils.c": "59b798f77226ceed8dbb2688001d17000127b45f2c9af7a7b825b0d7ad6ff18b",
+      "src/bitutils.h": "379ae17f7b1c10ff323684d7582413dcecfe2151b2c8dd0d5b55b6f5597e40b9",
+      "src/bitvec.c": "150cd99001d3398411dfd31c2e257fdbe07d278f76da136efe9dcf53eca84209",
+      "src/bitvec.h": "f2c103f71d933583d42309aa4ab74394672ced3bf8f5c8935675a988c9eca587",
+      "src/halfutils.c": "b187154518b8b0955a0b2fbecb52c1a0016b1b073af29d3b6cbee079a5bc9741",
+      "src/halfutils.h": "cf15f882c6843076e9a14d82b2d4d7c483d69d2acbc497fb23da6cf917c5b298",
+      "src/halfvec.c": "958b5bc29d4b3d7a910491bd93eeed62e5948f48c340fc324cd7a13331291ae7",
+      "src/halfvec.h": "451a53dded6a1e662d2bc9f75d0ecd655a347e0bfda9c7c05f9bc253fd4d7d3b",
+      "src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+      "src/hnsw.h": "86e520e945d57d208bf7b968f94da3522c2199f60865ca86e6c12b8149db3d9b",
+      "src/hnswbuild.c": "b20cbd64863702222f27220adfb323cd3ecaa0f3da428084169ada48c646fd91",
+      "src/hnswinsert.c": "b0771340fc19283ab5c5e77f61369dbeb370787468ada2d806f7b2209fc16349",
+      "src/hnswscan.c": "ed7a6a6bb16e94473db7d6b355fbdf1d3e042202d5c9e1ecd978511a0303858d",
+      "src/hnswutils.c": "d89f18228940e38ccffc9741ffe41e79aa08e098c8abf5f7eb51de6783ac331f",
+      "src/hnswvacuum.c": "0ca3f011abfd82370de5c173e25d586234bb2c8aaf92c86914c3c7ede9e9306f",
+      "src/ivfbuild.c": "767ca565b6a8c62a684424f58ceaa4f356d97d087b2d84b96d09a8bc90dd835d",
+      "src/ivfflat.c": "652309192fdd909048371ed24f5026ae0ebd1eecf253ca6512820ce114ea71e0",
+      "src/ivfflat.h": "e237e501810d963d6976199540784e9797f4ccbecaaebcf934acdbfe75c0e9ab",
+      "src/ivfinsert.c": "41df35c597ebf4e7f3a4feb8dd0bb2da615a4d61ed07dd1191e3b469b4dbf279",
+      "src/ivfkmeans.c": "7aefce174af9c02ad7c2aa0991247b266c9455090704092f13f743595b98f97d",
+      "src/ivfscan.c": "60399f3f5de986a45cfbc4f69c9ccab9829a669cc68ea97ab49591d8ee13e0a7",
+      "src/ivfutils.c": "db4d7bc6d34343032ecd456ee253e2865ad15e3bf272684c1671dbf33e3b998e",
+      "src/ivfvacuum.c": "edaea787a49f9b6c00b861cbf3d83ede93b2016bd3daa7aee2cf997f44ca74f4",
+      "src/sparsevec.c": "61b939b93a576c6864447818ddebb47dc6e0dd3596538c8e5127acb6eb495954",
+      "src/sparsevec.h": "89b01077de88c3597e687b04303499c35610b108cc64b05284d38d909dfc67bc",
+      "src/vector.c": "37642b15fd6cae9f968ddefadc53410be42bdb226d50e4af5aba6ef801d4b130",
+      "src/vector.h": "a67272ea44553d174968f575a91da71dfe82b8278ec2c70d51e37c154e2f0049"
+    }
+  },
+  "images": {
+    "baseline": {
+      "tag": "opentenbase-pg18-pgvector:mechanism-build-01-baseline-arm64",
+      "id": "sha256:a5ce22f6c8251519757d57f92ba57eeaa967037c148d105792033d8975baec44",
+      "identity_sha256": "e76326a93212ec4778c87e950e71e4cf0465f1e5ac2eb886e62845ac995906f8"
+    },
+    "candidate": {
+      "tag": "opentenbase-pg18-pgvector:mechanism-build-01-candidate-arm64",
+      "id": "sha256:3835555138a494ca0a34e93b37a4f695dcdcfebf2f361b02d75842467fecb317",
+      "identity_sha256": "a28e918fb3c89fb22443c929d49fe188cb9f00f9f5acafc5df68e69792bdcccd"
+    }
+  },
+  "finished_at_utc": "2026-09-13T02:01:49.103557+00:00"
+}

@@ -1,0 +1,54 @@
+--- before/test_profiles.py
++++ after/test_profiles.py
+@@ -1,5 +1,6 @@
+ """Offline protocol tests; subprocess is mocked except a parser-only C harness."""
+ import contextlib
++import hashlib
+ import io
+ import json
+ from pathlib import Path
+@@ -34,7 +35,7 @@
+                 run.integer_reference(invalid)
+ 
+     def simulate(self, profile='construction', *, failure_probe=None, failure=None, drift_probe=None,
+-                 drift_ns=0, mutate_method=False):
++                 drift_ns=0, mutate_method=False, mutate_protocol=False):
+         state = {'probes': [], 'clock_calls': 0, 'removed': False, 'timeouts': [], 'invalid': []}
+         image_id = 'sha256:' + 'a' * 64
+         container_id = 'b' * 64
+@@ -86,6 +87,14 @@
+                     index = len(state['probes'])
+                     state['probes'].append(iterations)
+                     state['timeouts'].append(kwargs['timeout'])
++                    if mutate_protocol:
++                        protocol_path = next((root / 'results').glob('*/protocol.json'))
++                        if index == 0:
++                            state['original_protocol_hash'] = hashlib.sha256(protocol_path.read_bytes()).hexdigest()
++                        if index == 4:
++                            # Change only protocol bytes; source/method and JSON content stay unchanged.
++                            protocol_path.write_text(protocol_path.read_text() + '\n')
++                            state['changed_protocol_hash'] = hashlib.sha256(protocol_path.read_bytes()).hexdigest()
+                     if index == failure_probe:
+                         if failure == 'interrupt':
+                             raise KeyboardInterrupt('offline interruption')
+@@ -182,6 +191,20 @@
+         self.assertEqual(len(state['probes']), 13)
+         self.assertFalse(files['summary.json']['source_hashes_unchanged'])
+ 
++    def test_protocol_only_tampering_fails_with_existing_frozen_digest_check(self):
++        status, state, files = self.simulate(mutate_protocol=True)
++        self.assertNotEqual(state['original_protocol_hash'], state['changed_protocol_hash'])
++        summary = files['summary.json']
++        self.assertEqual(status, 1)
++        self.assertEqual(summary['status'], 'failed')
++        self.assertEqual(summary['protocol_sha256'], state['original_protocol_hash'])
++        self.assertEqual(summary['input_hashes_at_finish'], summary['sources'])
++        self.assertIn('frozen protocol changed', summary['source_verification_error'])
++        self.assertEqual(len(summary['attempts']), 13)
++        self.assertEqual(len(summary['records']), 12)
++        self.assertEqual(summary['cleanup']['status'], 'verified')
++        self.assertTrue(state['removed'])
++
+ 
+ class CParserTests(unittest.TestCase):
+     def test_actual_parser_boundaries_without_calculate_or_fork(self):

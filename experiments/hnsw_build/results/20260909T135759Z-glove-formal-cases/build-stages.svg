@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="440" viewBox="0 0 940 440" role="img">
+<title>GloVe build stages — every formal repetition</title>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font:14px Arial,sans-serif;fill:#202020} .title{font-size:18px;font-weight:bold}</style>
+<text class="title" x="20" y="28">GloVe build stages — every formal repetition</text>
+<rect x="20" y="45" width="12" height="12" fill="#0072B2"/>
+<text x="38" y="56">Memory build</text>
+<rect x="230" y="45" width="12" height="12" fill="#E69F00"/>
+<text x="248" y="56">Flush</text>
+<rect x="440" y="45" width="12" height="12" fill="#D55E00"/>
+<text x="458" y="56">Disk insert</text>
+<rect x="650" y="45" width="12" height="12" fill="#999999"/>
+<text x="668" y="56">Other stages</text>
+<text x="12" y="105">1792MB / r1</text>
+<rect x="170.00" y="87" width="160.22" height="26" fill="#0072B2"><title>Memory build: 525.168s</title></rect>
+<rect x="330.22" y="87" width="2.47" height="26" fill="#E69F00"><title>Flush: 8.102s</title></rect>
+<rect x="332.69" y="87" width="0.00" height="26" fill="#D55E00"><title>Disk insert: 0.000s</title></rect>
+<rect x="332.69" y="87" width="1.33" height="26" fill="#999999"><title>Other stages: 4.355s</title></rect>
+<text x="752" y="105">537.62s; spill=False</text>
+<text x="12" y="150">1024MB / r1</text>
+<rect x="170.00" y="132" width="128.58" height="26" fill="#0072B2"><title>Memory build: 421.455s</title></rect>
+<rect x="298.58" y="132" width="1.94" height="26" fill="#E69F00"><title>Flush: 6.367s</title></rect>
+<rect x="300.52" y="132" width="299.59" height="26" fill="#D55E00"><title>Disk insert: 982.005s</title></rect>
+<rect x="600.11" y="132" width="1.41" height="26" fill="#999999"><title>Other stages: 4.623s</title></rect>
+<text x="752" y="150">1414.45s; spill=True</text>
+<text x="12" y="195">1024MB / r2</text>
+<rect x="170.00" y="177" width="76.98" height="26" fill="#0072B2"><title>Memory build: 252.343s</title></rect>
+<rect x="246.98" y="177" width="1.18" height="26" fill="#E69F00"><title>Flush: 3.874s</title></rect>
+<rect x="248.17" y="177" width="260.96" height="26" fill="#D55E00"><title>Disk insert: 855.369s</title></rect>
+<rect x="509.12" y="177" width="0.80" height="26" fill="#999999"><title>Other stages: 2.621s</title></rect>
+<text x="752" y="195">1114.21s; spill=True</text>
+<text x="12" y="240">1792MB / r2</text>
+<rect x="170.00" y="222" width="96.79" height="26" fill="#0072B2"><title>Memory build: 317.265s</title></rect>
+<rect x="266.79" y="222" width="1.64" height="26" fill="#E69F00"><title>Flush: 5.371s</title></rect>
+<rect x="268.43" y="222" width="0.00" height="26" fill="#D55E00"><title>Disk insert: 0.000s</title></rect>
+<rect x="268.43" y="222" width="1.11" height="26" fill="#999999"><title>Other stages: 3.652s</title></rect>
+<text x="752" y="240">326.29s; spill=False</text>
+<text x="12" y="285">1792MB / r3</text>
+<rect x="170.00" y="267" width="94.10" height="26" fill="#0072B2"><title>Memory build: 308.440s</title></rect>
+<rect x="264.10" y="267" width="1.03" height="26" fill="#E69F00"><title>Flush: 3.375s</title></rect>
+<rect x="265.13" y="267" width="0.00" height="26" fill="#D55E00"><title>Disk insert: 0.000s</title></rect>
+<rect x="265.13" y="267" width="1.03" height="26" fill="#999999"><title>Other stages: 3.376s</title></rect>
+<text x="752" y="285">315.19s; spill=False</text>
+<text x="12" y="330">1024MB / r3</text>
+<rect x="170.00" y="312" width="101.64" height="26" fill="#0072B2"><title>Memory build: 333.152s</title></rect>
+<rect x="271.64" y="312" width="3.84" height="26" fill="#E69F00"><title>Flush: 12.576s</title></rect>
+<rect x="275.47" y="312" width="420.80" height="26" fill="#D55E00"><title>Disk insert: 1379.303s</title></rect>
+<rect x="696.27" y="312" width="1.50" height="26" fill="#999999"><title>Other stages: 4.933s</title></rect>
+<text x="752" y="330">1729.96s; spill=True</text>
+<path d="M170 357h570" stroke="#444"/>
+<text text-anchor="middle" x="170.0" y="377">0</text>
+<text text-anchor="middle" x="284.0" y="377">374</text>
+<text text-anchor="middle" x="398.0" y="377">747</text>
+<text text-anchor="middle" x="512.0" y="377">1121</text>
+<text text-anchor="middle" x="626.0" y="377">1495</text>
+<text text-anchor="middle" x="740.0" y="377">1868</text>
+<text x="170" y="402">Internal elapsed wall time (seconds); not worker CPU time</text>
+</svg>

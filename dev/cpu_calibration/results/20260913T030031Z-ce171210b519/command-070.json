@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652",
+    "/opt/cpu-calibration/calibrate",
+    "1500000000"
+  ],
+  "started_at_utc": "2026-09-13T03:01:46.770284+00:00",
+  "returncode": 0,
+  "stdout": "{\"schema\":1,\"test_only\":true,\"scope\":\"fixed_arithmetic_three_processes\",\"dimensions\":32,\"inputs\":1024,\"expected_checksum\":2589109860917,\"iterations_per_process\":1500000000,\"elapsed_ns\":8029669722,\"affinity\":[0,1,2,3,4,5,6,7,8,9],\"processes\":[{\"role\":\"leader\",\"participant\":0,\"pid\":341,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":8026666470,\"user_cpu_us\":8024786,\"system_cpu_us\":398,\"minor_faults\":0,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":23},{\"role\":\"worker\",\"participant\":1,\"pid\":346,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":8004300534,\"user_cpu_us\":8003926,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":5},{\"role\":\"worker\",\"participant\":2,\"pid\":347,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":8019850506,\"user_cpu_us\":8019820,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":3}],\"verified\":true}\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T03:01:54.840606+00:00",
+  "host_elapsed_s": 8.070941458005109
+}

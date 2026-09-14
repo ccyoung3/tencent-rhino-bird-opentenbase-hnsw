@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "review_status": "verified",
+  "reviewed_at_utc": "2026-09-13T02:38:56.150621+00:00",
+  "subject_run": "dev/cpu_calibration/results/20260913T023309Z-5d2a069fdea1",
+  "test_only": true,
+  "no_acceptance_inference": true,
+  "no_workload_rerun": true,
+  "summary_sha256": "5cd65d579bf9665052ee5ce16880ddae4c64c455ed239a04c40e6a5b0f71dcba",
+  "protocol_sha256": "152350bbbb4f3ca9bfbad9db23733b88f568478edb5c8a21c23ff4d9fb92d427",
+  "initial_protocol_sha256": "6c09ca5b9a28c72676975123fd72dd9843ac84fe3df44d701c7d3f85dcf1361d",
+  "source_sha256": {
+    "run.py": "d7414fcd7a82c8426690dd9e6d9f29bf58778c83735821779b6e815518651099",
+    "compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e"
+  },
+  "binary_sha256": {
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e",
+    "disassembly.txt": "b59ce8b7400783ae258c4ad7f03fe2f8d65a103c03f2aefffa2cb6c2535aeb82",
+    "calibrate": "f98e7d5e0174a84c3152d6521b82b98ae19595cadf7ecce7719e2a6296eb1eb2",
+    "ldd.txt": "18a90ad2bcc2d47bb090b32d44d77eb2079d5cf52fb47e12b0c21e88c46bf49c",
+    "vectorization.txt": "5ead2c7460d55ad5c34f987a00266a6b11853c7ae55e34ecfe44e1d32a6d3bea",
+    "compiler-identity.txt": "8cc43957b630e192d712cb3694fe34f81e068d09251b2caf533e8d6738f76219"
+  },
+  "raw_probe_sha256": {
+    "sizing-01.json": "2f81aae09722345ca37af570712390938b039ac8db58a8fe662ce5f75a99f773",
+    "formal-01.json": "571d0c6bf9bb10b46d3252dbbb896bde25afae5032240ffbc8da07a4241f756c",
+    "formal-02.json": "481064fd8c7e8c4ecffd40adddba6aad214439ad935545e610a97dd26babc364",
+    "formal-03.json": "9718d90497f88bfb5d9c1e9e3f04bafd5422cc990487595833ad1a7b052d857c",
+    "formal-04.json": "8b430ab7068159c94e4c3555c9d6814696bad02b167e36bb9fa64e0bd9985da4",
+    "formal-05.json": "128273da6c18cb998678f4ad70dda98ab9930b6ac97f1726c0ad674125dd79d8",
+    "formal-06.json": "bbd2341d3a1116743c9be91d72e41de323759e75aa4548bef995c30093524ea4",
+    "formal-07.json": "19b8dca1da26415c0fd87e41b3de12698f73811cd1581c5b80098881b24a779e",
+    "formal-08.json": "fe29f376d31d685b4e1dafc33cd21567ba6b2ac8d8fd4a39699fa083c37276a6",
+    "formal-09.json": "88e468c7d8b3a7a2c17107587a1f6bef473627adb6851c42b829c7973b212998",
+    "formal-10.json": "f0fd10b498b8461a377180b80ea4d632d763c67155778c52f745332b95e9beb5",
+    "formal-11.json": "5286ddeb8def2581ed2a5f09e5669e463835c8b8a04d9ed609a04debd5ff2435",
+    "formal-12.json": "468d4b05009fcd4510f35595bbf00bcc437d6725b707b85b385826e6386507cb"
+  },
+  "checks": {
+    "fixed_twelve_formal_probes": true,
+    "one_duration_only_sizing_probe_excluded_from_formal_description": true,
+    "frozen_protocol_precedes_formal_probes": true,
+    "selection_rule_independently_recomputed": true,
+    "three_unique_processes_with_leader_and_two_workers": true,
+    "schema_scope_test_only_roles_and_positive_wall_verified": true,
+    "participant_cpu_summed_but_overlapping_elapsed_not_summed": true,
+    "all_record_iterations_and_checksums_independently_verified": true,
+    "raw_stdout_and_per_probe_files_match_summary": true,
+    "all_ac_boundaries_verified": true,
+    "all_descriptive_statistics_recomputed_from_twelve_records": true,
+    "source_and_binary_hashes_match_archives": true,
+    "disassembly_retains_per_iteration_distance_call_and_vectorized_32_dimension_loop": true,
+    "successful_attempt_owned_container_and_anonymous_volume_not_found_records_verified": true
+  },
+  "fixed_work": {
+    "formal_probes": 12,
+    "sizing_probes": 1,
+    "formal_process_records": 36,
+    "sizing_process_records": 3,
+    "iterations_per_formal_process": 50000000,
+    "independent_formal_checksum": 86303660579,
+    "independent_sizing_checksum": 8630366129,
+    "reference_method": "Independent Python integer arithmetic over the 1024-input/32-dimension period; no execution of the C binary."
+  },
+  "optimization_evidence": {
+    "disassembly_path": "binary/disassembly.txt",
+    "distance_call_address": "0x1500",
+    "loop_backedge_address": "0x1514",
+    "distance_symbol_address": "0x1360",
+    "vectorization_path": "binary/vectorization.txt",
+    "conclusion": "Runtime iteration loop consumes every distance return in the checksum; the arithmetic was not eliminated."
+  },
+  "descriptive": {
+    "outer_wall_s": {
+      "values": [
+        0.19152722,
+        0.212183182,
+        0.211226219,
+        0.310739095,
+        0.214140773,
+        0.205077027,
+        0.222416142,
+        0.212082764,
+        0.226519825,
+        0.222724101,
+        0.215299783,
+        0.19721371
+      ],
+      "min": 0.19152722,
+      "max": 0.310739095,
+      "median": 0.2131619775,
+      "max_over_min": 1.6224278460262724,
+      "sample_cv": 0.13766762712549424
+    },
+    "sum_process_cpu_s": {
+      "values": [
+        0.570818,
+        0.618884,
+        0.622211,
+        0.911764,
+        0.636849,
+        0.604946,
+        0.649845,
+        0.628247,
+        0.664735,
+        0.649591,
+        0.63597,
+        0.581809
+      ],
+      "min": 0.570818,
+      "max": 0.911764,
+      "median": 0.6321085,
+      "max_over_min": 1.5972937083273477,
+      "sample_cv": 0.13503877790687194
+    }
+  },
+  "time_scope": {
+    "cpu": "Sum of process RUSAGE_SELF differences around calculate; excludes fork/setup, reference generation and result collection.",
+    "outer_wall": "Monotonic time from barrier release through leader calculation, child result collection and waitpid; includes synchronization/reaping overhead."
+  },
+  "cleanup": {
+    "successful_attempt_cleanup_sha256": "a86951ee71d8ad7e1e660eb7299886c1e283b6429142e7d8cf7ff4dbbb9795f1",
+    "first_attempt_no_arithmetic_probe_executed": true,
+    "first_attempt_original_status": "failed; preserved",
+    "first_attempt_supplemental_cleanup_path": "dev/cpu_calibration/failed-attempt-cleanup-verification.json",
+    "first_attempt_supplemental_cleanup_sha256": "0417a5b06fe2ad145900e880fd8ae01514d08b9a412a04271b7953a0da270fd8"
+  },
+  "limitations": [
+    "The predefined 50M cap was reached; formal outer intervals are only 0.191527220–0.310739095 seconds, shorter than the intended 1–3 seconds. No iteration extension or extra probes were performed.",
+    "One short fixed-work calibration does not establish a stable hardware frequency, explain historical HNSW variation, or establish 5% diagnostic-overhead acceptance.",
+    "Ambient host/VM contention remains uncontrolled; guest CPU affinity is not exclusive physical-core access.",
+    "The frozen executed runner has a create-timeout recovery gap before container ID assignment; this run successfully recorded the owned ID and verified cleanup. A later source-only fix and its mock tests are separate evidence."
+  ]
+}

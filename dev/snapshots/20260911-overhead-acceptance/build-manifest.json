@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-09-11T01:34:54.759249+00:00",
+  "previous_audit_sha256": "93bd3a024d9e25d917af2fde233df2c00dcb6fbd30dc2c298eb2075887fcd4c0",
+  "previous_files_verified": 639,
+  "baseline_commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+  "baseline_archive_sha256": "68b6e84e43ad41ad3a3d3f59fd391a51aaef4c4e63d09e3f512d95ba1dfccf61",
+  "candidate_tracked_diff_sha256": "99da7d1050501be3d8060989511f26c39f0571e0a14c1d09a809c4a1fbf2bcc2",
+  "candidate_changes": {
+    "src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9"
+  },
+  "bases": {
+    "timing-v1-test-arm64": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+    "timing-v1-arm64": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7"
+  },
+  "build_context": "/var/folders/6y/11gbn31n30j3yh2t3tw6b16r0000gn/T/hnsw-acceptance-build-2cwlj7ik",
+  "attempt_directory": "dev/snapshots/20260911-overhead-acceptance/build-attempt-2",
+  "inputs": {
+    "dev/overhead/build.py": "77f845fcbf61f7ab8b0982df6be179ba87adb0ec776f2e460709902c08f87921",
+    "dev/overhead/Dockerfile": "28c9cfe0858d33fdd85443063aa1d90d5d16a96d91b781574bf4c886fb7215b1",
+    "dev/overhead/compile.sh": "a39a82c923b842887509e2162c8483b2d664e747cff8f35b2790c759f54eaa59"
+  },
+  "images": {
+    "baseline-seed42": {
+      "tag": "opentenbase-pg18-pgvector:acceptance-20260911-baseline-seed42-arm64",
+      "id": "sha256:3db4573bad80e77defd9e89f88f74affd77dc0ee1cd4d80ef670f6d0505b99bd",
+      "identity_sha256": "ed0c3e6c4a2beecb33a469134471da8a4327d80af9bb3f9ce7bffcc5eb66379a"
+    },
+    "baseline-normal": {
+      "tag": "opentenbase-pg18-pgvector:acceptance-20260911-baseline-normal-arm64",
+      "id": "sha256:5a7ffd0b187b3e3278cd905bd5f07d42163b1b96c5cedebc9e112e4d8dea05dc",
+      "identity_sha256": "005f745b0ad823be8e467d5cf55913d50f0b5082b6ca0b0befa353e94ab7acf9"
+    },
+    "candidate-seed42": {
+      "tag": "opentenbase-pg18-pgvector:acceptance-20260911-candidate-seed42-arm64",
+      "id": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+      "identity_sha256": "2cce9acce83c04ab7cd16480e4dbde8009897a0bd4920160e9951d687cad94a3"
+    },
+    "candidate-normal": {
+      "tag": "opentenbase-pg18-pgvector:acceptance-20260911-candidate-normal-arm64",
+      "id": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4",
+      "identity_sha256": "6504265a265684316db626a60237c6b1aa526c9c59a204a23e9c3c08c7404e20"
+    }
+  },
+  "finished_at_utc": "2026-09-11T01:35:00.570066+00:00"
+}

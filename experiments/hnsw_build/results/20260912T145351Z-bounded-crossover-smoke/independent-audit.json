@@ -1,0 +1,32 @@
+{
+  "status": "smoke_verified",
+  "audit_status": "verified",
+  "directory": "experiments/hnsw_build/results/20260912T145351Z-bounded-crossover-smoke",
+  "mode": "smoke",
+  "formal_count": 32,
+  "warmup_count": 16,
+  "verified_observers": 8,
+  "verified_instance_identities": 4,
+  "verified_cleanup_records": 4,
+  "live_resource_absence": "not queried by this offline audit; cleanup records verified",
+  "source_archive_verified": true,
+  "actual_sequence_verified": true,
+  "analysis": null,
+  "timing_window": {
+    "first_build_epoch": 1789224843.5618649,
+    "last_build_end_epoch": 1789225367.6442811,
+    "span_seconds": 524.0824162960052
+  },
+  "boundary_resources": {
+    "host_load_1m_min": 2.8115234375,
+    "host_load_1m_max": 5.6796875,
+    "memory_bytes_max": 231407616,
+    "not_continuous_peak": true,
+    "warnings": []
+  },
+  "inference_limit": "Median-ratio bounds assume independent comparable panels; offline consistency cannot prove temporal independence.",
+  "protocol_sha256": "e1e0e269c3de06221c06fa1eabab1cbc4dd52d56bb4537f3dd8c966efb766b42",
+  "summary_sha256": "19b661738113590c0fa33d0f73a1606f4f6e1358212f63a00c1a6f586799b400",
+  "audit_tool_sha256": "6f1a020d649d74ba0fab4c72dbdc3034c96ad682cf21860265bcf0535fd0f325",
+  "audited_at_utc": "2026-09-12T15:03:21.361102+00:00"
+}

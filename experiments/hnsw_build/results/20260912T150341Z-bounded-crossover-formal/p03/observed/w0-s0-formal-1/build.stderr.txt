@@ -1,0 +1,3 @@
+DEBUG: building index "items_hnsw" on table "large" serially
+INFO: memory: 80 MB
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":150,"index_oid":16733,"fork":0,"parallel_workers":0,"spill":false,"total_us":17996666,"phases":[{"phase":"setup","start_us":0,"end_us":45},{"phase":"memory_build","start_us":45,"end_us":17866432},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":17866432,"end_us":17946457},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":17946457,"end_us":17946458},{"phase":"wal","start_us":17946458,"end_us":17996628},{"phase":"cleanup","start_us":17996628,"end_us":17996666}]}

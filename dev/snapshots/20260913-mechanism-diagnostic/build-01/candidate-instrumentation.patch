@@ -1,0 +1,195 @@
+--- a/src/hnswutils.c
++++ b/src/hnswutils.c
+@@ -17,6 +17,10 @@
+ #include "utils/rel.h"
+ #include "vector.h"
+ 
++/* HNSW_MECHANISM_TEST_ONLY_V1: each backend owns its own copy. */
++bool hnsw_mechanism_active = false;
++HnswMechanismCounters hnsw_mechanism_counters;
++
+ #if PG_VERSION_NUM >= 160000
+ #include "varatt.h"
+ #endif
+@@ -251,6 +255,13 @@
+ 	/* Cap level */
+ 	if (level > maxLevel)
+ 		level = maxLevel;
++
++	if (hnsw_mechanism_active)
++	{
++		Assert(level >= 0 && level < 64);
++		hnsw_mechanism_counters.elementsInitialized++;
++		hnsw_mechanism_counters.levelHistogram[level]++;
++	}
+ 
+ 	element->heaptidsLength = 0;
+ 	HnswAddHeapTid(element, heaptid);
+@@ -524,6 +535,8 @@
+ static inline double
+ HnswGetDistance(Datum a, Datum b, HnswSupport * support)
+ {
++	if (hnsw_mechanism_active)
++		hnsw_mechanism_counters.distanceCalls++;
+ 	return DatumGetFloat8(FunctionCall2Coll(support->procinfo, support->collation, a, b));
+ }
+ 
+--- a/src/hnswbuild.c
++++ b/src/hnswbuild.c
+@@ -37,6 +37,9 @@
+ #include "postgres.h"
+ 
+ #include <limits.h>
++#include <sys/resource.h>
++#include "lib/stringinfo.h"
++#include "portability/instr_time.h"
+ 
+ #include "access/genam.h"
+ #include "access/parallel.h"
+@@ -650,6 +653,9 @@
+ 	HnswGraph  *graph = buildstate->graph;
+ 	MemoryContext oldCtx;
+ 
++	if (hnsw_mechanism_active)
++		hnsw_mechanism_counters.callbacksSeen++;
++
+ 	if (buildstate->reportBuildPhase)
+ 		ReportBuildPhase(buildstate);
+ 
+@@ -663,6 +669,8 @@
+ 	/* Insert tuple */
+ 	if (InsertTuple(index, values, isnull, tid, buildstate))
+ 	{
++		if (hnsw_mechanism_active)
++			hnsw_mechanism_counters.successfulInserts++;
+ 		/* Update progress */
+ 		SpinLockAcquire(&graph->lock);
+ 		pgstat_progress_update_param(PROGRESS_CREATEIDX_TUPLES_DONE, ++graph->indtuples);
+@@ -860,6 +868,58 @@
+ 	return reltuples;
+ }
+ 
++
++/* HNSW_MECHANISM_TEST_ONLY_V1: boundary measurements and one local summary. */
++static void
++HnswMechanismReadUsage(struct rusage *usage)
++{
++	if (getrusage(RUSAGE_SELF, usage) != 0)
++		ereport(ERROR, (errmsg("HNSW mechanism getrusage failed: %m")));
++}
++
++static int64
++HnswMechanismCPUTime(const struct timeval *start, const struct timeval *end)
++{
++	return ((int64) end->tv_sec - (int64) start->tv_sec) * INT64CONST(1000000)
++		+ (int64) end->tv_usec - (int64) start->tv_usec;
++}
++
++static void
++HnswMechanismReport(Relation index, const HnswMechanismCounters *counters,
++					const struct rusage *cpuStart, const struct rusage *cpuEnd,
++					instr_time wallStart, instr_time wallEnd)
++{
++	StringInfoData buf;
++	int64		userCPU = HnswMechanismCPUTime(&cpuStart->ru_utime, &cpuEnd->ru_utime);
++	int64		systemCPU = HnswMechanismCPUTime(&cpuStart->ru_stime, &cpuEnd->ru_stime);
++	int64		elapsed;
++	bool		worker = IsParallelWorker();
++
++	INSTR_TIME_SUBTRACT(wallEnd, wallStart);
++	elapsed = (int64) INSTR_TIME_GET_MICROSEC(wallEnd);
++	if (userCPU < 0 || systemCPU < 0 || elapsed < 0)
++		ereport(ERROR, (errmsg("HNSW mechanism counter clock moved backwards")));
++
++	initStringInfo(&buf);
++	appendStringInfo(&buf,
++		"{\"schema\":1,\"test_only\":true,\"scope\":\"scan_and_insert\","
++		"\"mode\":\"native\",\"role\":\"%s\",\"worker_number\":%d,\"pid\":%d,\"index_oid\":%u,"
++		"\"callbacks_seen\":" UINT64_FORMAT ",\"successful_inserts\":" UINT64_FORMAT ","
++		"\"distance_calls\":" UINT64_FORMAT ",\"elements_initialized\":" UINT64_FORMAT ","
++		"\"user_cpu_us\":" INT64_FORMAT ",\"system_cpu_us\":" INT64_FORMAT ","
++		"\"elapsed_us\":" INT64_FORMAT ",\"level_hist\":[",
++		worker ? "worker" : "leader", worker ? ParallelWorkerNumber : -1,
++		MyProcPid, RelationGetRelid(index), counters->callbacksSeen,
++		counters->successfulInserts, counters->distanceCalls,
++		counters->elementsInitialized, userCPU, systemCPU, elapsed);
++	for (int level = 0; level < 64; level++)
++		appendStringInfo(&buf, "%s" UINT64_FORMAT,
++						 level == 0 ? "" : ",", counters->levelHistogram[level]);
++	appendStringInfoString(&buf, "]}");
++	ereport(NOTICE, (errmsg_internal("HNSW_MECHANISM %s", buf.data)));
++	pfree(buf.data);
++}
++
+ /*
+  * Perform a worker's portion of a parallel insert
+  */
+@@ -870,6 +930,11 @@
+ 	TableScanDesc scan;
+ 	double		reltuples;
+ 	IndexInfo  *indexInfo;
++	struct rusage mechanismCPUStart;
++	struct rusage mechanismCPUEnd;
++	instr_time	mechanismWallStart;
++	instr_time	mechanismWallEnd;
++	HnswMechanismCounters mechanismCaptured;
+ 
+ 	/* Join parallel scan */
+ 	indexInfo = BuildIndexInfo(indexRel);
+@@ -886,9 +951,31 @@
+ 									,SO_NONE
+ #endif
+ 		);
+-	reltuples = table_index_build_scan(heapRel, indexRel, indexInfo,
+-									   true, progress, BuildCallback,
+-									   (void *) &buildstate, scan);
++	/* Only this participant's scan is counted; final leader flush is outside. */
++	if (hnsw_mechanism_active)
++		ereport(ERROR, (errmsg("nested HNSW mechanism diagnostic scan")));
++	MemSet(&hnsw_mechanism_counters, 0, sizeof(hnsw_mechanism_counters));
++	HnswMechanismReadUsage(&mechanismCPUStart);
++	INSTR_TIME_SET_CURRENT(mechanismWallStart);
++	hnsw_mechanism_active = true;
++	PG_TRY();
++	{
++		reltuples = table_index_build_scan(heapRel, indexRel, indexInfo,
++										   true, progress, BuildCallback,
++										   (void *) &buildstate, scan);
++	}
++	PG_FINALLY();
++	{
++		/* Cancellation/error must not leave a reused backend counting. */
++		hnsw_mechanism_active = false;
++	}
++	PG_END_TRY();
++	INSTR_TIME_SET_CURRENT(mechanismWallEnd);
++	HnswMechanismReadUsage(&mechanismCPUEnd);
++	mechanismCaptured = hnsw_mechanism_counters;
++	HnswMechanismReport(indexRel, &mechanismCaptured,
++						&mechanismCPUStart, &mechanismCPUEnd,
++						mechanismWallStart, mechanismWallEnd);
+ 
+ 	/* Record statistics */
+ 	SpinLockAcquire(&hnswshared->mutex);
+--- a/src/hnsw.h
++++ b/src/hnsw.h
+@@ -2,6 +2,19 @@
+ #define HNSW_H
+ 
+ #include "postgres.h"
++
++/* HNSW_MECHANISM_TEST_ONLY_V1: process-local diagnostic state, never DSM. */
++typedef struct HnswMechanismCounters
++{
++	uint64		distanceCalls;
++	uint64		elementsInitialized;
++	uint64		callbacksSeen;
++	uint64		successfulInserts;
++	uint64		levelHistogram[64];
++} HnswMechanismCounters;
++
++extern bool hnsw_mechanism_active;
++extern HnswMechanismCounters hnsw_mechanism_counters;
+ 
+ #include <math.h>
+ 

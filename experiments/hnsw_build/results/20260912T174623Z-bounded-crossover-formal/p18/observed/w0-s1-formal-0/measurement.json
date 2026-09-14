@@ -1,0 +1,139 @@
+{
+  "condition": "observed",
+  "workers": 0,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 16.51220295800158,
+  "started_epoch": 1789249211.208458,
+  "civil_wall_seconds": 16.512469053268433,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 330,
+        "index_oid": 16741,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": true,
+        "total_us": 16474118,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 54
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 54,
+            "end_us": 140326
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 140326,
+            "end_us": 140448
+          },
+          {
+            "phase": "flush",
+            "start_us": 140448,
+            "end_us": 141205
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 141205,
+            "end_us": 16469290
+          },
+          {
+            "phase": "finalize",
+            "start_us": 16469290,
+            "end_us": 16469291
+          },
+          {
+            "phase": "wal",
+            "start_us": 16469291,
+            "end_us": 16474087
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 16474087,
+            "end_us": 16474118
+          }
+        ],
+        "durations_us": {
+          "setup": 54,
+          "memory_build": 140272,
+          "spill_drain": 122,
+          "flush": 757,
+          "disk_insert": 16328085,
+          "finalize": 1,
+          "wal": 4796,
+          "cleanup": 31
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9911356104162906
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 330,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 17,
+      "phases": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "first_seen_s": 0.001730750002025161,
+          "last_seen_s": 0.001730750002025161,
+          "samples": 1
+        },
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 1.0137359580039629,
+          "last_seen_s": 16.126840958000685,
+          "samples": 16
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 331
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 16
+      },
+      "elapsed_seconds": 16.508446040999843
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      3.20166015625,
+      4.3681640625,
+      4.7470703125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 279005422\nuser_usec 270312242\nsystem_usec 8693179\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n111120384\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=22540288 wbytes=714903552 rios=374 wios=5063 dbytes=51548160 dios=71\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      3.0146484375,
+      4.26806640625,
+      4.70458984375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 295507911\nuser_usec 286781679\nsystem_usec 8726232\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n138723328\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=22540288 wbytes=727797760 rios=374 wios=5087 dbytes=51548160 dios=71\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

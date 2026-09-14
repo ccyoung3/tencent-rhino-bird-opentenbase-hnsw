@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "pmset",
+    "-g",
+    "batt"
+  ],
+  "started_at_utc": "2026-09-13T02:33:12.983296+00:00",
+  "returncode": 0,
+  "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T02:33:12.991738+00:00",
+  "host_elapsed_s": 0.00847204100136878
+}

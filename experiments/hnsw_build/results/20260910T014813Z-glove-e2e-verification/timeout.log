@@ -1,0 +1,6 @@
+/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014819Z-glove-e2e-timeout
+Validating pinned data
+Loading 10000 vectors
+Building with 64MB
+RuntimeError: build failed or completion timing invalid
+failed: /Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014819Z-glove-e2e-timeout

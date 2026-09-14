@@ -1,0 +1,82 @@
+{
+  "created_at_utc": "2026-09-12T22:51:12.179195+00:00",
+  "status": "bounded_local_verification_completed_performance_not_established",
+  "formal_run": "experiments/hnsw_build/results/20260912T174623Z-bounded-crossover-formal",
+  "formal_count": 768,
+  "warmup_count": 384,
+  "supported_groups": 9,
+  "not_established_groups": 3,
+  "regression_supported_groups": 0,
+  "audit_status": "verified",
+  "verified_observers": 192,
+  "verified_cleanup_records": 96,
+  "live_resource_absence": {
+    "containers": {
+      "query": [
+        "docker",
+        "ps",
+        "-a",
+        "--filter",
+        "label=hnsw.acceptance.run",
+        "--format",
+        "{{.Names}}"
+      ],
+      "names": []
+    },
+    "volumes": {
+      "query": [
+        "docker",
+        "volume",
+        "ls",
+        "--filter",
+        "label=hnsw.acceptance.run",
+        "--format",
+        "{{.Name}}"
+      ],
+      "names": []
+    }
+  },
+  "current_measurement_source_sha256": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "overhead_crossover.py": "38f1cac8294d13140f4cda8f83a46d5f301bebac6b231e752b9dbdaf2037c3d9"
+  },
+  "current_C_TAP_sha256": {
+    "src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9"
+  },
+  "full_unit_test_evidence": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv-glove/bin/python -m unittest discover -s experiments/hnsw_build -p test_*.py -q",
+    "tests": 109,
+    "failures": 0,
+    "skips": 0,
+    "seconds": 0.409
+  },
+  "unit_test_evidence_path": "dev/snapshots/20260913-crossover-boundary-fix/restart-preflight.json",
+  "same_measured_source_since_tests": true,
+  "C_regressions": "existing 2026-09-06 evidence applies to unchanged C/TAP; not rerun in this turn",
+  "artifacts_sha256": {
+    "summary.json": "b7f221d7b8bbfa872f3b842f2ff267809bc4f1fd896813fac5bc94a2b3ddb1d3",
+    "protocol.json": "b9ad6efba8210cbf3283008e90972e733e3a110b48292c0d193ecf121a09785f",
+    "independent-audit.json": "e6f86917454de77fe983bea8995433d359e5afac0057b42461f7c6c4d0f41408",
+    "descriptive-diagnostics.json": "5c79ae02cfe185c10b27aed2e93863bf92f58903e6b5284e8c3bd67752d3b6fa",
+    "descriptive_diagnostics.py": "3e180ffccd776df8a14251d0ef31452439ede90425ca9cad54feb840ba7688d8",
+    "report.md": "d45de289760748c44ee65af059e07f0bf3f87fded4f48f0e89808a3c394237c1",
+    "tooling-at-start.tar.gz": "5907b983ad2b0850f5af2d83eea06aa075a8cf6d9103ea2a9b7aa9073b80d67e",
+    "method-review-at-start.md": "711cab9d66de11aed71540c3d4d79633a59926a3b289161adedf8c8f7e1cb532"
+  },
+  "limitations": [
+    "three parallel comparisons lack <5% support",
+    "no attributable C regression established",
+    "median-ratio inference assumes independent comparable panels",
+    "5% is a self-set reference, not a confirmed project acceptance requirement"
+  ],
+  "further_automatic_experiments": false,
+  "delivery_actions": "No commit, push, PR or contact with maintainer in this turn"
+}

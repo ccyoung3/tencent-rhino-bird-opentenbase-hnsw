@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "created_at_utc": "2026-09-13T03:07:48.436550+00:00",
+  "scope": "Supplemental offline test only; existing frozen-protocol integrity check validated. No runtime code change, no real workload.",
+  "command": [
+    "python3",
+    "dev/cpu_calibration/test_profiles.py",
+    "-v"
+  ],
+  "tests": 7,
+  "runtime_source_unchanged": true,
+  "runtime_sha256": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+  "actual_run_source": "dev/cpu_calibration/results/20260913T030031Z-ce171210b519/source/run.py",
+  "files": {
+    "changes.diff": "e08684f0a72c929371038ef8ab01f9d98a03560fdded66d35cace3f3b8085f67",
+    "report.md": "b246aac593a9efcb986afa54ed7791c63340c6dc72d1640edb313b50dba59cd0",
+    "tests.log": "7f63d8be163b1a7be09f2afdbe132ad3dcca6ea839cc8fc4e0b5e257ab470633",
+    "before/run.py": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+    "before/test_profiles.py": "de232b31581438511ad7a81ceede2f7bc36adc7037c0fe971550f0c3663be770",
+    "after/run.py": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+    "after/test_profiles.py": "90958353770e55018a245da643d60c5f22a3d807b65244238c5d8170441d5d8d"
+  }
+}

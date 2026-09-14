@@ -1,0 +1,19 @@
+{
+  "container_id": "b9d576ecff18c4ce97a22e194c45479a2d56394d4fc086f021cc482fa18b648f",
+  "image": "sha256:c5d28721fc9fd5e2482ec48c65b007b77df7ac6f22fb3835210ef1877109f6f4",
+  "system_identifier": "7684145795526357006",
+  "port": 55434,
+  "affinity": "0-3",
+  "memory_limit": 2147483648,
+  "data": {
+    "large": {
+      "rows": 100000,
+      "digest": "c971d83018f6a5ddef03b0288dbd4cac"
+    },
+    "small": {
+      "rows": 30000,
+      "digest": "9920a28705b25035eeff216b35a2cf31"
+    }
+  },
+  "source_attestation": "variant=candidate\nmode=normal\nPG_CPPFLAGS=\ngcc (Debian 12.2.0-14+deb12u1) 12.2.0\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nPostgreSQL 18.6\n '--prefix=/opt/opentenbase' '--without-icu' '--with-openssl' '--with-libxml'\n-Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2\n61f7e8111e15c60d4b70e96521a76c2a4dd328ee29e252753a21065a9f94e3fd  /opt/opentenbase/bin/postgres\n679afd5c0ae367873e43e549ded9ba7f951eb88a97f56add2c3cc223a87d7656  vector.so\n0749c3ba5184631828ad870db74dcdfd80c18fd056f0ee2a472b665f05fe9d48  Makefile\nf1e1717c0c1da9c200ff3a53acf1d14eba5e3f70da928a723b247b0b1059417d  vector.control\n59b798f77226ceed8dbb2688001d17000127b45f2c9af7a7b825b0d7ad6ff18b  src/bitutils.c\n379ae17f7b1c10ff323684d7582413dcecfe2151b2c8dd0d5b55b6f5597e40b9  src/bitutils.h\n150cd99001d3398411dfd31c2e257fdbe07d278f76da136efe9dcf53eca84209  src/bitvec.c\nf2c103f71d933583d42309aa4ab74394672ced3bf8f5c8935675a988c9eca587  src/bitvec.h\nb187154518b8b0955a0b2fbecb52c1a0016b1b073af29d3b6cbee079a5bc9741  src/halfutils.c\ncf15f882c6843076e9a14d82b2d4d7c483d69d2acbc497fb23da6cf917c5b298  src/halfutils.h\n958b5bc29d4b3d7a910491bd93eeed62e5948f48c340fc324cd7a13331291ae7  src/halfvec.c\n451a53dded6a1e662d2bc9f75d0ecd655a347e0bfda9c7c05f9bc253fd4d7d3b  src/halfvec.h\n71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87  src/hnsw.c\ncac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8  src/hnsw.h\nf7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee  src/hnswbuild.c\nb0771340fc19283ab5c5e77f61369dbeb370787468ada2d806f7b2209fc16349  src/hnswinsert.c\ned7a6a6bb16e94473db7d6b355fbdf1d3e042202d5c9e1ecd978511a0303858d  src/hnswscan.c\n5177c9f74f73528a44708a10cd553441a7f603e08967f499d954f02f94fb3ff9  src/hnswutils.c\n0ca3f011abfd82370de5c173e25d586234bb2c8aaf92c86914c3c7ede9e9306f  src/hnswvacuum.c\n767ca565b6a8c62a684424f58ceaa4f356d97d087b2d84b96d09a8bc90dd835d  src/ivfbuild.c\n652309192fdd909048371ed24f5026ae0ebd1eecf253ca6512820ce114ea71e0  src/ivfflat.c\ne237e501810d963d6976199540784e9797f4ccbecaaebcf934acdbfe75c0e9ab  src/ivfflat.h\n41df35c597ebf4e7f3a4feb8dd0bb2da615a4d61ed07dd1191e3b469b4dbf279  src/ivfinsert.c\n7aefce174af9c02ad7c2aa0991247b266c9455090704092f13f743595b98f97d  src/ivfkmeans.c\n60399f3f5de986a45cfbc4f69c9ccab9829a669cc68ea97ab49591d8ee13e0a7  src/ivfscan.c\ndb4d7bc6d34343032ecd456ee253e2865ad15e3bf272684c1671dbf33e3b998e  src/ivfutils.c\nedaea787a49f9b6c00b861cbf3d83ede93b2016bd3daa7aee2cf997f44ca74f4  src/ivfvacuum.c\n61b939b93a576c6864447818ddebb47dc6e0dd3596538c8e5127acb6eb495954  src/sparsevec.c\n89b01077de88c3597e687b04303499c35610b108cc64b05284d38d909dfc67bc  src/sparsevec.h\n37642b15fd6cae9f968ddefadc53410be42bdb226d50e4af5aba6ef801d4b130  src/vector.c\na67272ea44553d174968f575a91da71dfe82b8278ec2c70d51e37c154e2f0049  src/vector.h\n"
+}

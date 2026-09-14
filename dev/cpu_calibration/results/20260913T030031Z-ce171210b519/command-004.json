@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "docker",
+    "build",
+    "--network=none",
+    "--pull=false",
+    "--progress=plain",
+    "-t",
+    "opentenbase-cpu-calibration:ce171210b519",
+    "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/dev/cpu_calibration/results/20260913T030031Z-ce171210b519/source"
+  ],
+  "started_at_utc": "2026-09-13T03:00:32.012471+00:00",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "#0 building with \"orbstack\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 393B done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/opentenbase-pg18-pgvector:timing-v1-test-arm64\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 2B done\n#4 DONE 0.0s\n\n#5 [compiler 1/4] FROM docker.io/library/opentenbase-pg18-pgvector:timing-v1-test-arm64\n#5 DONE 0.0s\n\n#6 [runtime 1/2] FROM docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64\n#6 DONE 0.0s\n\n#7 [internal] load build context\n#7 transferring context: 8.14kB done\n#7 DONE 0.0s\n\n#8 [compiler 2/4] WORKDIR /work\n#8 CACHED\n\n#9 [compiler 3/4] COPY calibrate.c compile.sh /work/\n#9 DONE 0.0s\n\n#10 [compiler 4/4] RUN /bin/sh /work/compile.sh\n#10 DONE 0.1s\n\n#6 [runtime 1/2] FROM docker.io/library/opentenbase-pg18-pgvector:timing-v1-arm64\n#6 CACHED\n\n#11 [runtime 2/2] COPY --from=compiler /work/out/ /opt/cpu-calibration/\n#11 DONE 0.0s\n\n#12 exporting to image\n#12 exporting layers 0.0s done\n#12 writing image sha256:47216ac1ea5d5f55805a0ab382b057876db2ece74d70ea625a7b9ae5271f1655 done\n#12 naming to docker.io/library/opentenbase-cpu-calibration:ce171210b519 done\n#12 DONE 0.0s\n",
+  "finished_at_utc": "2026-09-13T03:00:32.608385+00:00",
+  "host_elapsed_s": 0.5959355000013602
+}

@@ -1,0 +1,4 @@
+/work/calibrate.c:27:23: optimized: loop vectorized using 16 byte vectors
+/work/calibrate.c:94:12: optimized: basic block part vectorized using 16 byte vectors
+/work/calibrate.c:115:27: optimized: loop vectorized using 16 byte vectors
+/work/calibrate.c:106:27: optimized: loop vectorized using 16 byte vectors

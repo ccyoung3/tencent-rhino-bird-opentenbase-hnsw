@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 9.672390125000675,
+  "started_epoch": 1789248720.875017,
+  "civil_wall_seconds": 9.6725492477417,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 149,
+        "index_oid": 16733,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 9639399,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 85
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 85,
+            "end_us": 1211
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 1211,
+            "end_us": 1262
+          },
+          {
+            "phase": "flush",
+            "start_us": 1262,
+            "end_us": 1445
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 1445,
+            "end_us": 9629653
+          },
+          {
+            "phase": "finalize",
+            "start_us": 9629653,
+            "end_us": 9631017
+          },
+          {
+            "phase": "wal",
+            "start_us": 9631017,
+            "end_us": 9639391
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 9639391,
+            "end_us": 9639399
+          }
+        ],
+        "durations_us": {
+          "setup": 85,
+          "memory_build": 1126,
+          "spill_drain": 51,
+          "flush": 183,
+          "disk_insert": 9628208,
+          "finalize": 1364,
+          "wal": 8374,
+          "cleanup": 8
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9988390355041844
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 149,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 10,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.00546787499479251,
+          "last_seen_s": 9.087891124996531,
+          "samples": 10
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 150
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 9
+      },
+      "elapsed_seconds": 9.668337666997104
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      6.2509765625,
+      5.67724609375,
+      5.07275390625
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 68431086\nuser_usec 67212916\nsystem_usec 1218170\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n76390400\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=3227648 wbytes=256929792 rios=83 wios=3845 dbytes=51548160 dios=71\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      6.37841796875,
+      5.720703125,
+      5.09521484375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 97304303\nuser_usec 95828630\nsystem_usec 1475673\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n104288256\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=3227648 wbytes=269819904 rios=83 wios=3866 dbytes=51548160 dios=71\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

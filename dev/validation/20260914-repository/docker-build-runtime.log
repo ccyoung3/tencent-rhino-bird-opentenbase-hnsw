@@ -1,0 +1,82 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.37kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 ...
+
+#3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 3.2s
+
+#4 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#4 CACHED
+
+#5 [auth] library/debian:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/debian:bookworm
+#6 ...
+
+#7 [internal] load metadata for docker.io/library/debian:bookworm-slim
+#7 DONE 1.6s
+
+#6 [internal] load metadata for docker.io/library/debian:bookworm
+#6 DONE 2.0s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 143B done
+#8 DONE 0.0s
+
+#9 [build 1/8] FROM docker.io/library/debian:bookworm@sha256:6ebd97fa83deb272194a2cf015b3d26a4d538e9ad3a7a79d544c8af5b0a01443
+#9 DONE 0.0s
+
+#10 [runtime 1/5] FROM docker.io/library/debian:bookworm-slim@sha256:88200866dfff7ea7f5cbcb6ec7c8a701889efe6fe859fe64d6990e4b07ea4171
+#10 DONE 0.0s
+
+#11 [internal] load build context
+#11 transferring context: 546.36kB 0.2s done
+#11 DONE 0.2s
+
+#12 [build 5/8] RUN ./configure         --prefix=/opt/opentenbase         --without-icu         --with-openssl         --with-libxml     && make -j"6"     && make install
+#12 CACHED
+
+#13 [build 7/8] COPY pgvector/ ./
+#13 CACHED
+
+#14 [runtime 2/5] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         ca-certificates         libreadline8         libssl3         libxml2         zlib1g     && rm -rf /var/lib/apt/lists/*     && groupadd --system postgres     && useradd --system --gid postgres --home-dir /var/lib/postgresql postgres     && install -d -o postgres -g postgres /var/lib/postgresql/data
+#14 CACHED
+
+#15 [build 3/8] WORKDIR /src/opentenbase
+#15 CACHED
+
+#16 [build 6/8] WORKDIR /src/pgvector
+#16 CACHED
+
+#17 [build 8/8] RUN make -j"6"         PG_CONFIG=/opt/opentenbase/bin/pg_config         PG_CPPFLAGS=""     && make PG_CONFIG=/opt/opentenbase/bin/pg_config install
+#17 CACHED
+
+#18 [build 2/8] RUN apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         bison         build-essential         ca-certificates         flex         git         libreadline-dev         libssl-dev         libxml2-dev         perl         pkg-config         zlib1g-dev     && rm -rf /var/lib/apt/lists/*
+#18 CACHED
+
+#19 [runtime 3/5] COPY --from=build /opt/opentenbase /opt/opentenbase
+#19 CACHED
+
+#20 [runtime 4/5] COPY dev/entrypoint.sh /usr/local/bin/opentenbase-entrypoint
+#20 CACHED
+
+#21 [build 4/8] COPY OpenTenBase/ ./
+#21 CACHED
+
+#22 [runtime 5/5] RUN chmod 0755 /usr/local/bin/opentenbase-entrypoint
+#22 CACHED
+
+#23 exporting to image
+#23 exporting layers done
+#23 writing image sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7 done
+#23 naming to docker.io/library/opentenbase-pg18-pgvector:review-arm64 done
+#23 DONE 0.0s

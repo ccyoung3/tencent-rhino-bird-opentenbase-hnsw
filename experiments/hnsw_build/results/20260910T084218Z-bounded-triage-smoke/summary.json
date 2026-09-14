@@ -1,0 +1,1135 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "variant": "old_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.6416760419961065,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w0/old/formal-1-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.739554959000088,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "old_off",
+      "source": "A-b00-w0/old/formal-2-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.624901750008576,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "old_off",
+      "source": "A-b00-w0/old/formal-3-old_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.670728249941021,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w0/new/formal-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.584720957907848,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "new_off",
+      "source": "A-b00-w0/new/formal-2-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.763219042099081,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "new_off",
+      "source": "A-b00-w0/new/formal-3-new_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9826893330318853,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w2/old/formal-1-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9623344159917906,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "old_off",
+      "source": "A-b00-w2/old/formal-2-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0084769999375567,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "old_off",
+      "source": "A-b00-w2/old/formal-3-old_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0307463329518214,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w2/new/formal-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9365767920389771,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "new_off",
+      "source": "A-b00-w2/new/formal-2-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9858762089861557,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "new_off",
+      "source": "A-b00-w2/new/formal-3-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.8465314590139315,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "B-b00-w0/new/formal-1-new_off"
+    },
+    {
+      "variant": "new_on",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.813899958971888,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "complete",
+        "records": [
+          {
+            "version": 1,
+            "status": "complete",
+            "scope": "hnsw_build",
+            "clock": "elapsed_wall",
+            "pid": 53,
+            "index_oid": 16728,
+            "fork": 0,
+            "parallel_workers": 0,
+            "spill": true,
+            "total_us": 7798075,
+            "phases": [
+              {
+                "phase": "setup",
+                "start_us": 0,
+                "end_us": 16
+              },
+              {
+                "phase": "memory_build",
+                "start_us": 16,
+                "end_us": 96725
+              },
+              {
+                "phase": "spill_drain",
+                "start_us": 96725,
+                "end_us": 96835
+              },
+              {
+                "phase": "flush",
+                "start_us": 96835,
+                "end_us": 97390
+              },
+              {
+                "phase": "disk_insert",
+                "start_us": 97390,
+                "end_us": 7794882
+              },
+              {
+                "phase": "finalize",
+                "start_us": 7794882,
+                "end_us": 7794882
+              },
+              {
+                "phase": "wal",
+                "start_us": 7794882,
+                "end_us": 7798042
+              },
+              {
+                "phase": "cleanup",
+                "start_us": 7798042,
+                "end_us": 7798075
+              }
+            ],
+            "durations_us": {
+              "setup": 16,
+              "memory_build": 96709,
+              "spill_drain": 110,
+              "flush": 555,
+              "disk_insert": 7697492,
+              "finalize": 0,
+              "wal": 3160,
+              "cleanup": 33
+            }
+          }
+        ],
+        "dominant_phase": "disk_insert",
+        "dominant_fraction": 0.9871015603209766
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "new_off",
+      "source": "B-b00-w0/new/formal-2-new_on"
+    },
+    {
+      "variant": "new_observed",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.8816904169507325,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 1,
+        "observation": {
+          "status": "stopped",
+          "build_outcome": "unknown",
+          "pid": 53,
+          "interval_seconds": 1.0,
+          "duration_limit_seconds": 1800.0,
+          "samples": 8,
+          "phases": [
+            {
+              "phase": "building index: loading tuples in memory",
+              "first_seen_s": 0.0022293750662356615,
+              "last_seen_s": 0.0022293750662356615,
+              "samples": 1
+            },
+            {
+              "phase": "building index: loading tuples on disk",
+              "first_seen_s": 1.0141267080325633,
+              "last_seen_s": 7.060821000020951,
+              "samples": 7
+            }
+          ],
+          "joined_mid_build_possible": true,
+          "server": {
+            "database": "postgres",
+            "version": 180006,
+            "read_only": "on",
+            "observer_pid": 66
+          },
+          "observation_counts": {
+            "attached": 1,
+            "progress_observed": 7
+          },
+          "elapsed_seconds": 7.8756840829737484
+        }
+      },
+      "internal_timing": {
+        "status": "complete",
+        "records": [
+          {
+            "version": 1,
+            "status": "complete",
+            "scope": "hnsw_build",
+            "clock": "elapsed_wall",
+            "pid": 53,
+            "index_oid": 16729,
+            "fork": 0,
+            "parallel_workers": 0,
+            "spill": true,
+            "total_us": 7876478,
+            "phases": [
+              {
+                "phase": "setup",
+                "start_us": 0,
+                "end_us": 24
+              },
+              {
+                "phase": "memory_build",
+                "start_us": 24,
+                "end_us": 95084
+              },
+              {
+                "phase": "spill_drain",
+                "start_us": 95084,
+                "end_us": 95133
+              },
+              {
+                "phase": "flush",
+                "start_us": 95133,
+                "end_us": 95617
+              },
+              {
+                "phase": "disk_insert",
+                "start_us": 95617,
+                "end_us": 7844098
+              },
+              {
+                "phase": "finalize",
+                "start_us": 7844098,
+                "end_us": 7844098
+              },
+              {
+                "phase": "wal",
+                "start_us": 7844098,
+                "end_us": 7876448
+              },
+              {
+                "phase": "cleanup",
+                "start_us": 7876448,
+                "end_us": 7876478
+              }
+            ],
+            "durations_us": {
+              "setup": 24,
+              "memory_build": 95060,
+              "spill_drain": 49,
+              "flush": 484,
+              "disk_insert": 7748481,
+              "finalize": 0,
+              "wal": 32350,
+              "cleanup": 30
+            }
+          }
+        ],
+        "dominant_phase": "disk_insert",
+        "dominant_fraction": 0.9837494626405355
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "new_on",
+      "source": "B-b00-w0/new/formal-3-new_observed"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0194077920168638,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "B-b00-w2/new/formal-1-new_off"
+    },
+    {
+      "variant": "new_on",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9910738340113312,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "complete",
+        "records": [
+          {
+            "version": 1,
+            "status": "complete",
+            "scope": "hnsw_build",
+            "clock": "elapsed_wall",
+            "pid": 53,
+            "index_oid": 16728,
+            "fork": 0,
+            "parallel_workers": 2,
+            "spill": false,
+            "total_us": 980124,
+            "phases": [
+              {
+                "phase": "setup",
+                "start_us": 0,
+                "end_us": 16
+              },
+              {
+                "phase": "memory_build",
+                "start_us": 16,
+                "end_us": 961496
+              },
+              {
+                "phase": "spill_drain",
+                "start_us": null,
+                "end_us": null
+              },
+              {
+                "phase": "flush",
+                "start_us": 961496,
+                "end_us": 973060
+              },
+              {
+                "phase": "disk_insert",
+                "start_us": null,
+                "end_us": null
+              },
+              {
+                "phase": "finalize",
+                "start_us": 973060,
+                "end_us": 977315
+              },
+              {
+                "phase": "wal",
+                "start_us": 977315,
+                "end_us": 980104
+              },
+              {
+                "phase": "cleanup",
+                "start_us": 980104,
+                "end_us": 980124
+              }
+            ],
+            "durations_us": {
+              "setup": 16,
+              "memory_build": 961480,
+              "spill_drain": null,
+              "flush": 11564,
+              "disk_insert": null,
+              "finalize": 4255,
+              "wal": 2789,
+              "cleanup": 20
+            }
+          }
+        ],
+        "dominant_phase": "memory_build",
+        "dominant_fraction": 0.9809779170798797
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 2,
+      "previous_condition": "new_off",
+      "source": "B-b00-w2/new/formal-2-new_on"
+    },
+    {
+      "variant": "new_observed",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0215676659718156,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 1,
+        "observation": {
+          "status": "ended_unconfirmed",
+          "build_outcome": "unknown",
+          "pid": 53,
+          "interval_seconds": 1.0,
+          "duration_limit_seconds": 1800.0,
+          "samples": 2,
+          "phases": [
+            {
+              "phase": "building index: loading tuples in memory",
+              "first_seen_s": 0.005682708113454282,
+              "last_seen_s": 0.005682708113454282,
+              "samples": 1
+            }
+          ],
+          "joined_mid_build_possible": true,
+          "server": {
+            "database": "postgres",
+            "version": 180006,
+            "read_only": "on",
+            "observer_pid": 66
+          },
+          "observation_counts": {
+            "attached": 1,
+            "ended_unconfirmed": 1
+          },
+          "wait_observations": [
+            {
+              "phase": null,
+              "type": "IO",
+              "event": "WalSync",
+              "samples": 1,
+              "first_seen_s": 1.0116627500392497,
+              "last_seen_s": 1.0116627500392497
+            }
+          ],
+          "elapsed_seconds": 1.011855750111863
+        }
+      },
+      "internal_timing": {
+        "status": "complete",
+        "records": [
+          {
+            "version": 1,
+            "status": "complete",
+            "scope": "hnsw_build",
+            "clock": "elapsed_wall",
+            "pid": 53,
+            "index_oid": 16729,
+            "fork": 0,
+            "parallel_workers": 2,
+            "spill": false,
+            "total_us": 1016139,
+            "phases": [
+              {
+                "phase": "setup",
+                "start_us": 0,
+                "end_us": 13
+              },
+              {
+                "phase": "memory_build",
+                "start_us": 13,
+                "end_us": 970904
+              },
+              {
+                "phase": "spill_drain",
+                "start_us": null,
+                "end_us": null
+              },
+              {
+                "phase": "flush",
+                "start_us": 970904,
+                "end_us": 982531
+              },
+              {
+                "phase": "disk_insert",
+                "start_us": null,
+                "end_us": null
+              },
+              {
+                "phase": "finalize",
+                "start_us": 982531,
+                "end_us": 986525
+              },
+              {
+                "phase": "wal",
+                "start_us": 986525,
+                "end_us": 1016101
+              },
+              {
+                "phase": "cleanup",
+                "start_us": 1016101,
+                "end_us": 1016139
+              }
+            ],
+            "durations_us": {
+              "setup": 13,
+              "memory_build": 970891,
+              "spill_drain": null,
+              "flush": 11627,
+              "disk_insert": null,
+              "finalize": 3994,
+              "wal": 29576,
+              "cleanup": 38
+            }
+          }
+        ],
+        "dominant_phase": "memory_build",
+        "dominant_fraction": 0.9554706590338526
+      },
+      "index_bytes": 8708096,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 3,
+      "previous_condition": "new_on",
+      "source": "B-b00-w2/new/formal-3-new_observed"
+    }
+  ],
+  "warmups": [
+    {
+      "variant": "old_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.673495916998945,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w0/old/warmup-1-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.809060166939162,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "A-b00-w0/old/warmup-2-old_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.809601542074233,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w0/new/warmup-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.6417665829649195,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "A-b00-w0/new/warmup-2-new_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9538529589772224,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w2/old/warmup-1-old_off"
+    },
+    {
+      "variant": "old_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9255360000533983,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "diagnostics-v2-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "A-b00-w2/old/warmup-2-old_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.981113874935545,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "A-b00-w2/new/warmup-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 0.9283923340262845,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "A",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "A-b00-w2/new/warmup-2-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.794293624931015,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "B-b00-w0/new/warmup-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 0,
+      "spill": true,
+      "command_seconds": 7.6799139169743285,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "B-b00-w0/new/warmup-2-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0348445840645581,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8691712,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 1,
+      "previous_condition": null,
+      "source": "B-b00-w2/new/warmup-1-new_off"
+    },
+    {
+      "variant": "new_off",
+      "workers": 2,
+      "spill": false,
+      "command_seconds": 1.0598399580921978,
+      "command_returncode": 0,
+      "observer": {
+        "attachment_probes": 0
+      },
+      "internal_timing": {
+        "status": "not_requested",
+        "records": []
+      },
+      "index_bytes": 8699904,
+      "image_variant": "timing-v1-seed42-arm64",
+      "study": "B",
+      "block": 0,
+      "position": 2,
+      "previous_condition": null,
+      "source": "B-b00-w2/new/warmup-2-new_off"
+    }
+  ],
+  "images": {
+    "diagnostics-v2-seed42-arm64": {
+      "id": "sha256:bac4bb4f7c4b0e183882b6cf653f9ef5af2c046dcd073a25a20f6c97cc76160c",
+      "created": "2026-09-02T16:51:25.120580244+08:00",
+      "layers": [
+        "sha256:13a56b6535801be2adde694dabaf1c2df1d862a390661907dac821c42cd565cc",
+        "sha256:915e8399c95d8e60b907101e6de03242fe9d562e15b90d3d5630a2c3cb737291",
+        "sha256:1aac1423e37cba2a3c1bcfad8a12f28d6660f87e15f8b2c243cc323d15a12f76",
+        "sha256:af1b2b10ab8e09a11cc77c4e091da67183ce87fae5fdd1cc156b433e49cf0ce8",
+        "sha256:0d0cf34a2e507d5bdf2b8c1e7a7002d7974d2436750f5f6223ad11b763908fb6"
+      ],
+      "labels": null,
+      "runtime_inspection": "61f7e8111e15c60d4b70e96521a76c2a4dd328ee29e252753a21065a9f94e3fd  /opt/opentenbase/bin/postgres\n80d5a4166a7f56062f7f1f25180688741a8fad467e799757ab6dd0138348285a  /opt/opentenbase/lib/postgresql/vector.so\n '--prefix=/opt/opentenbase' '--without-icu' '--with-openssl' '--with-libxml'\n-Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2\nPostgreSQL 18.6\naarch64\n"
+    },
+    "timing-v1-seed42-arm64": {
+      "id": "sha256:a8b091b6ff87fb8c35037cabd00fb4cd5b0a111ced58371310cc620a05e4b969",
+      "created": "2026-09-06T01:19:17.646578429+08:00",
+      "layers": [
+        "sha256:13a56b6535801be2adde694dabaf1c2df1d862a390661907dac821c42cd565cc",
+        "sha256:915e8399c95d8e60b907101e6de03242fe9d562e15b90d3d5630a2c3cb737291",
+        "sha256:8a9ff750c01e10beb2ae2d581120d8c6910f5a8b2554dc83837cbf99a1ebc6b6",
+        "sha256:741ed95cc4f45385a23ea1e5c35c50cfda1475717dd555db42d4d9eb861694eb",
+        "sha256:590a9dfb30130ba12478562d0965eab52932a8e22184bcc172104ddfa2e50965"
+      ],
+      "labels": null,
+      "runtime_inspection": "61f7e8111e15c60d4b70e96521a76c2a4dd328ee29e252753a21065a9f94e3fd  /opt/opentenbase/bin/postgres\n6814b569b866552c5acfa1798301451dd37fec7abe122c56fb949b5dc95dcaf7  /opt/opentenbase/lib/postgresql/vector.so\n '--prefix=/opt/opentenbase' '--without-icu' '--with-openssl' '--with-libxml'\n-Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2\nPostgreSQL 18.6\naarch64\n"
+    }
+  },
+  "analysis": {
+    "matched": [
+      {
+        "workers": 0,
+        "spill": true,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.0038018109882247,
+              0.9799944567985542,
+              1.0181402064741818
+            ],
+            "median_ratio": 1.0038018109882247
+          }
+        ],
+        "median_change_percent": 0.3801810988224741,
+        "upper_bound": {
+          "upper_ratio": null,
+          "rank": null,
+          "coverage": null
+        },
+        "position_changes_percent": [
+          0.3801810988224741,
+          -2.0005543201445763,
+          1.8140206474181797
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "blocks": [
+          {
+            "block": 0,
+            "position_ratios": [
+              1.048903553040172,
+              0.9732342275982436,
+              0.9775891855215335
+            ],
+            "median_ratio": 0.9775891855215335
+          }
+        ],
+        "median_change_percent": -2.241081447846649,
+        "upper_bound": {
+          "upper_ratio": null,
+          "rank": null,
+          "coverage": null
+        },
+        "position_changes_percent": [
+          4.890355304017202,
+          -2.676577240175637,
+          -2.241081447846649
+        ]
+      }
+    ],
+    "ordering": [
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 1,
+            "median_seconds": 7.8465314590139315
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 2,
+            "n": 1,
+            "median_seconds": 7.813899958971888
+          }
+        ]
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 3,
+            "n": 1,
+            "median_seconds": 7.8816904169507325
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_off",
+        "positions": [
+          {
+            "position": 1,
+            "n": 1,
+            "median_seconds": 1.0194077920168638
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_on",
+        "positions": [
+          {
+            "position": 2,
+            "n": 1,
+            "median_seconds": 0.9910738340113312
+          }
+        ]
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "new_observed",
+        "positions": [
+          {
+            "position": 3,
+            "n": 1,
+            "median_seconds": 1.0215676659718156
+          }
+        ]
+      }
+    ]
+  }
+}

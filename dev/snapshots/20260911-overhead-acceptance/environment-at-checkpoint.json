@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-09-11T05:50:12.290094+00:00",
+  "scope": "point-in-time only",
+  "checks": {
+    "macos": {
+      "command": [
+        "sw_vers"
+      ],
+      "returncode": 0,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+      "stderr": ""
+    },
+    "hardware": {
+      "command": [
+        "sysctl",
+        "hw.model",
+        "hw.ncpu",
+        "hw.memsize",
+        "machdep.cpu.brand_string"
+      ],
+      "returncode": 0,
+      "stdout": "hw.model: Mac16,12\nhw.ncpu: 10\nhw.memsize: 25769803776\nmachdep.cpu.brand_string: Apple M4\n",
+      "stderr": ""
+    },
+    "power": {
+      "command": [
+        "pmset",
+        "-g",
+        "batt"
+      ],
+      "returncode": 0,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=34537571)\t89%; charging; 0:44 remaining present: true\n",
+      "stderr": ""
+    },
+    "thermal": {
+      "command": [
+        "pmset",
+        "-g",
+        "therm"
+      ],
+      "returncode": 0,
+      "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+      "stderr": ""
+    },
+    "docker": {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.OSType}} {{.Architecture}} {{.NCPU}} {{.MemTotal}} {{.ServerVersion}}"
+      ],
+      "returncode": 0,
+      "stdout": "linux aarch64 10 12600156160 29.4.0\n",
+      "stderr": ""
+    },
+    "disk": {
+      "command": [
+        "df",
+        "-h",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase"
+      ],
+      "returncode": 0,
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   389Gi    41Gi    91%    3.1M  431M    1%   /System/Volumes/Data\n",
+      "stderr": ""
+    }
+  }
+}

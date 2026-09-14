@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "frozen_at_utc": "2026-09-13T03:00:09.516727+00:00",
+  "scope": "Development and offline tests only. No real Docker or fixed arithmetic probe workload executed. Parser-only C harness compiled and exercised without calculate/fork.",
+  "tests": [
+    {
+      "command": [
+        "python3",
+        "dev/cpu_calibration/test_profiles.py",
+        "-v"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "dev/cpu_calibration/test_cleanup.py",
+        "-v"
+      ],
+      "returncode": 0
+    }
+  ],
+  "profile_test_methods": 6,
+  "cleanup_test_methods": 3,
+  "method_sha256": "7741df420c394ef811db25f4c67cde752d34ce8c52024998af572d11a947a74f",
+  "files": {
+    "changes.diff": "014f700f5df9224381834e8c55fd164bfe2c78f2a668ceadce9ccccc75c05dde",
+    "test_profiles.py.log": "4e22b4f7163d4ec2789e8391dabdf097ddf0daf699e4025e2feb59a4b2b3657e",
+    "test_cleanup.py.log": "84b37520ec29f1678b98489080d67f6403fe6dba8cd4f9c7011dd1679c849399",
+    "before/run.py": "db7254e0a0df536b16d0fbeef92ed00b4891f522469e00609e51760d045cbe55",
+    "before/compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "before/Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "before/calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e",
+    "after/run.py": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+    "after/method.md": "7741df420c394ef811db25f4c67cde752d34ce8c52024998af572d11a947a74f",
+    "after/compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "after/Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "after/test_cleanup.py": "08cdc18f2d6b07b7f9c218d7ce458a7b30a3c44226f28d62676bfe75af4b7012",
+    "after/README.md": "35ed0443f7e99ac95447bfbc763f2d4ba9fdfbc1c837a8d00edd6c0d0f871dbf",
+    "after/test_profiles.py": "de232b31581438511ad7a81ceede2f7bc36adc7037c0fe971550f0c3663be770",
+    "after/calibrate.c": "e69d3fa14355179a359795440bd8ef3e1aa533ec7639aaf2c71e14d171567a6e"
+  }
+}

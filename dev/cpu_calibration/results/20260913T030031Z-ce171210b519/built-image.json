@@ -1,0 +1,58 @@
+{
+  "Id": "sha256:47216ac1ea5d5f55805a0ab382b057876db2ece74d70ea625a7b9ae5271f1655",
+  "RepoTags": [
+    "opentenbase-cpu-calibration:ce171210b519"
+  ],
+  "RepoDigests": [],
+  "Comment": "buildkit.dockerfile.v0",
+  "Created": "2026-09-13T11:00:32.525254624+08:00",
+  "Config": {
+    "User": "postgres",
+    "ExposedPorts": {
+      "5432/tcp": {}
+    },
+    "Env": [
+      "PATH=/opt/opentenbase/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "PGDATA=/var/lib/postgresql/data"
+    ],
+    "Entrypoint": [
+      "/bin/sleep"
+    ],
+    "Cmd": [
+      "180"
+    ],
+    "Volumes": {
+      "/var/lib/postgresql/data": {}
+    },
+    "Labels": {
+      "cpu.calibration.test_only": "true"
+    },
+    "ArgsEscaped": true
+  },
+  "Architecture": "arm64",
+  "Os": "linux",
+  "Size": 181060134,
+  "GraphDriver": {
+    "Data": {
+      "LowerDir": "/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/diff:/var/lib/docker/overlay2/ismsya9vch9g6jv3obmis0xk9/diff:/var/lib/docker/overlay2/pzay2v15nabclwrnurioevp8b/diff:/var/lib/docker/overlay2/nk43qjqt7nmplh6bbebdbwaz7/diff:/var/lib/docker/overlay2/2b4ec3fbbb7ea74c31b2025246b00a475a80a93a2ba014565c5278b07cbccb6e/diff",
+      "MergedDir": "/var/lib/docker/overlay2/2o9g5pc8zee18en41n98laygj/merged",
+      "UpperDir": "/var/lib/docker/overlay2/2o9g5pc8zee18en41n98laygj/diff",
+      "WorkDir": "/var/lib/docker/overlay2/2o9g5pc8zee18en41n98laygj/work"
+    },
+    "Name": "overlay2"
+  },
+  "RootFS": {
+    "Type": "layers",
+    "Layers": [
+      "sha256:13a56b6535801be2adde694dabaf1c2df1d862a390661907dac821c42cd565cc",
+      "sha256:915e8399c95d8e60b907101e6de03242fe9d562e15b90d3d5630a2c3cb737291",
+      "sha256:0063346756912fdeae2f11c8e25224e3fa936b2cad66bda842c2f5d1fb0d1c86",
+      "sha256:d42ab9f7ce1074d641b72783d53d0916aa58868e8cd358aa18ac65fe291b28c9",
+      "sha256:9ed16320534bd20750721d9f8b2c436b0a34a9467059002d686c34e0a0e1d4fe",
+      "sha256:b775ff125faf0dd08c1632813440ec93493a50a71809aee7f73c62f6d23263a3"
+    ]
+  },
+  "Metadata": {
+    "LastTagTime": "2026-09-13T11:00:32.556306615+08:00"
+  }
+}

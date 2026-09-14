@@ -1,0 +1,45 @@
+{
+  "status": "ended_unconfirmed",
+  "build_outcome": "unknown",
+  "pid": 255,
+  "interval_seconds": 1.0,
+  "duration_limit_seconds": 180.0,
+  "samples": 20,
+  "phases": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_s": 0.004386541997519089,
+      "last_seen_s": 0.004386541997519089,
+      "samples": 1
+    },
+    {
+      "phase": "building index: loading tuples on disk",
+      "first_seen_s": 1.011484124999697,
+      "last_seen_s": 18.130409375000454,
+      "samples": 18
+    }
+  ],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 256
+  },
+  "observation_counts": {
+    "attached": 1,
+    "progress_observed": 18,
+    "ended_unconfirmed": 1
+  },
+  "wait_observations": [
+    {
+      "phase": null,
+      "type": "IO",
+      "event": "WalSync",
+      "samples": 1,
+      "first_seen_s": 19.136562791998585,
+      "last_seen_s": 19.136562791998585
+    }
+  ],
+  "elapsed_seconds": 19.155061041998124
+}

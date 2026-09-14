@@ -1,0 +1,3 @@
+DEBUG: building index "items_hnsw" on table "small" serially
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 1248 tuples
+DETAIL: Graph memory used: 2097024 bytes; graph memory limit: 1048576 bytes; dimensions: 32; m: 16; ef_construction: 64. Building will take significantly more time.

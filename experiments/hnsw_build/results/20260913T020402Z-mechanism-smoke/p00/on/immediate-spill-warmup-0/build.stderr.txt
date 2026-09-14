@@ -1,0 +1,12 @@
+DEBUG: building index "items_hnsw" on table "small" with request for 2 parallel workers
+DEBUG: using 2 parallel workers
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 0 tuples
+DETAIL: Graph memory used: 0 bytes; graph memory limit: 1048576 bytes; dimensions: 32; m: 16; ef_construction: 64. Building will take significantly more time.
+INFO: memory: 0 MB
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":0,"pid":145,"index_oid":16733,"callbacks_seen":9917,"successful_inserts":9917,"distance_calls":139390622,"elements_initialized":9917,"user_cpu_us":5556452,"system_cpu_us":58871,"elapsed_us":5617024,"level_hist":[9285,586,44,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 9917 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"leader","worker_number":-1,"pid":133,"index_oid":16733,"callbacks_seen":10072,"successful_inserts":10072,"distance_calls":140748311,"elements_initialized":10072,"user_cpu_us":5561839,"system_cpu_us":60134,"elapsed_us":5626482,"level_hist":[9453,576,41,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: leader processed 10072 tuples
+NOTICE: HNSW_MECHANISM {"schema":1,"test_only":true,"scope":"scan_and_insert","mode":"native","role":"worker","worker_number":1,"pid":144,"index_oid":16733,"callbacks_seen":10011,"successful_inserts":10011,"distance_calls":140415528,"elements_initialized":10011,"user_cpu_us":5581669,"system_cpu_us":52775,"elapsed_us":5637621,"level_hist":[9375,591,45,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+DEBUG: worker processed 10011 tuples
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":133,"index_oid":16733,"fork":0,"parallel_workers":2,"spill":true,"total_us":5648195,"phases":[{"phase":"setup","start_us":0,"end_us":52},{"phase":"memory_build","start_us":52,"end_us":450},{"phase":"spill_drain","start_us":450,"end_us":488},{"phase":"flush","start_us":488,"end_us":521},{"phase":"disk_insert","start_us":521,"end_us":5639320},{"phase":"finalize","start_us":5639320,"end_us":5640728},{"phase":"wal","start_us":5640728,"end_us":5648186},{"phase":"cleanup","start_us":5648186,"end_us":5648195}]}

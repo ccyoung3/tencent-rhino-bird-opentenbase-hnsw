@@ -1,0 +1,15 @@
+{
+  "upstream_commits": {
+    "OpenTenBase": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+    "pgvector": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c"
+  },
+  "candidate_sha256": {
+    "pgvector/src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "pgvector/src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "pgvector/src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "pgvector/test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "pgvector/test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9"
+  },
+  "frozen_manifest_sha256": "1d6598c5756bc8518c8fc9bad04bdfcc3751bb7ec9e331958464c84b6c69279b",
+  "source_check": "passed"
+}

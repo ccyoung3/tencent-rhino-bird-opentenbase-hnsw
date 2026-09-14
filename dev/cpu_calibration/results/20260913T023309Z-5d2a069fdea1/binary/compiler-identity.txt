@@ -1,0 +1,9 @@
+gcc -O2 -march=native -ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math -std=c11 -Wall -Wextra -Werror -fopt-info-vec-optimized=/work/out/vectorization.txt /work/calibrate.c -o /work/out/calibrate
+gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Linux buildkitsandbox 7.0.14-orbstack-00380-ga7e0a2dc9535 #1 SMP PREEMPT Fri Aug  7 03:48:40 UTC 2026 aarch64 GNU/Linux
+d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e  /work/calibrate.c
+f98e7d5e0174a84c3152d6521b82b98ae19595cadf7ecce7719e2a6296eb1eb2  /work/out/calibrate

@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 9.844271625002875,
+  "started_epoch": 1789236970.5331159,
+  "civil_wall_seconds": 9.844165086746216,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 275,
+        "index_oid": 16739,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 9823250,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 49
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 49,
+            "end_us": 299
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 299,
+            "end_us": 311
+          },
+          {
+            "phase": "flush",
+            "start_us": 311,
+            "end_us": 352
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 352,
+            "end_us": 9815857
+          },
+          {
+            "phase": "finalize",
+            "start_us": 9815857,
+            "end_us": 9816739
+          },
+          {
+            "phase": "wal",
+            "start_us": 9816739,
+            "end_us": 9823239
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 9823239,
+            "end_us": 9823250
+          }
+        ],
+        "durations_us": {
+          "setup": 49,
+          "memory_build": 250,
+          "spill_drain": 12,
+          "flush": 41,
+          "disk_insert": 9815505,
+          "finalize": 882,
+          "wal": 6500,
+          "cleanup": 11
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9992115644007838
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 275,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 10,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.0033787909997045062,
+          "last_seen_s": 9.085502832997008,
+          "samples": 10
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 276
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 9
+      },
+      "elapsed_seconds": 9.839459915998304
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      4.79638671875,
+      4.3076171875,
+      4.46240234375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 220647209\nuser_usec 212932587\nsystem_usec 7714622\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n125919232\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=30445568 wbytes=749400064 rios=368 wios=5141 dbytes=51134464 dios=88\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      4.88818359375,
+      4.345703125,
+      4.47412109375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 250069437\nuser_usec 242086357\nsystem_usec 7983080\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n153186304\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=30445568 wbytes=762302464 rios=368 wios=5165 dbytes=51134464 dios=88\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13041664
+}

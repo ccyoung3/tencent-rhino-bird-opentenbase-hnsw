@@ -1,0 +1,105 @@
+{
+  "condition": "on",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 11.921106291003525,
+  "started_epoch": 1789250402.284713,
+  "civil_wall_seconds": 11.9213228225708,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 206,
+        "index_oid": 16736,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 11891213,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 94
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 94,
+            "end_us": 486
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 486,
+            "end_us": 525
+          },
+          {
+            "phase": "flush",
+            "start_us": 525,
+            "end_us": 581
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 581,
+            "end_us": 11882954
+          },
+          {
+            "phase": "finalize",
+            "start_us": 11882954,
+            "end_us": 11883811
+          },
+          {
+            "phase": "wal",
+            "start_us": 11883811,
+            "end_us": 11891200
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 11891200,
+            "end_us": 11891213
+          }
+        ],
+        "durations_us": {
+          "setup": 94,
+          "memory_build": 392,
+          "spill_drain": 39,
+          "flush": 56,
+          "disk_insert": 11882373,
+          "finalize": 857,
+          "wal": 7389,
+          "cleanup": 13
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9992565939235972
+  },
+  "observer": {
+    "attachment_probes": 0
+  },
+  "resources_before": {
+    "host_load_average": [
+      6.93359375,
+      5.24951171875,
+      4.8125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 106763980\nuser_usec 105586848\nsystem_usec 1177132\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n72941568\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=2134016 wbytes=309563392 rios=120 wios=4179 dbytes=51216384 dios=70\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      6.86962890625,
+      5.29052734375,
+      4.83203125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 142401379\nuser_usec 140782931\nsystem_usec 1618448\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n99500032\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=2629632 wbytes=322469888 rios=126 wios=4208 dbytes=51216384 dios=70\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

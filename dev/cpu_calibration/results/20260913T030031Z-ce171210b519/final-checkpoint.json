@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "checked_at_utc": "2026-09-13T03:09:26.242096+00:00",
+  "status": "local_development_and_bounded_validation_complete_performance_not_established",
+  "construction_run": "dev/cpu_calibration/results/20260913T030031Z-ce171210b519",
+  "formal_probes": 12,
+  "warmups": 1,
+  "process_records": 39,
+  "run_artifacts": {
+    "summary.json": "33037482f450cceaf79350b714a1480c3f5ef42e06f4b1f7c11e6597a73ab324",
+    "protocol.json": "e9e4ce23f24720457fbb43660bed176e3122a6e074c7b2a73b05bbbac8ae94a9",
+    "independent-review.json": "81da23f506c347b9e1ac02eb9c011a00259e25bc292d96ee809fd11141ce7d8f",
+    "live-cleanup-verification.json": "fc22280c27d4694dd9550f5c408b7718d51e6e6752df8dd0bd811b6f1ff4eb38",
+    "report.md": "6e27bb452e885bd43cc9712e9599ab1fe27e94a5b59bbba57f93ea27eb72ce4e",
+    "cleanup.json": "f9f59ad436cf9c333ddf0516e9841a75dc36714b13bfd9da62b216672dccc4c5"
+  },
+  "source_hashes": {
+    "run.py": "3f33019bf61457be3569981b32e19acbac81e9acdb0fcd59eb16d472fca1d299",
+    "method.md": "7741df420c394ef811db25f4c67cde752d34ce8c52024998af572d11a947a74f",
+    "compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "calibrate.c": "e69d3fa14355179a359795440bd8ef3e1aa533ec7639aaf2c71e14d171567a6e"
+  },
+  "existing_formal_sha256": "b7f221d7b8bbfa872f3b842f2ff267809bc4f1fd896813fac5bc94a2b3ddb1d3",
+  "existing_performance": {
+    "supported": 9,
+    "not_established": 3,
+    "regression_supported": 0,
+    "reference_percent": 5,
+    "official_requirement_confirmed": false
+  },
+  "product_candidate_sha256": {
+    "src/hnsw.c": "71da2aafc9ac944d7667b878b9509a944b810b1d44968d4cdedf7f04dd4c2c87",
+    "src/hnsw.h": "cac0e2d2e20a1006cfa4b131144297ac97f2bd5b174d13aa7477edb6652257d8",
+    "src/hnswbuild.c": "f7564f02a18c481ad5050e9e0d7e09597652fbce7ce30e3c88d582c753e470ee",
+    "test/t/045_hnsw_low_memory_build.pl": "20a9c493f230ddd1d8c29b5b2b0aec2725d64f41845a627b2fdf7c645dc23391",
+    "test/t/049_hnsw_build_timing.pl": "c0d0ef1b10abc2d616a5680dfd17ab93a5e44a2630de0b3fd5fff2e523a7a3d9"
+  },
+  "calibration_tests": {
+    "profile_and_parser": 7,
+    "cleanup": 3,
+    "independent_auditor_mutations": 10,
+    "review_manifests": {
+      "review-construction-profile": "00b3e243ee4d68bbc24e98ab2b912bce450e9bebbac51af12cee5eaf6f72411a",
+      "review-protocol-freeze": "0068ed7bf429deb7ea863715e58ab3c081098f7ce389ff4c51fce97d700fa494",
+      "review-construction-audit": "58afebb6474233f4c6c75842444bd6ca30766af2f7b81f8f84aa0bdd2b37bf2e"
+    }
+  },
+  "measurement_sources_unchanged_after_run": true,
+  "owned_cleanup_verified": true,
+  "remaining": "Three parallel overhead comparisons are not established below the self-set 5% reference. No known required feature or attributable product C defect remains. No new benchmark without a concrete testable intervention or materially improved conditions.",
+  "delivery": "No commit, push, PR or maintainer contact performed."
+}

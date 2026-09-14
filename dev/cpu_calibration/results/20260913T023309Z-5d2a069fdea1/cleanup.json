@@ -1,0 +1,17 @@
+{
+  "status": "verified",
+  "container_id": "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035",
+  "nonce": "5d2a069fdea1",
+  "removed_owned_volumes": [
+    {
+      "Type": "volume",
+      "Name": "80dc262fe3971df106b84e822e703eea620c921dd17c701f32c6ef2bf7ed85b2",
+      "Source": "/var/lib/docker/volumes/80dc262fe3971df106b84e822e703eea620c921dd17c701f32c6ef2bf7ed85b2/_data",
+      "Destination": "/var/lib/postgresql/data",
+      "Driver": "local",
+      "Mode": "",
+      "RW": true,
+      "Propagation": ""
+    }
+  ]
+}

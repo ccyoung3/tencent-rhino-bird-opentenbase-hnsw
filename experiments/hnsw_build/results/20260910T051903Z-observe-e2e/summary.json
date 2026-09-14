@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "checks": [],
+  "error": "AssertionError:",
+  "error_locations": [
+    {
+      "file": "verify_observe.py",
+      "line": 30
+    }
+  ],
+  "tooling_sha256": {
+    "observe.py": "328828c7eea85382130db6322bcf107279312e314045f57334d6d4715117e40a",
+    "local_stack.py": "80b8d7ec0e193a896ea4c2fab03cddaffd0b4d2a1a79bd2dbb0756bbbe9fa0db",
+    "verify_observe.py": "4ea819f1ff2b8ce161de6eca75883900345687429ea6ec9c39dc935fd4d2105a"
+  }
+}

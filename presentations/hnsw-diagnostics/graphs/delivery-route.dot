@@ -1,0 +1,8 @@
+digraph delivery_route {
+  graph [rankdir=LR, nodesep=0.2, ranksep=0.34, pad=0.07, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#a5a8ad", penwidth=1.0, margin="0.15,0.16"];
+  edge [color="#62666c", penwidth=1.0, arrowsize=0.65];
+  candidate [color="#004f71", fillcolor="#edf4f7"];
+  location [color="#b60b2d", penwidth=1.4];
+  candidate -> location -> integration -> submit;
+}

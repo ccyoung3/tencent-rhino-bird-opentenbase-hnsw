@@ -1,0 +1,2 @@
+DEBUG: building index "items_embedding_hnsw_idx" on table "items" serially
+INFO: memory: 16 MB

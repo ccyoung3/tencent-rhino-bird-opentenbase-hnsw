@@ -1,0 +1,7 @@
+/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260909T145555Z-glove-formal-high-r3
+Validating pinned data
+Loading 1183514 vectors
+Building with 1792MB
+Evaluating tuning queries
+Validating held-out queries at [10, 40, 400]
+passed: /Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260909T145555Z-glove-formal-high-r3

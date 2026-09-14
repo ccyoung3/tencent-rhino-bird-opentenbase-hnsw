@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 0,
+  "spill": false,
+  "warmup": false,
+  "command_seconds": 19.697658791999856,
+  "started_epoch": 1789237434.133913,
+  "civil_wall_seconds": 19.697611093521118,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 135,
+        "index_oid": 16733,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": false,
+        "total_us": 19676729,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 56
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 56,
+            "end_us": 19529098
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "flush",
+            "start_us": 19529098,
+            "end_us": 19623323
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "finalize",
+            "start_us": 19623323,
+            "end_us": 19623323
+          },
+          {
+            "phase": "wal",
+            "start_us": 19623323,
+            "end_us": 19676695
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 19676695,
+            "end_us": 19676729
+          }
+        ],
+        "durations_us": {
+          "setup": 56,
+          "memory_build": 19529042,
+          "spill_drain": null,
+          "flush": 94225,
+          "disk_insert": null,
+          "finalize": 0,
+          "wal": 53372,
+          "cleanup": 34
+        }
+      }
+    ],
+    "dominant_phase": "memory_build",
+    "dominant_fraction": 0.9924943317560556
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 135,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 20,
+      "phases": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "first_seen_s": 0.001998083000216866,
+          "last_seen_s": 19.14912104099858,
+          "samples": 20
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 136
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 19
+      },
+      "elapsed_seconds": 19.694122916000197
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      3.212890625,
+      3.6171875,
+      4.046875
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 40297465\nuser_usec 38489547\nsystem_usec 1807918\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n111661056\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=19619840 wbytes=394321920 rios=349 wios=4019 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      3.2138671875,
+      3.59228515625,
+      4.02734375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 59989409\nuser_usec 57499396\nsystem_usec 2490013\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n201969664\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=24420352 wbytes=437080064 rios=401 wios=4097 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 43474944
+}

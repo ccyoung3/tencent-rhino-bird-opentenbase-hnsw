@@ -1,0 +1,20 @@
+{
+  "status": "not_found",
+  "build_outcome": "unknown",
+  "pid": 2147483647,
+  "interval_seconds": 1.0,
+  "duration_limit_seconds": 0.5,
+  "samples": 1,
+  "phases": [],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 60
+  },
+  "observation_counts": {
+    "not_found": 1
+  },
+  "elapsed_seconds": 0.0012487499989219941
+}

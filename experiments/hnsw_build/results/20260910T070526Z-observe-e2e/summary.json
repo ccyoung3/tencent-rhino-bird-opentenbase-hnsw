@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checks": [
+    "read_only_and_no_payload_privileges",
+    "idle",
+    "insufficient_visibility",
+    "missing_pid",
+    "lock_wait_visible",
+    "mid_build_attach",
+    "observer_exit_does_not_cancel_builder",
+    "cancelled_build_not_reported_success"
+  ],
+  "cleanup": {
+    "status": "complete",
+    "returncode": 0,
+    "stderr": " Container hnsw-local-99719-1789023926567005000-db-1 Stopping \n Container hnsw-local-99719-1789023926567005000-db-1 Stopped \n Container hnsw-local-99719-1789023926567005000-db-1 Removing \n Container hnsw-local-99719-1789023926567005000-db-1 Removed \n Volume hnsw-local-99719-1789023926567005000_opentenbase_pgdata Removing \n Network hnsw-local-99719-1789023926567005000_default Removing \n Volume hnsw-local-99719-1789023926567005000_opentenbase_pgdata Removed \n Network hnsw-local-99719-1789023926567005000_default Removed \n"
+  },
+  "tooling_sha256": {
+    "observe.py": "a1ec447bb364375e488bfad084b3a85d34edf4772eadd83aff6245cdbba40678",
+    "local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "verify_observe.py": "4ea819f1ff2b8ce161de6eca75883900345687429ea6ec9c39dc935fd4d2105a"
+  }
+}

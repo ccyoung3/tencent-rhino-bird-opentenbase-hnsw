@@ -1,0 +1,213 @@
+{
+  "Id": "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035",
+  "Created": "2026-09-13T02:33:09.813273936Z",
+  "Path": "/bin/sleep",
+  "Args": [
+    "180"
+  ],
+  "State": {
+    "Status": "created",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "0001-01-01T00:00:00Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "Image": "sha256:67f0f897778bdf0442b6a44eb3d329a055e56e8efccda5e25097bea32c674ab2",
+  "ResolvConfPath": "",
+  "HostnamePath": "",
+  "HostsPath": "",
+  "LogPath": "",
+  "Name": "/cpu-calibration-5d2a069fdea1",
+  "RestartCount": 0,
+  "Driver": "overlay2",
+  "Platform": "linux",
+  "MountLabel": "",
+  "ProcessLabel": "",
+  "AppArmorProfile": "",
+  "ExecIDs": null,
+  "HostConfig": {
+    "Binds": null,
+    "ContainerIDFile": "",
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {
+        "max-file": "5",
+        "max-size": "20m"
+      }
+    },
+    "NetworkMode": "none",
+    "PortBindings": {},
+    "RestartPolicy": {
+      "Name": "no",
+      "MaximumRetryCount": 0
+    },
+    "AutoRemove": false,
+    "VolumeDriver": "",
+    "VolumesFrom": null,
+    "ConsoleSize": [
+      0,
+      0
+    ],
+    "CapAdd": null,
+    "CapDrop": [
+      "ALL"
+    ],
+    "CgroupnsMode": "private",
+    "Dns": null,
+    "DnsOptions": [],
+    "DnsSearch": [],
+    "ExtraHosts": null,
+    "GroupAdd": null,
+    "IpcMode": "private",
+    "Cgroup": "",
+    "Links": null,
+    "OomScoreAdj": 0,
+    "PidMode": "",
+    "Privileged": false,
+    "PublishAllPorts": false,
+    "ReadonlyRootfs": true,
+    "SecurityOpt": [
+      "no-new-privileges"
+    ],
+    "UTSMode": "",
+    "UsernsMode": "",
+    "ShmSize": 6299844608,
+    "Runtime": "runc",
+    "Isolation": "",
+    "CpuShares": 0,
+    "Memory": 536870912,
+    "NanoCpus": 0,
+    "CgroupParent": "",
+    "BlkioWeight": 0,
+    "BlkioWeightDevice": [],
+    "BlkioDeviceReadBps": [],
+    "BlkioDeviceWriteBps": [],
+    "BlkioDeviceReadIOps": [],
+    "BlkioDeviceWriteIOps": [],
+    "CpuPeriod": 0,
+    "CpuQuota": 0,
+    "CpuRealtimePeriod": 0,
+    "CpuRealtimeRuntime": 0,
+    "CpusetCpus": "0-9",
+    "CpusetMems": "",
+    "Devices": [],
+    "DeviceCgroupRules": null,
+    "DeviceRequests": null,
+    "MemoryReservation": 0,
+    "MemorySwap": 536870912,
+    "MemorySwappiness": null,
+    "OomKillDisable": false,
+    "PidsLimit": null,
+    "Ulimits": [],
+    "CpuCount": 0,
+    "CpuPercent": 0,
+    "IOMaximumIOps": 0,
+    "IOMaximumBandwidth": 0,
+    "MaskedPaths": [
+      "/proc/acpi",
+      "/proc/asound",
+      "/proc/interrupts",
+      "/proc/kcore",
+      "/proc/keys",
+      "/proc/latency_stats",
+      "/proc/sched_debug",
+      "/proc/scsi",
+      "/proc/timer_list",
+      "/proc/timer_stats",
+      "/sys/devices/virtual/powercap",
+      "/sys/firmware"
+    ],
+    "ReadonlyPaths": [
+      "/proc/bus",
+      "/proc/fs",
+      "/proc/irq",
+      "/proc/sys",
+      "/proc/sysrq-trigger"
+    ]
+  },
+  "GraphDriver": {
+    "Data": {
+      "ID": "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035",
+      "LowerDir": "/var/lib/docker/overlay2/3b953289df74f91422444d4abe69129f74e4aea241ec90dc9dffdcab3ad1fdf3-init/diff:/var/lib/docker/overlay2/ue3klxdnonfehbiwnbmfd8dj7/diff:/var/lib/docker/overlay2/d00oeqx3v9gzhq6bh99apeh9u/diff:/var/lib/docker/overlay2/ismsya9vch9g6jv3obmis0xk9/diff:/var/lib/docker/overlay2/pzay2v15nabclwrnurioevp8b/diff:/var/lib/docker/overlay2/nk43qjqt7nmplh6bbebdbwaz7/diff:/var/lib/docker/overlay2/2b4ec3fbbb7ea74c31b2025246b00a475a80a93a2ba014565c5278b07cbccb6e/diff",
+      "MergedDir": "/var/lib/docker/overlay2/3b953289df74f91422444d4abe69129f74e4aea241ec90dc9dffdcab3ad1fdf3/merged",
+      "UpperDir": "/var/lib/docker/overlay2/3b953289df74f91422444d4abe69129f74e4aea241ec90dc9dffdcab3ad1fdf3/diff",
+      "WorkDir": "/var/lib/docker/overlay2/3b953289df74f91422444d4abe69129f74e4aea241ec90dc9dffdcab3ad1fdf3/work"
+    },
+    "Name": "overlay2"
+  },
+  "Mounts": [
+    {
+      "Type": "volume",
+      "Name": "80dc262fe3971df106b84e822e703eea620c921dd17c701f32c6ef2bf7ed85b2",
+      "Source": "/var/lib/docker/volumes/80dc262fe3971df106b84e822e703eea620c921dd17c701f32c6ef2bf7ed85b2/_data",
+      "Destination": "/var/lib/postgresql/data",
+      "Driver": "local",
+      "Mode": "",
+      "RW": true,
+      "Propagation": ""
+    }
+  ],
+  "Config": {
+    "Hostname": "7be0ff280989",
+    "Domainname": "",
+    "User": "postgres",
+    "AttachStdin": false,
+    "AttachStdout": true,
+    "AttachStderr": true,
+    "ExposedPorts": {
+      "5432/tcp": {}
+    },
+    "Tty": false,
+    "OpenStdin": false,
+    "StdinOnce": false,
+    "Env": [
+      "PATH=/opt/opentenbase/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "PGDATA=/var/lib/postgresql/data"
+    ],
+    "Cmd": [
+      "180"
+    ],
+    "Image": "sha256:67f0f897778bdf0442b6a44eb3d329a055e56e8efccda5e25097bea32c674ab2",
+    "Volumes": {
+      "/var/lib/postgresql/data": {}
+    },
+    "WorkingDir": "",
+    "Entrypoint": [
+      "/bin/sleep"
+    ],
+    "Labels": {
+      "cpu.calibration.nonce": "5d2a069fdea1",
+      "cpu.calibration.test_only": "true"
+    }
+  },
+  "NetworkSettings": {
+    "SandboxID": "",
+    "SandboxKey": "",
+    "Ports": {},
+    "Networks": {
+      "none": {
+        "IPAMConfig": null,
+        "Links": null,
+        "Aliases": null,
+        "DriverOpts": null,
+        "GwPriority": 0,
+        "NetworkID": "",
+        "EndpointID": "",
+        "Gateway": "",
+        "IPAddress": "",
+        "MacAddress": "",
+        "IPPrefixLen": 0,
+        "IPv6Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "DNSNames": null
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "kind": "formal",
+  "number": 9,
+  "iterations_per_process": 50000000,
+  "started_at_utc": "2026-09-13T02:33:12.983290+00:00",
+  "ac_before": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "resources_before": "FILE:cpu.stat\nusage_usec 5541739\nuser_usec 5454786\nsystem_usec 86953\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpuset.cpus.effective\n0-9\nFILE:memory.current\n2457600\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=1302528 wbytes=0 rios=49 wios=0 dbytes=0 dios=0\nFILE:cpu.pressure\nunavailable\n",
+  "raw_stdout": "{\"schema\":1,\"test_only\":true,\"scope\":\"fixed_arithmetic_three_processes\",\"dimensions\":32,\"inputs\":1024,\"expected_checksum\":86303660579,\"iterations_per_process\":50000000,\"elapsed_ns\":226519825,\"affinity\":[0,1,2,3,4,5,6,7,8,9],\"processes\":[{\"role\":\"leader\",\"participant\":0,\"pid\":287,\"iterations\":50000000,\"checksum\":86303660579,\"elapsed_ns\":226472908,\"user_cpu_us\":224190,\"system_cpu_us\":214,\"minor_faults\":0,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":1},{\"role\":\"worker\",\"participant\":1,\"pid\":292,\"iterations\":50000000,\"checksum\":86303660579,\"elapsed_ns\":223523021,\"user_cpu_us\":222763,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":2},{\"role\":\"worker\",\"participant\":2,\"pid\":293,\"iterations\":50000000,\"checksum\":86303660579,\"elapsed_ns\":217673913,\"user_cpu_us\":217568,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":4}],\"verified\":true}\n",
+  "raw_stderr": "",
+  "resources_after": "FILE:cpu.stat\nusage_usec 6222256\nuser_usec 6130321\nsystem_usec 91934\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpuset.cpus.effective\n0-9\nFILE:memory.current\n5869568\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=1302528 wbytes=0 rios=49 wios=0 dbytes=0 dios=0\nFILE:cpu.pressure\nunavailable\n",
+  "ac_after": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "result": {
+    "schema": 1,
+    "test_only": true,
+    "scope": "fixed_arithmetic_three_processes",
+    "dimensions": 32,
+    "inputs": 1024,
+    "expected_checksum": 86303660579,
+    "iterations_per_process": 50000000,
+    "elapsed_ns": 226519825,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "processes": [
+      {
+        "role": "leader",
+        "participant": 0,
+        "pid": 287,
+        "iterations": 50000000,
+        "checksum": 86303660579,
+        "elapsed_ns": 226472908,
+        "user_cpu_us": 224190,
+        "system_cpu_us": 214,
+        "minor_faults": 0,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 1
+      },
+      {
+        "role": "worker",
+        "participant": 1,
+        "pid": 292,
+        "iterations": 50000000,
+        "checksum": 86303660579,
+        "elapsed_ns": 223523021,
+        "user_cpu_us": 222763,
+        "system_cpu_us": 0,
+        "minor_faults": 64,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 2
+      },
+      {
+        "role": "worker",
+        "participant": 2,
+        "pid": 293,
+        "iterations": 50000000,
+        "checksum": 86303660579,
+        "elapsed_ns": 217673913,
+        "user_cpu_us": 217568,
+        "system_cpu_us": 0,
+        "minor_faults": 64,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 4
+      }
+    ],
+    "verified": true
+  },
+  "status": "verified",
+  "finished_at_utc": "2026-09-13T02:33:13.337895+00:00"
+}

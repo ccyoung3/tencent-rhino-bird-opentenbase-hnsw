@@ -1,0 +1,16 @@
+{
+  "variant": "new_off",
+  "workers": 2,
+  "spill": false,
+  "command_seconds": 3.5830214580055326,
+  "command_returncode": 0,
+  "observer": {
+    "attachment_probes": 0
+  },
+  "internal_timing": {
+    "status": "not_requested",
+    "records": []
+  },
+  "index_bytes": 8691712,
+  "image_variant": "timing-v1-seed42-arm64"
+}

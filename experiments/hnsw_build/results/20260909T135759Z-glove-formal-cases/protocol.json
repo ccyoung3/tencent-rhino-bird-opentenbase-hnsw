@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "rows": 1183514,
+  "low_memory": "1024MB",
+  "high_memory": "1792MB",
+  "order": [
+    [
+      "high",
+      1
+    ],
+    [
+      "low",
+      1
+    ],
+    [
+      "low",
+      2
+    ],
+    [
+      "high",
+      2
+    ],
+    [
+      "high",
+      3
+    ],
+    [
+      "low",
+      3
+    ]
+  ],
+  "runs": [
+    {
+      "group": "high",
+      "repetition": 1,
+      "directory": "20260909T135759Z-glove-formal-high-r1",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1792MB",
+        "--label",
+        "glove-formal-high-r1"
+      ]
+    },
+    {
+      "group": "low",
+      "repetition": 1,
+      "directory": "20260909T140726Z-glove-formal-low-r1",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1024MB",
+        "--label",
+        "glove-formal-low-r1"
+      ]
+    },
+    {
+      "group": "low",
+      "repetition": 2,
+      "directory": "20260909T143123Z-glove-formal-low-r2",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1024MB",
+        "--label",
+        "glove-formal-low-r2"
+      ]
+    },
+    {
+      "group": "high",
+      "repetition": 2,
+      "directory": "20260909T145015Z-glove-formal-high-r2",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1792MB",
+        "--label",
+        "glove-formal-high-r2"
+      ]
+    },
+    {
+      "group": "high",
+      "repetition": 3,
+      "directory": "20260909T145555Z-glove-formal-high-r3",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1792MB",
+        "--label",
+        "glove-formal-high-r3",
+        "--evaluate"
+      ]
+    },
+    {
+      "group": "low",
+      "repetition": 3,
+      "directory": "20260909T150617Z-glove-formal-low-r3",
+      "returncode": 0,
+      "command": [
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/.venv-glove/bin/python",
+        "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/glove_run.py",
+        "--rows",
+        "1183514",
+        "--maintenance-work-mem",
+        "1024MB",
+        "--label",
+        "glove-formal-low-r3"
+      ]
+    }
+  ],
+  "recall_on": "high repetition 3 only; no rebuilding within recall case",
+  "workers": 2,
+  "sample_interval_seconds": 0.5,
+  "build_timeout_ms": 1800000,
+  "tuning_queries": 200,
+  "validation_queries": 1000,
+  "query_repetitions": 3,
+  "ef_candidates": [
+    10,
+    40,
+    100,
+    200,
+    400
+  ],
+  "target": 0.95,
+  "tooling_sha256": {
+    "glove_cases.py": "5620e0e8ea8c36fb2772d22ebd8cd913747462be64766203dcb114d4f69dc35c",
+    "glove_report.py": "65dcacf5d0273188524ecd42dc706928f29607eb3a18dd1b867245f756ac4c8c"
+  }
+}

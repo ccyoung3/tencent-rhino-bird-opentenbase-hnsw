@@ -1,0 +1,54 @@
+variant=baseline
+PG_VERSION_NUM=180006 ALIGNOF_BUFFER=32 PG_CACHE_LINE_SIZE=128
+slock=4 LWLock=16 CV=12 instr_time=8 graph=120 shared=160 scan=24 blockscan=48
+HnswGraph.lock offset=0 size=4
+HnswGraph.head offset=8 size=8
+HnswGraph.indtuples offset=16 size=8
+HnswGraph.entryLock offset=24 size=16
+HnswGraph.entryWaitLock offset=40 size=16
+HnswGraph.allocatorLock offset=64 size=16
+HnswGraph.memoryUsed offset=80 size=8
+HnswGraph.memoryTotal offset=88 size=8
+HnswGraph.flushLock offset=96 size=16
+HnswGraph.flushed offset=112 size=1
+HnswShared.workersdonecv offset=12 size=12
+HnswShared.mutex offset=24 size=4
+HnswShared.nparticipantsdone offset=28 size=4
+HnswShared.reltuples offset=32 size=8
+HnswShared.graphData offset=40 size=120
+ParallelBlockTableScanDescData.phs_mutex offset=28 size=4
+ParallelBlockTableScanDescData.phs_nallocated offset=40 size=8
+parallel_scan_offset=160 nallocated_from_shared=200
+variant=candidate
+PG_VERSION_NUM=180006 ALIGNOF_BUFFER=32 PG_CACHE_LINE_SIZE=128
+slock=4 LWLock=16 CV=12 instr_time=8 graph=152 shared=192 scan=24 blockscan=48
+HnswGraph.lock offset=0 size=4
+HnswGraph.head offset=8 size=8
+HnswGraph.indtuples offset=16 size=8
+HnswGraph.entryLock offset=24 size=16
+HnswGraph.entryWaitLock offset=40 size=16
+HnswGraph.allocatorLock offset=64 size=16
+HnswGraph.memoryUsed offset=80 size=8
+HnswGraph.memoryTotal offset=88 size=8
+HnswGraph.flushLock offset=96 size=16
+HnswGraph.flushed offset=112 size=1
+HnswShared.workersdonecv offset=12 size=12
+HnswShared.mutex offset=24 size=4
+HnswShared.nparticipantsdone offset=28 size=4
+HnswShared.reltuples offset=32 size=8
+HnswShared.graphData offset=40 size=152
+ParallelBlockTableScanDescData.phs_mutex offset=28 size=4
+ParallelBlockTableScanDescData.phs_nallocated offset=40 size=8
+parallel_scan_offset=192 nallocated_from_shared=232
+HnswGraph.buildPhase offset=116 size=4
+HnswGraph.timing offset=120 size=32
+HnswGraphTiming.enabled offset=0 size=1
+HnswGraphTiming.spillRequested offset=8 size=8
+HnswGraphTiming.flushStarted offset=16 size=8
+HnswGraphTiming.flushFinished offset=24 size=8
+line=64 assumed_shared_base_mod_line=0 phase_with_graph_lock=0 phase_with_indtuples=0 phase_with_flushLock=1
+line=64 assumed_shared_base_mod_line=32 phase_with_graph_lock=0 phase_with_indtuples=0 phase_with_flushLock=1
+line=128 assumed_shared_base_mod_line=0 phase_with_graph_lock=0 phase_with_indtuples=0 phase_with_flushLock=1
+line=128 assumed_shared_base_mod_line=32 phase_with_graph_lock=0 phase_with_indtuples=0 phase_with_flushLock=1
+line=128 assumed_shared_base_mod_line=64 phase_with_graph_lock=0 phase_with_indtuples=0 phase_with_flushLock=1
+line=128 assumed_shared_base_mod_line=96 phase_with_graph_lock=1 phase_with_indtuples=1 phase_with_flushLock=1

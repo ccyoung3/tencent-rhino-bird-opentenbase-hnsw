@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "test_only": true,
+  "status": "failed",
+  "started_at_utc": "2026-09-13T02:32:03.659544+00:00",
+  "nonce": "2a6603339c4f",
+  "sources": {
+    "run.py": "aec12e0c3773c9e0cdf9ed5a6911ea7de20d4664261e4048505e5fb53e9749ca",
+    "compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e"
+  },
+  "records": [],
+  "run_directory": "/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/dev/cpu_calibration/results/20260913T023203Z-2a6603339c4f",
+  "error": "RuntimeError('command 14 failed: 1')",
+  "cleanup": {
+    "status": "failed",
+    "container_id": "4b7ce63d84e949b76a756110ea01dd3bb1658e81a25f7af7ee8a0eeeedc0be37",
+    "error": "AssertionError()"
+  },
+  "finished_at_utc": "2026-09-13T02:32:04.874087+00:00"
+}

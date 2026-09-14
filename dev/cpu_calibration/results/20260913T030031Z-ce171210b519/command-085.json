@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "docker",
+    "inspect",
+    "354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652"
+  ],
+  "started_at_utc": "2026-09-13T03:02:11.393667+00:00",
+  "returncode": 1,
+  "stdout": "[]\n",
+  "stderr": "error: no such object: 354c79a2badab759f559132ae8dc27d152fabf032f67f56426390f0b93a88652\n",
+  "finished_at_utc": "2026-09-13T03:02:11.426188+00:00",
+  "host_elapsed_s": 0.03252891600277508
+}

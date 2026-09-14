@@ -1,0 +1,139 @@
+{
+  "condition": "observed",
+  "workers": 0,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 14.2411988749991,
+  "started_epoch": 1789228176.197808,
+  "civil_wall_seconds": 14.241237163543701,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 130,
+        "index_oid": 16733,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": true,
+        "total_us": 14216764,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 52
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 52,
+            "end_us": 120120
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 120120,
+            "end_us": 120237
+          },
+          {
+            "phase": "flush",
+            "start_us": 120237,
+            "end_us": 120940
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 120940,
+            "end_us": 14212439
+          },
+          {
+            "phase": "finalize",
+            "start_us": 14212439,
+            "end_us": 14212439
+          },
+          {
+            "phase": "wal",
+            "start_us": 14212439,
+            "end_us": 14216737
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 14216737,
+            "end_us": 14216764
+          }
+        ],
+        "durations_us": {
+          "setup": 52,
+          "memory_build": 120068,
+          "spill_drain": 117,
+          "flush": 703,
+          "disk_insert": 14091499,
+          "finalize": 0,
+          "wal": 4298,
+          "cleanup": 27
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.991188923161417
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 130,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 15,
+      "phases": [
+        {
+          "phase": "building index: loading tuples in memory",
+          "first_seen_s": 0.0021011659991927445,
+          "last_seen_s": 0.0021011659991927445,
+          "samples": 1
+        },
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 1.0149609159998363,
+          "last_seen_s": 14.129781249999724,
+          "samples": 14
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 131
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 14
+      },
+      "elapsed_seconds": 14.236929790999056
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      3.4326171875,
+      3.9609375,
+      4.11376953125
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 30119202\nuser_usec 29688885\nsystem_usec 430317\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n73895936\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=1921024 wbytes=256929792 rios=92 wios=3899 dbytes=0 dios=0\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      3.82275390625,
+      4.0263671875,
+      4.13427734375
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 44365077\nuser_usec 43901857\nsystem_usec 463220\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n101990400\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=1921024 wbytes=269832192 rios=92 wios=3923 dbytes=0 dios=0\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

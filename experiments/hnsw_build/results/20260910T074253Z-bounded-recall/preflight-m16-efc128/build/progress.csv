@@ -1,0 +1,29 @@
+elapsed_seconds,phase,blocks_total,blocks_done,tuples_total,tuples_done,tuple_progress_percent,container_memory_bytes
+0.003208,building index: loading tuples in memory,0,0,0,0,0.0,199974912
+0.577866,building index: loading tuples in memory,5616,460,0,7628,7.628,2075664384
+1.187698,building index: loading tuples in memory,5616,867,0,15056,15.056,2075983872
+1.788922,building index: loading tuples in memory,5616,1138,0,21226,21.226,2076078080
+2.397061,building index: loading tuples in memory,5616,1504,0,27203,27.203,2076151808
+2.992135,building index: loading tuples in memory,5616,1886,0,32834,32.834,2075779072
+3.590753,building index: loading tuples in memory,5616,2000,0,37270,37.27,2075844608
+4.206982,building index: loading tuples in memory,5616,2316,0,41423,41.423,2075574272
+4.82021,building index: loading tuples in memory,5616,2417,0,45060,45.06,2075541504
+5.439233,building index: loading tuples in memory,5616,2718,0,47896,47.896,2076233728
+6.103735,building index: loading tuples in memory,5616,2775,0,50622,50.622,2075901952
+6.758222,building index: loading tuples in memory,5616,3018,0,53379,53.379,2075897856
+7.422216,building index: loading tuples in memory,5616,3157,0,56116,56.116,2076090368
+8.05532,building index: loading tuples in memory,5616,3217,0,58890,58.89,2075693056
+8.701891,building index: loading tuples in memory,5616,3438,0,61718,61.718,2075979776
+9.341495,building index: loading tuples in memory,5616,3592,0,65035,65.035,2075754496
+9.980232,building index: loading tuples in memory,5616,3785,0,68230,68.23,2079326208
+10.609332,building index: loading tuples in memory,5616,3961,0,71331,71.331,2075869184
+11.225526,building index: loading tuples in memory,5616,4143,0,74600,74.6,2075844608
+11.848723,building index: loading tuples in memory,5616,4306,0,77508,77.508,2075955200
+12.484787,building index: loading tuples in memory,5616,4457,0,80254,80.254,2075885568
+13.114483,building index: loading tuples in memory,5616,4616,0,83088,83.088,2075848704
+13.749886,building index: loading tuples in memory,5616,4776,0,85931,85.931,2075664384
+14.406079,building index: loading tuples in memory,5616,4942,0,88926,88.926,2075639808
+15.04305,building index: loading tuples in memory,5616,5097,0,91760,91.76,2076098560
+15.670704,building index: loading tuples in memory,5616,5257,0,94676,94.676,2075877376
+16.288403,building index: loading tuples in memory,5616,5412,0,97442,97.442,2075553792
+16.93167,building index: flushing in-memory graph,5616,5616,0,99990,99.99,2075013120

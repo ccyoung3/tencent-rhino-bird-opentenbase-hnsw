@@ -14,3 +14,19 @@
 /tmp/
 **/__pycache__/
 *.py[cod]
+
+# Public vector inputs and task-local optional Python dependencies.
+/data/cache/
+/.venv-glove/
+
+# Full upstream source copies for local mechanism attestation are not delivery assets.
+/dev/snapshots/20260913-mechanism-diagnostic/build-*/instrumented-source.tar.gz
+
+# Prepared source identity and incomplete, task-owned download directories.
+/.hnsw-source-provenance.json
+/.hnsw-sources-*/
+
+# Separate Zhihu demo and personal handoff correspondence remain local.
+/demos/zhihu-qa/
+/output/
+/docs/2026-09-14-cyrilwu-confirmation-checklist.md

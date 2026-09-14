@@ -1,0 +1,37 @@
+{
+  "status": "duration_reached",
+  "build_outcome": "unknown",
+  "pid": 62,
+  "interval_seconds": 0.25,
+  "duration_limit_seconds": 0.5,
+  "samples": 2,
+  "phases": [
+    {
+      "phase": "build progress not published; active task unconfirmed",
+      "first_seen_s": 0.004156167036853731,
+      "last_seen_s": 0.26462979207281023,
+      "samples": 2
+    }
+  ],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 60
+  },
+  "observation_counts": {
+    "active_without_build_progress": 2
+  },
+  "wait_observations": [
+    {
+      "phase": null,
+      "type": "Lock",
+      "event": "relation",
+      "samples": 2,
+      "first_seen_s": 0.004156167036853731,
+      "last_seen_s": 0.26462979207281023
+    }
+  ],
+  "elapsed_seconds": 0.5029316670261323
+}

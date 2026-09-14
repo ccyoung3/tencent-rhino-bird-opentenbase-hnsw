@@ -1,0 +1,100 @@
+--- run-before.py
++++ run-after.py
+@@ -5,6 +5,7 @@
+ import json
+ import math
+ from pathlib import Path
++import re
+ import shutil
+ import statistics
+ import subprocess
+@@ -29,6 +30,29 @@
+ 
+ def write(path, value):
+     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
++
++
++def recover_owned_container(command, name, nonce, image_id):
++    """Recover only this attempt's identity, including after create timed out.
++
++    A daemon-side create can succeed before the client returns its ID. Never
++    infer ownership from the name alone or treat arbitrary errors as absence.
++    """
++    result = command(['docker', 'container', 'inspect', name], check=False, cleanup_call=True)
++    if result.returncode:
++        if 'no such container' in result.stderr.lower() or 'no such object' in result.stderr.lower():
++            return None
++        raise RuntimeError('cannot establish whether owned container exists')
++    objects = json.loads(result.stdout)
++    if not isinstance(objects, list) or len(objects) != 1:
++        raise RuntimeError('ambiguous container identity; leaving object untouched')
++    identity = objects[0]
++    if (identity.get('Name') != '/' + name
++            or identity.get('Image') != image_id
++            or identity.get('Config', {}).get('Labels', {}).get('cpu.calibration.nonce') != nonce
++            or not re.fullmatch('[0-9a-f]{64}', identity.get('Id', ''))):
++        raise RuntimeError('container ownership mismatch; leaving object untouched')
++    return identity
+ 
+ 
+ def main():
+@@ -43,6 +67,9 @@
+     deadline = time.monotonic() + 180
+     command_number = 0
+     container = None
++    container_name = 'cpu-calibration-' + nonce
++    creation_attempted = False
++    image_id = None
+     cleanup = {'status': 'not_created'}
+     summary = {'schema': 1, 'test_only': True, 'status': 'running', 'started_at_utc': stamp(),
+                'nonce': nonce, 'sources': source_hashes, 'records': [], 'run_directory': str(run)}
+@@ -140,7 +167,10 @@
+         for base_tag, expected in BASES.items():
+             assert json.loads(command(['docker', 'image', 'inspect', base_tag]).stdout)[0]['Id'] == expected
+         write(run / 'built-image.json', image)
+-        result = command(['docker', 'create', '--name', 'cpu-calibration-' + nonce,
++        image_id = image['Id']
++        write(run / 'cleanup-scope.json', {'container_name': container_name, 'nonce': nonce, 'image_id': image_id})
++        creation_attempted = True
++        result = command(['docker', 'create', '--name', container_name,
+                           '--label', 'cpu.calibration.nonce=' + nonce, '--network', 'none',
+                           '--read-only', '--cpuset-cpus', '0-9', '--memory', '512m', '--memory-swap', '512m',
+                           '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', image['Id'], '180'])
+@@ -178,19 +208,25 @@
+     except Exception as error:
+         summary.update(status='failed', error=repr(error))
+     finally:
+-        if container:
++        if creation_attempted:
+             try:
+-                identity = json.loads(command(['docker', 'inspect', container], cleanup_call=True).stdout)[0]
+-                assert identity['Id'] == container and identity['Config']['Labels']['cpu.calibration.nonce'] == nonce
+-                command(['docker', 'rm', '-f', '-v', container], cleanup_call=True)
+-                check = command(['docker', 'inspect', container], check=False, cleanup_call=True)
+-                assert check.returncode != 0 and 'no such object' in check.stderr.lower()
+-                for mount in identity['Mounts']:
+-                    if mount['Type'] == 'volume':
+-                        check_volume = command(['docker', 'volume', 'inspect', mount['Name']], check=False, cleanup_call=True)
+-                        assert check_volume.returncode != 0 and 'no such volume' in check_volume.stderr.lower()
+-                cleanup = {'status': 'verified', 'container_id': container, 'nonce': nonce,
+-                           'removed_owned_volumes': identity['Mounts']}
++                identity = recover_owned_container(command, container_name, nonce, image_id)
++                if identity is None:
++                    cleanup = {'status': 'verified_absent', 'container_name': container_name, 'nonce': nonce}
++                else:
++                    if container is not None and identity['Id'] != container:
++                        raise RuntimeError('container ID changed; leaving object untouched')
++                    container = identity['Id']
++                    write(run / 'cleanup-recovered-identity.json', identity)
++                    command(['docker', 'rm', '-f', '-v', container], cleanup_call=True)
++                    check = command(['docker', 'inspect', container], check=False, cleanup_call=True)
++                    assert check.returncode != 0 and 'no such object' in check.stderr.lower()
++                    for mount in identity['Mounts']:
++                        if mount['Type'] == 'volume':
++                            check_volume = command(['docker', 'volume', 'inspect', mount['Name']], check=False, cleanup_call=True)
++                            assert check_volume.returncode != 0 and 'no such volume' in check_volume.stderr.lower()
++                    cleanup = {'status': 'verified', 'container_id': container, 'nonce': nonce,
++                               'removed_owned_volumes': identity['Mounts']}
+             except Exception as error:
+                 cleanup = {'status': 'failed', 'container_id': container, 'error': repr(error)}
+                 summary['status'] = 'failed'

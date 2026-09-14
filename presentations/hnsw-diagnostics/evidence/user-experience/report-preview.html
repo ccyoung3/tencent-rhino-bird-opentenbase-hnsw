@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>HNSW diagnostic.md excerpt</title><style>*{box-sizing:border-box}html,body{margin:0;background:white;color:#20242a}body{font-family:Arial,sans-serif;font-size:26px;line-height:1.32}article{width:1080px;padding:18px 24px 20px;border:1px solid #cbd0d5}header{font:21px ui-monospace,Menlo,monospace;color:#666;padding-bottom:10px;border-bottom:1px solid #d8dce0}h2{font-size:29px;margin:14px 0 10px}h3{font-size:22px;margin:18px 0 10px}table{width:100%;border-collapse:collapse;font-size:25px}th,td{text-align:left;border-bottom:1px solid #d8dce0;padding:8px 12px}th:last-child,td:last-child{text-align:right;font-variant-numeric:tabular-nums}thead{background:#f5f6f8}code{font-family:Menlo,monospace;background:#f0f2f5;padding:1px 3px;border-radius:2px;font-size:.88em}ul{padding-left:28px;margin:10px 0}li{margin:8px 0}p{margin:8px 0}header{display:none}body{font-size:26px;line-height:1.2}article{padding:12px 22px}h2{font-size:28px;margin:4px 0 10px}h3{font-size:21px;margin:12px 0 8px}table{font-size:24px}th,td{padding:5px 10px}ul{margin:6px 0}li{margin:5px 0}</style><article><header>diagnostic.md &nbsp; / &nbsp; excerpt</header><h2>Internal build timing</h2>
+<table>
+<thead>
+<tr>
+<th>Internal phase</th>
+<th style="text-align:right">Elapsed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>memory_build</td>
+<td style="text-align:right">2.426489s</td>
+</tr>
+<tr>
+<td>disk_insert</td>
+<td style="text-align:right">70.307945s</td>
+</tr>
+</tbody>
+</table>
+<h3>Evidence → judgment → recommendation → revalidation</h3>
+<ul>
+<li>
+<p>Evidence: <code>disk_insert</code> has the largest measured interval (96.5% of internal elapsed time); spill=<code>True</code>.</p>
+</li>
+<li>
+<p>Recommendation: if memory headroom permits, raise maintenance_work_mem; keep the same data, image, workers, m and ef_construction.</p>
+</li>
+</ul>
+</article></html>

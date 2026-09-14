@@ -1,0 +1,133 @@
+{
+  "condition": "observed",
+  "workers": 2,
+  "spill": true,
+  "warmup": false,
+  "command_seconds": 8.8769849170003,
+  "started_epoch": 1789229062.128178,
+  "civil_wall_seconds": 8.876947164535522,
+  "require_ac": true,
+  "command_returncode": 0,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 251,
+        "index_oid": 16738,
+        "fork": 0,
+        "parallel_workers": 2,
+        "spill": true,
+        "total_us": 8855185,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 64
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 64,
+            "end_us": 974
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 974,
+            "end_us": 1126
+          },
+          {
+            "phase": "flush",
+            "start_us": 1126,
+            "end_us": 1312
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 1312,
+            "end_us": 8832907
+          },
+          {
+            "phase": "finalize",
+            "start_us": 8832907,
+            "end_us": 8833814
+          },
+          {
+            "phase": "wal",
+            "start_us": 8833814,
+            "end_us": 8855175
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 8855175,
+            "end_us": 8855185
+          }
+        ],
+        "durations_us": {
+          "setup": 64,
+          "memory_build": 910,
+          "spill_drain": 152,
+          "flush": 186,
+          "disk_insert": 8831595,
+          "finalize": 907,
+          "wal": 21361,
+          "cleanup": 10
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9973360240356356
+  },
+  "observer": {
+    "attachment_probes": 1,
+    "observation": {
+      "status": "stopped",
+      "build_outcome": "unknown",
+      "pid": 251,
+      "interval_seconds": 1.0,
+      "duration_limit_seconds": 180.0,
+      "samples": 9,
+      "phases": [
+        {
+          "phase": "building index: loading tuples on disk",
+          "first_seen_s": 0.004344375000073342,
+          "last_seen_s": 8.062689833999684,
+          "samples": 9
+        }
+      ],
+      "joined_mid_build_possible": true,
+      "server": {
+        "database": "postgres",
+        "version": 180006,
+        "read_only": "on",
+        "observer_pid": 252
+      },
+      "observation_counts": {
+        "attached": 1,
+        "progress_observed": 8
+      },
+      "elapsed_seconds": 8.872132333999616
+    }
+  },
+  "resources_before": {
+    "host_load_average": [
+      4.86376953125,
+      4.22119140625,
+      4.14013671875
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 181254844\nuser_usec 174187269\nsystem_usec 7067574\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n107335680\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=9760768 wbytes=679735296 rios=276 wios=4786 dbytes=51118080 dios=60\n"
+  },
+  "resources_after": {
+    "host_load_average": [
+      5.10546875,
+      4.29541015625,
+      4.16748046875
+    ],
+    "power_source": "AC",
+    "cgroup": "FILE:cpu.stat\nusage_usec 207729384\nuser_usec 200379757\nsystem_usec 7349627\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.pressure\nFILE:memory.current\n135577600\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=9764864 wbytes=692629504 rios=277 wios=4821 dbytes=51118080 dios=60\n"
+  },
+  "image": "sha256:f8a66172be721f8240a6f21f7cd0cc164ad17d2061bc357518ef25c2227d63be",
+  "index_bytes": 13033472
+}

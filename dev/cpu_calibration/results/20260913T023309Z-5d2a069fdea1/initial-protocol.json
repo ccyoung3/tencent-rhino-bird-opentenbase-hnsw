@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "test_only": true,
+  "created_at_utc": "2026-09-13T02:33:09.370514+00:00",
+  "sources": {
+    "run.py": "d7414fcd7a82c8426690dd9e6d9f29bf58778c83735821779b6e815518651099",
+    "compile.sh": "ffe69d4f1c19d725a775937945f4d352032e7d9beb1699183d31e63d714788ec",
+    "Dockerfile": "4ddf8a4774646a976f90f1671f096df321e16a6a63909c5d06858bcd9a964f72",
+    "calibrate.c": "d4acc2836325f114841204c313fd1c503dfb026004a6dce3dfe9df933adf206e"
+  },
+  "scope": "fixed arithmetic loop only; process setup and integer reference excluded; outer wall includes barrier/reaping",
+  "participants": 3,
+  "dimensions": 32,
+  "input_vectors": 1024,
+  "linux_guest_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "network": "none",
+  "database": "none",
+  "memory_bytes": 536870912,
+  "bases": {
+    "opentenbase-pg18-pgvector:timing-v1-test-arm64": "sha256:583632f8a2ba73f694ffed52fcd8e9a9a385da94c2602bfd65de1086a92148c6",
+    "opentenbase-pg18-pgvector:timing-v1-arm64": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7"
+  },
+  "sizing_probes": 1,
+  "sizing_iterations_per_process": 5000000,
+  "selection_rule": "round half up (5M * 2 seconds / sizing outer elapsed seconds) to whole million, clamp 20M..50M; duration only",
+  "formal_probes": 12,
+  "schedule": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "stop_on_failure": true,
+  "replacement_or_extra_probes": false,
+  "limitations": [
+    "Exploratory fixed-work calibration, not HNSW or 5% acceptance.",
+    "No normalization of existing observations.",
+    "CPU time per work unit does not establish hardware frequency.",
+    "Existing unrelated containers remain untouched; ambient host/VM contention is not controlled."
+  ]
+}

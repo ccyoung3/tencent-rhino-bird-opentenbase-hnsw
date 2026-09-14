@@ -1,0 +1,80 @@
+{
+  "rows": 10000,
+  "smoke": true,
+  "configs": [
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      32,
+      128
+    ]
+  ],
+  "ef_candidates": [
+    40,
+    100,
+    200,
+    400,
+    800,
+    1000
+  ],
+  "target": 0.95,
+  "query_ids": {
+    "tuning": [
+      6716,
+      6828,
+      2190,
+      3513,
+      4533,
+      6429,
+      743,
+      9454,
+      8913,
+      2197
+    ],
+    "validation": [
+      3860,
+      3732,
+      2293,
+      448,
+      8608,
+      7789,
+      3263,
+      2831,
+      4516,
+      7708,
+      7031,
+      1141,
+      1260,
+      6885,
+      2230,
+      2388,
+      4405,
+      9417,
+      8641,
+      3969
+    ]
+  },
+  "query_repetitions": 1,
+  "selection": "first construction with any tuning ef meeting target; smallest qualifying ef",
+  "fallback": "if none pass, no selection; validate last construction at ef1000 alongside40/400; do not retune",
+  "memory": "1792MB",
+  "workers": 2,
+  "build_timeout_ms": 1800000,
+  "resource_limit_bytes": 6442450944,
+  "index_seed": "normal runtime; not fixed",
+  "tooling_sha256": {
+    "bounded_recall.py": "0d871955f83e10b71f71b92688a559f3ee45e70737135695b0abd6c44d99fa32",
+    "local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "glove.py": "98ff0be4928acc7e59e7cccad49664dcc43a2c69a7ce758dd6da0825400a2c7a",
+    "glove_run.py": "56347bc2d0129f7d467d62bd997ea6945d791e62d6b30c85ead4bc8d5ead401c",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "recall.py": "8fed0edf184dfb9375f9038f60a5e04ce9e5c9ef167f87d4b10ba920e7e0fb89"
+  }
+}

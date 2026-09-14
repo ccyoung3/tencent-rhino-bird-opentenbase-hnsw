@@ -1,0 +1,38 @@
+{
+  "status": "stopped",
+  "build_outcome": "unknown",
+  "pid": 284,
+  "interval_seconds": 1.0,
+  "duration_limit_seconds": 180.0,
+  "samples": 10,
+  "phases": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_s": 0.0074966660013160435,
+      "last_seen_s": 9.119137958001374,
+      "samples": 10
+    }
+  ],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 285
+  },
+  "observation_counts": {
+    "waiting_observed": 1,
+    "progress_observed": 9
+  },
+  "wait_observations": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "type": "IO",
+      "event": "DsmAllocate",
+      "samples": 1,
+      "first_seen_s": 0.0074966660013160435,
+      "last_seen_s": 0.0074966660013160435
+    }
+  ],
+  "elapsed_seconds": 10.115046165999956
+}

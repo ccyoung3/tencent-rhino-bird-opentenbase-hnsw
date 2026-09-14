@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-09-10T07:45:35.107309+00:00",
+  "reason": "Move psycopg import after argument parsing so --help works without optional dependencies; no measurement changes. Recorded before formal overhead starts.",
+  "before_sha256": {
+    "experiments/hnsw_build/bounded_overhead.py": "9af6b9195060b047c0d3f1c98cfafa554d65cf6b719476723b9c845c37b299b5"
+  },
+  "sha256": {
+    "experiments/hnsw_build/bounded_overhead.py": "240d1090102ffda2129755de6141f99d8e38f46fdf6acdd1fab5487ffb50902d"
+  },
+  "archive_sha256": "f5ae8ea2a4bf422d2135c6a4c9d55af150c3dc73b4410cc8a66dfe1d638c5c1e"
+}

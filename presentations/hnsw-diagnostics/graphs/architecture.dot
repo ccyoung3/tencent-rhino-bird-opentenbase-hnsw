@@ -1,0 +1,25 @@
+digraph architecture {
+  graph [rankdir=LR, nodesep=0.4, ranksep=0.48, pad=0.05, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#5a0718", penwidth=1.0, margin="0.15,0.13"];
+  edge [color="#62666c", penwidth=1.1, arrowsize=0.65];
+  subgraph cluster_db {
+    label="OpenTenBase PG18";
+    color="#b60b2d"; style=rounded; margin=16;
+    hnsw [fillcolor="#f5e8ec", color="#b60b2d"];
+    progress; logs;
+    hnsw -> progress;
+    hnsw -> logs;
+  }
+  subgraph cluster_tools {
+    label="Python 工具";
+    color="#004f71"; style=rounded; margin=16;
+    observer [color="#004f71"];
+    runner [color="#004f71"];
+  }
+  progress -> observer;
+  progress -> runner;
+  logs -> runner;
+  observer -> reports;
+  runner -> reports;
+  reports [fillcolor="#edf4f7", color="#004f71"];
+}

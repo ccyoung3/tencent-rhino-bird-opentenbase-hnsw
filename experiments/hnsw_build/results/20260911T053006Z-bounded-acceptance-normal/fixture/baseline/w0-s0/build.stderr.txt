@@ -1,0 +1,1 @@
+DEBUG: building index "items_hnsw" on table "large" serially

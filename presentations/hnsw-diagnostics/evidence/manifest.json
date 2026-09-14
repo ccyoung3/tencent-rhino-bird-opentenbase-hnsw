@@ -1,0 +1,92 @@
+{
+  "as_of": "2026-09-13",
+  "purpose": "Presentation reading evidence, not a complete database reproduction bundle",
+  "copied_files": [
+    {
+      "packaged_path": "evidence/glove-low-r1-diagnostic.md",
+      "project_source": "experiments/hnsw_build/results/20260909T140726Z-glove-formal-low-r1/diagnostic.md",
+      "sha256": "49e34e8b7e07dc566f2ce01f95fdcbba32970f259af4de16fef579ac3282da5d",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/glove-memory/report.md",
+      "project_source": "experiments/hnsw_build/results/20260909T135759Z-glove-formal-cases/report.md",
+      "sha256": "dc54b7958bf1c2347f741ac1add48c1a38737a1eda312187eaa9b2f1cc0d00bd",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/glove-memory/build-stages.svg",
+      "project_source": "experiments/hnsw_build/results/20260909T135759Z-glove-formal-cases/build-stages.svg",
+      "sha256": "6f6ed8c109aa6344358c8860d66c4cd12b2733397d9fa5dce3321d09bc1fe981",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/glove-memory/recall-latency.svg",
+      "project_source": "experiments/hnsw_build/results/20260909T135759Z-glove-formal-cases/recall-latency.svg",
+      "sha256": "9964a42d2c23f66fef69b6ca9aa51b63e4d85f42c231adc0503a5e6360d15f37",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/glove-recall/report.md",
+      "project_source": "experiments/hnsw_build/results/20260910T074253Z-bounded-recall/report.md",
+      "sha256": "050245bb4e3707fedb3e1ed2676a37118a061e337c7bfc79da3cb76fa14f03e6",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/glove-recall/recall-latency.svg",
+      "project_source": "experiments/hnsw_build/results/20260910T074253Z-bounded-recall/recall-latency.svg",
+      "sha256": "75b6ed84544217fc74a8c69a077ecfc6fbcf7c19630a21363d0ed4fe2a53d890",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/performance/report.md",
+      "project_source": "experiments/hnsw_build/results/20260912T174623Z-bounded-crossover-formal/report.md",
+      "sha256": "d45de289760748c44ee65af059e07f0bf3f87fded4f48f0e89808a3c394237c1",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-low/diagnostic.md",
+      "project_source": "experiments/hnsw_build/results/20260913T145652Z-manual-low/diagnostic.md",
+      "sha256": "567d68415bfc08cf633d35bef8b070ff2e9f9f68f918c437000620eafae924ae",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-low/summary.json",
+      "project_source": "experiments/hnsw_build/results/20260913T145652Z-manual-low/summary.json",
+      "sha256": "1b716c7a0a3622da5c8c782c17a7f6068fc866888f25ad6f22d1c295b2432be6",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-low/progress.csv",
+      "project_source": "experiments/hnsw_build/results/20260913T145652Z-manual-low/progress.csv",
+      "sha256": "d79dd9a89e0e883df490bec4759d17c681b605e2675744e61bb58338355c7d75",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-high/diagnostic.md",
+      "project_source": "experiments/hnsw_build/results/20260913T145933Z-manual-high/diagnostic.md",
+      "sha256": "61ad1820aec6ce159b59506a23bf8702a3b3a15cd94214204e07343943d41301",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-high/summary.json",
+      "project_source": "experiments/hnsw_build/results/20260913T145933Z-manual-high/summary.json",
+      "sha256": "bb287fa20e10e2d7a8a8231a7104f1e353ca6178b394bc450cc32bbec8ee1d58",
+      "copy": "byte-identical"
+    },
+    {
+      "packaged_path": "evidence/user-experience/manual-high/progress.csv",
+      "project_source": "experiments/hnsw_build/results/20260913T145933Z-manual-high/progress.csv",
+      "sha256": "67f7aaf6b95627f0f9ee73162c2cadd57593c6219c0fca1c148509c2c3137b7f",
+      "copy": "byte-identical"
+    }
+  ],
+  "environment_source_sha256": {
+    "dev/snapshots/20260911-overhead-acceptance/environment-20260912-review.json": "f811392ad99988bb02f08f9f338a2a1df4d1f73a72c71d37dd337a7c56b51f10",
+    "docs/2026-09-02-mac-arm64-baseline.md": "6dee87fb8d35a2c9bbe9c70c6a204458ce1a27418c77a1aa1155ea89145c9400",
+    "docs/2026-09-09-glove-validation.md": "c0e45abdf335294ced70dab951d44b8ea9c12a63a0cf61eb8382eab9545755f9",
+    "docs/2026-09-12-performance-method-review.md": "711cab9d66de11aed71540c3d4d79633a59926a3b289161adedf8c8f7e1cb532",
+    "docs/2026-09-05-hnsw-build-timing.md": "a37e773a705ddb691fba2f5e0f95025b880a07a173f40f494f76642674feb1a1",
+    "experiments/hnsw_build/results/20260912T174623Z-bounded-crossover-formal/protocol.json": "b9ad6efba8210cbf3283008e90972e733e3a110b48292c0d193ecf121a09785f"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variant": "old_off",
+  "workers": 0,
+  "spill": false,
+  "command_seconds": 2.4884794170502573,
+  "command_returncode": 0,
+  "observer": {
+    "attachment_probes": 0
+  },
+  "internal_timing": {
+    "status": "not_requested",
+    "records": []
+  },
+  "index_bytes": 8699904,
+  "image_variant": "diagnostics-v2-seed42-arm64"
+}

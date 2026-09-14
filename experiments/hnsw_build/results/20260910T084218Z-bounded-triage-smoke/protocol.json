@@ -1,0 +1,33 @@
+{
+  "blocks": 1,
+  "orders": 1,
+  "smoke": true,
+  "scenes": [
+    [
+      0,
+      true
+    ],
+    [
+      2,
+      false
+    ]
+  ],
+  "warmups": 2,
+  "formal_per_fixture": 3,
+  "rows": 20000,
+  "dimensions": 32,
+  "m": 16,
+  "ef_construction": 64,
+  "prior_source": "20260910T075739Z-bounded-overhead",
+  "tooling_sha256": {
+    "triage_overhead.py": "055ebdc324b84d99a11c0afcf1b05d2b74226c210b9a7f57dae1744dbc9e6cb1",
+    "bounded_overhead.py": "240d1090102ffda2129755de6141f99d8e38f46fdf6acdd1fab5487ffb50902d",
+    "local_stack.py": "1f32d1776cd65d1c4899c78fa8c70c7f8b4b7d0cf566bb3a94c7b07cc999ee19",
+    "observe.py": "daa99f0218d820f9688b643c28bcb97ea70c265cdfd44974e776bea52338cc47",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "glove.py": "98ff0be4928acc7e59e7cccad49664dcc43a2c69a7ce758dd6da0825400a2c7a",
+    "glove_run.py": "56347bc2d0129f7d467d62bd997ea6945d791e62d6b30c85ead4bc8d5ead401c"
+  },
+  "no_optional_stopping": true
+}

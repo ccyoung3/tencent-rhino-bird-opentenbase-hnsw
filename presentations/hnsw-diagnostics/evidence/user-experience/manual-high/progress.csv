@@ -1,0 +1,23 @@
+elapsed_seconds,phase,blocks_total,blocks_done,tuples_total,tuples_done,tuple_progress_percent,container_memory_bytes
+0.005464,building index: loading tuples in memory,1852,1,0,42,0.084,133885952
+0.63209,building index: loading tuples in memory,1852,122,0,3312,6.624,137510912
+1.268431,building index: loading tuples in memory,1852,220,0,5964,11.928,139657216
+1.890501,building index: loading tuples in memory,1852,327,0,8842,17.684,142708736
+2.500668,building index: loading tuples in memory,1852,445,0,12037,24.074,145776640
+3.177547,building index: loading tuples in memory,1852,530,0,14322,28.644,147779584
+3.85209,building index: loading tuples in memory,1852,590,0,15946,31.892,149549056
+4.519013,building index: loading tuples in memory,1852,639,0,17269,34.538,150757376
+5.236864,building index: loading tuples in memory,1852,687,0,18554,37.108,152707072
+6.093461,building index: loading tuples in memory,1852,724,0,19551,39.102,153264128
+6.808079,building index: loading tuples in memory,1852,778,0,21010,42.02,154501120
+7.505938,building index: loading tuples in memory,1852,833,0,22502,45.004,155557888
+8.155954,building index: loading tuples in memory,1852,914,0,24689,49.378,158470144
+8.767448,building index: loading tuples in memory,1852,1016,0,27457,54.914,160591872
+9.367161,building index: loading tuples in memory,1852,1124,0,30365,60.73,163467264
+9.958415,building index: loading tuples in memory,1852,1228,0,33165,66.33,166068224
+10.550821,building index: loading tuples in memory,1852,1332,0,35972,71.944,169435136
+11.137261,building index: loading tuples in memory,1852,1435,0,38765,77.53,171671552
+11.728146,building index: loading tuples in memory,1852,1525,0,41200,82.4,174260224
+12.322255,building index: loading tuples in memory,1852,1617,0,43666,87.332,121262080
+12.98994,building index: loading tuples in memory,1852,1699,0,45890,91.78,123219968
+13.59331,building index: loading tuples in memory,1852,1793,0,48433,96.866,125341696

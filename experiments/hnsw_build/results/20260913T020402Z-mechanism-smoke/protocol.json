@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "exploratory": true,
+  "mode": "smoke",
+  "created_at_utc": "2026-09-13T02:04:02.923668+00:00",
+  "schedule": [
+    {
+      "panel": 0,
+      "slots": [
+        "baseline",
+        "off",
+        "on"
+      ],
+      "scenes": [
+        {
+          "scene": "no-spill",
+          "warmup_order": [
+            "off",
+            "baseline",
+            "on"
+          ],
+          "order": []
+        },
+        {
+          "scene": "partial-spill",
+          "warmup_order": [
+            "off",
+            "on",
+            "baseline"
+          ],
+          "order": []
+        },
+        {
+          "scene": "immediate-spill",
+          "warmup_order": [
+            "on",
+            "off",
+            "baseline"
+          ],
+          "order": []
+        }
+      ]
+    }
+  ],
+  "images": {
+    "baseline": "sha256:a5ce22f6c8251519757d57f92ba57eeaa967037c148d105792033d8975baec44",
+    "off": "sha256:3835555138a494ca0a34e93b37a4f695dcdcfebf2f361b02d75842467fecb317",
+    "on": "sha256:3835555138a494ca0a34e93b37a4f695dcdcfebf2f361b02d75842467fecb317"
+  },
+  "scenes": {
+    "no-spill": {
+      "table": "large",
+      "rows": 100000,
+      "memory": "256MB",
+      "spill": "none"
+    },
+    "immediate-spill": {
+      "table": "small",
+      "rows": 30000,
+      "memory": "4MB",
+      "spill": "zero"
+    },
+    "partial-spill": {
+      "table": "small",
+      "rows": 30000,
+      "memory": "8MB",
+      "spill": "partial"
+    }
+  },
+  "workers": 2,
+  "affinity": "0-9",
+  "formal_count": 0,
+  "warmup_count": 9,
+  "no_acceptance_inference": true,
+  "no_effect_based_sample_addition": true,
+  "scope": "participant scan_and_insert counters exclude final leader flush/WAL/cleanup",
+  "limitation": "instrumentation can change scheduling; native worker randomness and graph topology remain variable",
+  "sources": {
+    "acceptance.py": "9a05d3f8aea764676dab49017f6a8e0bcb9dee6b47bc46e835c870489c6cd433",
+    "acceptance_stack.py": "3d79981faa3a3b5cfce711c6e3ec69430f688d285190b823607f7908e850bebb",
+    "run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+    "timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c",
+    "mechanism_diagnostic.py": "0ea0b1e42e8a853f99ea2c073ab7aca01357c1f20af4dd49f1067a5b5245f639"
+  },
+  "build_manifest_sha256": "5ee24073e1bec89adaf68ace1748d963deceb3ae5f0e280b0fbdcd09b5e8481a",
+  "method_sha256": "9b2f84de178e5253edb70d3cbf6e4ade228126aeef4c3c1e120314223e03afc6"
+}

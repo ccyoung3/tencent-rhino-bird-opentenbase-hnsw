@@ -1,0 +1,83 @@
+{
+  "variant": "new_on",
+  "workers": 0,
+  "spill": true,
+  "command_seconds": 21.45990158407949,
+  "command_returncode": 0,
+  "observer": {
+    "attachment_probes": 0
+  },
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 72,
+        "index_oid": 16727,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": true,
+        "total_us": 21449159,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 41
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 41,
+            "end_us": 193187
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": 193187,
+            "end_us": 193357
+          },
+          {
+            "phase": "flush",
+            "start_us": 193357,
+            "end_us": 194490
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": 194490,
+            "end_us": 21397117
+          },
+          {
+            "phase": "finalize",
+            "start_us": 21397117,
+            "end_us": 21397117
+          },
+          {
+            "phase": "wal",
+            "start_us": 21397117,
+            "end_us": 21449089
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 21449089,
+            "end_us": 21449159
+          }
+        ],
+        "durations_us": {
+          "setup": 41,
+          "memory_build": 193146,
+          "spill_drain": 170,
+          "flush": 1133,
+          "disk_insert": 21202627,
+          "finalize": 0,
+          "wal": 51972,
+          "cleanup": 70
+        }
+      }
+    ],
+    "dominant_phase": "disk_insert",
+    "dominant_fraction": 0.9885062160246003
+  },
+  "index_bytes": 8691712,
+  "image_variant": "timing-v1-seed42-arm64"
+}

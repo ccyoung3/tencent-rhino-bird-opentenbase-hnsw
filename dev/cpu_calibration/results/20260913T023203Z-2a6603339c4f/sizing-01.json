@@ -1,0 +1,10 @@
+{
+  "kind": "sizing",
+  "number": 1,
+  "iterations_per_process": 5000000,
+  "started_at_utc": "2026-09-13T02:32:04.713553+00:00",
+  "ac_before": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "status": "failed",
+  "error": "RuntimeError('command 14 failed: 1')",
+  "finished_at_utc": "2026-09-13T02:32:04.756912+00:00"
+}

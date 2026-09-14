@@ -1,0 +1,6 @@
+/Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014824Z-glove-e2e-interrupt
+Validating pinned data
+Loading 100000 vectors
+Building with 4MB
+KeyboardInterrupt: 
+failed: /Users/ccyoung/Develop/Quant_Job_Prep/OpentenBase/experiments/hnsw_build/results/20260910T014824Z-glove-e2e-interrupt

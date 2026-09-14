@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "4b7ce63d84e949b76a756110ea01dd3bb1658e81a25f7af7ee8a0eeeedc0be37",
+    "/bin/sh",
+    "-c",
+    "for f in cpu.stat cpu.max cpu.pressure cpuset.cpus.effective memory.current memory.events io.stat; do printf \"FILE:%s\\n\" \"$f\"; cat \"/sys/fs/cgroup/$f\" || exit; done"
+  ],
+  "started_at_utc": "2026-09-13T02:32:04.721677+00:00",
+  "returncode": 1,
+  "stdout": "FILE:cpu.stat\nusage_usec 31792\nuser_usec 18876\nsystem_usec 12915\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpu.pressure\n",
+  "stderr": "cat: /sys/fs/cgroup/cpu.pressure: No such file or directory\n",
+  "finished_at_utc": "2026-09-13T02:32:04.756549+00:00",
+  "host_elapsed_s": 0.034904958003608044
+}

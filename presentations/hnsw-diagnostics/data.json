@@ -1,0 +1,215 @@
+{
+  "as_of": "2026-09-13",
+  "memory": [
+    {
+      "budget_mb": 1024,
+      "times_s": [
+        1414.648555416963,
+        1114.4684085000772,
+        1730.1846467909636
+      ],
+      "median_s": 1414.648555416963,
+      "min_s": 1114.4684085000772,
+      "max_s": 1730.1846467909636,
+      "spill_count": 3,
+      "peak_mib_median": 2781.08203125
+    },
+    {
+      "budget_mb": 1792,
+      "times_s": [
+        538.0406294999411,
+        326.57123408303596,
+        315.59885808301624
+      ],
+      "median_s": 326.57123408303596,
+      "min_s": 315.59885808301624,
+      "max_s": 538.0406294999411,
+      "spill_count": 0,
+      "peak_mib_median": 3580.6953125
+    }
+  ],
+  "memory_reduction_percent": 76.91502721064313,
+  "example": {
+    "phase_seconds": {
+      "setup": 0.000116,
+      "memory_build": 421.454772,
+      "spill_drain": 0.001356,
+      "flush": 6.367296,
+      "disk_insert": 982.004717,
+      "finalize": 0.066267,
+      "wal": 4.555544,
+      "cleanup": 2.9e-05
+    },
+    "total_s": 1414.450097,
+    "command_s": 1414.648555416963,
+    "disk_fraction": 0.6942660749098171
+  },
+  "recall": [
+    {
+      "ef_search": 400,
+      "unique_queries": 1000,
+      "measurements": 3000,
+      "mean_recall": 0.9113,
+      "minimum_recall": 0.0,
+      "p50_execution_ms": 3.74,
+      "p95_execution_ms": 7.126699999999996,
+      "below_target": true
+    },
+    {
+      "ef_search": 1000,
+      "unique_queries": 1000,
+      "measurements": 3000,
+      "mean_recall": 0.9547,
+      "minimum_recall": 0.3,
+      "p50_execution_ms": 28.997500000000002,
+      "p95_execution_ms": 44.945299999999996,
+      "below_target": false
+    }
+  ],
+  "formal": {
+    "measurements": 768,
+    "warmups": 384,
+    "groups": [
+      {
+        "workers": 0,
+        "spill": false,
+        "condition": "off",
+        "median_change": 0.9503195281699295,
+        "upper_change": 2.5942342577569555,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 0,
+        "spill": false,
+        "condition": "on",
+        "median_change": -0.29741409844994404,
+        "upper_change": 3.779285412707112,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 0,
+        "spill": false,
+        "condition": "observed",
+        "median_change": -2.266118034984621,
+        "upper_change": 3.2194420485347264,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "off",
+        "median_change": -1.0943654805064207,
+        "upper_change": 1.4847956821833375,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "on",
+        "median_change": -1.5835092218911662,
+        "upper_change": 4.165244977175209,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 0,
+        "spill": true,
+        "condition": "observed",
+        "median_change": -2.824157149257789,
+        "upper_change": 0.7381939533327664,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "off",
+        "median_change": -0.3095903644697806,
+        "upper_change": 7.595698226650649,
+        "verdict": "not_established",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "on",
+        "median_change": 0.7315164698342702,
+        "upper_change": 7.860409626451803,
+        "verdict": "not_established",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": false,
+        "condition": "observed",
+        "median_change": -1.0052673174296922,
+        "upper_change": 1.8648231177449404,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": true,
+        "condition": "off",
+        "median_change": -1.8347137736477448,
+        "upper_change": 4.484566581917959,
+        "verdict": "supported",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": true,
+        "condition": "on",
+        "median_change": -0.9097398094364606,
+        "upper_change": 5.538097343741555,
+        "verdict": "not_established",
+        "panels": 24
+      },
+      {
+        "workers": 2,
+        "spill": true,
+        "condition": "observed",
+        "median_change": -3.0085441280196856,
+        "upper_change": 2.111400751598147,
+        "verdict": "supported",
+        "panels": 24
+      }
+    ]
+  },
+  "cpu": {
+    "values": [
+      6.493263931,
+      6.814540051,
+      7.817364929,
+      7.072207182,
+      7.538032884,
+      7.306296308,
+      7.449862262,
+      7.644705699,
+      7.831446293,
+      8.029669722,
+      8.470704404,
+      7.544967752
+    ],
+    "min": 6.493263931,
+    "max": 8.470704404,
+    "median": 7.541500318,
+    "max_over_min": 1.3045372087155345,
+    "sample_cv": 0.0715009027001471
+  },
+  "source_sha256": {
+    "experiments/hnsw_build/results/20260909T140726Z-glove-formal-low-r1/summary.json": "721924a6d23c040a4ba48c7b8b633fdb207bb8024bc67928163aaa965088e74c",
+    "experiments/hnsw_build/results/20260909T143123Z-glove-formal-low-r2/summary.json": "c3320b2ceb63f7fe5e2052e4ba33c5f7a64fdc8077de76f01d4437d8e7927deb",
+    "experiments/hnsw_build/results/20260909T150617Z-glove-formal-low-r3/summary.json": "cb869005afc564d902f653e06a356427dabc99278aca71d4f613256d7b5bdf19",
+    "experiments/hnsw_build/results/20260909T135759Z-glove-formal-high-r1/summary.json": "8b7dcc9630794594958d3bc860373a471e70028a128726833c2eb1d0d64be7db",
+    "experiments/hnsw_build/results/20260909T145015Z-glove-formal-high-r2/summary.json": "2f4c0d16705c27c88aac4e3fdec50f09cceb175249ba61e07bc2e925f53a3003",
+    "experiments/hnsw_build/results/20260909T145555Z-glove-formal-high-r3/summary.json": "ac560d4955b1829449d867721e925de79a94a3d7deabc3fb88f9cdec450e5749",
+    "experiments/hnsw_build/results/20260910T074253Z-bounded-recall/summary.json": "f66c253a4f165ad47c99c68694bc1d6c176f9b7dca97f7e0b74ecf4b895d8322",
+    "experiments/hnsw_build/results/20260912T174623Z-bounded-crossover-formal/summary.json": "b7f221d7b8bbfa872f3b842f2ff267809bc4f1fd896813fac5bc94a2b3ddb1d3",
+    "dev/cpu_calibration/results/20260913T030031Z-ce171210b519/summary.json": "33037482f450cceaf79350b714a1480c3f5ef42e06f4b1f7c11e6597a73ab324"
+  }
+}

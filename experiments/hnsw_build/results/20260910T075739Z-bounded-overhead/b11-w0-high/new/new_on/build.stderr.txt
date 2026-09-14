@@ -1,0 +1,3 @@
+DEBUG: building index "items_embedding_hnsw_idx" on table "items" serially
+INFO: memory: 16 MB
+NOTICE: hnsw build timing: {"version":1,"status":"complete","scope":"hnsw_build","clock":"elapsed_wall","pid":53,"index_oid":16728,"fork":0,"parallel_workers":0,"spill":false,"total_us":3493164,"phases":[{"phase":"setup","start_us":0,"end_us":10},{"phase":"memory_build","start_us":10,"end_us":3475115},{"phase":"spill_drain","start_us":null,"end_us":null},{"phase":"flush","start_us":3475115,"end_us":3488920},{"phase":"disk_insert","start_us":null,"end_us":null},{"phase":"finalize","start_us":3488920,"end_us":3488921},{"phase":"wal","start_us":3488921,"end_us":3493163},{"phase":"cleanup","start_us":3493163,"end_us":3493164}]}

@@ -1,0 +1,15 @@
+digraph contributions {
+  graph [rankdir=BT, nodesep=0.35, ranksep=0.38, pad=0.06, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#b60b2d", penwidth=1.1, margin="0.2,0.15"];
+  edge [color="#62666c", penwidth=1.0, arrowsize=0.65];
+  foundation [fillcolor="#f3f3f3", color="#b4b6b9"];
+  subgraph cluster_new {
+    label=""; color="#b60b2d"; style=rounded; margin=14;
+    {rank=same; process; timing; verify;}
+    process -> timing -> verify [style=invis];
+    verify [color="#004f71"];
+  }
+  foundation -> process;
+  foundation -> timing;
+  foundation -> verify;
+}

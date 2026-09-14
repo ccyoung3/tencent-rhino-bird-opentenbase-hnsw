@@ -1,0 +1,6 @@
+digraph performance_method {
+  graph [rankdir=LR, nodesep=0.3, ranksep=0.45, pad=0.1, bgcolor="transparent"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#b60b2d", penwidth=1.2, margin="0.16,0.14"];
+  edge [color="#5a0718", penwidth=1.2, arrowsize=0.7];
+  build -> run -> aggregate -> judge;
+}

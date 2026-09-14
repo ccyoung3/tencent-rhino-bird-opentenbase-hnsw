@@ -1,0 +1,2420 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-09-14T03:51:54.913521+00:00",
+  "workload": {
+    "distance_metric": "Euclidean (L2)",
+    "distance_operator": "<->",
+    "operator_class": "vector_l2_ops",
+    "indexed_data_distribution": "PostgreSQL random()::real per component after setseed(seed), synthetic uniform [0,1)",
+    "holdout_distribution": "Python random.Random(query_seed).random() per component, independent synthetic uniform [0,1)"
+  },
+  "parameters": {
+    "rows": 10000,
+    "dimensions": 32,
+    "maintenance_work_mem": "64MB",
+    "m": 16,
+    "ef_construction": 64,
+    "parallel_workers": 0,
+    "seed": 0.42,
+    "sample_interval_seconds": 0.5,
+    "build_timing": true,
+    "statement_timeout_ms": 180000,
+    "recall_queries": 20,
+    "recall_k": 10,
+    "ef_search_values": [
+      40,
+      100,
+      200
+    ],
+    "query_seed": 20260903,
+    "minimum_mean_recall": null,
+    "image": "opentenbase-pg18-pgvector:review-arm64",
+    "isolated_database": true
+  },
+  "provenance": {
+    "host": {
+      "system": "Darwin",
+      "release": "25.6.0",
+      "machine": "arm64",
+      "python_version": "3.14.7"
+    },
+    "container_image_id": "sha256:af1ee2f012f452048c080b591c5456e8a5a83fea77fb4df6e53f4d28ba395fc7",
+    "provenance_scope": {
+      "git_sources": "host checkouts at experiment invocation; they do not attest which source bytes built the selected Docker image",
+      "container_image_id": "runtime image identity; source attestation requires a separate image label or build manifest"
+    },
+    "opentenbase_source": {
+      "commit": "4c66f172a09296b08d53526f802ddd2b461bd7e8",
+      "branch": "",
+      "dirty": false,
+      "changed_paths": [],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "host checkout at experiment invocation; not a container-image build-source attestation"
+    },
+    "pgvector_source": {
+      "commit": "8ee86c96f0fd72390f890aa8a336fda6d3ab4c6c",
+      "branch": "",
+      "dirty": true,
+      "changed_paths": [
+        " M src/hnsw.c",
+        " M src/hnsw.h",
+        " M src/hnswbuild.c",
+        " M test/t/045_hnsw_low_memory_build.pl",
+        "?? test/t/049_hnsw_build_timing.pl"
+      ],
+      "tracked_diff_sha256": "99da7d1050501be3d8060989511f26c39f0571e0a14c1d09a809c4a1fbf2bcc2",
+      "scope": "host checkout at experiment invocation; not a container-image build-source attestation"
+    },
+    "experiment_tooling": {
+      "sha256": {
+        "dev/compose.yml": "e348f673186e72e472aad3abc7f8c7a1950fb92fb5918eb4161367a4aca8304e",
+        "experiments/hnsw_build/run.py": "e7fd349fa4a5d141ecbe79012badae31ed71032c22bc6078aa511446d4910e61",
+        "experiments/hnsw_build/recall.py": "8fed0edf184dfb9375f9038f60a5e04ce9e5c9ef167f87d4b10ba920e7e0fb89",
+        "experiments/hnsw_build/timing.py": "43d63b9f5ccd920afa90ab1dae6c72b9c79e54373bd3093fe059181b7f2e322c"
+      }
+    }
+  },
+  "build_elapsed_seconds": 1.269477,
+  "internal_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "version": 1,
+        "status": "complete",
+        "scope": "hnsw_build",
+        "clock": "elapsed_wall",
+        "pid": 63,
+        "index_oid": 16723,
+        "fork": 0,
+        "parallel_workers": 0,
+        "spill": false,
+        "total_us": 1095046,
+        "phases": [
+          {
+            "phase": "setup",
+            "start_us": 0,
+            "end_us": 67
+          },
+          {
+            "phase": "memory_build",
+            "start_us": 67,
+            "end_us": 1088250
+          },
+          {
+            "phase": "spill_drain",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "flush",
+            "start_us": 1088250,
+            "end_us": 1094250
+          },
+          {
+            "phase": "disk_insert",
+            "start_us": null,
+            "end_us": null
+          },
+          {
+            "phase": "finalize",
+            "start_us": 1094250,
+            "end_us": 1094251
+          },
+          {
+            "phase": "wal",
+            "start_us": 1094251,
+            "end_us": 1095027
+          },
+          {
+            "phase": "cleanup",
+            "start_us": 1095027,
+            "end_us": 1095046
+          }
+        ],
+        "durations_us": {
+          "setup": 67,
+          "memory_build": 1088183,
+          "spill_drain": null,
+          "flush": 6000,
+          "disk_insert": null,
+          "finalize": 1,
+          "wal": 776,
+          "cleanup": 19
+        }
+      }
+    ],
+    "dominant_phase": "memory_build",
+    "dominant_fraction": 0.9937326833758582
+  },
+  "initial_container_memory_bytes": 86949888,
+  "peak_container_memory_bytes": 97480704,
+  "peak_memory_delta_bytes": 10530816,
+  "observed_phases": [
+    "building index: loading tuples in memory"
+  ],
+  "phase_observations": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_seconds": 0.001643,
+      "last_seen_seconds": 0.587484,
+      "sample_count": 2,
+      "sampled_span_seconds": 0.585841,
+      "first_tuple_progress_percent": 0.25,
+      "last_tuple_progress_percent": 56.86,
+      "peak_container_memory_bytes": 97480704
+    }
+  ],
+  "progress_sample_count": 2,
+  "diagnostics": {
+    "spill_detected": false,
+    "spill_after_tuples": null,
+    "spill_context": null,
+    "hnsw_memory_bytes": null,
+    "hnsw_memory_source": null,
+    "parallel_memory_safety_margin_bytes": null,
+    "phase_order_monotonic": true
+  },
+  "launched_parallel_workers": 0,
+  "metadata": {
+    "server_version": "18.6",
+    "pgvector_version": "0.8.6",
+    "row_count": 10000,
+    "table_total_bytes": 6381568,
+    "index_bytes": 4358144,
+    "container_architecture": "aarch64",
+    "query_plan": "SET\nLimit\n  InitPlan 1\n    ->  Index Scan using items_pkey on items items_1\n          Index Cond: (id = 1)\n  ->  Index Scan using items_embedding_hnsw_idx on items\n        Order By: (embedding <-> (InitPlan 1).col1)",
+    "uses_hnsw_index": true
+  },
+  "recall_evaluation": {
+    "query_source": "deterministic synthetic holdout sample",
+    "query_seed": 20260903,
+    "query_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "query_count": 20,
+    "k": 10,
+    "ef_search_values": [
+      40,
+      100,
+      200
+    ],
+    "minimum_mean_recall": null,
+    "rows": [
+      {
+        "query_id": 1,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.043,
+        "approximate_execution_ms": 1.835,
+        "exact_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ],
+        "approximate_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ]
+      },
+      {
+        "query_id": 2,
+        "ef_search": 40,
+        "recall_at_k": 0.9,
+        "exact_execution_ms": 1.451,
+        "approximate_execution_ms": 0.949,
+        "exact_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          5962,
+          6164
+        ],
+        "approximate_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          6164,
+          1996
+        ]
+      },
+      {
+        "query_id": 3,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.765,
+        "approximate_execution_ms": 0.715,
+        "exact_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ],
+        "approximate_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ]
+      },
+      {
+        "query_id": 4,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.768,
+        "approximate_execution_ms": 0.628,
+        "exact_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ],
+        "approximate_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ]
+      },
+      {
+        "query_id": 5,
+        "ef_search": 40,
+        "recall_at_k": 0.9,
+        "exact_execution_ms": 0.822,
+        "approximate_execution_ms": 0.658,
+        "exact_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          8612,
+          1407
+        ],
+        "approximate_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          1407,
+          1464
+        ]
+      },
+      {
+        "query_id": 6,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.308,
+        "approximate_execution_ms": 0.54,
+        "exact_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ],
+        "approximate_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ]
+      },
+      {
+        "query_id": 7,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.881,
+        "approximate_execution_ms": 0.517,
+        "exact_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ],
+        "approximate_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ]
+      },
+      {
+        "query_id": 8,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.182,
+        "approximate_execution_ms": 0.634,
+        "exact_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ],
+        "approximate_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ]
+      },
+      {
+        "query_id": 9,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.697,
+        "approximate_execution_ms": 0.613,
+        "exact_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ],
+        "approximate_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ]
+      },
+      {
+        "query_id": 10,
+        "ef_search": 40,
+        "recall_at_k": 0.9,
+        "exact_execution_ms": 0.936,
+        "approximate_execution_ms": 0.646,
+        "exact_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          6762,
+          3809,
+          3127
+        ],
+        "approximate_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          3809,
+          3127,
+          9432
+        ]
+      },
+      {
+        "query_id": 11,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.781,
+        "approximate_execution_ms": 0.596,
+        "exact_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ],
+        "approximate_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ]
+      },
+      {
+        "query_id": 12,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.13,
+        "approximate_execution_ms": 0.503,
+        "exact_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ],
+        "approximate_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ]
+      },
+      {
+        "query_id": 13,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.431,
+        "approximate_execution_ms": 0.969,
+        "exact_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ],
+        "approximate_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ]
+      },
+      {
+        "query_id": 14,
+        "ef_search": 40,
+        "recall_at_k": 0.9,
+        "exact_execution_ms": 0.88,
+        "approximate_execution_ms": 0.643,
+        "exact_neighbors": [
+          9014,
+          7668,
+          9158,
+          3530,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964
+        ],
+        "approximate_neighbors": [
+          9014,
+          7668,
+          9158,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964,
+          8725
+        ]
+      },
+      {
+        "query_id": 15,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.032,
+        "approximate_execution_ms": 0.526,
+        "exact_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ],
+        "approximate_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ]
+      },
+      {
+        "query_id": 16,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.3,
+        "approximate_execution_ms": 0.595,
+        "exact_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ],
+        "approximate_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ]
+      },
+      {
+        "query_id": 17,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.746,
+        "approximate_execution_ms": 0.639,
+        "exact_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ],
+        "approximate_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ]
+      },
+      {
+        "query_id": 18,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.694,
+        "approximate_execution_ms": 0.747,
+        "exact_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ],
+        "approximate_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ]
+      },
+      {
+        "query_id": 19,
+        "ef_search": 40,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.233,
+        "approximate_execution_ms": 0.599,
+        "exact_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ],
+        "approximate_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ]
+      },
+      {
+        "query_id": 20,
+        "ef_search": 40,
+        "recall_at_k": 0.9,
+        "exact_execution_ms": 0.944,
+        "approximate_execution_ms": 0.577,
+        "exact_neighbors": [
+          9860,
+          9278,
+          4125,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002
+        ],
+        "approximate_neighbors": [
+          9860,
+          9278,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002,
+          4672
+        ]
+      },
+      {
+        "query_id": 1,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.043,
+        "approximate_execution_ms": 1.12,
+        "exact_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ],
+        "approximate_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ]
+      },
+      {
+        "query_id": 2,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.451,
+        "approximate_execution_ms": 0.738,
+        "exact_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          5962,
+          6164
+        ],
+        "approximate_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          5962,
+          6164
+        ]
+      },
+      {
+        "query_id": 3,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.765,
+        "approximate_execution_ms": 0.997,
+        "exact_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ],
+        "approximate_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ]
+      },
+      {
+        "query_id": 4,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.768,
+        "approximate_execution_ms": 0.923,
+        "exact_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ],
+        "approximate_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ]
+      },
+      {
+        "query_id": 5,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.822,
+        "approximate_execution_ms": 0.719,
+        "exact_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          8612,
+          1407
+        ],
+        "approximate_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          8612,
+          1407
+        ]
+      },
+      {
+        "query_id": 6,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.308,
+        "approximate_execution_ms": 0.941,
+        "exact_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ],
+        "approximate_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ]
+      },
+      {
+        "query_id": 7,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.881,
+        "approximate_execution_ms": 0.828,
+        "exact_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ],
+        "approximate_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ]
+      },
+      {
+        "query_id": 8,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.182,
+        "approximate_execution_ms": 0.728,
+        "exact_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ],
+        "approximate_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ]
+      },
+      {
+        "query_id": 9,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.697,
+        "approximate_execution_ms": 1.162,
+        "exact_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ],
+        "approximate_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ]
+      },
+      {
+        "query_id": 10,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.936,
+        "approximate_execution_ms": 1.003,
+        "exact_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          6762,
+          3809,
+          3127
+        ],
+        "approximate_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          6762,
+          3809,
+          3127
+        ]
+      },
+      {
+        "query_id": 11,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.781,
+        "approximate_execution_ms": 1.067,
+        "exact_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ],
+        "approximate_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ]
+      },
+      {
+        "query_id": 12,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.13,
+        "approximate_execution_ms": 1.077,
+        "exact_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ],
+        "approximate_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ]
+      },
+      {
+        "query_id": 13,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.431,
+        "approximate_execution_ms": 1.001,
+        "exact_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ],
+        "approximate_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ]
+      },
+      {
+        "query_id": 14,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.88,
+        "approximate_execution_ms": 0.876,
+        "exact_neighbors": [
+          9014,
+          7668,
+          9158,
+          3530,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964
+        ],
+        "approximate_neighbors": [
+          9014,
+          7668,
+          9158,
+          3530,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964
+        ]
+      },
+      {
+        "query_id": 15,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.032,
+        "approximate_execution_ms": 1.129,
+        "exact_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ],
+        "approximate_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ]
+      },
+      {
+        "query_id": 16,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.3,
+        "approximate_execution_ms": 1.2,
+        "exact_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ],
+        "approximate_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ]
+      },
+      {
+        "query_id": 17,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.746,
+        "approximate_execution_ms": 1.046,
+        "exact_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ],
+        "approximate_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ]
+      },
+      {
+        "query_id": 18,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.694,
+        "approximate_execution_ms": 1.154,
+        "exact_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ],
+        "approximate_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ]
+      },
+      {
+        "query_id": 19,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.233,
+        "approximate_execution_ms": 0.889,
+        "exact_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ],
+        "approximate_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ]
+      },
+      {
+        "query_id": 20,
+        "ef_search": 100,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.944,
+        "approximate_execution_ms": 1.104,
+        "exact_neighbors": [
+          9860,
+          9278,
+          4125,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002
+        ],
+        "approximate_neighbors": [
+          9860,
+          9278,
+          4125,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002
+        ]
+      },
+      {
+        "query_id": 1,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.043,
+        "approximate_execution_ms": 1.554,
+        "exact_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ],
+        "approximate_neighbors": [
+          57,
+          7587,
+          6048,
+          4314,
+          5587,
+          135,
+          6247,
+          2813,
+          4981,
+          6348
+        ]
+      },
+      {
+        "query_id": 2,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.451,
+        "approximate_execution_ms": 1.59,
+        "exact_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          5962,
+          6164
+        ],
+        "approximate_neighbors": [
+          2137,
+          4606,
+          7575,
+          2702,
+          5564,
+          4239,
+          3679,
+          4416,
+          5962,
+          6164
+        ]
+      },
+      {
+        "query_id": 3,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.765,
+        "approximate_execution_ms": 1.508,
+        "exact_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ],
+        "approximate_neighbors": [
+          2690,
+          5914,
+          652,
+          1030,
+          7483,
+          328,
+          5495,
+          8369,
+          1140,
+          8241
+        ]
+      },
+      {
+        "query_id": 4,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.768,
+        "approximate_execution_ms": 1.443,
+        "exact_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ],
+        "approximate_neighbors": [
+          6687,
+          2748,
+          3921,
+          3119,
+          9115,
+          2068,
+          1453,
+          4292,
+          4839,
+          4958
+        ]
+      },
+      {
+        "query_id": 5,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.822,
+        "approximate_execution_ms": 1.274,
+        "exact_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          8612,
+          1407
+        ],
+        "approximate_neighbors": [
+          9563,
+          2718,
+          6118,
+          1183,
+          7693,
+          4331,
+          9802,
+          3239,
+          8612,
+          1407
+        ]
+      },
+      {
+        "query_id": 6,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.308,
+        "approximate_execution_ms": 1.307,
+        "exact_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ],
+        "approximate_neighbors": [
+          1822,
+          7662,
+          3438,
+          153,
+          8003,
+          4704,
+          7694,
+          8656,
+          5083,
+          7192
+        ]
+      },
+      {
+        "query_id": 7,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.881,
+        "approximate_execution_ms": 1.578,
+        "exact_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ],
+        "approximate_neighbors": [
+          5503,
+          2718,
+          7466,
+          8135,
+          2882,
+          6717,
+          9875,
+          3435,
+          1542,
+          6499
+        ]
+      },
+      {
+        "query_id": 8,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.182,
+        "approximate_execution_ms": 1.499,
+        "exact_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ],
+        "approximate_neighbors": [
+          3302,
+          568,
+          7773,
+          6682,
+          5558,
+          6446,
+          3073,
+          4630,
+          1706,
+          6860
+        ]
+      },
+      {
+        "query_id": 9,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.697,
+        "approximate_execution_ms": 1.319,
+        "exact_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ],
+        "approximate_neighbors": [
+          5002,
+          536,
+          3039,
+          4345,
+          467,
+          7191,
+          9919,
+          6493,
+          4396,
+          1183
+        ]
+      },
+      {
+        "query_id": 10,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.936,
+        "approximate_execution_ms": 1.619,
+        "exact_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          6762,
+          3809,
+          3127
+        ],
+        "approximate_neighbors": [
+          248,
+          925,
+          5358,
+          7736,
+          1443,
+          8503,
+          1052,
+          6762,
+          3809,
+          3127
+        ]
+      },
+      {
+        "query_id": 11,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.781,
+        "approximate_execution_ms": 1.304,
+        "exact_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ],
+        "approximate_neighbors": [
+          5903,
+          6591,
+          3395,
+          2745,
+          8104,
+          5914,
+          7757,
+          3293,
+          6704,
+          1231
+        ]
+      },
+      {
+        "query_id": 12,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.13,
+        "approximate_execution_ms": 1.124,
+        "exact_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ],
+        "approximate_neighbors": [
+          87,
+          9341,
+          1425,
+          7807,
+          6527,
+          3095,
+          8212,
+          9217,
+          541,
+          4222
+        ]
+      },
+      {
+        "query_id": 13,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.431,
+        "approximate_execution_ms": 1.615,
+        "exact_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ],
+        "approximate_neighbors": [
+          3795,
+          6988,
+          8301,
+          3194,
+          1261,
+          5470,
+          5830,
+          1311,
+          2788,
+          5705
+        ]
+      },
+      {
+        "query_id": 14,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.88,
+        "approximate_execution_ms": 1.103,
+        "exact_neighbors": [
+          9014,
+          7668,
+          9158,
+          3530,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964
+        ],
+        "approximate_neighbors": [
+          9014,
+          7668,
+          9158,
+          3530,
+          8854,
+          5206,
+          239,
+          7313,
+          6746,
+          4964
+        ]
+      },
+      {
+        "query_id": 15,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.032,
+        "approximate_execution_ms": 1.49,
+        "exact_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ],
+        "approximate_neighbors": [
+          3396,
+          6523,
+          986,
+          7720,
+          517,
+          5593,
+          7688,
+          6565,
+          1676,
+          8189
+        ]
+      },
+      {
+        "query_id": 16,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.3,
+        "approximate_execution_ms": 1.109,
+        "exact_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ],
+        "approximate_neighbors": [
+          4454,
+          6562,
+          5472,
+          1144,
+          1345,
+          2748,
+          6286,
+          5948,
+          8056,
+          2293
+        ]
+      },
+      {
+        "query_id": 17,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.746,
+        "approximate_execution_ms": 1.597,
+        "exact_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ],
+        "approximate_neighbors": [
+          1285,
+          3040,
+          9549,
+          5824,
+          9470,
+          998,
+          1347,
+          804,
+          9575,
+          9246
+        ]
+      },
+      {
+        "query_id": 18,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.694,
+        "approximate_execution_ms": 1.35,
+        "exact_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ],
+        "approximate_neighbors": [
+          1797,
+          531,
+          8791,
+          5811,
+          2831,
+          7853,
+          6292,
+          2320,
+          5390,
+          4366
+        ]
+      },
+      {
+        "query_id": 19,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 1.233,
+        "approximate_execution_ms": 1.02,
+        "exact_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ],
+        "approximate_neighbors": [
+          4929,
+          9485,
+          2823,
+          2308,
+          2769,
+          1845,
+          748,
+          6532,
+          1681,
+          6981
+        ]
+      },
+      {
+        "query_id": 20,
+        "ef_search": 200,
+        "recall_at_k": 1.0,
+        "exact_execution_ms": 0.944,
+        "approximate_execution_ms": 1.163,
+        "exact_neighbors": [
+          9860,
+          9278,
+          4125,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002
+        ],
+        "approximate_neighbors": [
+          9860,
+          9278,
+          4125,
+          1618,
+          8698,
+          873,
+          1759,
+          2837,
+          5647,
+          1002
+        ]
+      }
+    ],
+    "by_ef_search": [
+      {
+        "ef_search": 40,
+        "queries": 20,
+        "mean_recall": 0.975,
+        "median_recall": 1.0,
+        "minimum_recall": 0.9,
+        "maximum_recall": 1.0,
+        "risk_detected": null,
+        "mean_query_execution_ms": 0.70645,
+        "median_query_execution_ms": 0.631,
+        "minimum_query_execution_ms": 0.503,
+        "maximum_query_execution_ms": 1.835
+      },
+      {
+        "ef_search": 100,
+        "queries": 20,
+        "mean_recall": 1.0,
+        "median_recall": 1.0,
+        "minimum_recall": 1.0,
+        "maximum_recall": 1.0,
+        "risk_detected": null,
+        "mean_query_execution_ms": 0.9851,
+        "median_query_execution_ms": 1.0019999999999998,
+        "minimum_query_execution_ms": 0.719,
+        "maximum_query_execution_ms": 1.2
+      },
+      {
+        "ef_search": 200,
+        "queries": 20,
+        "mean_recall": 1.0,
+        "median_recall": 1.0,
+        "minimum_recall": 1.0,
+        "maximum_recall": 1.0,
+        "risk_detected": null,
+        "mean_query_execution_ms": 1.3783,
+        "median_query_execution_ms": 1.3965,
+        "minimum_query_execution_ms": 1.02,
+        "maximum_query_execution_ms": 1.619
+      }
+    ],
+    "plan_verification": {
+      "exact_uses_sequential_scan": true,
+      "approximate_uses_hnsw": true,
+      "exact_plan": {
+        "Plan": {
+          "Node Type": "Limit",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Actual Rows": 10.0,
+          "Actual Loops": 1,
+          "Disabled": false,
+          "Shared Hit Blocks": 216,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Sort",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Actual Rows": 10.0,
+              "Actual Loops": 1,
+              "Disabled": false,
+              "Sort Key": [
+                "((embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788,0.5155185,0.12403127,0.21163067,0.9552913,0.6647176,0.018538764,0.2723326,0.9492245,0.2751993,0.941507,0.7437436,0.26288754,0.771575,0.7843985,0.23185658,0.35103917,0.6938274,0.6019195,0.4925697,0.8526659,0.03526167,0.32299575,0.47603667,0.17771988]'::vector))"
+              ],
+              "Sort Method": "top-N heapsort",
+              "Sort Space Used": 25,
+              "Sort Space Type": "Memory",
+              "Shared Hit Blocks": 216,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "items",
+                  "Alias": "items",
+                  "Actual Rows": 10000.0,
+                  "Actual Loops": 1,
+                  "Disabled": false,
+                  "Shared Hit Blocks": 213,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 137,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.236,
+        "Triggers": [],
+        "Execution Time": 1.043
+      },
+      "approximate_plans": {
+        "40": {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Actual Rows": 10.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Shared Hit Blocks": 1151,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "items_embedding_hnsw_idx",
+                "Relation Name": "items",
+                "Alias": "items",
+                "Actual Rows": 10.0,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Order By": "(embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788,0.5155185,0.12403127,0.21163067,0.9552913,0.6647176,0.018538764,0.2723326,0.9492245,0.2751993,0.941507,0.7437436,0.26288754,0.771575,0.7843985,0.23185658,0.35103917,0.6938274,0.6019195,0.4925697,0.8526659,0.03526167,0.32299575,0.47603667,0.17771988]'::vector)",
+                "Index Searches": 1,
+                "Shared Hit Blocks": 1151,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 137,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.255,
+          "Triggers": [],
+          "Execution Time": 1.835
+        },
+        "100": {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Actual Rows": 10.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Shared Hit Blocks": 2277,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "items_embedding_hnsw_idx",
+                "Relation Name": "items",
+                "Alias": "items",
+                "Actual Rows": 10.0,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Order By": "(embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788,0.5155185,0.12403127,0.21163067,0.9552913,0.6647176,0.018538764,0.2723326,0.9492245,0.2751993,0.941507,0.7437436,0.26288754,0.771575,0.7843985,0.23185658,0.35103917,0.6938274,0.6019195,0.4925697,0.8526659,0.03526167,0.32299575,0.47603667,0.17771988]'::vector)",
+                "Index Searches": 1,
+                "Shared Hit Blocks": 2277,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 137,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.299,
+          "Triggers": [],
+          "Execution Time": 1.12
+        },
+        "200": {
+          "Plan": {
+            "Node Type": "Limit",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Actual Rows": 10.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Shared Hit Blocks": 3591,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "items_embedding_hnsw_idx",
+                "Relation Name": "items",
+                "Alias": "items",
+                "Actual Rows": 10.0,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Order By": "(embedding <-> '[0.78141177,0.2702666,0.9951186,0.79220456,0.48224872,0.2451916,0.3335753,0.5047788,0.5155185,0.12403127,0.21163067,0.9552913,0.6647176,0.018538764,0.2723326,0.9492245,0.2751993,0.941507,0.7437436,0.26288754,0.771575,0.7843985,0.23185658,0.35103917,0.6938274,0.6019195,0.4925697,0.8526659,0.03526167,0.32299575,0.47603667,0.17771988]'::vector)",
+                "Index Searches": 1,
+                "Shared Hit Blocks": 3591,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 137,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.286,
+          "Triggers": [],
+          "Execution Time": 1.554
+        }
+      }
+    }
+  },
+  "finished_at_utc": "2026-09-14T03:52:12.290959+00:00",
+  "build_command_returncode": 0,
+  "cleanup": {
+    "status": "complete",
+    "steps": [
+      {
+        "action": "drop_experiment_schema",
+        "returncode": 0,
+        "stderr": "NOTICE:  drop cascades to table hnsw_diag.items\n"
+      },
+      {
+        "action": "remove_isolated_stack_and_volume",
+        "returncode": 0,
+        "stderr": " Container hnswdiag-20260914t035154z-33016-db-1 Stopping \n Container hnswdiag-20260914t035154z-33016-db-1 Stopped \n Container hnswdiag-20260914t035154z-33016-db-1 Removing \n Container hnswdiag-20260914t035154z-33016-db-1 Removed \n Volume hnswdiag-20260914t035154z-33016_opentenbase_pgdata Removing \n Network hnswdiag-20260914t035154z-33016_default Removing \n Volume hnswdiag-20260914t035154z-33016_opentenbase_pgdata Removed \n Network hnswdiag-20260914t035154z-33016_default Removed \n"
+      }
+    ],
+    "data_kept_by_request": false
+  }
+}

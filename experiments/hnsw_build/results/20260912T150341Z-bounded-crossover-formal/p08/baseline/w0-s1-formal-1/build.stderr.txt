@@ -1,0 +1,4 @@
+DEBUG: building index "items_hnsw" on table "small" serially
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 1242 tuples
+DETAIL: Building will take significantly more time.
+INFO: memory: 1 MB

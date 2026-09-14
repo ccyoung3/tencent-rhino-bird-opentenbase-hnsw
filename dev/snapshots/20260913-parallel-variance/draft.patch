@@ -1,0 +1,13 @@
+--- a/src/hnswbuild.c
++++ b/src/hnswbuild.c
+@@ -650,7 +650,9 @@
+ 	HnswGraph  *graph = buildstate->graph;
+ 	MemoryContext oldCtx;
+ 
+-	if (buildstate->reportBuildPhase)
++	/* LOAD_DISK is terminal for tuple callbacks; WAL is reported by BuildIndex. */
++	if (buildstate->reportBuildPhase &&
++		buildstate->reportedBuildPhase != PROGRESS_HNSW_PHASE_LOAD_DISK)
+ 		ReportBuildPhase(buildstate);
+ 
+ 	/* Skip nulls */

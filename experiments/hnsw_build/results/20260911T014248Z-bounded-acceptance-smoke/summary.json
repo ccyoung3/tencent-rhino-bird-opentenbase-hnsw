@@ -1,0 +1,32 @@
+{
+  "status": "failed",
+  "rows": [],
+  "warmups": [],
+  "error": "OperationalError:",
+  "error_locations": [
+    {
+      "file": "acceptance.py",
+      "line": 239
+    },
+    {
+      "file": "contextlib.py",
+      "line": 141
+    },
+    {
+      "file": "acceptance_stack.py",
+      "line": 147
+    },
+    {
+      "file": "acceptance_stack.py",
+      "line": 75
+    },
+    {
+      "file": "acceptance_stack.py",
+      "line": 42
+    },
+    {
+      "file": "connection.py",
+      "line": 122
+    }
+  ]
+}

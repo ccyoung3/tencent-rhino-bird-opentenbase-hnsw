@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "docker",
+    "create",
+    "--name",
+    "cpu-calibration-5d2a069fdea1",
+    "--label",
+    "cpu.calibration.nonce=5d2a069fdea1",
+    "--network",
+    "none",
+    "--read-only",
+    "--cpuset-cpus",
+    "0-9",
+    "--memory",
+    "512m",
+    "--memory-swap",
+    "512m",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "sha256:67f0f897778bdf0442b6a44eb3d329a055e56e8efccda5e25097bea32c674ab2",
+    "180"
+  ],
+  "started_at_utc": "2026-09-13T02:33:09.795480+00:00",
+  "returncode": 0,
+  "stdout": "7be0ff2809892910ce55ae82b4c1598ed1dfd616ee7eeb1aa1f6cfbe5df6f035\n",
+  "stderr": "",
+  "finished_at_utc": "2026-09-13T02:33:09.853842+00:00",
+  "host_elapsed_s": 0.05839604200446047
+}

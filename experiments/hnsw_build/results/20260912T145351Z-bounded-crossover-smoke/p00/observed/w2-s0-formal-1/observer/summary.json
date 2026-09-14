@@ -1,0 +1,44 @@
+{
+  "status": "stopped",
+  "build_outcome": "unknown",
+  "pid": 215,
+  "interval_seconds": 1.0,
+  "duration_limit_seconds": 180.0,
+  "samples": 10,
+  "phases": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "first_seen_s": 0.0021416660001705168,
+      "last_seen_s": 8.053781000000527,
+      "samples": 9
+    },
+    {
+      "phase": "building index: writing index pages to WAL",
+      "first_seen_s": 9.062463750000461,
+      "last_seen_s": 9.062463750000461,
+      "samples": 1
+    }
+  ],
+  "joined_mid_build_possible": true,
+  "server": {
+    "database": "postgres",
+    "version": 180006,
+    "read_only": "on",
+    "observer_pid": 216
+  },
+  "observation_counts": {
+    "waiting_observed": 1,
+    "progress_observed": 9
+  },
+  "wait_observations": [
+    {
+      "phase": "building index: loading tuples in memory",
+      "type": "IO",
+      "event": "DsmAllocate",
+      "samples": 1,
+      "first_seen_s": 0.0021416660001705168,
+      "last_seen_s": 0.0021416660001705168
+    }
+  ],
+  "elapsed_seconds": 9.068955040998844
+}

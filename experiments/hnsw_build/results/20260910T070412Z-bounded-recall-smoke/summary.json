@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "candidates": [],
+  "selected": null,
+  "validation_target_met": null,
+  "error": "KeyError:",
+  "error_locations": [
+    {
+      "file": "bounded_recall.py",
+      "line": 128
+    },
+    {
+      "file": "bounded_recall.py",
+      "line": 74
+    },
+    {
+      "file": "run.py",
+      "line": 445
+    }
+  ]
+}

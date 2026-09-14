@@ -1,5 +1,10 @@
 # Mac 上的 Linux/ARM64 开发环境
 
+首次拿到仓库，请先按[当前用法与最小复现](../docs/usage.md)运行
+`python3 dev/prepare_sources.py`，准备固定源码和新增测试。本页保留早期开发环境
+与兼容性命令；下面的开发分支名称是作者当时的本地状态，新准备的源码使用固定
+commit 的 detached HEAD。当前候选与正式证据见[效果说明](../docs/results.md)。
+
 本环境用于在 Apple Silicon Mac 上，以 OrbStack 的 Docker-compatible 接口
 运行原生 `linux/arm64` 容器并编译：
 
@@ -21,7 +26,7 @@ git -C pgvector rev-parse HEAD
 两个仓库的开发分支均为 `codex/hnsw-build-diagnostics`。
 
 2026-09-02 的实际编译、版本与 HNSW 验证结果见
-[[../docs/2026-09-02-mac-arm64-baseline|Mac ARM64 环境基线]]。
+[Mac ARM64 环境基线](../docs/2026-09-02-mac-arm64-baseline.md)。
 
 ## 构建与启动
 
@@ -80,8 +85,8 @@ Docker 环境之外，冻结候选已在 OrbStack CentOS Stream 9 原生 ARM64 M
 中完成 clean build、动态链接、专项 TAP、4 项 SQL regression、最小 HNSW
 smoke 和全部 27 个 HNSW TAP 验证。
 
-- 复现步骤：[[centos/README|CentOS Stream 9 ARM64 兼容性复现]]；
+- 复现步骤：[CentOS Stream 9 ARM64 兼容性复现](centos/README.md)；
 - 实测报告：
-  [[../docs/2026-09-03-centos-stream9-arm64-compatibility|CentOS Stream 9 ARM64 兼容性报告]]。
+  [CentOS Stream 9 ARM64 兼容性报告](../docs/2026-09-03-centos-stream9-arm64-compatibility.md)。
 
 该验证只增加发行版与工具链兼容性证据，不与本页 Docker 性能数字横向比较。

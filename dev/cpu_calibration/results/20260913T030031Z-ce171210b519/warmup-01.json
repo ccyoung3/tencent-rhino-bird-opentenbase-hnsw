@@ -1,0 +1,94 @@
+{
+  "kind": "warmup",
+  "number": 1,
+  "iterations_per_process": 1500000000,
+  "started_at_utc": "2026-09-13T03:00:33.063598+00:00",
+  "ac_before": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "resources_before": "FILE:cpu.stat\nusage_usec 60797\nuser_usec 38127\nsystem_usec 22670\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpuset.cpus.effective\n0-9\nFILE:memory.current\n4128768\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=3358720 wbytes=0 rios=37 wios=0 dbytes=0 dios=0\nFILE:cpu.pressure\nunavailable\n",
+  "host_clock_before": {
+    "realtime_ns": 1789268433106450000,
+    "monotonic_ns": 49099701428999,
+    "sampling_span_ns": 917
+  },
+  "host_clock_after": {
+    "realtime_ns": 1789268439360440000,
+    "monotonic_ns": 49105955395666,
+    "sampling_span_ns": 1583
+  },
+  "host_wall_elapsed_ns": 6253990000,
+  "host_monotonic_elapsed_ns": 6253966667,
+  "host_wall_minus_monotonic_ns": 23333,
+  "raw_stdout": "{\"schema\":1,\"test_only\":true,\"scope\":\"fixed_arithmetic_three_processes\",\"dimensions\":32,\"inputs\":1024,\"expected_checksum\":2589109860917,\"iterations_per_process\":1500000000,\"elapsed_ns\":6217590816,\"affinity\":[0,1,2,3,4,5,6,7,8,9],\"processes\":[{\"role\":\"leader\",\"participant\":0,\"pid\":50,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":6204396850,\"user_cpu_us\":6204089,\"system_cpu_us\":0,\"minor_faults\":0,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":73},{\"role\":\"worker\",\"participant\":1,\"pid\":55,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":6217511649,\"user_cpu_us\":6217485,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":1},{\"role\":\"worker\",\"participant\":2,\"pid\":56,\"iterations\":1500000000,\"checksum\":2589109860917,\"elapsed_ns\":6208509157,\"user_cpu_us\":6207655,\"system_cpu_us\":0,\"minor_faults\":64,\"major_faults\":0,\"voluntary_switches\":0,\"involuntary_switches\":8}],\"verified\":true}\n",
+  "raw_stderr": "",
+  "resources_after": "FILE:cpu.stat\nusage_usec 18706572\nuser_usec 18677435\nsystem_usec 29136\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\nFILE:cpu.max\nmax 100000\nFILE:cpuset.cpus.effective\n0-9\nFILE:memory.current\n4231168\nFILE:memory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\nFILE:io.stat\n254:16 rbytes=3358720 wbytes=0 rios=37 wios=0 dbytes=0 dios=0\nFILE:cpu.pressure\nunavailable\n",
+  "ac_after": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=21889123)\t100%; charged; 0:00 remaining present: true\n",
+  "result": {
+    "schema": 1,
+    "test_only": true,
+    "scope": "fixed_arithmetic_three_processes",
+    "dimensions": 32,
+    "inputs": 1024,
+    "expected_checksum": 2589109860917,
+    "iterations_per_process": 1500000000,
+    "elapsed_ns": 6217590816,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "processes": [
+      {
+        "role": "leader",
+        "participant": 0,
+        "pid": 50,
+        "iterations": 1500000000,
+        "checksum": 2589109860917,
+        "elapsed_ns": 6204396850,
+        "user_cpu_us": 6204089,
+        "system_cpu_us": 0,
+        "minor_faults": 0,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 73
+      },
+      {
+        "role": "worker",
+        "participant": 1,
+        "pid": 55,
+        "iterations": 1500000000,
+        "checksum": 2589109860917,
+        "elapsed_ns": 6217511649,
+        "user_cpu_us": 6217485,
+        "system_cpu_us": 0,
+        "minor_faults": 64,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 1
+      },
+      {
+        "role": "worker",
+        "participant": 2,
+        "pid": 56,
+        "iterations": 1500000000,
+        "checksum": 2589109860917,
+        "elapsed_ns": 6208509157,
+        "user_cpu_us": 6207655,
+        "system_cpu_us": 0,
+        "minor_faults": 64,
+        "major_faults": 0,
+        "voluntary_switches": 0,
+        "involuntary_switches": 8
+      }
+    ],
+    "verified": true
+  },
+  "status": "verified",
+  "finished_at_utc": "2026-09-13T03:00:39.422887+00:00"
+}
